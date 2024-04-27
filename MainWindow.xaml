@@ -6,24 +6,22 @@
         xmlns:local="clr-namespace:ProgrammEasy"
         mc:Ignorable="d"
         
-        Title="Программирование это просто!" Height="450" Width="700" Icon="/LogIso.jpg" MinWidth="700" MaxWidth="800" MinHeight="400" MaxHeight="500">
+        Title="Программирование это просто!" Height="450" Width="660" Icon="/LogIso.jpg" MinWidth="660" MaxWidth="800" MinHeight="400" MaxHeight="500">
     <Grid Background="#FF9BF9F9">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="1.3*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Программирование это просто!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="#FF5C5B5B" FontFamily="Comic Sans MS"/>
-        </StackPanel>
-        <Image Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/ProgLogo.jpg" />           
-        <Grid Grid.Row="2" Grid.Column="1">
+             <TextBlock Text="Программирование это просто!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="#FF5C5B5B" FontFamily="Comic Sans MS" Grid.ColumnSpan="4"/>
+        <Image Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/ProgLogo.jpg" Grid.Column="1" />           
+        <Grid Grid.Row="1" Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
