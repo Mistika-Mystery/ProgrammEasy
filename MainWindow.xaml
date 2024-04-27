@@ -5,18 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy"
         mc:Ignorable="d"
-        Title="Программирование это просто!" Height="450" Width="800">
-    <Grid>
+        Title="Программирование это просто!" Height="450" Width="800" Icon="/LogIso.jpg">
+    <Grid Background="#FF9BF9F9">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Программирование это просто!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="#FF5C5B5B" FontFamily="Comic Sans MS"/>
+        </StackPanel>
+        <Image Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/ProgLogo.jpg" />
 
 
     </Grid>
