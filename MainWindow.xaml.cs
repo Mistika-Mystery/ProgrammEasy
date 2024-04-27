@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,17 +28,23 @@ namespace ProgrammEasy
 
         private void LogInBT_Click(object sender, RoutedEventArgs e)
         {
-
+            var logInWin = new LogWin();
+            logInWin.Show();
+            this.Close();
         }
 
         private void RegInBt_Click(object sender, RoutedEventArgs e)
         {
-
+            var registrWin = new Registration();
+            registrWin.Show();
+            this.Close();
         }
 
         private void GuestInBt_Click(object sender, RoutedEventArgs e)
         {
-
+            var mainWinPg = new MainWinUse();
+            mainWinPg.Show();
+            this.Close();
         }
     }
 }
