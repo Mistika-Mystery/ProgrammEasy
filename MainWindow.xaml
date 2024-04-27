@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy"
         mc:Ignorable="d"
+        
         Title="Программирование это просто!" Height="450" Width="700" Icon="/LogIso.jpg" MinWidth="650" MaxWidth="900" MinHeight="300" MaxHeight="650">
     <Grid Background="#FF9BF9F9">
         <Grid.ColumnDefinitions>
