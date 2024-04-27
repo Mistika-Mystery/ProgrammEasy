@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProgrammEasy"
         mc:Ignorable="d"
         
-        Title="Программирование это просто!" Height="450" Width="660" Icon="/LogIso.jpg" MinWidth="660" MaxWidth="800" MinHeight="400" MaxHeight="500">
+        Title="Программирование это просто!" Height="450" Width="660" Icon="/LogIsoPr.png" MinWidth="660" MaxWidth="800" MinHeight="400" MaxHeight="500">
     <Grid Background="#FF9BF9F9">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>

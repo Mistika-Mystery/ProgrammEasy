@@ -101,9 +101,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recourse\LogIso.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="ProgrammLogo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +115,12 @@
   <ItemGroup>
     <Folder Include="PageUse\" />
     <Folder Include="WinUse\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\LogIsoPr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LogIsoPr.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
