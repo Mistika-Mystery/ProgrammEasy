@@ -24,13 +24,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.ColumnSpan="3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Авторизируйся" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="20" FontWeight="Bold"/>
+        <TextBlock Grid.ColumnSpan="3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Авторизируйся и начнём!" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="20" FontWeight="Bold"/>
         <Image HorizontalAlignment="Center"  VerticalAlignment="Center" Source="/ProgLogo.jpg" Grid.Column="1" Grid.Row="1" />
-        <TextBlock Text="Введи свой логин ->" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock Text="Введи пароль ->" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button Content="Войти" x:Name="LogInBT" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Click="LogInBT_Click" Background="#FF62E5FF" Cursor="Hand"/>
-        <Button Content="Назад" x:Name="BackBT" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Width="150" Click="BackBT_Click" Background="{x:Null}" Cursor="Hand"/>
-        <TextBox x:Name="LogTB" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
-        <TextBox x:Name="PassTB" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
+        <TextBlock Text="Введи свой логин ->" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock Text="Введи пароль ->" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <Button Content="Войти" x:Name="LogInBT" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="150" Click="LogInBT_Click" Background="#FF62E5FF" Cursor="Hand" FontSize="20" FontWeight="Bold"/>
+        <Button Content="Назад" x:Name="BackBT" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="150" Click="BackBT_Click" Background="{x:Null}" Cursor="Hand" FontSize="20" FontWeight="Bold"/>
+        <TextBox x:Name="LogTB" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" FontSize="18" MaxLength="15"/>
+        <TextBox x:Name="PassTB" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" FontSize="18" MaxLength="15"/>
     </Grid>
 </Window>
