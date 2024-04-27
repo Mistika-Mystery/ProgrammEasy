@@ -35,5 +35,24 @@ namespace ProgrammEasy.WinUse
             backWin.Show();
             this.Close();
         }
+
+        private void EyaOfIMG_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PassTB.Text = PassPB.Password;
+            PassTB.Visibility = Visibility.Visible;
+            PassPB.Visibility = Visibility.Collapsed;
+            EyaOfIMG.Visibility = Visibility.Collapsed;
+            EyaOnIMG.Visibility = Visibility.Visible;
+        }
+
+        private void EyaOnIMG_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PassPB.Password = PassTB.Text; // скопируем в PasswordBox из TextBox 
+            PassTB.Visibility = Visibility.Collapsed; // TextBox - скрыть
+            PassPB.Visibility = Visibility.Visible;
+            EyaOnIMG.Visibility = Visibility.Collapsed;
+            EyaOfIMG.Visibility = Visibility.Visible;
+
+        }
     }
 }

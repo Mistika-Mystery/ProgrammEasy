@@ -30,7 +30,16 @@
         <TextBlock Text="Введи пароль ->" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
         <Button Content="Войти" x:Name="LogInBT" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="150" Click="LogInBT_Click" Background="#FF62E5FF" Cursor="Hand" FontSize="20" FontWeight="Bold"/>
         <Button Content="Назад" x:Name="BackBT" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="150" Click="BackBT_Click" Background="{x:Null}" Cursor="Hand" FontSize="20" FontWeight="Bold"/>
-        <TextBox x:Name="LogTB" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" FontSize="18" MaxLength="15"/>
-        <TextBox x:Name="PassTB" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" FontSize="18" MaxLength="15"/>
+        <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBox x:Name="LogTB" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Width="150" FontSize="18" MaxLength="15"/>
+            <Image Source="/WinUse/UserIcon.png" MinWidth="25" MinHeight="25" MaxWidth="27" MaxHeight="27"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <PasswordBox x:Name="PassPB" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Width="150" FontSize="18" MaxLength="15" />
+            <TextBox x:Name="PassTB" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Width="150" FontSize="18" MaxLength="15" Visibility="Collapsed"/>
+            <Image x:Name="EyaOfIMG" MinWidth="25" MinHeight="25" MaxWidth="27" MaxHeight="27" Source="/WinUse/eye_slash_icon.png" Margin="2,0,0,0" MouseDown="EyaOfIMG_MouseDown"/>
+            <Image x:Name="EyaOnIMG" MinWidth="25" MinHeight="25" MaxWidth="27" MaxHeight="27" Source="/WinUse/eye_vision_view_icon.png" Margin="2,0,0,0" MouseDown="EyaOnIMG_MouseDown" Visibility="Collapsed"/>
+
+        </StackPanel>
     </Grid>
 </Window>
