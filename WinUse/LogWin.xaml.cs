@@ -47,8 +47,8 @@ namespace ProgrammEasy.WinUse
 
         private void EyaOnIMG_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            PassPB.Password = PassTB.Text; // скопируем в PasswordBox из TextBox 
-            PassTB.Visibility = Visibility.Collapsed; // TextBox - скрыть
+            PassPB.Password = PassTB.Text; 
+            PassTB.Visibility = Visibility.Collapsed; 
             PassPB.Visibility = Visibility.Visible;
             EyaOnIMG.Visibility = Visibility.Collapsed;
             EyaOfIMG.Visibility = Visibility.Visible;
