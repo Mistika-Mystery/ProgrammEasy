@@ -109,5 +109,9 @@
   <ItemGroup>
     <Resource Include="ProgLogo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PageUse\" />
+    <Folder Include="WinUse\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

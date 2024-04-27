@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy"
         mc:Ignorable="d"
-        Title="Программирование это просто!" Height="450" Width="800" Icon="/LogIso.jpg">
+        Title="Программирование это просто!" Height="450" Width="700" Icon="/LogIso.jpg" MinWidth="650" MaxWidth="900" MinHeight="300" MaxHeight="650">
     <Grid Background="#FF9BF9F9">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -21,7 +21,11 @@
             <TextBlock Text="Программирование это просто!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="#FF5C5B5B" FontFamily="Comic Sans MS"/>
         </StackPanel>
         <Image Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/ProgLogo.jpg" />
-
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Войти" x:Name="LogInBT" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20" Click="LogInBT_Click" Cursor="Hand" FontSize="22" Background="{x:Null}" FontWeight="Bold" BorderThickness="0,0,0,0"/>
+            <Button Content="Зарегистироваться" x:Name="RegInBt" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20" Click="RegInBt_Click" Cursor="Hand" FontSize="22" Background="{x:Null}" FontWeight="Bold" BorderThickness="0,0,0,0"/>
+            <Button Content="Войти как гость" x:Name="GuestInBt" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Click="GuestInBt_Click" Cursor="Hand" FontSize="22" Background="{x:Null}" FontWeight="Bold" BorderThickness="0,0,0,0"/>
+        </StackPanel>
 
     </Grid>
 </Window>

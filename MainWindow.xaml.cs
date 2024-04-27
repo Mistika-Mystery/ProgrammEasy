@@ -24,5 +24,20 @@ namespace ProgrammEasy
         {
             InitializeComponent();
         }
+
+        private void LogInBT_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RegInBt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GuestInBt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
