@@ -23,5 +23,17 @@ namespace ProgrammEasy.WinUse
         {
             InitializeComponent();
         }
+
+        private void LogInBT_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BackBT_Click(object sender, RoutedEventArgs e)
+        {
+            var backWin = new MainWindow();
+            backWin.Show();
+            this.Close();
+        }
     }
 }
