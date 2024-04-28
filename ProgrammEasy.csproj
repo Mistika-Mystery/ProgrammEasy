@@ -129,16 +129,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ProgrammLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="LogIso.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Recourse\ProgLogo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ProgLogo.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recourse\Hello.png" />
@@ -147,28 +138,13 @@
     <Resource Include="Recourse\LogIsoPr.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="LogIsoPr.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="WinUse\LogIsoPr.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Recourse\UserIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="WinUse\UserIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recourse\eye_slash_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recourse\eye_vision_view_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="WinUse\eye_slash_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="WinUse\eye_vision_view_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

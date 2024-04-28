@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse"
         mc:Ignorable="d"
-        Title="Регистрация" Height="400" Width="500" Icon="/WinUse/LogIsoPr.png">
+        Title="Регистрация" Height="400" Width="500" Icon="/Recourse/LogIsoPr.png">
     <Grid Background="#FF9BF9F9">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
