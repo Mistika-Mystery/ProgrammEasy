@@ -146,5 +146,8 @@
   <ItemGroup>
     <Resource Include="Recourse\eye_vision_view_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\HandHello.svg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

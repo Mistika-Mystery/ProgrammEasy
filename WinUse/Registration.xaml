@@ -8,14 +8,14 @@
         Title="Регистрация" Height="400" Width="500" Icon="/Recourse/LogIsoPr.png">
     <Grid Background="#FF9BF9F9">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Frame x:Name="RegFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1"/>
     </Grid>

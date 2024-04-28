@@ -24,5 +24,23 @@ namespace ProgrammEasy.PageUse
         {
             InitializeComponent();
         }
+
+        private void NextBT_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GoMainWinBT_Click(object sender, RoutedEventArgs e)
+        {
+            var mainWind = new MainWindow();
+            mainWind.Show();
+            CloseWindow();
+        }
+
+        private void CloseWindow()
+        {
+            Window window = Window.GetWindow(this);
+            window.Close();
+        }
     }
 }
