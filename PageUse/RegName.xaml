@@ -1,0 +1,33 @@
+﻿<Page x:Class="ProgrammEasy.PageUse.RegName"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProgrammEasy.PageUse"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="500"
+      Title="RegName">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Привет!" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Grid.Column="1"/>
+        <TextBlock Text="Давай Познакомимся!" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Grid.Row="1"/>
+        <TextBlock Text="Как тебя зовут? Напиши свое имя" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Grid.Row="2"/>
+        <TextBox x:Name="UserNameTB" Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Width="200"/>
+        <Button x:Name="NextBT" Content="Продолжить" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="180" FontSize="20" FontWeight="Bold"/>
+        <Button x:Name="GoMainWinBT" Content="Вернуться назад" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="180" FontSize="20" FontWeight="Bold"/>
+        <Image Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourse/Hello.png"/>
+    </Grid>
+</Page>

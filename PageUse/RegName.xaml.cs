@@ -10,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProgrammEasy.WinUse
+namespace ProgrammEasy.PageUse
 {
     /// <summary>
-    /// Логика взаимодействия для Registration.xaml
+    /// Логика взаимодействия для RegName.xaml
     /// </summary>
-    public partial class Registration : Window
+    public partial class RegName : Page
     {
-        public Registration()
+        public RegName()
         {
             InitializeComponent();
-            RegFrame.Navigate(new PageUse.RegName());
         }
     }
 }

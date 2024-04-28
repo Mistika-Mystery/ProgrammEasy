@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse"
         mc:Ignorable="d"
-        Title="Регистрация" Height="450" Width="800" Icon="/WinUse/LogIsoPr.png">
-    <Grid>
-        
+        Title="Регистрация" Height="400" Width="500" Icon="/WinUse/LogIsoPr.png">
+    <Grid Background="#FF9BF9F9">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Frame x:Name="RegFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Window>

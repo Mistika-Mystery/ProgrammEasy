@@ -60,6 +60,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PageUse\RegName.xaml.cs">
+      <DependentUpon>RegName.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinUse\LogWin.xaml.cs">
       <DependentUpon>LogWin.xaml</DependentUpon>
     </Compile>
@@ -81,6 +84,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PageUse\RegName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WinUse\LogWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,7 +141,7 @@
     <Resource Include="ProgLogo.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PageUse\" />
+    <Resource Include="Recourse\Hello.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recourse\LogIsoPr.png" />
