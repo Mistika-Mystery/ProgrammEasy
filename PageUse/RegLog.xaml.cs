@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,8 @@ namespace ProgrammEasy.PageUse
 
         private void LogInfoBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            var infoLog = new InfoLogin();
+            infoLog.Show();
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)

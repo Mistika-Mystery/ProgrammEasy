@@ -69,6 +69,9 @@
     <Compile Include="PageUse\RegName.xaml.cs">
       <DependentUpon>RegName.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\InfoLogin.xaml.cs">
+      <DependentUpon>InfoLogin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinUse\LogWin.xaml.cs">
       <DependentUpon>LogWin.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\RegName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\InfoLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,6 +178,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recourse\Cool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\InfoImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\Close_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\Question.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
