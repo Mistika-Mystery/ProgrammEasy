@@ -23,6 +23,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Frame x:Name="RegFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1"/>
+       <Frame x:Name="RegFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1"/>   
     </Grid>
 </Window>

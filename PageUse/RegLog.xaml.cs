@@ -24,5 +24,20 @@ namespace ProgrammEasy.PageUse
         {
             InitializeComponent();
         }
+
+        private void LogInfoBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void NextBT_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void GoMainWinBT_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }

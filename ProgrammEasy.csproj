@@ -164,13 +164,10 @@
     <Resource Include="Recourse\HandHello.svg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Recourse\Cool.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Recourse\PC.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Recourse\ProgLogoNew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\Cool2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
