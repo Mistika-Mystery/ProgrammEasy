@@ -14,18 +14,21 @@
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            
         </Grid.RowDefinitions>
-        <TextBlock Text="Что такое Логин?" FontFamily="Comic Sans MS" FontSize="24" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Image Grid.Column="2" Source="/Recourse/Question.png" HorizontalAlignment="Left"/>
-        <TextBlock Text="Логин (Login) — это как ваше уникальное имя, которое позволяет вам войти в свою учетную запись в интернете. " TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="22"/>
+        <TextBlock Text="Что такое Логин?" FontFamily="Comic Sans MS" FontSize="24" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="50,0,0,0"/>
+        <Image Grid.Column="3" Source="/Recourse/Question.png" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+        <TextBlock Text="Логин (Login) — это как ваше уникальное имя, которое позволяет вам войти в свою учетную запись." TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock TextWrapping="Wrap" Text="Например, если у тебя есть учетная запись на сайте для игр, твоим логином может быть имя или какая-то комбинация букв и чисел. Когда ты вводишь свой логин, сайт узнает, кто ты, и открывает доступ к твои личным данным и возможностям." Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="20"/>
     </Grid>
 </Window>
