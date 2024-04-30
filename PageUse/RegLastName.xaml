@@ -22,10 +22,10 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Молодец!" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Grid.Column="1" Grid.Row="1"/>
-        <TextBlock Text="А теперь напиши свою фамилию:" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Grid.Row="2"/>
+        <TextBlock Text="А теперь напиши свою фамилию:" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" Grid.Row="2"/>
         <TextBox x:Name="UserLastNameTB" Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Width="250"/>
         <Button x:Name="NextBT" Content="Продолжить" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="180" FontSize="20" FontWeight="Bold" Background="#FF62E5FF" Click="NextBT_Click" Cursor="Hand"/>
         <Button x:Name="GoBackBT" Content="Назад" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="180" FontSize="20" FontWeight="Bold" Background="{x:Null}" Click="GoBackBT_Click" Cursor="Hand"/>
-        <Image Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourse/Cool2.png" Grid.Row="1"/>
+        <Image Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Source="/Recourse/Cool2.png" Grid.Row="1"/>
     </Grid>
 </Page>
