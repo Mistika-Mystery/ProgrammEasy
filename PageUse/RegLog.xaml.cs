@@ -41,5 +41,11 @@ namespace ProgrammEasy.PageUse
         {
             NavigationService.GoBack();
         }
+
+        private void QuestionLogBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var questLog = new RecommendLog();
+            questLog.Show();
+        }
     }
 }

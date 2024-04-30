@@ -78,6 +78,9 @@
     <Compile Include="WinUse\MainWinUse.xaml.cs">
       <DependentUpon>MainWinUse.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\RecommendLog.xaml.cs">
+      <DependentUpon>RecommendLog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinUse\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
@@ -114,6 +117,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinUse\MainWinUse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\RecommendLog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -187,6 +194,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recourse\Question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\question_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\important_emblem_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\Important.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\star_red_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
