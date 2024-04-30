@@ -27,7 +27,7 @@ namespace ProgrammEasy.PageUse
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new PageUse.RegLastName());
         }
 
         private void GoMainWinBT_Click(object sender, RoutedEventArgs e)

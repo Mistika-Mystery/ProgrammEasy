@@ -60,6 +60,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PageUse\RegLastName.xaml.cs">
+      <DependentUpon>RegLastName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\RegLog.xaml.cs">
+      <DependentUpon>RegLog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\RegName.xaml.cs">
       <DependentUpon>RegName.xaml</DependentUpon>
     </Compile>
@@ -84,6 +90,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PageUse\RegLastName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\RegLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageUse\RegName.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +162,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recourse\HandHello.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\Cool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\PC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\ProgLogoNew.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

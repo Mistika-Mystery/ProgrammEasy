@@ -5,7 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse"
         mc:Ignorable="d" Height="450" Width="450" Title="Авторизация" Icon="/Recourse/LogIsoPr.png" MinWidth="400" MinHeight="400" MaxWidth="500" MaxHeight="500">
-    <Grid Background="#FF9BF9F9">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF57FEFE"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
@@ -25,7 +31,7 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.ColumnSpan="3" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Авторизируйся и начнём!" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" FontSize="20" FontWeight="Bold" FontFamily="Comic Sans MS"/>
-        <Image HorizontalAlignment="Center"  VerticalAlignment="Center" Source="/Recourse/ProgLogo.jpg" Grid.Column="1" Grid.Row="1" />
+        <Image HorizontalAlignment="Right"  VerticalAlignment="Center" Source="/Recourse/ProgLogoNew.png" Grid.Column="1" Grid.Row="1" />
         <TextBlock Text="Введи свой логин ->" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontFamily="Comic Sans MS"/>
         <TextBlock Text="Введи пароль ->" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontFamily="Comic Sans MS"/>
         <Button Content="Войти" x:Name="LogInBT" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="150" Click="LogInBT_Click" Background="#FF62E5FF" Cursor="Hand" FontSize="20" FontWeight="Bold"/>
