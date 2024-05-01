@@ -79,6 +79,9 @@
     <Compile Include="WinUse\MainWinUse.xaml.cs">
       <DependentUpon>MainWinUse.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\RecomendLastName.xaml.cs">
+      <DependentUpon>RecomendLastName.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinUse\RecomendName.xaml.cs">
       <DependentUpon>RecomendName.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinUse\MainWinUse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\RecomendLastName.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,12 @@ namespace ProgrammEasy.PageUse
         {
             RegFlag.LastNameFlage = UserLastNameTB.Text;
             NavigationService.Navigate(new RegLog());
+        }
+
+        private void RecomLastNameBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var recLastName = new RecomendLastName();
+            recLastName.Show();
         }
     }
 }
