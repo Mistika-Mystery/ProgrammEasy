@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ProgrammEasy.WinUse
 {
     /// <summary>
-    /// Логика взаимодействия для RecommendLog.xaml
+    /// Логика взаимодействия для RecomendName.xaml
     /// </summary>
-    public partial class RecommendLog : Window
+    public partial class RecomendName : Window
     {
-        public RecommendLog()
+        public RecomendName()
         {
             InitializeComponent();
         }

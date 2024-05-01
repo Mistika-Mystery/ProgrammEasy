@@ -24,6 +24,7 @@ namespace ProgrammEasy.PageUse
         public RegLog()
         {
             InitializeComponent();
+            SaveNameTB.Text = RegFlag.NameFlage;
         }
 
         private void LogInfoBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -34,7 +35,7 @@ namespace ProgrammEasy.PageUse
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-
+            RegFlag.LoginFlag = UserlogTB.Text;
         }
 
         private void GoMainWinBT_Click(object sender, RoutedEventArgs e)
@@ -43,9 +44,10 @@ namespace ProgrammEasy.PageUse
         }
 
         private void QuestionLogBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
+        {         
             var questLog = new RecommendLog();
             questLog.Show();
         }
+
     }
 }

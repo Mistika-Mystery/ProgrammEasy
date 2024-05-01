@@ -23,5 +23,10 @@ namespace ProgrammEasy.WinUse
         {
             InitializeComponent();
         }
+
+        private void CloseBT_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -32,6 +32,7 @@ namespace ProgrammEasy.PageUse
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
+            RegFlag.LastNameFlage = UserLastNameTB.Text;
             NavigationService.Navigate(new RegLog());
         }
     }

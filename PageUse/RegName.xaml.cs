@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,7 @@ namespace ProgrammEasy.PageUse
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
+            RegFlag.NameFlage = UserNameTB.Text;
             NavigationService.Navigate(new PageUse.RegLastName());
         }
 
@@ -41,6 +43,12 @@ namespace ProgrammEasy.PageUse
         {
             Window window = Window.GetWindow(this);
             window.Close();
+        }
+
+        private void NameInfoBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var recName = new RecomendName();
+            recName.Show();
         }
     }
 }

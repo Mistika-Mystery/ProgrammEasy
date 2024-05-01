@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse"
         mc:Ignorable="d"
-        Title="Информация о логине" Height="600" Width="500" Icon="/Recourse/InfoImg.png" MinWidth="500" MinHeight="600" MaxWidth="500" MaxHeight="600">
+        Title="Информация о логине" Height="500" Width="500" Icon="/Recourse/InfoImg.png" MinWidth="500" MinHeight="500" MaxWidth="500" MaxHeight="500">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FF57FEFE"/>
@@ -24,11 +24,14 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
             
         </Grid.RowDefinitions>
         <TextBlock Text="Что такое Логин?" FontFamily="Comic Sans MS" FontSize="24" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="50,0,0,0"/>
         <Image Grid.Column="3" Source="/Recourse/Question.png" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
         <TextBlock Text="Логин (Login) — это как ваше уникальное имя, которое позволяет вам войти в свою учетную запись." TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
-        <TextBlock TextWrapping="Wrap" Text="Например, если у тебя есть учетная запись на сайте для игр, твоим логином может быть имя или какая-то комбинация букв и чисел. Когда ты вводишь свой логин, сайт узнает, кто ты, и открывает доступ к твои личным данным и возможностям." Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="20"/>
+        <TextBlock TextWrapping="Wrap" Text="Например, если у тебя есть учетная запись на сайте для игр, твоим логином может быть имя или какая-то комбинация букв и чисел. Когда ты вводишь свой логин, сайт узнает, кто ты, и открывает доступ к твои личным данным и возможностям." Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="20" Grid.RowSpan="2"/>
+        <Button x:Name="CloseBT" Content="Закрыть" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="40" FontSize="20" FontWeight="Bold" FontFamily="Comic Sans MS" Background="#FF62E5FF" Click="CloseBT_Click"/>
     </Grid>
 </Window>

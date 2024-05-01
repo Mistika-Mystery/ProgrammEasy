@@ -29,5 +29,6 @@
         <Button x:Name="NextBT" Content="Продолжить" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="180" FontSize="20" FontWeight="Bold" Background="#FF62E5FF" Click="NextBT_Click" Cursor="Hand"/>
         <Button x:Name="GoMainWinBT" Content="Назад" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="180" FontSize="20" FontWeight="Bold" Background="{x:Null}" Click="GoMainWinBT_Click" Cursor="Hand"/>
         <Image Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourse/Hello.png"/>
+        <Image x:Name="NameInfoBT" Style="{StaticResource HoverEffectStyle}" Cursor="Hand" ToolTip="Требования для Имени" Source="/Recourse/question_icon.png" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="30" MouseLeftButtonDown="NameInfoBT_MouseLeftButtonDown"/>
     </Grid>
 </Page>
