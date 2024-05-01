@@ -26,6 +26,7 @@ namespace ProgrammEasy.WinUse
 
         private void CloseBT_Click(object sender, RoutedEventArgs e)
         {
+            RegFlag.Informbool = 1;
             this.Close();
         }
     }
