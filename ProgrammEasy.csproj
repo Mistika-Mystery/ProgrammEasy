@@ -69,6 +69,9 @@
     <Compile Include="PageUse\RegName.xaml.cs">
       <DependentUpon>RegName.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\RegPassword.xaml.cs">
+      <DependentUpon>RegPassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegFlag.cs" />
     <Compile Include="WinUse\InfoLogin.xaml.cs">
       <DependentUpon>InfoLogin.xaml</DependentUpon>
@@ -112,6 +115,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\RegName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\RegPassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,8 +25,8 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Отлично!" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24" FontWeight="Bold" Grid.Column="1"/>
         <StackPanel Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-            <TextBlock Text="А теперь," FontSize="24"/>
-            <TextBlock x:Name="SaveNameTB" FontSize="24" FontWeight="Bold"/>
+            <TextBlock Text="А теперь, " FontSize="24"/>
+            <TextBlock x:Name="SaveNameTB" FontSize="24" FontWeight="Bold" FontFamily="Comic Sans MS"/>
             <TextBlock Text="," FontSize="24"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">

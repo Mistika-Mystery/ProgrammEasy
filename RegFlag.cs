@@ -16,5 +16,6 @@ namespace ProgrammEasy
         public static int LastNamebool = 1;
         public static int Logbool = 1;
         public static int Passbool = 1;
+        public static int Informbool = 1;
     }
 }

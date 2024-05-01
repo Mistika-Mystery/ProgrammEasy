@@ -41,10 +41,8 @@ namespace ProgrammEasy.PageUse
         private void RecomLastNameBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (RegFlag.LastNamebool == 1)
-            {
-               
-                OpenToolTipWindow();
-                
+            {               
+                OpenToolTipWindow();                
             }
 
         }

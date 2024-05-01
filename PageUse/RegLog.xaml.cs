@@ -29,13 +29,22 @@ namespace ProgrammEasy.PageUse
 
         private void LogInfoBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            if (RegFlag.Informbool == 1)
+            {
+                OpenInformTipWindow();
+            }
+        }
+        private void OpenInformTipWindow()
+        {
             var infoLog = new InfoLogin();
             infoLog.Show();
+            RegFlag.Informbool = 2;
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
             RegFlag.LoginFlag = UserlogTB.Text;
+            NavigationService.Navigate(new RegPassword());
         }
 
         private void GoMainWinBT_Click(object sender, RoutedEventArgs e)
@@ -44,9 +53,17 @@ namespace ProgrammEasy.PageUse
         }
 
         private void QuestionLogBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {         
+        {
+            if (RegFlag.Logbool == 1)
+            {
+                OpenToolTipWindow();
+            }
+        }
+        private void OpenToolTipWindow()
+        {
             var questLog = new RecommendLog();
             questLog.Show();
+            RegFlag.Logbool = 2;
         }
 
     }
