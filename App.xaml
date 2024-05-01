@@ -31,7 +31,7 @@
                     <Trigger.EnterActions>
                         <BeginStoryboard>
                             <Storyboard>
-                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="28" Duration="0:0:0.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="29" Duration="0:0:0.2"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </Trigger.EnterActions>
@@ -50,7 +50,7 @@
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="RenderTransform">
                         <Setter.Value>
-                            <ScaleTransform ScaleX="1.15" ScaleY="1.15"/>
+                            <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
                         </Setter.Value>
                     </Setter>
                 </Trigger>

@@ -47,8 +47,18 @@ namespace ProgrammEasy.PageUse
 
         private void NameInfoBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            if (RegFlag.Namebool == 1)
+            {
+
+                OpenToolTipWindow();
+
+            }
+        }
+        private void OpenToolTipWindow()
+        {
             var recName = new RecomendName();
             recName.Show();
+            RegFlag.Namebool = 2;
         }
     }
 }

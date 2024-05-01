@@ -24,23 +24,36 @@ namespace ProgrammEasy.PageUse
         public RegLastName()
         {
             InitializeComponent();
-        }
 
+        }
+       
         private void GoBackBT_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
-        {
+        {            
             RegFlag.LastNameFlage = UserLastNameTB.Text;
             NavigationService.Navigate(new RegLog());
         }
 
         private void RecomLastNameBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            if (RegFlag.LastNamebool == 1)
+            {
+               
+                OpenToolTipWindow();
+                
+            }
+
+        }
+        private void OpenToolTipWindow()
+        {
             var recLastName = new RecomendLastName();
             recLastName.Show();
+            RegFlag.LastNamebool = 2;
         }
+
     }
 }

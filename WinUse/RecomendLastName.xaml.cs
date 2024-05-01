@@ -27,6 +27,7 @@ namespace ProgrammEasy.WinUse
         private void CloseBT_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            RegFlag.LastNamebool = 1;
         }
     }
 }

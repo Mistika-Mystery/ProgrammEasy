@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse"
         mc:Ignorable="d"
-        Title="Требования для Имени" Height="500" Width="750" MinWidth="750" MinHeight="500" MaxWidth="750" MaxHeight="500" Icon="/Recourse/important_emblem_icon.png">
+        Title="Требования для Имени" Height="500" Width="750" MinWidth="750" MinHeight="500" MaxWidth="750" MaxHeight="500" Icon="/Recourse/question_icon.png" WindowStyle="None">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FF57FEFE" Offset="0"/>
@@ -28,7 +28,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
 
         </Grid.RowDefinitions>
         <TextBlock Text="Внимание! Это важно!" Grid.Column="1" Grid.ColumnSpan="2" FontSize="24" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="200,0,0,0" FontWeight="Bold"/>
