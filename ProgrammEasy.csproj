@@ -88,6 +88,9 @@
     <Compile Include="WinUse\RecomendName.xaml.cs">
       <DependentUpon>RecomendName.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\RecomendPassword.xaml.cs">
+      <DependentUpon>RecomendPassword.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinUse\RecommendLog.xaml.cs">
       <DependentUpon>RecommendLog.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinUse\RecomendName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\RecomendPassword.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
