@@ -10,24 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProgrammEasy.WinUse
+namespace ProgrammEasy.PageUse
 {
     /// <summary>
-    /// Логика взаимодействия для RecomendPassword.xaml
+    /// Логика взаимодействия для RegResult.xaml
     /// </summary>
-    public partial class RecomendPassword : Window
+    public partial class RegResult : Page
     {
-        public RecomendPassword()
+        public RegResult()
         {
             InitializeComponent();
-        }
-
-        private void CloseBT_Click(object sender, RoutedEventArgs e)
-        {
-            RegFlag.Passbool = 1;
-            this.Close();
         }
     }
 }

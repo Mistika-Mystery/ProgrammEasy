@@ -15,18 +15,18 @@ using System.Windows.Shapes;
 namespace ProgrammEasy.WinUse
 {
     /// <summary>
-    /// Логика взаимодействия для RecomendPassword.xaml
+    /// Логика взаимодействия для InfoPassword.xaml
     /// </summary>
-    public partial class RecomendPassword : Window
+    public partial class InfoPassword : Window
     {
-        public RecomendPassword()
+        public InfoPassword()
         {
             InitializeComponent();
         }
 
         private void CloseBT_Click(object sender, RoutedEventArgs e)
         {
-            RegFlag.Passbool = 1;
+            RegFlag.Passwordbool = 1;
             this.Close();
         }
     }

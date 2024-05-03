@@ -23,11 +23,32 @@ namespace ProgrammEasy.PageUse
         public RegPassword()
         {
             InitializeComponent();
+            SaveLogTB.Text = RegFlag.LoginFlag;
         }
 
         private void GoMainWinBT_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void QuestionPassBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void PassInfoBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void UserPassTB_MouseLeave(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void NextBT_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
