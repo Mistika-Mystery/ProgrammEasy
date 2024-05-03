@@ -74,14 +74,17 @@ namespace ProgrammEasy.PageUse
                 string text = textBox.Text.Trim(); // Удаляем пробелы в начале и в конце текста
                 if (!string.IsNullOrEmpty(text))
                 {
+                    // Удаляем все пробелы, включая в середине текста
+                    text = System.Text.RegularExpressions.Regex.Replace(text, @"\s+", "");
+
+                    // Удаляем все символы кроме букв кириллицы и дефиса
+                    text = System.Text.RegularExpressions.Regex.Replace(text, @"[^a-zA-Z-]", "");
+
                     // Если первая буква не заглавная, делаем ее заглавной
                     if (char.IsLower(text[0]))
                     {
-                        text = char.ToUpper(text[0]) + text.Substring(1);
+                        text = char.ToUpper(text[0]) + text.Substring(1).ToLower();
                     }
-
-                    // Заменяем множественные пробелы одним пробелом
-                    text = System.Text.RegularExpressions.Regex.Replace(text, @"\s+", " ");
 
                     textBox.Text = text; // Устанавливаем измененный текст обратно в TextBox
                 }

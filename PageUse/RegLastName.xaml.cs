@@ -58,19 +58,29 @@ namespace ProgrammEasy.PageUse
             TextBox textBox = sender as TextBox;
             if (textBox != null)
             {
-                string text = textBox.Text.Trim(); // Удаляем пробелы в начале и в конце текста
+                string text = textBox.Text.Trim();
                 if (!string.IsNullOrEmpty(text))
                 {
+                    // Удаляем все пробелы, включая в середине текста
+                    text = System.Text.RegularExpressions.Regex.Replace(text, @"\s+", "");
+
+                    // Удаляем все символы кроме букв кириллицы и дефиса
+                    text = System.Text.RegularExpressions.Regex.Replace(text, @"[^а-яА-ЯёЁ-]", "");
+
+                    // Удаляем два и более подряд идущих дефиса, оставляя только один, если за ним есть буква
+                    text = System.Text.RegularExpressions.Regex.Replace(text, @"-{2,}", "-");
+                    text = System.Text.RegularExpressions.Regex.Replace(text, @"-(?![а-яА-ЯёЁ])", "");
+
                     // Если первая буква не заглавная, делаем ее заглавной
-                    if (char.IsLower(text[0]))
+                    if (!string.IsNullOrEmpty(text) && char.IsLower(text[0]))
                     {
-                        text = char.ToUpper(text[0]) + text.Substring(1);
+                        text = char.ToUpper(text[0]) + text.Substring(1).ToLower();
                     }
 
-                    // Заменяем множественные пробелы одним пробелом
-                    text = System.Text.RegularExpressions.Regex.Replace(text, @"\s+", " ");
+                    // Делаем буквы после дефиса заглавными
+                    text = System.Text.RegularExpressions.Regex.Replace(text, @"-(\p{L})", match => "-" + match.Groups[1].Value.ToUpper());
 
-                    textBox.Text = text; // Устанавливаем измененный текст обратно в TextBox
+                    textBox.Text = text;
                 }
             }
         }
