@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,23 +34,40 @@ namespace ProgrammEasy.PageUse
 
         private void QuestionPassBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (RegFlag.Passbool == 1)
+            {
+                OpenToolTipWindow();
+            }
+        }
+        private void OpenToolTipWindow()
+        {
+            var questPass = new RecomendPassword();
+            questPass.Show();
+            RegFlag.Passbool = 2;
         }
 
         private void PassInfoBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            if (RegFlag.Passwordbool == 1)
+            {
+                OpenInformTipWindow();
+            }
         }
-
-        private void UserPassTB_MouseLeave(object sender, MouseEventArgs e)
+        private void OpenInformTipWindow()
         {
-
+            var infoPass = new InfoPassword();
+            infoPass.Show();
+            RegFlag.Passwordbool = 2;
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
             RegFlag.PasswordFlag = UserPassTB.Text;
             NavigationService.Navigate(new RegResult());
+        }
+        private void UserPassTB_MouseLeave(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
