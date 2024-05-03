@@ -229,5 +229,11 @@
   <ItemGroup>
     <Resource Include="Recourse\star_red_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\smajlik-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\podmig.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,7 +24,7 @@ namespace ProgrammEasy.PageUse
         public RegLastName()
         {
             InitializeComponent();
-
+            SaveNameTB.Text = RegFlag.NameFlage;
         }
        
         private void GoBackBT_Click(object sender, RoutedEventArgs e)

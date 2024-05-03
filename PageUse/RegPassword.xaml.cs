@@ -24,5 +24,10 @@ namespace ProgrammEasy.PageUse
         {
             InitializeComponent();
         }
+
+        private void GoMainWinBT_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
     }
 }
