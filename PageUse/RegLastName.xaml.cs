@@ -70,9 +70,6 @@ namespace ProgrammEasy.PageUse
                     // Удаляем два и более подряд идущих дефиса, оставляя только один, если за ним есть буква
                     text = System.Text.RegularExpressions.Regex.Replace(text, @"-{2,}", "-");
                     text = System.Text.RegularExpressions.Regex.Replace(text, @"-(?![а-яА-ЯёЁ])", "");
-                                       
-                    // Делаем буквы после дефиса заглавными
-                    text = System.Text.RegularExpressions.Regex.Replace(text, @"-(\p{L})", match => "-" + match.Groups[1].Value.ToUpper());
 
                     // Удаляем начальный дефис, если он есть
                     if (text.StartsWith("-"))
@@ -80,10 +77,13 @@ namespace ProgrammEasy.PageUse
                         text = text.Substring(1);
                     }
                     // Если первая буква не заглавная, делаем ее заглавной
-                    if (!string.IsNullOrEmpty(text) && char.IsLower(text[0]))
+                    if (!string.IsNullOrEmpty(text))
                     {
                         text = char.ToUpper(text[0]) + text.Substring(1).ToLower();
                     }
+                    // Делаем буквы после дефиса заглавными
+                    text = System.Text.RegularExpressions.Regex.Replace(text, @"-(\p{L})", match => "-" + match.Groups[1].Value.ToUpper());
+
                     textBox.Text = text;
                 }
             }
