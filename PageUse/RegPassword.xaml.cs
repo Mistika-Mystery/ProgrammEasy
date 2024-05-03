@@ -48,7 +48,8 @@ namespace ProgrammEasy.PageUse
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-
+            RegFlag.PasswordFlag = UserPassTB.Text;
+            NavigationService.Navigate(new RegResult());
         }
     }
 }
