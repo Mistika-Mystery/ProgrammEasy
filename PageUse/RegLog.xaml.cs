@@ -68,6 +68,7 @@ namespace ProgrammEasy.PageUse
 
         private void UserlogTB_MouseLeave(object sender, MouseEventArgs e)
         {
+
             TextBox textBox = sender as TextBox;
             if (textBox != null)
             {
@@ -77,11 +78,18 @@ namespace ProgrammEasy.PageUse
                     // Удаляем все пробелы, включая в середине текста
                     text = System.Text.RegularExpressions.Regex.Replace(text, @"\s+", "");
 
-                    // Удаляем все символы кроме букв кириллицы и дефиса
-                    text = System.Text.RegularExpressions.Regex.Replace(text, @"[^a-zA-Z-]", "");
+                    // Удаляем все символы кроме букв латиницы, цифр и дефиса
+                    text = System.Text.RegularExpressions.Regex.Replace(text, @"[^a-zA-Z0-9-]", "");
+                    // Делаем буквы после дефиса заглавными
+                    text = System.Text.RegularExpressions.Regex.Replace(text, @"-(\p{L})", match => "-" + match.Groups[1].Value.ToUpper());
+                    // Удаляем начальный дефис, если он есть
+                    if (text.StartsWith("-"))
+                    {
+                        text = text.Substring(1);
+                    }
 
                     // Если первая буква не заглавная, делаем ее заглавной
-                    if (char.IsLower(text[0]))
+                    if (!string.IsNullOrEmpty(text) && char.IsLower(text[0]))
                     {
                         text = char.ToUpper(text[0]) + text.Substring(1).ToLower();
                     }

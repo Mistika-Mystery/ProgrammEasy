@@ -48,7 +48,7 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3">
             <Image Source="/Recourse/star_red_icon.png" Width="25" Margin="0,0,5,0"/>
             <TextBlock Text="Можно" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold"/>
-            <TextBlock Text=" использовать знак дефиса (-) и цифры." FontFamily="Comic Sans MS" FontSize="22"/>            
+            <TextBlock Text=" использовать знак дефиса (-)." FontFamily="Comic Sans MS" FontSize="22"/>            
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3">
             <Image Source="/Recourse/star_red_icon.png" Width="25" Margin="0,0,5,0"/>
