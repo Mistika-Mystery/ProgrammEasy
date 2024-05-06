@@ -32,15 +32,22 @@
             <TextBlock Text="Внимательно проверь свои данные!" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" Source="/Recourse/Important.png"/>
         </StackPanel>
-        <TextBlock Text="Имя: " Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-        <TextBlock Text="Фамилия: " Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
-        <TextBlock Text="Логин: " Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-        <TextBlock Text="Пароль: " Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Grid.Column="2"/>
-        <TextBlock Foreground="#FF952626" x:Name="TBName" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold" Margin="20,0,0,0"/>
-        <TextBlock Foreground="#FF952626" x:Name="TBLastName" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold" Margin="20,0,0,0"/>
-        <TextBlock Foreground="#FF952626" x:Name="TBLog" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold" Margin="20,0,0,0"/>
-        <TextBlock Foreground="#FF952626" x:Name="TBPass" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold" Margin="20,0,0,0"/>
-
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Имя: " FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Foreground="#FF952626" x:Name="TBName" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2">
+            <TextBlock Text="Фамилия: " FontSize="20" FontWeight="Bold" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Foreground="#FF952626" x:Name="TBLastName"  FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Логин: " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+            <TextBlock Foreground="#FF952626" x:Name="TBLog"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2">
+            <TextBlock Text="Пароль: " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" />
+            <TextBlock Foreground="#FF952626" x:Name="TBPass"  HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold"/>
+        </StackPanel>
         <StackPanel Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock TextWrapping="Wrap" Text="Если все хорошо, то жми зарегистироваться!" FontFamily="Comic Sans MS" FontSize="20"/>
             <TextBlock Text="Либо вернить назад и исправь неточности." FontFamily="Comic Sans MS" FontSize="20"/>
