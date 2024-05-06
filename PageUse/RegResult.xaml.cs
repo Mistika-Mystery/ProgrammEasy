@@ -38,7 +38,7 @@ namespace ProgrammEasy.PageUse
         {
             try
             {
-
+                NavigationService.Navigate(new SuccessfulReg());
             }
             catch(Exception ex)
             {
