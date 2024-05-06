@@ -43,6 +43,7 @@ namespace ProgrammEasy.PageUse
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
+            FormatTextBox(UserlogTB);
             RegFlag.LoginFlag = UserlogTB.Text;
             NavigationService.Navigate(new RegPassword());
         }
@@ -69,6 +70,11 @@ namespace ProgrammEasy.PageUse
         private void UserlogTB_MouseLeave(object sender, MouseEventArgs e)
         {
             TextBox textBox = sender as TextBox;
+            FormatTextBox(textBox);
+
+        }
+        private void FormatTextBox(TextBox textBox)
+        {
             if (textBox != null)
             {
                 string text = textBox.Text.Trim();
@@ -102,4 +108,5 @@ namespace ProgrammEasy.PageUse
             }
         }
     }
+
 }

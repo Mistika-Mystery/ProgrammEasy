@@ -62,12 +62,17 @@ namespace ProgrammEasy.PageUse
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
+            FormatTextBox(UserPassTB);
             RegFlag.PasswordFlag = UserPassTB.Text;
             NavigationService.Navigate(new RegResult());
         }
         private void UserPassTB_MouseLeave(object sender, MouseEventArgs e)
         {
             TextBox textBox = sender as TextBox;
+            FormatTextBox(textBox);
+        }
+        private void FormatTextBox(TextBox textBox)
+        {
             if (textBox != null)
             {
                 string text = textBox.Text.Trim();
@@ -78,7 +83,7 @@ namespace ProgrammEasy.PageUse
 
                     // Удаляем все символы кроме букв латиницы и цифр
                     text = System.Text.RegularExpressions.Regex.Replace(text, @"[^a-zA-Z0-9]", "");
-                   
+
                     textBox.Text = text;
                 }
             }

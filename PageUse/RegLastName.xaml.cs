@@ -33,7 +33,8 @@ namespace ProgrammEasy.PageUse
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
-        {            
+        {
+            FormatTextBox(UserLastNameTB);
             RegFlag.LastNameFlage = UserLastNameTB.Text;
             NavigationService.Navigate(new RegLog());
         }
@@ -56,6 +57,11 @@ namespace ProgrammEasy.PageUse
         private void UserLastNameTB_MouseLeave(object sender, MouseEventArgs e)
         {
             TextBox textBox = sender as TextBox;
+            FormatTextBox(textBox);
+        }
+
+        private void FormatTextBox(TextBox textBox)
+        {
             if (textBox != null)
             {
                 string text = textBox.Text.Trim();
@@ -88,5 +94,6 @@ namespace ProgrammEasy.PageUse
                 }
             }
         }
+
     }
 }

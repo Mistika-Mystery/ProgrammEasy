@@ -30,6 +30,7 @@ namespace ProgrammEasy.PageUse
         {
             try
             {
+                FormatTextBox(UserNameTB);
                 RegFlag.NameFlage = UserNameTB.Text;
                 NavigationService.Navigate(new PageUse.RegLastName());
             }
@@ -71,6 +72,10 @@ namespace ProgrammEasy.PageUse
         private void UserNameTB_MouseLeave(object sender, MouseEventArgs e)
         {
             TextBox textBox = sender as TextBox;
+            FormatTextBox(textBox);
+        }
+        private void FormatTextBox(TextBox textBox)
+        {
             if (textBox != null)
             {
                 string text = textBox.Text.Trim();
