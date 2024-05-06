@@ -62,9 +62,16 @@ namespace ProgrammEasy.PageUse
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-            FormatTextBox(UserPassTB);
-            RegFlag.PasswordFlag = UserPassTB.Text;
-            NavigationService.Navigate(new RegResult());
+            try
+            {
+                FormatTextBox(UserPassTB);
+                RegFlag.PasswordFlag = UserPassTB.Text;
+                NavigationService.Navigate(new RegResult());
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void UserPassTB_MouseLeave(object sender, MouseEventArgs e)
         {

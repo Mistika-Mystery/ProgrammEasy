@@ -34,9 +34,16 @@ namespace ProgrammEasy.PageUse
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-            FormatTextBox(UserLastNameTB);
-            RegFlag.LastNameFlage = UserLastNameTB.Text;
-            NavigationService.Navigate(new RegLog());
+            try
+            {
+                FormatTextBox(UserLastNameTB);
+                RegFlag.LastNameFlage = UserLastNameTB.Text;
+                NavigationService.Navigate(new RegLog());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void RecomLastNameBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

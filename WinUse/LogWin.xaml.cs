@@ -26,7 +26,15 @@ namespace ProgrammEasy.WinUse
 
         private void LogInBT_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void BackBT_Click(object sender, RoutedEventArgs e)

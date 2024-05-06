@@ -23,11 +23,27 @@ namespace ProgrammEasy.PageUse
         public RegResult()
         {
             InitializeComponent();
+            TBName.Text = RegFlag.NameFlage;
+            TBLastName.Text = RegFlag.LastNameFlage;
+            TBLog.Text = RegFlag.LoginFlag;
+            TBPass.Text = RegFlag.PasswordFlag;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BackBT_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void RegBT_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

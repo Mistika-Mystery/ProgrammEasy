@@ -43,9 +43,16 @@ namespace ProgrammEasy.PageUse
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-            FormatTextBox(UserlogTB);
-            RegFlag.LoginFlag = UserlogTB.Text;
-            NavigationService.Navigate(new RegPassword());
+            try
+            {
+                FormatTextBox(UserlogTB);
+                RegFlag.LoginFlag = UserlogTB.Text;
+                NavigationService.Navigate(new RegPassword());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void GoMainWinBT_Click(object sender, RoutedEventArgs e)
