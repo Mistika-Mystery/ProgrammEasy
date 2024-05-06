@@ -29,7 +29,10 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Внимательно проверь свои данные!" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Внимательно проверь и" FontSize="26" FontFamily="Comic Sans MS" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="запомни свои данные!" FontSize="26" FontFamily="Comic Sans MS" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
             <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" Source="/Recourse/Important.png"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
