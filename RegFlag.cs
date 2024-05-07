@@ -12,6 +12,7 @@ namespace ProgrammEasy
         public static string LastNameFlage;
         public static string LoginFlag;
         public static string PasswordFlag;
+
         public static int Namebool = 1;
         public static int LastNamebool = 1;
         public static int Logbool = 1;
@@ -19,6 +20,7 @@ namespace ProgrammEasy
         public static int Informbool = 1;
         public static int Passwordbool = 1;
         public static int Avtorizbool = 1;
+
         public static string UserLogin;
         public static int IdRol;
         public static int IdUser;
