@@ -1,4 +1,5 @@
-﻿using ProgrammEasy.WinUse;
+﻿using Microsoft.CodeAnalysis.Differencing;
+using ProgrammEasy.WinUse;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace ProgrammEasy.PageUse
 {
@@ -22,7 +24,8 @@ namespace ProgrammEasy.PageUse
     /// </summary>
     public partial class RegName : Page
     {
-        Regex CounName = new Regex(@"^.{2,20}$");
+        Regex CountName = new Regex(@"^.{2,20}$");
+        MatchCollection match;
         public RegName()
         {
             InitializeComponent();
@@ -35,7 +38,8 @@ namespace ProgrammEasy.PageUse
                 StringBuilder errors = new StringBuilder();
                 if (string.IsNullOrWhiteSpace(UserNameTB.Text))
                     errors.AppendLine("Введите Логин");
-
+                match = CountName.Matches(UserNameTB.Text);
+                if (match.Count == 0) errors.AppendLine("Имя должно содержать минимум 2 символа, а максимум 50");
 
 
                 FormatTextBox(UserNameTB);
