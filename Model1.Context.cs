@@ -15,9 +15,18 @@ namespace ProgrammEasy
     
     public partial class my01Entities : DbContext
     {
+        private static my01Entities my01;
         public my01Entities()
             : base("name=my01Entities")
         {
+        }
+        public static my01Entities GetContext()
+        {
+            if (my01 == null)
+            {
+                my01 = new my01Entities();
+            }
+            return my01;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

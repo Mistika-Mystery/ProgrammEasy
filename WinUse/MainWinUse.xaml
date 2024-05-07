@@ -7,6 +7,18 @@
         mc:Ignorable="d"
         Title="Программирование это просто!" Height="450" Width="800" Icon="/Recourse/LogIsoPr.png">
     <Grid>
-        <Image Source="/Recourse/podmig.png" x:Name="eeeetb" MouseLeftButtonDown="eeeetb_MouseLeftButtonDown"/>
+
+        <Button Content="Открыть меню" HorizontalAlignment="Center" VerticalAlignment="Center"
+                Click="Button_Click" x:Name="btn"/>
+        <Popup Name="popup" PlacementTarget="{Binding ElementName=btn}" Placement="Bottom">
+            <Border BorderBrush="Black" BorderThickness="1" Background="White">
+                <StackPanel>
+                    <Button Content="назад" x:Name="back" Click="back_Click"/>
+                    <Button Content="Пункт меню 2"/>
+                    <Button Content="Пункт меню 3"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+
     </Grid>
 </Window>

@@ -19,5 +19,12 @@ namespace ProgrammEasy
         public static int Informbool = 1;
         public static int Passwordbool = 1;
         public static int Avtorizbool = 1;
+        public static string UserLogin;
+        public static int IdRol;
+        public static int IdUser;
+        public static string UserName;
+        public static string UserLastName;
+        public static string RoleName;
+
     }
 }

@@ -5,6 +5,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style TargetType="Button">
+            <!--x:Key="SpecialButtonStyle" добавить потом это сюды-->
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">

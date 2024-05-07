@@ -28,8 +28,19 @@ namespace ProgrammEasy.WinUse
         {
             try
             {
-                
+                var UserLog = my01Entities.GetContext().User.FirstOrDefault(x => x.Login==LogTB.Text && x.Pass1==PassPB.Password);
+                if (UserLog==null) 
+                {
+                    MessageBox.Show("Проверьте правильность написания Логина и Пароля", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    
 
+                    var mainWin = new MainWinUse();
+                    mainWin.Show();
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {

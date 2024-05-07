@@ -24,9 +24,20 @@ namespace ProgrammEasy.WinUse
             InitializeComponent();
         }
 
-        private void eeeetb_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var glavwin =new MainWindow();
+            if (popup.IsOpen)
+                popup.IsOpen = false;
+            else
+                popup.IsOpen = true;
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            var glavwin = new MainWindow();
             glavwin.Show();
             this.Close();
         }
