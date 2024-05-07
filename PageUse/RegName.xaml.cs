@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,7 @@ namespace ProgrammEasy.PageUse
     /// </summary>
     public partial class RegName : Page
     {
+        Regex CounName = new Regex(@"^.{2,20}$");
         public RegName()
         {
             InitializeComponent();
@@ -30,6 +32,12 @@ namespace ProgrammEasy.PageUse
         {
             try
             {
+                StringBuilder errors = new StringBuilder();
+                if (string.IsNullOrWhiteSpace(UserNameTB.Text))
+                    errors.AppendLine("Введите Логин");
+
+
+
                 FormatTextBox(UserNameTB);
                 RegFlag.NameFlage = UserNameTB.Text;
                 NavigationService.Navigate(new PageUse.RegLastName());
