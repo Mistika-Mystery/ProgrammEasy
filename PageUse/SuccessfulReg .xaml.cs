@@ -37,5 +37,19 @@ namespace ProgrammEasy.PageUse
                 window.Close();
             }
         }
+
+        private void AvtorizInfoBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (RegFlag.Avtorizbool == 1)
+            {
+                OpenInformTipWindow();
+            }
+        }
+        private void OpenInformTipWindow()
+        {
+            var infoAvtoriz = new InfoAvtoriz();
+            infoAvtoriz.Show();
+            RegFlag.Avtorizbool = 2;
+        }
     }
 }

@@ -18,5 +18,6 @@ namespace ProgrammEasy
         public static int Passbool = 1;
         public static int Informbool = 1;
         public static int Passwordbool = 1;
+        public static int Avtorizbool = 1;
     }
 }

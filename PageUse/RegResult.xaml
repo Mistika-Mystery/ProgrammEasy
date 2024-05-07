@@ -53,9 +53,9 @@
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock TextWrapping="Wrap" Text="Если все хорошо, то жми зарегистироваться!" FontFamily="Comic Sans MS" FontSize="20"/>
-            <TextBlock Text="Либо вернить назад и исправь неточности." FontFamily="Comic Sans MS" FontSize="20"/>
+            <TextBlock Text="Либо вернись назад и исправь неточности." FontFamily="Comic Sans MS" FontSize="20"/>
         </StackPanel>
-        <Button Content="Назад" x:Name="BackBT" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Bottom" Click="BackBT_Click"  Height="50" Width="120" Background="{x:Null}" FontSize="20" Grid.ColumnSpan="2"/>
+        <Button Content="Назад" x:Name="BackBT" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Bottom" Click="BackBT_Click"  Height="50" Width="200" Background="{x:Null}" FontSize="20" Grid.ColumnSpan="2" FontWeight="Bold"/>
         <Button Content="Зарегистрироваться" x:Name="RegBT" Click="RegBT_Click" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="50" Width="250" FontSize="20" FontWeight="Bold" Background="#FF62E5FF"/>
     </Grid>
 </Page>

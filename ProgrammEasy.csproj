@@ -79,6 +79,9 @@
       <DependentUpon>SuccessfulReg .xaml</DependentUpon>
     </Compile>
     <Compile Include="RegFlag.cs" />
+    <Compile Include="WinUse\InfoAvtoriz.xaml.cs">
+      <DependentUpon>InfoAvtoriz.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinUse\InfoLogin.xaml.cs">
       <DependentUpon>InfoLogin.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\SuccessfulReg .xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\InfoAvtoriz.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

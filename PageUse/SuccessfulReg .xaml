@@ -33,7 +33,7 @@
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <TextBlock Text="Теперь можешь " FontFamily="Comic Sans MS" FontSize="24"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBlock Text="авторизироваться" Style="{StaticResource TextHoverStyle}" x:Name="AvtorizInfoBT" Foreground="#FF06199A" FontFamily="Comic Sans MS" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" ToolTip="Нажми для подсказки!"/>
+            <TextBlock Text="авторизироваться" Style="{StaticResource TextHoverStyle}" x:Name="AvtorizInfoBT" Foreground="#FF06199A" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" ToolTip="Нажми для подсказки" MouseLeftButtonDown="AvtorizInfoBT_MouseLeftButtonDown"/>
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="и начать изучать программирование!" FontFamily="Comic Sans MS" FontSize="24" />

@@ -15,19 +15,18 @@ using System.Windows.Shapes;
 namespace ProgrammEasy.WinUse
 {
     /// <summary>
-    /// Логика взаимодействия для MainWinUse.xaml
+    /// Логика взаимодействия для InfoAvtoriz.xaml
     /// </summary>
-    public partial class MainWinUse : Window
+    public partial class InfoAvtoriz : Window
     {
-        public MainWinUse()
+        public InfoAvtoriz()
         {
             InitializeComponent();
         }
 
-        private void eeeetb_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void CloseBT_Click(object sender, RoutedEventArgs e)
         {
-            var glavwin =new MainWindow();
-            glavwin.Show();
+            RegFlag.Avtorizbool = 1;
             this.Close();
         }
     }
