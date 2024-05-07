@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,8 @@ namespace ProgrammEasy.PageUse
     /// </summary>
     public partial class RegPassword : Page
     {
+        Regex CountPass = new Regex(@"^.{4,20}$");
+        MatchCollection match;
         public RegPassword()
         {
             InitializeComponent();
@@ -65,6 +68,19 @@ namespace ProgrammEasy.PageUse
             try
             {
                 FormatTextBox(UserPassTB);
+
+                StringBuilder errors = new StringBuilder();
+                if (string.IsNullOrWhiteSpace(UserPassTB.Text))
+                    errors.AppendLine("Введите Пароль!");
+                match = CountPass.Matches(UserPassTB.Text);
+                if (match.Count == 0) errors.AppendLine("Пароль должен содержать только буквы английского алфавита и цифры, длиной от 4-х, до 20-ти символов.");
+
+                if (errors.Length > 0)
+                {
+                    MessageBox.Show(errors.ToString());
+                    return;
+                }
+
                 RegFlag.PasswordFlag = UserPassTB.Text;
                 NavigationService.Navigate(new RegResult());
             }
