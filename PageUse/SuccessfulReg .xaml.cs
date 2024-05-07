@@ -28,13 +28,20 @@ namespace ProgrammEasy.PageUse
 
         private void AvtorizBT_Click(object sender, RoutedEventArgs e)
         {
-            var logIn = new LogWin();
-            logIn.Show();
-
-            Window window = Window.GetWindow(this);
-            if (window != null)
+            try
             {
-                window.Close();
+                var logIn = new LogWin();
+                logIn.Show();
+
+                Window window = Window.GetWindow(this);
+                if (window != null)
+                {
+                    window.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
