@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,18 @@ namespace ProgrammEasy.PageUse
         public SuccessfulReg()
         {
             InitializeComponent();
+        }
+
+        private void AvtorizBT_Click(object sender, RoutedEventArgs e)
+        {
+            var logIn = new LogWin();
+            logIn.Show();
+
+            Window window = Window.GetWindow(this);
+            if (window != null)
+            {
+                window.Close();
+            }
         }
     }
 }

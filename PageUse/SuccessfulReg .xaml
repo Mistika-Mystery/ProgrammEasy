@@ -33,10 +33,11 @@
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <TextBlock Text="Теперь можешь " FontFamily="Comic Sans MS" FontSize="24"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBlock Text="авторизироваться" Style="{StaticResource TextHoverStyle}" x:Name="AvtorizInfoBT" Foreground="#FF06199A" FontFamily="Comic Sans MS" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="авторизироваться" Style="{StaticResource TextHoverStyle}" x:Name="AvtorizInfoBT" Foreground="#FF06199A" FontFamily="Comic Sans MS" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" ToolTip="Нажми для подсказки!"/>
         </StackPanel>
         <StackPanel Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="и начать изучать программирование!" FontFamily="Comic Sans MS" FontSize="24" />
         </StackPanel>
+        <Button x:Name="AvtorizBT" Content="Авторизация" Click="AvtorizBT_Click" Grid.Row="5" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF62E5FF" Width="200" FontSize="20" FontWeight="Bold" Height="50"/>
     </Grid>
 </Page>
