@@ -35,14 +35,20 @@ namespace ProgrammEasy.PageUse
         {
             try
             {
+                FormatTextBox(UserNameTB);
+
                 StringBuilder errors = new StringBuilder();
                 if (string.IsNullOrWhiteSpace(UserNameTB.Text))
-                    errors.AppendLine("Введите Логин");
+                    errors.AppendLine("Введите Имя!");
                 match = CountName.Matches(UserNameTB.Text);
-                if (match.Count == 0) errors.AppendLine("Имя должно содержать минимум 2 символа, а максимум 50");
+                if (match.Count == 0) errors.AppendLine("Имя должно содержать только буквы русского алфавита, длиной от 2-х, до 20-ти символов.");
 
+                if (errors.Length > 0)
+                {
+                    MessageBox.Show(errors.ToString());
+                    return;
+                }
 
-                FormatTextBox(UserNameTB);
                 RegFlag.NameFlage = UserNameTB.Text;
                 NavigationService.Navigate(new PageUse.RegLastName());
             }

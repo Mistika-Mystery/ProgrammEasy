@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,8 @@ namespace ProgrammEasy.PageUse
     /// </summary>
     public partial class RegLastName : Page
     {
+        Regex CountName = new Regex(@"^.{2,20}$");
+        MatchCollection match;
         public RegLastName()
         {
             InitializeComponent();
@@ -37,6 +40,19 @@ namespace ProgrammEasy.PageUse
             try
             {
                 FormatTextBox(UserLastNameTB);
+
+                StringBuilder errors = new StringBuilder();
+                if (string.IsNullOrWhiteSpace(UserLastNameTB.Text))
+                    errors.AppendLine("Введите Фамилию!");
+                match = CountName.Matches(UserLastNameTB.Text);
+                if (match.Count == 0) errors.AppendLine("Фамилия должна содержать только буквы русского алфавита, длиной от 2-х, до 20-ти символов.");
+
+                if (errors.Length > 0)
+                {
+                    MessageBox.Show(errors.ToString());
+                    return;
+                }
+
                 RegFlag.LastNameFlage = UserLastNameTB.Text;
                 NavigationService.Navigate(new RegLog());
             }

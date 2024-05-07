@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse"
         mc:Ignorable="d"
-        Title="Требования для Имени" Height="500" Width="750" MinWidth="750" MinHeight="500" MaxWidth="750" MaxHeight="500" Icon="/Recourse/question_icon.png" WindowStyle="None">
+        Title="Требования для Имени" Height="500" Width="800" MinWidth="800" MinHeight="500" MaxWidth="800" MaxHeight="500" Icon="/Recourse/question_icon.png" WindowStyle="None">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FF57FEFE" Offset="0"/>
@@ -22,6 +22,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -68,6 +69,11 @@
             <TextBlock Text="Можно" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold"/>
             <TextBlock Text=" использовать знак дефиса (-)." FontFamily="Comic Sans MS" FontSize="22"/>
         </StackPanel>
-        <Button x:Name="CloseBT" Content="Закрыть" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="40" FontSize="20" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF62E5FF" Cursor="Hand" Click="CloseBT_Click"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Grid.Column="1">
+            <Image Source="/Recourse/important_emblem_icon.png"/>
+            <TextBlock Text="Все не подходящие символы будут автоматически удаляться!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Foreground="#FFBF1010" />
+            <Image Source="/Recourse/important_emblem_icon.png"/>
+        </StackPanel>
+        <Button x:Name="CloseBT" Content="Закрыть" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="40" FontSize="20" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF62E5FF" Cursor="Hand" Click="CloseBT_Click"/>
     </Grid>
 </Window>
