@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,6 +22,8 @@ namespace ProgrammEasy.PageUse
     /// </summary>
     public partial class RegLog : Page
     {
+        Regex CountLog = new Regex(@"^.{3,20}$");
+        MatchCollection match;
         public RegLog()
         {
             InitializeComponent();
@@ -46,6 +49,19 @@ namespace ProgrammEasy.PageUse
             try
             {
                 FormatTextBox(UserlogTB);
+
+                StringBuilder errors = new StringBuilder();
+                if (string.IsNullOrWhiteSpace(UserlogTB.Text))
+                    errors.AppendLine("Введите Логин!");
+                match = CountLog.Matches(UserlogTB.Text);
+                if (match.Count == 0) errors.AppendLine("Логин должн содержать только буквы английского алфавита и цифры, длиной от 3-х, до 20-ти символов.");
+
+                if (errors.Length > 0)
+                {
+                    MessageBox.Show(errors.ToString());
+                    return;
+                }
+
                 RegFlag.LoginFlag = UserlogTB.Text;
                 NavigationService.Navigate(new RegPassword());
             }

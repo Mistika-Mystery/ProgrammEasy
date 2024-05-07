@@ -28,6 +28,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="1.5*"/>
 
         </Grid.RowDefinitions>
@@ -61,12 +62,17 @@
             <TextBlock Text="не больше 20" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold"/>
             <TextBlock Text=" символов!" FontFamily="Comic Sans MS" FontSize="22"/>
         </StackPanel>
-        <Button x:Name="CloseBT" Content="Закрыть" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="40" FontSize="20" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF62E5FF" Cursor="Hand" Click="CloseBT_Click"/>
+        <Button x:Name="CloseBT" Content="Закрыть" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="40" FontSize="20" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF62E5FF" Cursor="Hand" Click="CloseBT_Click"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
             <Image Source="/Recourse/star_red_icon.png" Width="25" Margin="0,0,5,0"/>
             <TextBlock Text="Логин должен состоять " FontFamily="Comic Sans MS" FontSize="22"/>
             <TextBlock Text="только" FontFamily="Comic Sans MS" FontSize="22" FontWeight="Bold"/>
             <TextBlock Text=" из одного слова!" FontFamily="Comic Sans MS" FontSize="22"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Grid.Column="1">
+            <Image Source="/Recourse/important_emblem_icon.png"/>
+            <TextBlock Text="Все не подходящие символы будут автоматически удаляться!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Foreground="#FFBF1010" />
+            <Image Source="/Recourse/important_emblem_icon.png"/>
         </StackPanel>
     </Grid>
 </Window>
