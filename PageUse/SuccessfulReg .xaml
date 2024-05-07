@@ -16,11 +16,27 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.7*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="1.3*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="Поздравляем!" FontFamily="Comic Sans MS" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image Source="/Recourse/Goog.png" Margin="10,0,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Регистрация прошла успешно!" FontFamily="Comic Sans MS" FontSize="28" FontWeight="Bold"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="Теперь можешь " FontFamily="Comic Sans MS" FontSize="24"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="авторизироваться" Style="{StaticResource TextHoverStyle}" x:Name="AvtorizInfoBT" Foreground="#FF06199A" FontFamily="Comic Sans MS" FontSize="26" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="и начать изучать программирование!" FontFamily="Comic Sans MS" FontSize="24" />
+        </StackPanel>
     </Grid>
 </Page>

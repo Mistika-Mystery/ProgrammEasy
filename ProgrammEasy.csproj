@@ -260,5 +260,8 @@
   <ItemGroup>
     <Resource Include="Recourse\podmig.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Recourse\Goog.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
