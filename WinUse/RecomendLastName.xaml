@@ -74,6 +74,6 @@
             <TextBlock Text="Все не подходящие символы будут автоматически удаляться!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold" Foreground="#FFBF1010" />
             <Image Source="/Recourse/important_emblem_icon.png"/>
         </StackPanel>
-        <Button x:Name="CloseBT" Content="Закрыть" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="40" FontSize="20" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF62E5FF" Cursor="Hand" Click="CloseBT_Click"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="CloseBT" Content="Закрыть" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="40" FontSize="20" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#FF62E5FF" Cursor="Hand" Click="CloseBT_Click"/>
     </Grid>
 </Window>

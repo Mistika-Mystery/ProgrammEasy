@@ -35,8 +35,8 @@
             <TextBlock Text=" и напиши его:" FontSize="24" FontFamily="Comic Sans MS"/>
         </StackPanel>
         <TextBox x:Name="UserlogTB" Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Width="250" MaxLength="20" MouseLeave="UserlogTB_MouseLeave"/>
-        <Button x:Name="NextBT" Content="Продолжить" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="180" FontSize="20" FontWeight="Bold" Background="#FF62E5FF" Click="NextBT_Click" Cursor="Hand"/>
-        <Button x:Name="GoMainWinBT" Content="Назад" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="180" FontSize="20" FontWeight="Bold" Background="{x:Null}" Click="GoMainWinBT_Click" Cursor="Hand"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Content="Продолжить" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="180" FontSize="20" FontWeight="Bold" Background="#FF62E5FF" Click="NextBT_Click" Cursor="Hand"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="GoMainWinBT" Content="Назад" Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="180" FontSize="20" FontWeight="Bold" Background="{x:Null}" Click="GoMainWinBT_Click" Cursor="Hand"/>
         <Image Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourse/Cool.png"/>
         <Image Style="{StaticResource HoverEffectStyle}" x:Name="QuestionLogBT" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Recourse/question_icon.png" Width="30" Cursor="Hand" ToolTip="Требования для логина" MouseLeftButtonDown="QuestionLogBT_MouseLeftButtonDown"/>
     </Grid>

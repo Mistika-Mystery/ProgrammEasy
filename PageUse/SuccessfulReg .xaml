@@ -38,6 +38,6 @@
         <StackPanel Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="и начать изучать программирование!" FontFamily="Comic Sans MS" FontSize="24" />
         </StackPanel>
-        <Button x:Name="AvtorizBT" Content="Авторизация" Click="AvtorizBT_Click" Grid.Row="5" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF62E5FF" Width="200" FontSize="20" FontWeight="Bold" Height="50"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="AvtorizBT" Content="Авторизация" Click="AvtorizBT_Click" Grid.Row="5" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FF62E5FF" Width="200" FontSize="20" FontWeight="Bold" Height="50"/>
     </Grid>
 </Page>

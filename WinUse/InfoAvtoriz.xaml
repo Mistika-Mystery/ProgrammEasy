@@ -33,6 +33,6 @@
         <Image Grid.Column="3" Source="/Recourse/Question.png" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
         <TextBlock Text="Авторизация - это процесс, когда ты входишь в свою учетную запись с помощью своего логина и пароля." TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
         <TextBlock TextWrapping="Wrap" Text="Благодаря этому, система узнаёт, что это именно ты, и дает тебе доступ к разным функциям или информации, которая доступна только тебе." Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button x:Name="CloseBT" Content="Закрыть" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" FontSize="20" FontWeight="Bold" FontFamily="Comic Sans MS" Background="#FF62E5FF" Click="CloseBT_Click"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="CloseBT" Content="Закрыть" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" FontSize="20" FontWeight="Bold" FontFamily="Comic Sans MS" Background="#FF62E5FF" Click="CloseBT_Click"/>
     </Grid>
 </Window>
