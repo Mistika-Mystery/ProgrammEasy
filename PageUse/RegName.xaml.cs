@@ -1,4 +1,4 @@
-﻿using Microsoft.CodeAnalysis.Differencing;
+﻿//using Microsoft.CodeAnalysis.Differencing;
 using ProgrammEasy.WinUse;
 using System;
 using System.Collections.Generic;
