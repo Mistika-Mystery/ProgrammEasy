@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse.Admin"
         mc:Ignorable="d"
-        Title="AdminGlavWin" Height="450" Width="800">
+        Title="Программирование это просто!" Height="450" Width="800" Icon="/Recourse/LogIsoPr.png">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFA2FAFA"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="15"/>
             <ColumnDefinition Width="767*"/>
@@ -17,6 +23,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
+        <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <Image Source="/Recourse/ProgLogoNew.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="100"/>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Панель" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontFamily="Comic Sans MS"/>
+                <TextBlock Text="Администратора" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="24"/>
+            </StackPanel>
+        </StackPanel>
 
         <TabControl Grid.Row="1" Grid.Column="1" >
             <TabItem Header="Журнал заявок" >
@@ -24,7 +37,7 @@
          Содержимое вкладки 1 
         
             </TabItem>
-            <TabItem Header="Журнал Пользователей">
+            <TabItem Header="Пользователи">
                 
          Содержимое вкладки 2 
         
@@ -39,7 +52,7 @@
          Содержимое вкладки 4 
         
             </TabItem>
-            <TabItem Header="Журнал Оценок">
+            <TabItem Header="Журнал Результатов">
 
                 Содержимое вкладки 5
 
