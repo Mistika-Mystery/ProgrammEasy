@@ -42,9 +42,20 @@ namespace ProgrammEasy
 
         private void GuestInBt_Click(object sender, RoutedEventArgs e)
         {
-            var mainWinPg = new MainWinUse();
-            mainWinPg.Show();
-            this.Close();
+           if (MessageBox.Show("Если Вы заходите как гость, Вы можете только изучать уроки и проходить тесты. Ваши результаты не будут сохранены. Продолжить?", "ВНИМАНИЕ", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    var mainWinPg = new MainWinUse();
+                    mainWinPg.Show();
+                    this.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
         }
     }
 }
