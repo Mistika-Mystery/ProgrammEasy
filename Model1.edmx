@@ -4,13 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Group">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdTeatcher" Type="int" />
         </EntityType>
         <EntityType Name="ImgFoto">
           <Key>
@@ -95,6 +96,18 @@
           <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FotoImg" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Group_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Group" Type="Self.Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Group">
+              <PropertyRef Name="IdTeatcher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Requests_Status">
           <End Role="Status" Type="Self.Status" Multiplicity="1" />
           <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
@@ -202,6 +215,10 @@
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Group_User" Association="Self.FK_Group_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Group" EntitySet="Group" />
+          </AssociationSet>
           <AssociationSet Name="FK_Requests_Status" Association="Self.FK_Requests_Status">
             <End Role="Status" EntitySet="Status" />
             <End Role="Requests" EntitySet="Requests" />
@@ -235,8 +252,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -247,6 +263,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Group" FromRole="Group" ToRole="User" />
+          <Property Name="IdTeatcher" Type="Int32" />
+          <NavigationProperty Name="User1" Relationship="dbModel.FK_Group_User" FromRole="Group" ToRole="User" />
         </EntityType>
         <EntityType Name="ImgFoto">
           <Key>
@@ -345,6 +363,7 @@
           <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_User" FromRole="User" ToRole="Requests" />
           <NavigationProperty Name="Results" Relationship="Self.FK_Results_User" FromRole="User" ToRole="Results" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Group1" Relationship="dbModel.FK_Group_User" FromRole="User" ToRole="Group" />
         </EntityType>
         <Association Name="FK_User_Group">
           <End Role="Group" Type="Self.Group" Multiplicity="1" />
@@ -485,7 +504,23 @@
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
+          <AssociationSet Name="FK_Group_User" Association="dbModel.FK_Group_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Group" EntitySet="Group" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Group_User">
+          <End Type="dbModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="dbModel.Group" Role="Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Group">
+              <PropertyRef Name="IdTeatcher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -495,6 +530,7 @@
           <EntitySetMapping Name="Group">
             <EntityTypeMapping TypeName="dbModel.Group">
               <MappingFragment StoreEntitySet="Group">
+                <ScalarProperty Name="IdTeatcher" ColumnName="IdTeatcher" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>

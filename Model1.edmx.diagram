@@ -23,6 +23,7 @@
         <AssociationConnector Association="dbModel.FK_Results_ScoreImage" ManuallyRouted="false" />
         <AssociationConnector Association="dbModel.FK_Results_User" ManuallyRouted="false" />
         <AssociationConnector Association="dbModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Group_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
