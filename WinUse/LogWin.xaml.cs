@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProgrammEasy.WinUse
@@ -43,9 +44,23 @@ namespace ProgrammEasy.WinUse
                     RegFlag.UserLastName=UserLog.LastName;
                     //RegFlag.RoleName=UserLog.Role.Name;
 
-                    var mainWin = new MainWinUse();
-                    mainWin.Show();
-                    this.Close();
+                    switch (UserLog.IdRole)
+                    {
+
+                        case 1:
+                            MessageBox.Show("Приветсвуем Вас, " + UserLog.LastName + "!", "Вы вошли как администратор", MessageBoxButton.OK, MessageBoxImage.Information);
+                            var mainAdmin = new WinUse.Admin.AdminMain();
+                            mainAdmin.Show();
+                            this.Close();
+                            break;
+                        case 3:
+                            MessageBox.Show("Привет, " + UserLog.LastName + "!", "Вы вошли как ученик", MessageBoxButton.OK, MessageBoxImage.Information);
+                            var mainWin = new MainWinUse();
+                            mainWin.Show();
+                            this.Close();
+                            break;
+                        default: MessageBox.Show("Не обнужерен", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning); break;
+                    }
                 }
             }
             catch (Exception ex)
