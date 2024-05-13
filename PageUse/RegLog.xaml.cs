@@ -22,6 +22,7 @@ namespace ProgrammEasy.PageUse
     /// </summary>
     public partial class RegLog : Page
     {
+        
         Regex CountLog = new Regex(@"^.{3,20}$");
         MatchCollection match;
         public RegLog()
@@ -62,7 +63,18 @@ namespace ProgrammEasy.PageUse
                     return;
                 }
 
-                RegFlag.LoginFlag = UserlogTB.Text;
+                    var Log = my01Entities.GetContext().User.FirstOrDefault(x => x.Login == UserlogTB.Text);
+                    if (Log != null)
+                    {
+                        errors.AppendLine("Такой логин уже существует, придумай другой");
+                    }
+                    if (errors.Length > 0)
+                    {
+                        MessageBox.Show(errors.ToString());
+                        return;
+                    }
+              
+                    RegFlag.LoginFlag = UserlogTB.Text;
                 NavigationService.Navigate(new RegPassword());
             }
             catch (Exception ex)
