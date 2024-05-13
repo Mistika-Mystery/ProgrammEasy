@@ -93,6 +93,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\PageAdmin\GlavAdmin.xaml.cs">
+      <DependentUpon>GlavAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\PageAdmin\JornalPG.xaml.cs">
+      <DependentUpon>JornalPG.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\RegLastName.xaml.cs">
       <DependentUpon>RegLastName.xaml</DependentUpon>
     </Compile>
@@ -178,6 +184,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PageUse\PageAdmin\GlavAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\PageAdmin\JornalPG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageUse\RegLastName.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -349,13 +363,13 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\changeUser.png" />
     <Resource Include="Recourse\adminWin_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PageUse\PageAdmin\" />
     <Folder Include="WinUse\Student\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

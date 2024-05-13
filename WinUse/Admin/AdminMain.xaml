@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse.Admin"
         mc:Ignorable="d"
-        Title="AdminMain" Height="450" Width="800">
+        Title="Программирование это просто!" Height="450" Width="800" Icon="/Recourse/LogIsoPr.png" MinWidth="600" MinHeight="400">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF57FEFE"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Source="/Recourse/adminWin_icon.png" Height="50"/>
+            <TextBlock Text="Панель Администратора" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0" FontWeight="Bold" FontSize="24"/>
+        </StackPanel>
+        <Button Content="Меню" x:Name="MenuBT" Grid.Column="3" VerticalAlignment="Center" Background="{x:Null}" FontWeight="Bold" FontSize="20" Click="MenuBT_Click"/>
+        <Popup Name="popup" PlacementTarget="{Binding ElementName=btn}" Placement="Bottom">
+            <Border BorderBrush="Black" BorderThickness="1" Background="White">
+                <StackPanel>
+                    <Button Content="назад" x:Name="back" Click="back_Click"/>
+                    <Button Content="Пункт меню 2"/>
+                    <Button Content="Пункт меню 3"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+        <Frame ContentRendered="AdminFrame_ContentRendered"  x:Name="AdminFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"/>
     </Grid>
 </Window>

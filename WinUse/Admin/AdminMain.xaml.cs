@@ -22,6 +22,32 @@ namespace ProgrammEasy.WinUse.Admin
         public AdminMain()
         {
             InitializeComponent();
+            AdminFrame.Navigate(new PageUse.PageAdmin.GlavAdmin());
+        }
+
+        private void MenuBT_Click(object sender, RoutedEventArgs e)
+        {
+            if (popup.IsOpen)
+                popup.IsOpen = false;
+            else
+                popup.IsOpen = true;
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            AdminFrame.GoBack();
+        }
+
+        private void AdminFrame_ContentRendered(object sender, EventArgs e)
+        {
+            if (AdminFrame.CanGoBack)
+            {
+                MenuBT.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MenuBT.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }
