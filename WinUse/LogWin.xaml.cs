@@ -48,13 +48,13 @@ namespace ProgrammEasy.WinUse
                     {
 
                         case 1:
-                            MessageBox.Show("Приветсвуем Вас, " + UserLog.LastName + "!", "Вы вошли как администратор", MessageBoxButton.OK, MessageBoxImage.Information);
+                            MessageBox.Show("Приветсвуем Вас, " + UserLog.FirstName + "!", "Вы вошли как администратор", MessageBoxButton.OK, MessageBoxImage.Information);
                             var mainAdmin = new WinUse.Admin.AdminMain();
                             mainAdmin.Show();
                             this.Close();
                             break;
                         case 3:
-                            MessageBox.Show("Привет, " + UserLog.LastName + "!", "Вы вошли как ученик", MessageBoxButton.OK, MessageBoxImage.Information);
+                            MessageBox.Show("Привет, " + UserLog.FirstName + "!", "Вы вошли как ученик", MessageBoxButton.OK, MessageBoxImage.Information);
                             var mainWin = new MainWinUse();
                             mainWin.Show();
                             this.Close();
