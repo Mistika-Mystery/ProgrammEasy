@@ -42,14 +42,14 @@ namespace ProgrammEasy.WinUse
                     RegFlag.IdUser = UserLog.Id;
                     RegFlag.UserName = UserLog.FirstName;
                     RegFlag.UserLastName=UserLog.LastName;
-                    //RegFlag.RoleName=UserLog.Role.Name;
+ 
 
                     switch (UserLog.IdRole)
                     {
 
                         case 1:
                             MessageBox.Show("Приветсвуем Вас, " + UserLog.FirstName + "!", "Вы вошли как администратор", MessageBoxButton.OK, MessageBoxImage.Information);
-                            var mainAdmin = new WinUse.Admin.AdminMain();
+                            var mainAdmin = new WinUse.Admin.AdminGlavWin();
                             mainAdmin.Show();
                             this.Close();
                             break;
