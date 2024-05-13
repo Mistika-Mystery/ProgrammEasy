@@ -101,10 +101,8 @@ namespace ProgrammEasy.PageUse
                 string text = textBox.Text.Trim();
                 if (!string.IsNullOrEmpty(text))
                 {
-                    // Удаляем все пробелы, включая в середине текста
                     text = System.Text.RegularExpressions.Regex.Replace(text, @"\s+", "");
 
-                    // Удаляем все символы кроме букв латиницы и цифр
                     text = System.Text.RegularExpressions.Regex.Replace(text, @"[^a-zA-Z0-9]", "");
 
                     textBox.Text = text;
