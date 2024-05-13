@@ -7,6 +7,48 @@
         mc:Ignorable="d"
         Title="AdminGlavWin" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15"/>
+            <ColumnDefinition Width="767*"/>
+            <ColumnDefinition Width="15"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="1" Grid.Column="1" >
+            <TabItem Header="Журнал заявок" >
+                
+         Содержимое вкладки 1 
         
+            </TabItem>
+            <TabItem Header="Журнал Пользователей">
+                
+         Содержимое вкладки 2 
+        
+            </TabItem>
+            <TabItem Header="Роли Пользователей">
+                
+         Содержимое вкладки 3 
+        
+            </TabItem>
+            <TabItem Header="Группы Пользователей">
+                
+         Содержимое вкладки 4 
+        
+            </TabItem>
+            <TabItem Header="Журнал Оценок">
+
+                Содержимое вкладки 5
+
+            </TabItem>
+
+
+
+        </TabControl>
+
+
     </Grid>
 </Window>
