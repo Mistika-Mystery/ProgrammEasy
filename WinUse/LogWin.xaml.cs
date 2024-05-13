@@ -41,7 +41,6 @@ namespace ProgrammEasy.WinUse
                     RegFlag.IdUser = UserLog.Id;
                     RegFlag.UserName = UserLog.FirstName;
                     RegFlag.UserLastName=UserLog.LastName;
-                    RegFlag.RoleName=UserLog.Role.Name;
 
                     var mainWin = new MainWinUse();
                     mainWin.Show();

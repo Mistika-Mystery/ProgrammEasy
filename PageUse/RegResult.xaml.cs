@@ -52,6 +52,8 @@ namespace ProgrammEasy.PageUse
                 my01Entities.GetContext().User.Add( _user );
                 my01Entities.GetContext().SaveChanges();
 
+                MessageBox.Show("Отлично!");
+
                 NavigationService.Navigate(new SuccessfulReg());
             }
             catch(Exception ex)
