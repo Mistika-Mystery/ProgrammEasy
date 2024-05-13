@@ -66,7 +66,7 @@ namespace ProgrammEasy.PageUse
                     var Log = my01Entities.GetContext().User.FirstOrDefault(x => x.Login == UserlogTB.Text);
                     if (Log != null)
                     {
-                        errors.AppendLine("Такой логин уже существует, придумай другой");
+                        errors.AppendLine("Такой логин уже существует, придумай другой!");
                     }
                     if (errors.Length > 0)
                     {

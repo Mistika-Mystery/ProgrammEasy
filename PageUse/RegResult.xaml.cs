@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace ProgrammEasy.PageUse
     /// </summary>
     public partial class RegResult : Page
     {
+        private User _user = new User();
         public RegResult()
         {
             InitializeComponent();
@@ -38,6 +40,18 @@ namespace ProgrammEasy.PageUse
         {
             try
             {
+                _user.FirstName = TBName.Text;
+                _user.LastName = TBLastName.Text;
+                _user.Login = TBLog.Text;
+                _user.Pass1 = TBPass.Text;
+                _user.IdRole = 3;
+                _user.IdGroup = 1;
+                _user.DateOfReg = DateTime.Now;
+                _user.FotoImg = 1;
+
+                my01Entities.GetContext().User.Add( _user );
+                my01Entities.GetContext().SaveChanges();
+
                 NavigationService.Navigate(new SuccessfulReg());
             }
             catch(Exception ex)
