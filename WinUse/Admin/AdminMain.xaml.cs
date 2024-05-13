@@ -36,6 +36,7 @@ namespace ProgrammEasy.WinUse.Admin
         private void back_Click(object sender, RoutedEventArgs e)
         {
             AdminFrame.GoBack();
+            popup.IsOpen = false;
         }
 
         private void AdminFrame_ContentRendered(object sender, EventArgs e)
