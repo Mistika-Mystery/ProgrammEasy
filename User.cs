@@ -19,6 +19,7 @@ namespace ProgrammEasy
         {
             this.Requests = new HashSet<Requests>();
             this.Results = new HashSet<Results>();
+            this.GroupUser1 = new HashSet<GroupUser>();
         }
     
         public int Id { get; set; }
@@ -38,5 +39,7 @@ namespace ProgrammEasy
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Results> Results { get; set; }
         public virtual RoleUser RoleUser { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GroupUser> GroupUser1 { get; set; }
     }
 }
