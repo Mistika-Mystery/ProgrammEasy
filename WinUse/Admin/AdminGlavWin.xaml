@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse.Admin"
         mc:Ignorable="d"
-        Title="Программирование это просто!" Height="450" Width="800" Icon="/Recourse/LogIsoPr.png" MinWidth="600" MinHeight="400">
+        Title="Программирование это просто!" Height="500" Width="800" Icon="/Recourse/LogIsoPr.png" MinWidth="600" MinHeight="500">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -15,12 +15,13 @@
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="15"/>
-            <ColumnDefinition Width="767*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="15"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="215*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <Grid Grid.Column="1">
@@ -29,45 +30,206 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="0.8*"/>
             </Grid.ColumnDefinitions>
-            <Image Source="/Recourse/ProgLogoNew.png" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Cursor="Hand"/>
+            <Image Source="/Recourse/ProgLogoNew.png" Height="101" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown" ToolTip="Перейти на главную"/>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
                 <TextBlock Text="Панель" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Comic Sans MS" FontWeight="Bold"/>
                 <TextBlock Text="Администратора" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="32" FontWeight="Bold"/>
             </StackPanel>
-            <Image x:Name="ExitBT" Grid.Column="2" Source="/Recourse/exit_icon.png" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="60" Margin="0,0,20,15" Cursor="Hand" MouseLeftButtonDown="ExitBT_MouseLeftButtonDown" ToolTip="Выйти"/>
+            <Image x:Name="ExitBT" Grid.Column="2" Source="/Recourse/exit_icon.png" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="60" Margin="0,0,20,15" Cursor="Hand" MouseLeftButtonDown="ExitBT_MouseLeftButtonDown" ToolTip="Сменить пользователя"/>
 
         </Grid>
 
 
-        <TabControl Grid.Row="1" Grid.Column="1" >
-            <TabItem Header="Журнал заявок" >
-                
-         Содержимое вкладки 1 
-        
-            </TabItem>
-            <TabItem Header="Пользователи">
-                
-         Содержимое вкладки 2 
-        
-            </TabItem>
-            <TabItem Header="Роли Пользователей">
-                
-         Содержимое вкладки 3 
-        
-            </TabItem>
-            <TabItem Header="Группы Пользователей">
-                
-         Содержимое вкладки 4 
-        
-            </TabItem>
-            <TabItem Header="Журнал Результатов">
+        <TabControl Grid.Row="1" Grid.Column="1" Background="{x:Null}" TabStripPlacement="Left" Grid.RowSpan="2" >
+            <TabItem Cursor="Hand" >
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF56E0FF" Offset="1"/>
+                        <GradientStop Color="#FF56E0FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Recourse/messagicon.png" Height="30"/>
+                        <TextBlock Text="Журнал Заявок" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="ReqDG" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Редактирование двойным нажатием">
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick"  Handler="DataGridRow_MouseDoubleClick"/>
+                            </Style>
+                        </DataGrid.Resources>
+                    </DataGrid>
+                </Grid>
 
-                Содержимое вкладки 5
-
             </TabItem>
 
 
+            <TabItem Cursor="Hand">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF04D1FF" Offset="1"/>
+                        <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Recourse/UserIcon.png" Height="30"/>
+                        <TextBlock Text="Пользователи" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                Содержимое вкладки 1
 
+            </TabItem>
+            <TabItem Cursor="Hand" >
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF04D1FF" Offset="1"/>
+                        <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Recourse/Rluser_icon.png" Height="30"/>
+                        <TextBlock Text="Роли Пользователей" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                Содержимое вкладки 1
+
+            </TabItem>
+            <TabItem Cursor="Hand" >
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF04D1FF" Offset="1"/>
+                        <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Recourse/GRusers_icon.png" Height="30"/>
+                        <TextBlock Text="Группы Пользователей" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                Содержимое вкладки 1
+
+            </TabItem>
+            <TabItem Cursor="Hand">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF04D1FF" Offset="1"/>
+                        <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Recourse/days_icon.png" Height="30"/>
+                        <TextBlock Text="Успеваемость" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                Содержимое вкладки 1
+
+            </TabItem>
+            <TabItem Cursor="Hand">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF04D1FF" Offset="1"/>
+                        <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Recourse/dlgedit_icon.png" Height="30"/>
+                        <TextBlock Text="Уроки" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                Содержимое вкладки 1
+
+            </TabItem>
+            <TabItem Cursor="Hand">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF04D1FF" Offset="1"/>
+                        <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Recourse/drawing_paint_picture_icon.png" Height="30"/>
+                        <TextBlock Text="Изображения" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                Содержимое вкладки 1
+
+            </TabItem>
+            <TabItem Cursor="Hand">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF04D1FF" Offset="1"/>
+                        <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Recourse/bookmark_rate_rating_star_toolbar_icon.png" Height="30"/>
+                        <TextBlock Text="Оценки" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                Содержимое вкладки 1
+
+            </TabItem>
+            <TabItem Cursor="Hand">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF04D1FF" Offset="1"/>
+                        <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Recourse/atom_icon.png" Height="30"/>
+                        <TextBlock Text="Статус" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+                Содержимое вкладки 1
+
+            </TabItem>
         </TabControl>
 
 

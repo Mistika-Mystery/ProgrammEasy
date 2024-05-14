@@ -28,6 +28,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Requests">
           <Key>
@@ -56,6 +57,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Img" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ScoreImage">
           <Key>
@@ -283,6 +285,7 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Results" Relationship="Self.FK_Results_Lessons" FromRole="Lessons" ToRole="Results" />
+          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Requests">
           <Key>
@@ -317,6 +320,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
+          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ScoreImage">
           <Key>
@@ -548,6 +552,7 @@
           <EntitySetMapping Name="Lessons">
             <EntityTypeMapping TypeName="dbModel.Lessons">
               <MappingFragment StoreEntitySet="Lessons">
+                <ScalarProperty Name="Img" ColumnName="Img" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -580,6 +585,7 @@
           <EntitySetMapping Name="Role">
             <EntityTypeMapping TypeName="dbModel.Role">
               <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Img" ColumnName="Img" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>

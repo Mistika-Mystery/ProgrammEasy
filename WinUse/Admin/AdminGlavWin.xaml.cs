@@ -30,5 +30,12 @@ namespace ProgrammEasy.WinUse.Admin
             glavWin.Show();
             this.Close();
         }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var glavWin = new MainWindow();
+            glavWin.Show();
+            this.Close();
+        }
     }
 }

@@ -370,6 +370,17 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\atom_icon.png" />
+    <Resource Include="Recourse\bookmark_rate_rating_star_toolbar_icon.png" />
+    <Resource Include="Recourse\drawing_paint_picture_icon.png" />
+    <Resource Include="Recourse\dlgedit_icon.png" />
+    <Resource Include="Recourse\days_icon.png" />
+    <Resource Include="Recourse\Rluser_icon.png" />
+    <Resource Include="Recourse\GRusers_icon.png" />
+    <Resource Include="Recourse\1614379526_42-p-svetlii-biznes-fon-44.jpg" />
+    <Resource Include="Recourse\Web-Data-HTTPS.jpg" />
+    <Resource Include="Recourse\messagicon.png" />
+    <Resource Include="Recourse\messages_icon.png" />
     <Resource Include="Recourse\exit_icon.png" />
     <Resource Include="Recourse\settings_setup_icon.png" />
     <Resource Include="Recourse\changeUser.png" />
