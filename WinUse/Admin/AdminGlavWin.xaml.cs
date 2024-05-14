@@ -22,6 +22,7 @@ namespace ProgrammEasy.WinUse.Admin
         public AdminGlavWin()
         {
             InitializeComponent();
+            ReqDG.ItemsSource = my01Entities.GetContext().Requests.ToList();
         }
 
         private void ExitBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -36,6 +37,11 @@ namespace ProgrammEasy.WinUse.Admin
             var glavWin = new MainWindow();
             glavWin.Show();
             this.Close();
+        }
+
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

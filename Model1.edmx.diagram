@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8e98a280fcc04758bff8015901ca0506" Name="Diagram1">
-        <EntityTypeShape EntityType="dbModel.Group" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbModel.ImgFoto" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbModel.Lessons" Width="1.5" PointX="6" PointY="1.375" IsExpanded="true" />
+      <Diagram DiagramId="2c79497355494f70a5ca2247d8df1f76" Name="Diagram1">
+        <EntityTypeShape EntityType="dbModel.GroupUser" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.ImgFoto" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Lessons" Width="1.5" PointX="6" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="dbModel.Requests" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="dbModel.Results" Width="1.5" PointX="8.25" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbModel.Role" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbModel.ScoreImage" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.RoleUser" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.ScoreImage" Width="1.5" PointX="6" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="dbModel.Status" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="dbModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="dbModel.User" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
@@ -23,7 +23,6 @@
         <AssociationConnector Association="dbModel.FK_Results_ScoreImage" ManuallyRouted="false" />
         <AssociationConnector Association="dbModel.FK_Results_User" ManuallyRouted="false" />
         <AssociationConnector Association="dbModel.FK_User_Role" ManuallyRouted="false" />
-        <AssociationConnector Association="dbModel.FK_Group_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

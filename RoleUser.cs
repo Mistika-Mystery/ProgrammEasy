@@ -12,31 +12,19 @@ namespace ProgrammEasy
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class RoleUser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public RoleUser()
         {
-            this.Requests = new HashSet<Requests>();
-            this.Results = new HashSet<Results>();
+            this.User = new HashSet<User>();
         }
     
         public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int IdRole { get; set; }
-        public int IdGroup { get; set; }
-        public string Pass1 { get; set; }
-        public System.DateTime DateOfReg { get; set; }
-        public string Login { get; set; }
-        public int FotoImg { get; set; }
+        public string Name { get; set; }
+        public string Img { get; set; }
     
-        public virtual GroupUser GroupUser { get; set; }
-        public virtual ImgFoto ImgFoto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Requests> Requests { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Results> Results { get; set; }
-        public virtual RoleUser RoleUser { get; set; }
+        public virtual ICollection<User> User { get; set; }
     }
 }
