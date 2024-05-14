@@ -105,9 +105,11 @@ namespace ProgrammEasy.WinUse.Admin
 
             if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
             {
-                //по наименованию и описанию 
+                //по логину, описанию, FI
 
                 ReqSerch = ReqSerch.Where(s => s.User.Login.ToLower().Contains(search.ToLower())
+                || (s.User.FirstName ?? "").ToLower().Contains(search.ToLower())
+                || (s.User.LastName ?? "").ToLower().Contains(search.ToLower())
                 || (s.Description ?? "").ToLower().Contains(search.ToLower())).ToList();
             }
             ReqDG.ItemsSource = ReqSerch;
