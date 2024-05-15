@@ -22,7 +22,13 @@ namespace ProgrammEasy.WinUse.Admin
         public AdminGlavWin()
         {
             InitializeComponent();
-        
+
+            var AllGroup = my01Entities.GetContext().GroupUser.ToList();
+            AllGroup.Insert(0, new GroupUser
+            {
+                Name = "Все группы"
+            });
+            CBTip.ItemsSource = AllGroup;
         }
 
         private void ExitBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -82,7 +88,7 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void CBTip_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Seach_Filter_Films(SeactWater.Text);
+            Seach_Filter(SeactWater.Text);
         }
 
         private void CBJanr_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -133,6 +139,16 @@ namespace ProgrammEasy.WinUse.Admin
                 default:
                     break;
             }
+
+            if (CBTip == null)
+            {
+                return;
+            }
+            if (CBTip.SelectedIndex != 0)
+            {
+                ReqSerch = ReqSerch.Where(s => s.User.GroupUser == CBTip.SelectedValue).ToList();
+            }
+
             ReqDG.ItemsSource = ReqSerch;
         }
 
@@ -150,6 +166,8 @@ namespace ProgrammEasy.WinUse.Admin
             SeactWater.Visibility = Visibility.Collapsed;
             SeactWater.Text = "";
             TBoxSearch.Visibility = Visibility.Visible;
+            sortBox.SelectedIndex = 0;
+            CBTip.SelectedIndex = 0;
 
             ReqDG.ItemsSource = my01Entities.GetContext().Requests.ToList();
         }

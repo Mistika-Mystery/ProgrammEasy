@@ -168,7 +168,7 @@
                             <ComboBoxItem Content="По дате, вначале новее"/>
                         </ComboBox>
                         <Label Height="5"/>
-                        <TextBlock Text="Фильтр по типу" FontWeight="Bold">
+                        <TextBlock Text="Фильтр по группам:" FontWeight="Bold">
                             <TextBlock.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="White" Offset="0.507"/>
@@ -178,7 +178,7 @@
                                     <GradientStop Color="White" Offset="0.409"/>
                                 </LinearGradientBrush>
                             </TextBlock.Background></TextBlock>
-                        <ComboBox x:Name="CBTip" DisplayMemberPath="NameTip" Cursor="Hand" SelectionChanged="CBTip_SelectionChanged" SelectedIndex="0"/>
+                        <ComboBox x:Name="CBTip" DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBTip_SelectionChanged" SelectedIndex="0"/>
                         <Label Height="5"/>
 
                         <TextBlock Text="Фильтр по жанру" FontWeight="Bold">
