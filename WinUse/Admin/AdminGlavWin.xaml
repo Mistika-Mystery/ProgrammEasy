@@ -41,7 +41,7 @@
 
 
         <TabControl Grid.Row="1" Grid.Column="1" Background="{x:Null}" TabStripPlacement="Left" Grid.RowSpan="2" >
-            <TabItem Cursor="Hand" Height="40" >
+            <TabItem Height="40" >
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -52,7 +52,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Cursor="Hand">
                         <Image Source="/Recourse/messagicon.png" Height="30"/>
                         <TextBlock Text="Журнал Заявок" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
@@ -231,7 +231,7 @@
             </TabItem>
 
 
-            <TabItem Cursor="Hand" Height="40">
+            <TabItem Height="40">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -242,7 +242,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Cursor="Hand" Orientation="Horizontal">
                         <Image Source="/Recourse/UserIcon.png" Height="30"/>
                         <TextBlock Text="Пользователи" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
@@ -250,7 +250,7 @@
                 Содержимое вкладки 1
 
             </TabItem>
-            <TabItem Cursor="Hand" Height="40" >
+            <TabItem Height="40" >
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -261,7 +261,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Cursor="Hand" Orientation="Horizontal">
                         <Image Source="/Recourse/Rluser_icon.png" Height="30"/>
                         <TextBlock Text="Роли Пользователей" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
@@ -269,7 +269,7 @@
                 Содержимое вкладки 1
 
             </TabItem>
-            <TabItem Cursor="Hand" Height="40" >
+            <TabItem Height="40" >
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -280,7 +280,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Cursor="Hand" Orientation="Horizontal">
                         <Image Source="/Recourse/GRusers_icon.png" Height="30"/>
                         <TextBlock Text="Группы Пользователей" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
@@ -288,7 +288,7 @@
                 Содержимое вкладки 1
 
             </TabItem>
-            <TabItem Cursor="Hand" Height="40">
+            <TabItem Height="40">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -299,7 +299,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Cursor="Hand" Orientation="Horizontal">
                         <Image Source="/Recourse/days_icon.png" Height="30"/>
                         <TextBlock Text="Успеваемость" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
@@ -307,7 +307,7 @@
                 Содержимое вкладки 1
 
             </TabItem>
-            <TabItem Cursor="Hand" Height="40">
+            <TabItem Height="40">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -318,7 +318,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Cursor="Hand" Orientation="Horizontal">
                         <Image Source="/Recourse/dlgedit_icon.png" Height="30"/>
                         <TextBlock Text="Уроки" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
@@ -326,7 +326,7 @@
                 Содержимое вкладки 1
 
             </TabItem>
-            <TabItem Cursor="Hand" Height="40">
+            <TabItem Height="40">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -337,7 +337,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Cursor="Hand" Orientation="Horizontal">
                         <Image Source="/Recourse/drawing_paint_picture_icon.png" Height="30"/>
                         <TextBlock Text="Изображения" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
@@ -345,7 +345,7 @@
                 Содержимое вкладки 1
 
             </TabItem>
-            <TabItem Cursor="Hand" Height="40">
+            <TabItem Height="40">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -356,7 +356,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Cursor="Hand" Orientation="Horizontal">
                         <Image Source="/Recourse/bookmark_rate_rating_star_toolbar_icon.png" Height="30"/>
                         <TextBlock Text="Оценки" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
@@ -364,7 +364,7 @@
                 Содержимое вкладки 1
 
             </TabItem>
-            <TabItem Cursor="Hand" Height="40">
+            <TabItem Height="40">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -375,7 +375,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Cursor="Hand" Orientation="Horizontal">
                         <Image Source="/Recourse/atom_icon.png" Height="30"/>
                         <TextBlock Text="Статус" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
