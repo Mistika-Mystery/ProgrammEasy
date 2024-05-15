@@ -28,7 +28,15 @@ namespace ProgrammEasy.WinUse.Admin
             {
                 Name = "Все группы"
             });
-            CBTip.ItemsSource = AllGroup;
+            CBGroupe.ItemsSource = AllGroup;
+
+            var AllRole = my01Entities.GetContext().RoleUser.ToList();
+            AllRole.Insert(0, new RoleUser
+            {
+                Name = "Все роли"
+            });
+            var filteredRole = AllRole.Where(role => role.Name != "Гость").ToList();
+            CBRole.ItemsSource = filteredRole;
         }
 
         private void ExitBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -86,14 +94,14 @@ namespace ProgrammEasy.WinUse.Admin
             Seach_Filter(SeactWater.Text);
         }
 
-        private void CBTip_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CBGroupe_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Seach_Filter(SeactWater.Text);
         }
 
-        private void CBJanr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CBRole_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Seach_Filter_Films(SeactWater.Text);
+            Seach_Filter(SeactWater.Text);
         }
 
         private void CBStrana_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -140,13 +148,18 @@ namespace ProgrammEasy.WinUse.Admin
                     break;
             }
 
-            if (CBTip == null)
+            if (CBGroupe == null)
             {
                 return;
             }
-            if (CBTip.SelectedIndex != 0)
+            if (CBGroupe.SelectedIndex != 0)
             {
-                ReqSerch = ReqSerch.Where(s => s.User.GroupUser == CBTip.SelectedValue).ToList();
+                ReqSerch = ReqSerch.Where(s => s.User.GroupUser == CBGroupe.SelectedValue).ToList();
+            }
+
+            if (CBRole.SelectedIndex > 0)
+            {
+                ReqSerch = ReqSerch.Where(s => s.User.RoleUser == CBRole.SelectedValue).ToList();
             }
 
             ReqDG.ItemsSource = ReqSerch;
@@ -167,9 +180,11 @@ namespace ProgrammEasy.WinUse.Admin
             SeactWater.Text = "";
             TBoxSearch.Visibility = Visibility.Visible;
             sortBox.SelectedIndex = 0;
-            CBTip.SelectedIndex = 0;
+            CBGroupe.SelectedIndex = 0;
+            CBRole.SelectedIndex = 0;
 
             ReqDG.ItemsSource = my01Entities.GetContext().Requests.ToList();
         }
+
     }
 }

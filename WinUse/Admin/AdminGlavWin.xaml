@@ -178,10 +178,10 @@
                                     <GradientStop Color="White" Offset="0.409"/>
                                 </LinearGradientBrush>
                             </TextBlock.Background></TextBlock>
-                        <ComboBox x:Name="CBTip" DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBTip_SelectionChanged" SelectedIndex="0"/>
+                        <ComboBox x:Name="CBGroupe" DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBGroupe_SelectionChanged"  SelectedIndex="0"/>
                         <Label Height="5"/>
 
-                        <TextBlock Text="Фильтр по жанру" FontWeight="Bold">
+                        <TextBlock Text="Фильтр по роли" FontWeight="Bold">
                             <TextBlock.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="White" Offset="0.507"/>
@@ -191,7 +191,7 @@
                                     <GradientStop Color="White" Offset="0.409"/>
                                 </LinearGradientBrush>
                             </TextBlock.Background></TextBlock>
-                        <ComboBox x:Name="CBJanr"  DisplayMemberPath="NameJanr" Cursor="Hand" SelectionChanged="CBJanr_SelectionChanged" SelectedIndex="0">
+                        <ComboBox x:Name="CBRole"  DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBRole_SelectionChanged"  SelectedIndex="0">
 
                         </ComboBox>
                         <Label Height="5"/>
