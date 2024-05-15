@@ -77,7 +77,7 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void sortBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Seach_Filter_Films(SeactWater.Text);
+            Seach_Filter(SeactWater.Text);
         }
 
         private void CBTip_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -111,6 +111,27 @@ namespace ProgrammEasy.WinUse.Admin
                 || (s.User.FirstName ?? "").ToLower().Contains(search.ToLower())
                 || (s.User.LastName ?? "").ToLower().Contains(search.ToLower())
                 || (s.Description ?? "").ToLower().Contains(search.ToLower())).ToList();
+            }
+
+            switch (sortBox.SelectedIndex)
+            {
+                // сортировака имя, рейтинг, год
+
+                case 1:
+                    ReqSerch = ReqSerch.OrderBy(s => s.User.Login).ToList();
+                    break;
+                case 2:
+                    ReqSerch = ReqSerch.OrderByDescending(s => s.User.Login).ToList();
+
+                    break;
+                case 3:
+                    ReqSerch = ReqSerch.OrderByDescending(s => s.Date).ToList();
+                    break;
+                case 4:
+                    ReqSerch = ReqSerch.OrderBy(s => s.Date).ToList();
+                    break;
+                default:
+                    break;
             }
             ReqDG.ItemsSource = ReqSerch;
         }

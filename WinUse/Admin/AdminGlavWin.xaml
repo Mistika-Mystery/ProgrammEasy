@@ -162,8 +162,8 @@
                             </TextBlock.Background></TextBlock>
                         <ComboBox x:Name="sortBox" Cursor="Hand" SelectionChanged="sortBox_SelectionChanged" SelectedIndex="0" >
                             <ComboBoxItem Content="Без сортировки"/>
-                            <ComboBoxItem Content="По имени, от А до Я"/>
-                            <ComboBoxItem Content="По имени, от Я до А"/>
+                            <ComboBoxItem Content="По Логину, от A до Z"/>
+                            <ComboBoxItem Content="По Логину, от Z до A"/>
                             <ComboBoxItem Content="По дате, вначале старее"/>
                             <ComboBoxItem Content="По дате, вначале новее"/>
                         </ComboBox>
