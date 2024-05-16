@@ -1,0 +1,64 @@
+﻿<Window x:Name="ReqAddEditWin" x:Class="ProgrammEasy.WinUse.ReqAddEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgrammEasy.WinUse"
+        mc:Ignorable="d"
+        Title="Добавить/Редактировать заявку" Height="450" Width="800" Icon="/Recourse/messagicon.png">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFA2FAFA"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Номер заявки: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding Id}" x:Name="TbId" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Дата подачи: "/>
+            <TextBlock Text="{Binding Date}" x:Name="TbDate"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Заявитель: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding User.LastName}"/>
+            <TextBlock Text="{Binding User.FirstName}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Роль заявителя: "/>
+            <TextBlock Text="{Binding User.RoleUser.Name}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Группа заявителя: "/>
+                <TextBlock Text="{Binding User.GroupeUser.Name}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Текущий статус заявки: "/>
+                <TextBlock Text="{Binding Status.Name}"/>
+            </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Изменить статус на: "/>
+            <ComboBox x:Name="CBStatus" SelectedItem="{Binding Status}" DisplayMemberPath="Name" Width="100"/>
+        </StackPanel>
+        <TextBlock Text="Описание:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock x:Name="OpisanTB" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Description}" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" FontSize="16"/>
+        <TextBlock Text="Изображение:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3"/>
+
+    </Grid>
+</Window>

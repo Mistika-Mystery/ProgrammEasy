@@ -85,8 +85,8 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel >
-                                            <TextBlock Text="{Binding User.FirstName}" Margin="0,0,5,0"/>
                                             <TextBlock Text="{Binding User.LastName}" Margin="0,0,5,0" />
+                                            <TextBlock Text="{Binding User.FirstName}" Margin="0,0,5,0"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
