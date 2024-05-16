@@ -164,8 +164,8 @@
                             <ComboBoxItem Content="Без сортировки"/>
                             <ComboBoxItem Content="По Логину, от A до Z"/>
                             <ComboBoxItem Content="По Логину, от Z до A"/>
-                            <ComboBoxItem Content="По дате, вначале старее"/>
                             <ComboBoxItem Content="По дате, вначале новее"/>
+                            <ComboBoxItem Content="По дате, вначале старые"/>
                         </ComboBox>
                         <Label Height="5"/>
                         <TextBlock Text="Фильтр по группам:" FontWeight="Bold">
@@ -206,10 +206,10 @@
                                     <GradientStop Color="White" Offset="0.409"/>
                                 </LinearGradientBrush>
                             </TextBlock.Background></TextBlock>
-                        <ComboBox x:Name="CBStrana" DisplayMemberPath="NameStrana" Cursor="Hand" SelectionChanged="CBStrana_SelectionChanged" SelectedIndex="0">
+                        <ComboBox x:Name="CBStatus" DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBStatus_SelectionChanged"  SelectedIndex="0">
 
                         </ComboBox>
-                        <Label Height="5"/>
+                        <Label Height="15"/>
 
                        
                         <Button x:Name="BtnReload" Content="Сбросить Фильтры" Cursor="Hand" FontWeight="Bold" FontSize="14" Height="35" Click="BtnReload_Click">

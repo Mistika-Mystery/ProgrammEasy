@@ -37,6 +37,13 @@ namespace ProgrammEasy.WinUse.Admin
             });
             var filteredRole = AllRole.Where(role => role.Name != "Гость").ToList();
             CBRole.ItemsSource = filteredRole;
+
+            var AllStatus = my01Entities.GetContext().Status.ToList();
+            AllStatus.Insert(0, new Status
+            {
+                Name = "Все статусы"
+            });
+            CBStatus.ItemsSource = AllStatus;
         }
 
         private void ExitBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -104,9 +111,9 @@ namespace ProgrammEasy.WinUse.Admin
             Seach_Filter(SeactWater.Text);
         }
 
-        private void CBStrana_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void CBStatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Seach_Filter_Films(SeactWater.Text);
+            Seach_Filter(SeactWater.Text);
         }
 
         private void BtnReload_Click(object sender, RoutedEventArgs e)
@@ -119,8 +126,6 @@ namespace ProgrammEasy.WinUse.Admin
 
             if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
             {
-                //по логину, описанию, FI
-
                 ReqSerch = ReqSerch.Where(s => s.User.Login.ToLower().Contains(search.ToLower())
                 || (s.User.FirstName ?? "").ToLower().Contains(search.ToLower())
                 || (s.User.LastName ?? "").ToLower().Contains(search.ToLower())
@@ -129,8 +134,6 @@ namespace ProgrammEasy.WinUse.Admin
 
             switch (sortBox.SelectedIndex)
             {
-                // сортировака имя, рейтинг, год
-
                 case 1:
                     ReqSerch = ReqSerch.OrderBy(s => s.User.Login).ToList();
                     break;
@@ -162,6 +165,11 @@ namespace ProgrammEasy.WinUse.Admin
                 ReqSerch = ReqSerch.Where(s => s.User.RoleUser == CBRole.SelectedValue).ToList();
             }
 
+            if (CBStatus.SelectedIndex > 0)
+            {
+                ReqSerch = ReqSerch.Where(p => p.Status == CBStatus.SelectedValue).ToList();
+            }
+
             ReqDG.ItemsSource = ReqSerch;
         }
 
@@ -182,6 +190,7 @@ namespace ProgrammEasy.WinUse.Admin
             sortBox.SelectedIndex = 0;
             CBGroupe.SelectedIndex = 0;
             CBRole.SelectedIndex = 0;
+            CBStatus.SelectedIndex = 0;
 
             ReqDG.ItemsSource = my01Entities.GetContext().Requests.ToList();
         }
