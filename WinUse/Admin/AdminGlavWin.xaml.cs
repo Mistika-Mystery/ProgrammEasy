@@ -62,12 +62,14 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
+            var row = (sender as DataGridRow).DataContext as Requests;
+            ReqAddEdit addEddWin = new ReqAddEdit(row);
+            addEddWin.Show();
         }
 
         private void AddBT_Click(object sender, RoutedEventArgs e)
         {
-            ReqAddEdit reqAddEdit = new ReqAddEdit();
+            ReqAddEdit reqAddEdit = new ReqAddEdit(null);
             reqAddEdit.Show();
         }
 

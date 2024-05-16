@@ -19,9 +19,17 @@ namespace ProgrammEasy.WinUse
     /// </summary>
     public partial class ReqAddEdit : Window
     {
-        public ReqAddEdit()
+        private Requests _req = new Requests();
+        public ReqAddEdit(Requests rowRequests)
         {
             InitializeComponent();
+            if (rowRequests != null)
+            {
+                _req = rowRequests;
+            }
+            DataContext = _req;
+            CBStatus.ItemsSource = my01Entities.GetContext().Status.ToList();
+            if (_req.Foto != null) ImgOshib.Source = new ImageSourceConverter().ConvertFrom(_req.Foto) as ImageSource;
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)

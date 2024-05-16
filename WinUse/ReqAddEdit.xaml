@@ -38,7 +38,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Заявитель: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Text="{Binding User.LastName}"/>
-            <TextBlock Text="{Binding User.FirstName}"/>
+            <TextBlock Text="{Binding User.FirstName}" Margin="5,0,0,0"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Роль заявителя: "/>
@@ -46,7 +46,7 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="Группа заявителя: "/>
-                <TextBlock Text="{Binding User.GroupeUser.Name}"/>
+                <TextBlock Text="{Binding User.GroupUser.Name}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="Текущий статус заявки: "/>
