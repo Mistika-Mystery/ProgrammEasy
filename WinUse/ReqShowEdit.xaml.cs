@@ -23,15 +23,5 @@ namespace ProgrammEasy.WinUse
         {
             InitializeComponent();
         }
-
-        private void SaveBTN_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BackBTN_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
