@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse.Admin"
         mc:Ignorable="d"
-        Title="Программирование это просто!" Height="550" Width="800" Icon="/Recourse/LogIsoPr.png" MinWidth="600" MinHeight="550" Loaded="AdminWin_Loaded"  Activated="AdminWin_Activated">
+        Title="Программирование это просто!" Height="550" Width="800" Icon="/Recourse/LogIsoPr.png" MinWidth="650" MinHeight="550" Loaded="AdminWin_Loaded"  Activated="AdminWin_Activated">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -94,10 +94,10 @@
                             <DataGridTextColumn Header="Дата заявки" Width="*" Binding="{Binding Date}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Описание" Width="*" Binding="{Binding Description}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Статус" Width="*" Binding="{Binding Status.Name}"></DataGridTextColumn>
-                            <DataGridTemplateColumn  Header="Изображение">
+                            <DataGridTemplateColumn Header="Изображение" Width="40">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Image Width="30" >
+                                        <Image >
                                             <Image.Source>
                                                 <Binding Path="Foto">
                                                     <Binding.TargetNullValue>
@@ -113,7 +113,7 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button x:Name="AddBT" Content="Создать" Grid.Row="1" FontSize="14" FontWeight="Bold" Cursor="Hand" Click="AddBT_Click"  HorizontalAlignment="Left" Width="130" Margin="0,2,0,0" Height="35" VerticalAlignment="Top">
+                    <Button x:Name="AddBT" Content="Создать" Grid.Row="1" FontSize="14" FontWeight="Bold" Cursor="Hand" Click="AddBT_Click"  HorizontalAlignment="Left" Width="130" Height="35" VerticalAlignment="Center">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0.507"/>
