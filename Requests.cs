@@ -19,7 +19,7 @@ namespace ProgrammEasy
         public int IdUser { get; set; }
         public int IdStatus { get; set; }
         public string Description { get; set; }
-        public string Foto { get; set; }
+        public byte[] Foto { get; set; }
     
         public virtual Status Status { get; set; }
         public virtual User User { get; set; }

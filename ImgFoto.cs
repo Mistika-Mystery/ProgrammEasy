@@ -21,7 +21,7 @@ namespace ProgrammEasy
         }
     
         public int Id { get; set; }
-        public string ImgLev { get; set; }
+        public byte[] ImgLev { get; set; }
         public int Number { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
