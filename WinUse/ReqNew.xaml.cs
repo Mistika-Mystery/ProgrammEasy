@@ -23,5 +23,20 @@ namespace ProgrammEasy.WinUse
         {
             InitializeComponent();
         }
+
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SelectImageBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SaveBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
