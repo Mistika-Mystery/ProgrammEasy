@@ -184,6 +184,9 @@
     <Compile Include="WinUse\ReqAddEdit.xaml.cs">
       <DependentUpon>ReqAddEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\ReqNew.xaml.cs">
+      <DependentUpon>ReqNew.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -277,6 +280,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinUse\ReqAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\ReqNew.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

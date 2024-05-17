@@ -69,8 +69,8 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void AddBT_Click(object sender, RoutedEventArgs e)
         {
-            ReqAddEdit reqAddEdit = new ReqAddEdit(null);
-            reqAddEdit.Show();
+            //ReqAddEdit reqAddEdit = new ReqAddEdit(null);
+            //reqAddEdit.Show();
         }
 
         private void DelBT_Click(object sender, RoutedEventArgs e)
