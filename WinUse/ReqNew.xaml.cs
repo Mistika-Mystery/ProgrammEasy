@@ -80,6 +80,9 @@ namespace ProgrammEasy.WinUse
                 _req.Foto = data;
 
                 my01Entities.GetContext().Requests.Add(_req);
+                my01Entities.GetContext().SaveChanges();
+                MessageBox.Show("Заявка успешно создана!");
+                this.Close();
 
             }
             catch (Exception ex) { MessageBox.Show(ex.Message);}
