@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="GroupUser">
           <Key>
             <PropertyRef Name="Id" />
@@ -170,7 +170,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_User_Group">
+        <Association Name="FK_User_GroupUser">
           <End Role="GroupUser" Type="Self.GroupUser" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
@@ -272,7 +272,7 @@
             <End Role="User" EntitySet="User" />
             <End Role="Results" EntitySet="Results" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_Group" Association="Self.FK_User_Group">
+          <AssociationSet Name="FK_User_GroupUser" Association="Self.FK_User_GroupUser">
             <End Role="GroupUser" EntitySet="GroupUser" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
@@ -285,8 +285,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -297,8 +296,8 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdTeatcher" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="Self.FK_GroupUser_User" FromRole="GroupUser" ToRole="User" />
-          <NavigationProperty Name="User1" Relationship="Self.FK_User_Group" FromRole="GroupUser" ToRole="User" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_GroupUser" FromRole="GroupUser" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="dbModel.FK_GroupUser_User" FromRole="GroupUser" ToRole="User" />
         </EntityType>
         <EntityType Name="ImgFoto">
           <Key>
@@ -394,26 +393,14 @@
           <Property Name="DateOfReg" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FotoImg" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="GroupUser" Relationship="Self.FK_GroupUser_User" FromRole="User" ToRole="GroupUser" />
-          <NavigationProperty Name="GroupUser1" Relationship="Self.FK_User_Group" FromRole="User" ToRole="GroupUser" />
+          <NavigationProperty Name="GroupUser" Relationship="Self.FK_User_GroupUser" FromRole="User" ToRole="GroupUser" />
           <NavigationProperty Name="ImgFoto" Relationship="Self.FK_User_ImgFoto" FromRole="User" ToRole="ImgFoto" />
           <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_User" FromRole="User" ToRole="Requests" />
           <NavigationProperty Name="Results" Relationship="Self.FK_Results_User" FromRole="User" ToRole="Results" />
           <NavigationProperty Name="RoleUser" Relationship="Self.FK_User_Role" FromRole="User" ToRole="RoleUser" />
+          <NavigationProperty Name="GroupUser1" Relationship="dbModel.FK_GroupUser_User" FromRole="User" ToRole="GroupUser" />
         </EntityType>
-        <Association Name="FK_GroupUser_User">
-          <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="GroupUser" Type="Self.GroupUser" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="GroupUser">
-              <PropertyRef Name="IdTeatcher" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_User_Group">
+        <Association Name="FK_User_GroupUser">
           <End Role="GroupUser" Type="Self.GroupUser" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
@@ -520,11 +507,7 @@
           <EntitySet Name="Status" EntityType="Self.Status" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="User" EntityType="Self.User" />
-          <AssociationSet Name="FK_GroupUser_User" Association="Self.FK_GroupUser_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="GroupUser" EntitySet="GroupUser" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Group" Association="Self.FK_User_Group">
+          <AssociationSet Name="FK_User_GroupUser" Association="Self.FK_User_GroupUser">
             <End Role="GroupUser" EntitySet="GroupUser" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
@@ -586,6 +569,10 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <AssociationSet Name="FK_GroupUser_User" Association="dbModel.FK_GroupUser_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="GroupUser" EntitySet="GroupUser" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -598,6 +585,18 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <Association Name="FK_GroupUser_User">
+          <End Type="dbModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="dbModel.GroupUser" Role="GroupUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GroupUser">
+              <PropertyRef Name="IdTeatcher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

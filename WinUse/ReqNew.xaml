@@ -23,7 +23,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Создание новой заявки" VerticalAlignment="Center" FontSize="22" Grid.ColumnSpan="2"/>
-        <Button x:Name="BackBTN" Content="Отмена\Назад" HorizontalAlignment="Center" Grid.Row="2" FontSize="16" Click="BackBTN_Click" Height="25" VerticalAlignment="Top">
+        <Button x:Name="BackBTN" Content="Отмена\Назад" HorizontalAlignment="Center" Grid.Row="2" FontSize="16" Click="BackBTN_Click" Height="25" VerticalAlignment="Center">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0.507"/>
@@ -34,7 +34,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="SaveBTN" Content=" Сохранить и отправить " HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" FontSize="16" Grid.Column="1" Click="SaveBTN_Click">
+        <Button x:Name="SaveBTN" Content=" Сохранить и отправить " HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" FontSize="16" Grid.Column="1" Click="SaveBTN_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White" Offset="0.507"/>
@@ -47,7 +47,7 @@
         </Button>
         <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center">
             <Image  x:Name="ImageSerice" MaxWidth="400" MaxHeight="350"></Image>
-            <Button x:Name="SelectImageBTN"  Content="Если есть - загрузите Скриншот проблемы"  Click="SelectImageBTN_Click" Width="300">
+            <Button x:Name="SelectImageBTN"  Content="Если есть - загрузите Скриншот проблемы"  Click="SelectImageBTN_Click" Width="300" Margin="0,5,0,0">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
