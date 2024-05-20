@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,6 +76,20 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DelBT_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var delReq = ReqDG.SelectedItems.Cast<Requests>().ToList();
+
+                if (MessageBox.Show($"Вы дейстиветльно хотите удалить заявок: {delReq.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+
+                {
+                    my01Entities.GetContext().Requests.RemoveRange(delReq);
+                    my01Entities.GetContext().SaveChanges();
+                    MessageBox.Show("Удаление прошло успешно");
+                    UpdWin();
+                }
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
 
         }
 
@@ -219,12 +234,26 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void AddBTSt_Click(object sender, RoutedEventArgs e)
         {
-
+            addEdStatus adnewst = new addEdStatus(null);
+            adnewst.Show();
         }
 
         private void DelBTSt_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var delSt = StatusDG.SelectedItems.Cast<Status>().ToList();
 
+                if (MessageBox.Show($"Вы дейстиветльно хотите удалить статусов: {delSt.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+
+                {
+                    my01Entities.GetContext().Status.RemoveRange(delSt);
+                    my01Entities.GetContext().SaveChanges();
+                    MessageBox.Show("Удаление прошло успешно!");
+                    UpdWin();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void TBoxSearchST_GotFocus(object sender, RoutedEventArgs e)
