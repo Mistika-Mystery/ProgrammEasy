@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static ProgrammEasy.WinUse.Admin.AdminGlavWin;
 
 namespace ProgrammEasy.WinUse.Admin
 {
@@ -20,9 +22,11 @@ namespace ProgrammEasy.WinUse.Admin
     /// </summary>
     public partial class AdminGlavWin : Window
     {
+        private readonly StatusService _statusService;
         public AdminGlavWin()
         {
             InitializeComponent();
+            _statusService = new StatusService(new my01Entities());
 
             var AllGroup = my01Entities.GetContext().GroupUser.ToList();
             AllGroup.Insert(0, new GroupUser
@@ -44,7 +48,7 @@ namespace ProgrammEasy.WinUse.Admin
             {
                 Name = "Все статусы"
             });
-            CBStatus.ItemsSource = AllStatus;
+            CBStatus.ItemsSource = AllStatus;            
         }
 
         private void ExitBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -242,18 +246,43 @@ namespace ProgrammEasy.WinUse.Admin
         {
             try
             {
-                var delSt = StatusDG.SelectedItems.Cast<Status>().ToList();
+                //var delSt = StatusDG.SelectedItems.Cast<Status>().ToList();
 
-                if (MessageBox.Show($"Вы дейстиветльно хотите удалить статусов: {delSt.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                //if (MessageBox.Show($"Вы дейстиветльно хотите удалить статусов: {delSt.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
 
+                //{
+                //    my01Entities.GetContext().Status.RemoveRange(delSt);
+                //    my01Entities.GetContext().SaveChanges();
+                //    MessageBox.Show("Удаление прошло успешно!");
+                //    UpdWin();
+                //}
+                int statusId = GetSelectedStatusId();
+                if (statusId != -1)
                 {
-                    my01Entities.GetContext().Status.RemoveRange(delSt);
-                    my01Entities.GetContext().SaveChanges();
-                    MessageBox.Show("Удаление прошло успешно!");
-                    UpdWin();
+                    if (_statusService.DeleteStatus(statusId))
+                    {
+                        MessageBox.Show("Статус успешно удален.");
+                        ApdSt(); // Обновление списка статусов
+                    }
+                    else
+                    {
+                        MessageBox.Show("Невозможно удалить статус, так как он используется в заявках.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Пожалуйста, выберите статус для удаления.");
                 }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        private int GetSelectedStatusId()
+        {
+            if (StatusDG.SelectedItem is Status selectedStatus)
+            {
+                return selectedStatus.Id;
+            }
+            return -1; // Возвращает -1, если ничего не выбрано
         }
 
         private void TBoxSearchST_GotFocus(object sender, RoutedEventArgs e)
@@ -295,7 +324,7 @@ namespace ProgrammEasy.WinUse.Admin
                 StSerch = StSerch.Where(s => s.Name.ToLower().Contains(search.ToLower())).ToList();
             }
 
-            switch (sortBox.SelectedIndex)
+            switch (sortBoxSt.SelectedIndex)
             {
                 case 1:
                     StSerch = StSerch.OrderBy(s => s.Name).ToList();
@@ -308,5 +337,36 @@ namespace ProgrammEasy.WinUse.Admin
             }
             StatusDG.ItemsSource = StSerch;
         }
+        public class StatusService
+        {
+            private readonly my01Entities _context;            
+
+            public StatusService(my01Entities context)
+            {
+                _context = context;
+            }
+
+            public bool CanDeleteStatus(int statusId)
+            {
+                return !_context.Requests.Any(r => r.IdStatus == statusId);
+            }
+
+            public bool DeleteStatus(int statusId)
+            {
+                if (CanDeleteStatus(statusId))
+                {
+                    var status = _context.Status.Find(statusId);
+                    if (status != null)
+                    {
+                        _context.Status.Remove(status);
+                        _context.SaveChanges();
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+
     }
 }

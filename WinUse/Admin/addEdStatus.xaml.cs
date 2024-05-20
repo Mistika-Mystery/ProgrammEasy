@@ -71,11 +71,32 @@ namespace ProgrammEasy.WinUse.Admin
                         MessageBox.Show(errors.ToString());
                         return;
                     }
-                    my01Entities.GetContext().Status.Add(_status);
-                    my01Entities.GetContext().SaveChanges();
-                    MessageBox.Show("Статус успешно добавлен!");
-                    this.Close();
-                }              
+                    else
+                    {
+                        my01Entities.GetContext().Status.Add(_status);
+                        my01Entities.GetContext().SaveChanges();
+                        MessageBox.Show("Статус успешно добавлен!");
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    if (NameSt != null && _status.Id != NameSt.Id)
+                    {
+                        errors.AppendLine("Такой статус уже сущестует!");
+                    }
+                    if (errors.Length > 0)
+                    {
+                        MessageBox.Show(errors.ToString());
+                        return;
+                    }
+                    else
+                    {
+                        my01Entities.GetContext().SaveChanges();
+                        MessageBox.Show("Изменения сохранены!");
+                        this.Close();
+                    }
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
