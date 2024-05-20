@@ -179,11 +179,13 @@ namespace ProgrammEasy.WinUse.Admin
         private void AdminWin_Loaded(object sender, RoutedEventArgs e)
         {
             UpdWin();
+            ApdSt();
         }
 
         private void AdminWin_Activated(object sender, EventArgs e)
         {
             UpdWin();
+            ApdSt();
         }
         private void UpdWin()
         {
@@ -197,10 +199,22 @@ namespace ProgrammEasy.WinUse.Admin
 
             ReqDG.ItemsSource = my01Entities.GetContext().Requests.ToList();
         }
+        private void ApdSt()
+        {
+            SeactWaterSt.Visibility = Visibility.Collapsed;
+            SeactWaterSt.Text = "";
+            TBoxSearchST.Visibility = Visibility.Visible;
+            sortBoxSt.SelectedIndex = 0;
+
+           StatusDG.ItemsSource = my01Entities.GetContext().Status.ToList();
+        }
+
 
         private void DataGridRow_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
         {
-
+            var rowSt = (sender as DataGridRow).DataContext as Status;
+            addEdStatus adst = new addEdStatus(rowSt);
+            adst.Show();
         }
 
         private void AddBTSt_Click(object sender, RoutedEventArgs e)
@@ -215,17 +229,55 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void TBoxSearchST_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            TBoxSearchST.Visibility = Visibility.Collapsed;
+            SeactWaterSt.Visibility = Visibility.Visible;
+            SeactWaterSt.Focus();
         }
 
         private void SeactWaterSt_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(SeactWaterSt.Text))
+            {
+                SeactWaterSt.Visibility = Visibility.Collapsed;
+                TBoxSearchST.Visibility = Visibility.Visible;
+            }
         }
 
         private void BtnReloadSt_Click(object sender, RoutedEventArgs e)
         {
+            ApdSt();
+        }
 
+        private void SeactWaterSt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Seach_FilterSt(SeactWaterSt.Text);
+        }
+
+        private void sortBoxSt_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterSt(SeactWaterSt.Text);
+        }
+        private void Seach_FilterSt(string search = "")
+        {
+            var StSerch = my01Entities.GetContext().Status.ToList();
+
+            if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
+            {
+                StSerch = StSerch.Where(s => s.Name.ToLower().Contains(search.ToLower())).ToList();
+            }
+
+            switch (sortBox.SelectedIndex)
+            {
+                case 1:
+                    StSerch = StSerch.OrderBy(s => s.Name).ToList();
+                    break;
+                case 2:
+                    StSerch = StSerch.OrderByDescending(s => s.Name).ToList();
+                    break;
+                default:
+                    break;
+            }
+            StatusDG.ItemsSource = StSerch;
         }
     }
 }

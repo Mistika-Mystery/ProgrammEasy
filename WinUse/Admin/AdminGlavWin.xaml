@@ -396,11 +396,9 @@
                             </Style>
                         </DataGrid.Resources>
 
-
-
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="*" Binding="{Binding Id}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Название статуса" Width="*" Binding="{Binding Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Название статуса" Width="2*" Binding="{Binding Name}"></DataGridTextColumn>
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -439,7 +437,7 @@
                                 </LinearGradientBrush>
                             </TextBlock.Background></TextBlock>
                         <TextBox x:Name="TBoxSearchST" Height="21"  Text="Введите имя\логин\описание" GotFocus="TBoxSearchST_GotFocus"/>
-                        <TextBox x:Name="SeactWaterSt" Height="21" LostFocus="SeactWaterSt_LostFocus"  Visibility="Collapsed" TextChanged="SeactWater_TextChanged" />
+                        <TextBox x:Name="SeactWaterSt" Height="21" LostFocus="SeactWaterSt_LostFocus"  Visibility="Collapsed" TextChanged="SeactWaterSt_TextChanged" />
                         <Label Height="5"/>
                         <TextBlock Text="Сортировать по:" FontWeight="Bold">
                             <TextBlock.Background>
@@ -451,7 +449,7 @@
                                     <GradientStop Color="White" Offset="0.409"/>
                                 </LinearGradientBrush>
                             </TextBlock.Background></TextBlock>
-                        <ComboBox x:Name="sortBoxSt" Cursor="Hand" SelectionChanged="sortBox_SelectionChanged" SelectedIndex="0" >
+                        <ComboBox x:Name="sortBoxSt" Cursor="Hand" SelectionChanged="sortBoxSt_SelectionChanged"  SelectedIndex="0" >
                             <ComboBoxItem Content="Без сортировки"/>
                             <ComboBoxItem Content="По названию, от А до Я"/>
                             <ComboBoxItem Content="По названию, от Я до А"/>
