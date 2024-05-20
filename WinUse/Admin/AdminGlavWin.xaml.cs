@@ -198,5 +198,34 @@ namespace ProgrammEasy.WinUse.Admin
             ReqDG.ItemsSource = my01Entities.GetContext().Requests.ToList();
         }
 
+        private void DataGridRow_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void AddBTSt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelBTSt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBoxSearchST_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SeactWaterSt_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnReloadSt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
