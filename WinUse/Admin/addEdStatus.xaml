@@ -49,5 +49,6 @@
             <TextBox x:Name="NameTB" Text="{Binding Name}" FontSize="18" Width="175" MaxLength="50"></TextBox>
         </StackPanel>
         <TextBlock Text="Создание/редактирование статуса:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="700,152,0,0" Grid.Row="1" VerticalAlignment="Top" x:Name="lable"/>
     </Grid>
 </Window>

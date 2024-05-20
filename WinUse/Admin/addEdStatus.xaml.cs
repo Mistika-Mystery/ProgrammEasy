@@ -25,6 +25,7 @@ namespace ProgrammEasy.WinUse.Admin
         private Status _status = new Status();
         Regex nazvania = new Regex(@"^[А-ЯЁ][а-яё\s]{2,50}$");
         MatchCollection match;
+   
         public addEdStatus(Status status)
         {
             InitializeComponent();
@@ -33,6 +34,9 @@ namespace ProgrammEasy.WinUse.Admin
                 _status = status;
             }
             DataContext = _status;
+            lable.Content = _status.Name;
+            lable.Visibility = Visibility.Hidden;
+
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
@@ -51,8 +55,8 @@ namespace ProgrammEasy.WinUse.Admin
                 StringBuilder errors = new StringBuilder();
                 if (string.IsNullOrWhiteSpace(_status.Name)) errors.AppendLine("Укажите название статуса!");
                 match = nazvania.Matches(NameTB.Text);
-                if (match.Count == 0) errors.AppendLine("Название должно содержать только русские быквы! Первая буква должна быть Заглавной! Длина от 2 до 50 символов");
-                var NameSt = my01Entities.GetContext().Status.FirstOrDefault(x => x.Name == _status.Name.ToString());
+                if (match.Count == 0) errors.AppendLine("Название должно содержать только русские буквы! Первая буква должна быть заглавной! Длина от 2 до 50 символов");
+                var NameSt = my01Entities.GetContext().Status.FirstOrDefault(x => x.Name == _status.Name);
 
                 if (errors.Length > 0)
                 {
@@ -64,7 +68,7 @@ namespace ProgrammEasy.WinUse.Admin
                 {
                     if (NameSt != null)
                     {
-                        errors.AppendLine("Такой статус уже сущестует!");
+                        errors.AppendLine("Такой статус уже существует!");
                     }
                     if (errors.Length > 0)
                     {
@@ -83,11 +87,13 @@ namespace ProgrammEasy.WinUse.Admin
                 {
                     if (NameSt != null && _status.Id != NameSt.Id)
                     {
-                        errors.AppendLine("Такой статус уже сущестует!");
+                        errors.AppendLine("Такой статус уже существует!");
                     }
                     if (errors.Length > 0)
                     {
                         MessageBox.Show(errors.ToString());
+                        _status.Name = lable.Content.ToString();
+                        NameTB.Text = _status.Name;
                         return;
                     }
                     else
@@ -98,7 +104,11 @@ namespace ProgrammEasy.WinUse.Admin
                     }
                 }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
     }
 }
