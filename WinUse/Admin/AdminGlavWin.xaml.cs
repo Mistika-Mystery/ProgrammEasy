@@ -206,6 +206,7 @@ namespace ProgrammEasy.WinUse.Admin
             ApdSt();
             ApdRL();
             ApdGR();
+            ApdImg();
         }
 
         private void AdminWin_Activated(object sender, EventArgs e)
@@ -214,6 +215,7 @@ namespace ProgrammEasy.WinUse.Admin
             ApdSt();
             ApdRL();
             ApdGR();
+            ApdImg();
         }
         private void UpdWin()
         {
@@ -253,6 +255,15 @@ namespace ProgrammEasy.WinUse.Admin
             sortBoxGR.SelectedIndex = 0;
 
             GroupDG.ItemsSource = myEntities.GetContext().GroupUser.ToList();
+        }
+        private void ApdImg()
+        {
+            SeactWaterImg.Visibility = Visibility.Collapsed;
+            SeactWaterImg.Text = "";
+            TBoxSearchImg.Visibility = Visibility.Visible;
+            sortBoxImg.SelectedIndex = 0;
+
+            ImgDG.ItemsSource = myEntities.GetContext().ImgFoto.ToList();
         }
 
 
@@ -624,27 +635,56 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void TBoxSearchImg_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            TBoxSearchImg.Visibility = Visibility.Collapsed;
+            SeactWaterImg.Visibility = Visibility.Visible;
+            SeactWaterImg.Focus();
         }
 
         private void SeactWaterImg_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(SeactWaterImg.Text))
+            {
+                SeactWaterImg.Visibility = Visibility.Collapsed;
+                TBoxSearchImg.Visibility = Visibility.Visible;
+            }
         }
 
         private void SeactWaterImg_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Seach_FilterImg(SeactWaterImg.Text);
         }
 
         private void sortBoxImg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Seach_FilterImg(SeactWaterImg.Text);
 
         }
 
         private void BtnReloadImg_Click(object sender, RoutedEventArgs e)
         {
-
+            ApdImg();
         }
+        private void Seach_FilterImg(string search = "")
+        {
+            var ImgSerch = myEntities.GetContext().ImgFoto.ToList();
+            if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
+            {
+                ImgSerch = ImgSerch.Where(s => s.Name.ToLower().Contains(search.ToLower())).ToList();
+            }
+
+            switch (sortBoxImg.SelectedIndex)
+            {
+                case 1:
+                    ImgSerch = ImgSerch.OrderBy(s => s.Name).ToList();
+                    break;
+                case 2:
+                    ImgSerch = ImgSerch.OrderByDescending(s => s.Name).ToList();
+                    break;
+                default:
+                    break;
+            }
+            ImgDG.ItemsSource = ImgSerch;
+        }
+
     }
 }
