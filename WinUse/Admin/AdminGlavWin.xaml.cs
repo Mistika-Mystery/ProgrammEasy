@@ -48,7 +48,10 @@ namespace ProgrammEasy.WinUse.Admin
             {
                 Name = "Все статусы"
             });
-            CBStatus.ItemsSource = AllStatus;            
+            CBStatus.ItemsSource = AllStatus;     
+            
+            
+            UserDG.ItemsSource = myEntities.GetContext().User.ToList(); ///kjaXLJGalxv
         }
 
         private void ExitBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -199,12 +202,14 @@ namespace ProgrammEasy.WinUse.Admin
         {
             UpdWin();
             ApdSt();
+            ApdRL();
         }
 
         private void AdminWin_Activated(object sender, EventArgs e)
         {
             UpdWin();
             ApdSt();
+            ApdRL();
         }
         private void UpdWin()
         {
@@ -226,6 +231,15 @@ namespace ProgrammEasy.WinUse.Admin
             sortBoxSt.SelectedIndex = 0;
 
            StatusDG.ItemsSource = myEntities.GetContext().Status.ToList();
+        }
+        private void ApdRL()
+        {
+            SeactWaterRL.Visibility = Visibility.Collapsed;
+            SeactWaterRL.Text = "";
+            TBoxSearchRL.Visibility = Visibility.Visible;
+            sortBoxRL.SelectedIndex = 0;
+
+            RoleDG.ItemsSource = myEntities.GetContext().RoleUser.ToList();
         }
 
 
@@ -367,6 +381,78 @@ namespace ProgrammEasy.WinUse.Admin
             }
         }
 
+        private void DataGridRow_MouseDoubleClick_2(object sender, MouseButtonEventArgs e)
+        {
+            ///двойной щелчек пользователей
+        }
 
+        private void DataGridRow_MouseDoubleClick_3(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void AddBTRL_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelBTRL_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBoxSearchRL_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TBoxSearchRL.Visibility = Visibility.Collapsed;
+            SeactWaterRL.Visibility = Visibility.Visible;
+            SeactWaterRL.Focus();
+        }
+
+        private void SeactWaterRL_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(SeactWater.Text))
+            {
+                SeactWaterRL.Visibility = Visibility.Collapsed;
+                TBoxSearchRL.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void SeactWaterRL_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Seach_FilterRL(SeactWaterRL.Text);
+        }
+
+        private void sortBoxRL_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterRL(SeactWaterRL.Text);
+        }
+
+        private void BtnReloadRL_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Seach_FilterRL(string search = "")
+        {
+            var RLSerch = myEntities.GetContext().RoleUser.ToList();
+
+            if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
+            {
+                RLSerch = RLSerch.Where(s => s.Name.ToLower().Contains(search.ToLower())).ToList();
+            }
+
+            switch (sortBoxRL.SelectedIndex)
+            {
+                case 1:
+                    RLSerch = RLSerch.OrderBy(s => s.Name).ToList();
+                    break;
+                case 2:
+                    RLSerch = RLSerch.OrderByDescending(s => s.Name).ToList();
+                    break;
+                default:
+                    break;
+            }
+            RoleDG.ItemsSource = RLSerch;
+        }
     }
 }
