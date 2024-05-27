@@ -378,12 +378,15 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DataGridRow_MouseDoubleClick_3(object sender, MouseButtonEventArgs e)
         {
-
+            var rowRL = (sender as DataGridRow).DataContext as RoleUser;
+            addEdRole adRl = new addEdRole(rowRL);
+            adRl.Show();
         }
 
         private void AddBTRL_Click(object sender, RoutedEventArgs e)
         {
-
+            addEdRole adnewst = new addEdRole(null);
+            adnewst.Show();
         }
 
         private void DelBTRL_Click(object sender, RoutedEventArgs e)
@@ -419,7 +422,7 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void BtnReloadRL_Click(object sender, RoutedEventArgs e)
         {
-
+            ApdRL();
         }
 
         private void Seach_FilterRL(string search = "")
