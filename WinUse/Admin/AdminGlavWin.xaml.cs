@@ -519,8 +519,8 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void AddBTGR_Click(object sender, RoutedEventArgs e)
         {
-            addEdGroup adnewst = new addEdGroup(null);
-            adnewst.Show();
+            addEdGroup adnewGr = new addEdGroup(null);
+            adnewGr.Show();
         }
 
         private void DelBTGR_Click(object sender, RoutedEventArgs e)
@@ -620,12 +620,15 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DataGridRow_MouseDoubleClick_5(object sender, MouseButtonEventArgs e)
         {
-
+            var rowImg = (sender as DataGridRow).DataContext as ImgFoto;
+            addEdImg adImg = new addEdImg(rowImg);
+            adImg.Show();
         }
 
         private void AddBTImg_Click(object sender, RoutedEventArgs e)
         {
-
+            addEdImg adnewImg = new addEdImg(null);
+            adnewImg.Show();
         }
 
         private void DelBTImg_Click(object sender, RoutedEventArgs e)

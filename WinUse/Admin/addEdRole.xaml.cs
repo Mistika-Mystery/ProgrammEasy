@@ -41,7 +41,7 @@ namespace ProgrammEasy.WinUse.Admin
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
-"Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
                 this.Close();
             }
