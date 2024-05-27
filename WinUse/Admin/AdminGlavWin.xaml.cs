@@ -205,6 +205,7 @@ namespace ProgrammEasy.WinUse.Admin
             UpdWin();
             ApdSt();
             ApdRL();
+            ApdGR();
         }
 
         private void AdminWin_Activated(object sender, EventArgs e)
@@ -212,6 +213,7 @@ namespace ProgrammEasy.WinUse.Admin
             UpdWin();
             ApdSt();
             ApdRL();
+            ApdGR();
         }
         private void UpdWin()
         {
@@ -242,6 +244,15 @@ namespace ProgrammEasy.WinUse.Admin
             sortBoxRL.SelectedIndex = 0;
 
             RoleDG.ItemsSource = myEntities.GetContext().RoleUser.ToList();
+        }
+        private void ApdGR()
+        {
+            SeactWaterGR.Visibility = Visibility.Collapsed;
+            SeactWaterGR.Text = "";
+            TBoxSearchGR.Visibility = Visibility.Visible;
+            sortBoxGR.SelectedIndex = 0;
+
+            GroupDG.ItemsSource = myEntities.GetContext().GroupUser.ToList();
         }
 
 
@@ -485,6 +496,113 @@ namespace ProgrammEasy.WinUse.Admin
                     break;
             }
             RoleDG.ItemsSource = RLSerch;
+        }
+
+        private void DataGridRow_MouseDoubleClick_4(object sender, MouseButtonEventArgs e)
+        {
+            var rowGR = (sender as DataGridRow).DataContext as GroupUser;
+            addEdGroup adGR = new addEdGroup(rowGR);
+            adGR.Show();
+        }
+
+        private void AddBTGR_Click(object sender, RoutedEventArgs e)
+        {
+            addEdGroup adnewst = new addEdGroup(null);
+            adnewst.Show();
+        }
+
+        private void DelBTGR_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var selectedGR = GroupDG.SelectedItems.Cast<GroupUser>().ToList();
+
+                if (selectedGR.Count == 0)
+                {
+                    MessageBox.Show("Пожалуйста, выберите группу для удаления.");
+                    return;
+                }
+
+                if (MessageBox.Show($"Вы действительно хотите удалить групп: {selectedGR.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    foreach (var group in selectedGR)
+                    {
+                        if (CanDeleteGR(group.Id))
+                        {
+                            myEntities.GetContext().GroupUser.Remove(group);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Группа '{group.Name}' не может быть удалена, так как она присвоена пользователю.");
+                        }
+                    }
+
+                    myEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удаление прошло успешно.");
+                    ApdGR();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private bool CanDeleteGR(int groupId)
+        {
+            return !myEntities.GetContext().User.Any(u => u.GroupUser.Id == groupId);
+        }
+
+        private void TBoxSearchGR_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TBoxSearchGR.Visibility = Visibility.Collapsed;
+            SeactWaterGR.Visibility = Visibility.Visible;
+            SeactWaterGR.Focus();
+        }
+
+        private void SeactWaterGR_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(SeactWaterGR.Text))
+            {
+                SeactWaterGR.Visibility = Visibility.Collapsed;
+                TBoxSearchGR.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void SeactWaterGR_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Seach_FilterGR(SeactWaterGR.Text);
+        }
+
+        private void sortBoxGR_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterGR(SeactWaterGR.Text);
+        }
+
+        private void BtnReloadGR_Click(object sender, RoutedEventArgs e)
+        {
+            ApdGR();
+        }
+        private void Seach_FilterGR(string search = "")
+        {
+            var GRSerch = myEntities.GetContext().GroupUser.ToList();
+
+            if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
+            {
+                GRSerch = GRSerch.Where(s => s.Name.ToLower().Contains(search.ToLower())).ToList();
+            }
+
+            switch (sortBoxGR.SelectedIndex)
+            {
+                case 1:
+                    GRSerch = GRSerch.OrderBy(s => s.Name).ToList();
+                    break;
+                case 2:
+                    GRSerch = GRSerch.OrderByDescending(s => s.Name).ToList();
+                    break;
+                default:
+                    break;
+            }
+            GroupDG.ItemsSource = GRSerch;
         }
     }
 }

@@ -142,11 +142,11 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="TichGroup.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WinUse\Admin\addEdGroup.xaml.cs">
+      <DependentUpon>addEdGroup.xaml</DependentUpon>
     </Compile>
     <Compile Include="WinUse\Admin\addEdRole.xaml.cs">
       <DependentUpon>addEdRole.xaml</DependentUpon>
@@ -237,6 +237,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\SuccessfulReg .xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\Admin\addEdGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
