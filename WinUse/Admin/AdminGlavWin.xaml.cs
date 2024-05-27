@@ -260,23 +260,13 @@ namespace ProgrammEasy.WinUse.Admin
         {
             try
             {
-                //var delSt = StatusDG.SelectedItems.Cast<Status>().ToList();
-
-                //if (MessageBox.Show($"Вы дейстиветльно хотите удалить статусов: {delSt.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-
-                //{
-                //    myEntities.GetContext().Status.RemoveRange(delSt);
-                //    myEntities.GetContext().SaveChanges();
-                //    MessageBox.Show("Удаление прошло успешно!");
-                //    UpdWin();
-                //}
                 int statusId = GetSelectedStatusId();
                 if (statusId != -1)
                 {
                     if (_statusService.DeleteStatus(statusId))
                     {
                         MessageBox.Show("Статус успешно удален.");
-                        ApdSt(); // Обновление списка статусов
+                        ApdSt(); 
                     }
                     else
                     {
