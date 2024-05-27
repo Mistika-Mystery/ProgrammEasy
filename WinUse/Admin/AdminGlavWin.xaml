@@ -462,16 +462,6 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="*" Binding="{Binding Id}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Название Группы" Width="2*" Binding="{Binding Name}"></DataGridTextColumn>
-                            <DataGridTemplateColumn Header="Учитель" Width="*">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <TextBlock Text="{Binding User.FirstName}"/>
-                                            <TextBlock Text="{Binding User.LastName}"/>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
                             <DataGridTemplateColumn Header="Изображение" Width="88">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>

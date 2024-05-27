@@ -32,7 +32,6 @@ namespace ProgrammEasy.WinUse.Admin
             if (role != null)
             {
                 _role = role;
-                //dataIMG = _role.Img;
             }
             DataContext = _role;
             lable.Content = _role.Name;
@@ -56,7 +55,7 @@ namespace ProgrammEasy.WinUse.Admin
                 if (string.IsNullOrWhiteSpace(_role.Name)) errors.AppendLine("Укажите название роли!");
                 match = nazvania.Matches(NameTB.Text);
                 if (match.Count == 0) errors.AppendLine("Название должно содержать только русские буквы! Первая буква должна быть заглавной! Длина от 2 до 50 символов");
-                var NameRl = myEntities.GetContext().Status.FirstOrDefault(x => x.Name == _role.Name);
+                var NameRl = myEntities.GetContext().RoleUser.FirstOrDefault(x => x.Name == _role.Name);
 
                 if (errors.Length > 0)
                 {

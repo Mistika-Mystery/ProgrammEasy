@@ -24,7 +24,7 @@ namespace ProgrammEasy.WinUse.Admin
     public partial class addEdGroup : Window
     {
         private GroupUser _group = new GroupUser();
-        Regex nazvania = new Regex(@"^[А-ЯЁ][а-яё\s]{2,50}$");
+        Regex nazvania = new Regex(@"^[a-zA-Zа-яА-Я0-9][\s\S]{1,49}$");
         MatchCollection match;
         private byte[] data = null;
         public addEdGroup(GroupUser group)
@@ -33,12 +33,12 @@ namespace ProgrammEasy.WinUse.Admin
             if (group != null)
             {
                 _group = group;
-                //dataIMG = _role.Img;
+
             }
             DataContext = _group;
             lable.Content = _group.Name;
             lable.Visibility = Visibility.Hidden;
-            CBTeacher.ItemsSource = myEntities.GetContext().User.ToList();
+
 
         }
 
@@ -73,7 +73,72 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
         {
-            
+            try
+            {
+                StringBuilder errors = new StringBuilder();
+                if (string.IsNullOrWhiteSpace(_group.Name)) errors.AppendLine("Укажите название группы!");
+                match = nazvania.Matches(NameTB.Text);
+                if (match.Count == 0) errors.AppendLine("Название должно начинаться с цифр или букв! Длина от 2 до 50 символов.");
+                var NameGr = myEntities.GetContext().GroupUser.FirstOrDefault(x => x.Name == _group.Name);
+
+                if (errors.Length > 0)
+                {
+                    MessageBox.Show(errors.ToString());
+                    return;
+                }
+
+                if (_group.Id == 0)
+                {
+                    if (NameGr != null)
+                    {
+                        errors.AppendLine("Такая группа уже существует!");
+                    }
+                    if (errors.Length > 0)
+                    {
+                        MessageBox.Show(errors.ToString());
+                        return;
+                    }
+                    else
+                    {
+                        if (data != null)
+                        {
+                            _group.Img = data;
+                        }
+                        myEntities.GetContext().GroupUser.Add(_group);
+                        myEntities.GetContext().SaveChanges();
+                        MessageBox.Show("Группа успешно добавлена!");
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    if (NameGr != null && _group.Id != NameGr.Id)
+                    {
+                        errors.AppendLine("Такая группа уже существует!");
+                    }
+                    if (errors.Length > 0)
+                    {
+                        MessageBox.Show(errors.ToString());
+                        _group.Name = lable.Content.ToString();
+                        NameTB.Text = _group.Name;
+                        return;
+                    }
+                    else
+                    {
+                        if (data != null)
+                        {
+                            _group.Img = data;
+                        }
+                        myEntities.GetContext().SaveChanges();
+                        MessageBox.Show("Изменения сохранены!");
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
