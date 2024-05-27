@@ -633,7 +633,44 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DelBTImg_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var selectedImg = ImgDG.SelectedItems.Cast<ImgFoto>().ToList();
 
+                if (selectedImg.Count == 0)
+                {
+                    MessageBox.Show("Пожалуйста, выберите изображение для удаления.");
+                    return;
+                }
+
+                if (MessageBox.Show($"Вы действительно хотите удалить изображений: {selectedImg.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    foreach (var Img in selectedImg)
+                    {
+                        if (CanDeleteImg(Img.Id))
+                        {
+                            myEntities.GetContext().ImgFoto.Remove(Img);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Изображение '{Img.Name}' не может быть удалено, так как оно присвоена пользователю.");
+                            return;
+                        }
+                    }
+
+                    myEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удаление прошло успешно.");
+                    ApdImg();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private bool CanDeleteImg(int ImgId)
+        {
+            return !myEntities.GetContext().User.Any(u => u.ImgFoto.Id == ImgId);
         }
 
         private void TBoxSearchImg_GotFocus(object sender, RoutedEventArgs e)

@@ -52,7 +52,7 @@ namespace ProgrammEasy.WinUse.Admin
             try
             {
                 StringBuilder errors = new StringBuilder();
-                if (string.IsNullOrWhiteSpace(_imgFoto.Name)) errors.AppendLine("Укажите название роли!");
+                if (string.IsNullOrWhiteSpace(_imgFoto.Name)) errors.AppendLine("Укажите название изображения!");
                 match = nazvania.Matches(NameTB.Text);
                 if (match.Count == 0) errors.AppendLine("Название должно содержать только русские буквы! Первая буква должна быть заглавной! Длина от 2 до 50 символов");
                 var NameImg = myEntities.GetContext().ImgFoto.FirstOrDefault(x => x.Name == _imgFoto.Name);
@@ -67,7 +67,7 @@ namespace ProgrammEasy.WinUse.Admin
                 {
                     if (NameImg != null)
                     {
-                        errors.AppendLine("Такая роль уже существует!");
+                        errors.AppendLine("Такое название уже существует!");
                     }
                     if (errors.Length > 0)
                     {
@@ -82,7 +82,7 @@ namespace ProgrammEasy.WinUse.Admin
                         }
                         myEntities.GetContext().ImgFoto.Add(_imgFoto);
                         myEntities.GetContext().SaveChanges();
-                        MessageBox.Show("Роль успешно добавлена!");
+                        MessageBox.Show("Изображение успешно добавлено!");
                         this.Close();
                     }
                 }
@@ -90,7 +90,7 @@ namespace ProgrammEasy.WinUse.Admin
                 {
                     if (NameImg != null && _imgFoto.Id != NameImg.Id)
                     {
-                        errors.AppendLine("Такая роль уже существует!");
+                        errors.AppendLine("Такое название уже существует!");
                     }
                     if (errors.Length > 0)
                     {
