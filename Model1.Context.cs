@@ -22,7 +22,7 @@ namespace ProgrammEasy
             : base("name=myEntities")
         {
         }
-     public static myEntities GetContext()
+    public static myEntities GetContext()
         {
             if (my01 == null)
             {

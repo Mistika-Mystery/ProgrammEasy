@@ -32,11 +32,11 @@ namespace ProgrammEasy.WinUse.Admin
             if (role != null)
             {
                 _role = role;
+                //dataIMG = _role.Img;
             }
             DataContext = _role;
             lable.Content = _role.Name;
             lable.Visibility = Visibility.Hidden;
-            if (_role.Img != null) ImageSerice.Source = new ImageSourceConverter().ConvertFrom(_role.Img) as ImageSource;
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
@@ -77,7 +77,10 @@ namespace ProgrammEasy.WinUse.Admin
                     }
                     else
                     {
-                        _role.Img = data;
+                        if (data != null) 
+                        {
+                            _role.Img = data;
+                        }
                         myEntities.GetContext().RoleUser.Add(_role);
                         myEntities.GetContext().SaveChanges();
                         MessageBox.Show("Роль успешно добавлена!");
@@ -99,6 +102,10 @@ namespace ProgrammEasy.WinUse.Admin
                     }
                     else
                     {
+                        if (data != null) 
+                        {
+                            _role.Img = data;
+                        }
                         myEntities.GetContext().SaveChanges();
                         MessageBox.Show("Изменения сохранены!");
                         this.Close();
@@ -110,6 +117,7 @@ namespace ProgrammEasy.WinUse.Admin
                 MessageBox.Show(ex.Message);
             }
         }
+
 
         private void SelectImageBTN_Click(object sender, RoutedEventArgs e)
         {
