@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -48,12 +49,92 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                StringBuilder errors = new StringBuilder();
+                if (string.IsNullOrWhiteSpace(_imgFoto.Name)) errors.AppendLine("Укажите название роли!");
+                match = nazvania.Matches(NameTB.Text);
+                if (match.Count == 0) errors.AppendLine("Название должно содержать только русские буквы! Первая буква должна быть заглавной! Длина от 2 до 50 символов");
+                var NameImg = myEntities.GetContext().ImgFoto.FirstOrDefault(x => x.Name == _imgFoto.Name);
 
+                if (errors.Length > 0)
+                {
+                    MessageBox.Show(errors.ToString());
+                    return;
+                }
+
+                if (_imgFoto.Id == 0)
+                {
+                    if (NameImg != null)
+                    {
+                        errors.AppendLine("Такая роль уже существует!");
+                    }
+                    if (errors.Length > 0)
+                    {
+                        MessageBox.Show(errors.ToString());
+                        return;
+                    }
+                    else
+                    {
+                        if (data != null)
+                        {
+                            _imgFoto.ImgLev = data;
+                        }
+                        myEntities.GetContext().ImgFoto.Add(_imgFoto);
+                        myEntities.GetContext().SaveChanges();
+                        MessageBox.Show("Роль успешно добавлена!");
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    if (NameImg != null && _imgFoto.Id != NameImg.Id)
+                    {
+                        errors.AppendLine("Такая роль уже существует!");
+                    }
+                    if (errors.Length > 0)
+                    {
+                        MessageBox.Show(errors.ToString());
+                        _imgFoto.Name = lable.Content.ToString();
+                        NameTB.Text = _imgFoto.Name;
+                        return;
+                    }
+                    else
+                    {
+                        if (data != null)
+                        {
+                            _imgFoto.ImgLev = data;
+                        }
+                        myEntities.GetContext().SaveChanges();
+                        MessageBox.Show("Изменения сохранены!");
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void SelectImageBTN_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                OpenFileDialog fileOpen = new OpenFileDialog();
+                fileOpen.Multiselect = false;
+                fileOpen.Filter = "Image | *.png; *.jpg; *.jpeg";
+                if (fileOpen.ShowDialog() == true)
+                {
+                    data = System.IO.File.ReadAllBytes(fileOpen.FileName);
 
+                    ImageSerice.Source = new ImageSourceConverter().ConvertFrom(data) as ImageSource;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
