@@ -23,7 +23,7 @@ namespace ProgrammEasy.WinUse.Admin
     public partial class addEdImg : Window
     {
         private ImgFoto _imgFoto = new ImgFoto();
-        Regex nazvania = new Regex(@"^[А-ЯЁ][а-яё\s]{2,50}$");
+        Regex nazvania = new Regex(@"^[А-ЯЁ0-9][А-ЯЁа-яё0-9\s\S]{1,49}$");
         MatchCollection match;
         private byte[] data = null;
         public addEdImg(ImgFoto imgFoto)
@@ -54,7 +54,7 @@ namespace ProgrammEasy.WinUse.Admin
                 StringBuilder errors = new StringBuilder();
                 if (string.IsNullOrWhiteSpace(_imgFoto.Name)) errors.AppendLine("Укажите название изображения!");
                 match = nazvania.Matches(NameTB.Text);
-                if (match.Count == 0) errors.AppendLine("Название должно содержать только русские буквы! Первая буква должна быть заглавной! Длина от 2 до 50 символов");
+                if (match.Count == 0) errors.AppendLine("Название должно содержать только русские буквы и цифры! Если первая буква, то она должна быть заглавной! Длина от 2 до 50 символов");
                 var NameImg = myEntities.GetContext().ImgFoto.FirstOrDefault(x => x.Name == _imgFoto.Name);
 
                 if (errors.Length > 0)
