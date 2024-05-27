@@ -23,10 +23,12 @@ namespace ProgrammEasy.WinUse.Admin
     public partial class AdminGlavWin : Window
     {
         private readonly StatusService _statusService;
+
         public AdminGlavWin()
         {
             InitializeComponent();
             _statusService = new StatusService(new myEntities());
+
 
             var AllGroup = myEntities.GetContext().GroupUser.ToList();
             AllGroup.Insert(0, new GroupUser
@@ -391,7 +393,44 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DelBTRL_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var selectedRoles = RoleDG.SelectedItems.Cast<RoleUser>().ToList();
 
+                if (selectedRoles.Count == 0)
+                {
+                    MessageBox.Show("Пожалуйста, выберите роль для удаления.");
+                    return;
+                }
+
+                if (MessageBox.Show($"Вы действительно хотите удалить роли: {selectedRoles.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    foreach (var role in selectedRoles)
+                    {
+                        if (CanDeleteRole(role.Id))
+                        {
+                            myEntities.GetContext().RoleUser.Remove(role);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Роль '{role.Name}' не может быть удалена, так как она присвоена пользователю.");
+                        }
+                    }
+
+                    myEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удаление прошло успешно.");
+                    ApdRL();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private bool CanDeleteRole(int roleId)
+        {
+            return !myEntities.GetContext().User.Any(u => u.RoleUser.Id == roleId);
         }
 
         private void TBoxSearchRL_GotFocus(object sender, RoutedEventArgs e)

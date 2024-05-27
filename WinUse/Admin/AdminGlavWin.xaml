@@ -340,22 +340,22 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="*" Binding="{Binding Id}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Название роли" Width="2*" Binding="{Binding Name}"></DataGridTextColumn>
-                       
-                        <DataGridTemplateColumn Header="Изображение" Width="60">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Image >
-                                        <Image.Source>
-                                            <Binding Path="Img">
-                                                <Binding.TargetNullValue>
-                                                    <ImageSource>netu.png</ImageSource>
-                                                </Binding.TargetNullValue>
-                                            </Binding>
-                                        </Image.Source>
-                                    </Image>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Header="Изображение" Width="60">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image >
+                                            <Image.Source>
+                                                <Binding Path="Img">
+                                                    <Binding.TargetNullValue>
+                                                        <ImageSource>netu.png</ImageSource>
+                                                    </Binding.TargetNullValue>
+                                                </Binding>
+                                            </Image.Source>
+                                        </Image>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -370,7 +370,7 @@
                             </LinearGradientBrush>
                         </Button.Background>
                     </Button>
-                    <Button x:Name="DelBTRL" Content="Удалить" FontSize="14" Grid.Row="1" FontWeight="Bold" Cursor="Hand" Height="35" Click="DelBTRL_Click"  HorizontalAlignment="Right" VerticalAlignment="Center" Width="130">
+                    <Button x:Name="DelBTRL" Content="Удалить" FontSize="14" Grid.Row="1" FontWeight="Bold" Cursor="Hand" Click="DelBTRL_Click"  HorizontalAlignment="Right" Width="130" Height="35" VerticalAlignment="Center">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0.507"/>
@@ -426,7 +426,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            
+
             <TabItem Height="40" >
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -612,7 +612,7 @@
                             <ComboBoxItem Content="По названию, от А до Я"/>
                             <ComboBoxItem Content="По названию, от Я до А"/>
                         </ComboBox>
-                       
+
                         <Label Height="15"/>
 
 
