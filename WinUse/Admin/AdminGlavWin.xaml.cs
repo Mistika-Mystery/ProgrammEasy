@@ -425,6 +425,7 @@ namespace ProgrammEasy.WinUse.Admin
                         else
                         {
                             MessageBox.Show($"Роль '{role.Name}' не может быть удалена, так как она присвоена пользователю.");
+                            return;
                         }
                     }
 
@@ -534,6 +535,7 @@ namespace ProgrammEasy.WinUse.Admin
                         else
                         {
                             MessageBox.Show($"Группа '{group.Name}' не может быть удалена, так как она присвоена пользователю.");
+                            return;
                         }
                     }
 
