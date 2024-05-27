@@ -606,5 +606,45 @@ namespace ProgrammEasy.WinUse.Admin
             }
             GroupDG.ItemsSource = GRSerch;
         }
+
+        private void DataGridRow_MouseDoubleClick_5(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void AddBTImg_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelBTImg_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBoxSearchImg_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SeactWaterImg_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SeactWaterImg_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void sortBoxImg_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void BtnReloadImg_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
