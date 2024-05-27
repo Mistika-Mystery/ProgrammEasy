@@ -56,7 +56,7 @@ namespace ProgrammEasy.WinUse.Admin
                 if (string.IsNullOrWhiteSpace(_status.Name)) errors.AppendLine("Укажите название статуса!");
                 match = nazvania.Matches(NameTB.Text);
                 if (match.Count == 0) errors.AppendLine("Название должно содержать только русские буквы! Первая буква должна быть заглавной! Длина от 2 до 50 символов");
-                var NameSt = my01Entities.GetContext().Status.FirstOrDefault(x => x.Name == _status.Name);
+                var NameSt = myEntities.GetContext().Status.FirstOrDefault(x => x.Name == _status.Name);
 
                 if (errors.Length > 0)
                 {
@@ -77,8 +77,8 @@ namespace ProgrammEasy.WinUse.Admin
                     }
                     else
                     {
-                        my01Entities.GetContext().Status.Add(_status);
-                        my01Entities.GetContext().SaveChanges();
+                        myEntities.GetContext().Status.Add(_status);
+                        myEntities.GetContext().SaveChanges();
                         MessageBox.Show("Статус успешно добавлен!");
                         this.Close();
                     }
@@ -98,7 +98,7 @@ namespace ProgrammEasy.WinUse.Admin
                     }
                     else
                     {
-                        my01Entities.GetContext().SaveChanges();
+                        myEntities.GetContext().SaveChanges();
                         MessageBox.Show("Изменения сохранены!");
                         this.Close();
                     }

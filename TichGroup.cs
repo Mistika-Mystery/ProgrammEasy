@@ -12,21 +12,13 @@ namespace ProgrammEasy
     using System;
     using System.Collections.Generic;
     
-    public partial class GroupUser
+    public partial class TichGroup
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public GroupUser()
-        {
-            this.TichGroup = new HashSet<TichGroup>();
-            this.User = new HashSet<User>();
-        }
-    
         public int Id { get; set; }
-        public string Name { get; set; }
+        public Nullable<int> IdGroup { get; set; }
+        public Nullable<int> IdTicher { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TichGroup> TichGroup { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> User { get; set; }
+        public virtual GroupUser GroupUser { get; set; }
+        public virtual User User { get; set; }
     }
 }

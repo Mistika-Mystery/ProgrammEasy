@@ -79,8 +79,8 @@ namespace ProgrammEasy.WinUse
 
                 _req.Foto = data;
 
-                my01Entities.GetContext().Requests.Add(_req);
-                my01Entities.GetContext().SaveChanges();
+                myEntities.GetContext().Requests.Add(_req);
+                myEntities.GetContext().SaveChanges();
                 MessageBox.Show("Заявка успешно создана!");
                 this.Close();
 

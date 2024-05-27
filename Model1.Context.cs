@@ -15,22 +15,21 @@ namespace ProgrammEasy
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class my01Entities : DbContext
+    public partial class myEntities : DbContext
     {
-        private static my01Entities my01;
-        public my01Entities()
-            : base("name=my01Entities")
+        public static myEntities my01;
+        public myEntities()
+            : base("name=myEntities")
         {
         }
-        public static my01Entities GetContext()
+     public static myEntities GetContext()
         {
             if (my01 == null)
             {
-                my01 = new my01Entities();
+                my01 = new myEntities();
             }
             return my01;
         }
-    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -45,6 +44,7 @@ namespace ProgrammEasy
         public virtual DbSet<ScoreImage> ScoreImage { get; set; }
         public virtual DbSet<Status> Status { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TichGroup> TichGroup { get; set; }
         public virtual DbSet<User> User { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

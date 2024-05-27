@@ -30,7 +30,7 @@ namespace ProgrammEasy.WinUse
                 _req = rowRequests;
             }
             DataContext = _req;
-            CBStatus.ItemsSource = my01Entities.GetContext().Status.ToList();
+            CBStatus.ItemsSource = myEntities.GetContext().Status.ToList();
             if (_req.Foto != null) ImgOshib.Source = new ImageSourceConverter().ConvertFrom(_req.Foto) as ImageSource;
         }
 
@@ -38,7 +38,7 @@ namespace ProgrammEasy.WinUse
         {
             try
             {
-                my01Entities.GetContext().SaveChanges();
+                myEntities.GetContext().SaveChanges();
                 MessageBox.Show("Запись изменена!");
                 this.Close();
             }

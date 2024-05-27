@@ -26,16 +26,16 @@ namespace ProgrammEasy.WinUse.Admin
         public AdminGlavWin()
         {
             InitializeComponent();
-            _statusService = new StatusService(new my01Entities());
+            _statusService = new StatusService(new myEntities());
 
-            var AllGroup = my01Entities.GetContext().GroupUser.ToList();
+            var AllGroup = myEntities.GetContext().GroupUser.ToList();
             AllGroup.Insert(0, new GroupUser
             {
                 Name = "Все группы"
             });
             CBGroupe.ItemsSource = AllGroup;
 
-            var AllRole = my01Entities.GetContext().RoleUser.ToList();
+            var AllRole = myEntities.GetContext().RoleUser.ToList();
             AllRole.Insert(0, new RoleUser
             {
                 Name = "Все роли"
@@ -43,7 +43,7 @@ namespace ProgrammEasy.WinUse.Admin
             var filteredRole = AllRole.Where(role => role.Name != "Гость").ToList();
             CBRole.ItemsSource = filteredRole;
 
-            var AllStatus = my01Entities.GetContext().Status.ToList();
+            var AllStatus = myEntities.GetContext().Status.ToList();
             AllStatus.Insert(0, new Status
             {
                 Name = "Все статусы"
@@ -87,8 +87,8 @@ namespace ProgrammEasy.WinUse.Admin
                 if (MessageBox.Show($"Вы дейстиветльно хотите удалить заявок: {delReq.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
 
                 {
-                    my01Entities.GetContext().Requests.RemoveRange(delReq);
-                    my01Entities.GetContext().SaveChanges();
+                    myEntities.GetContext().Requests.RemoveRange(delReq);
+                    myEntities.GetContext().SaveChanges();
                     MessageBox.Show("Удаление прошло успешно");
                     UpdWin();
                 }
@@ -144,7 +144,7 @@ namespace ProgrammEasy.WinUse.Admin
         }
         private void Seach_Filter(string search = "")
         {
-            var ReqSerch = my01Entities.GetContext().Requests.ToList();
+            var ReqSerch = myEntities.GetContext().Requests.ToList();
 
             if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
             {
@@ -216,7 +216,7 @@ namespace ProgrammEasy.WinUse.Admin
             CBRole.SelectedIndex = 0;
             CBStatus.SelectedIndex = 0;
 
-            ReqDG.ItemsSource = my01Entities.GetContext().Requests.ToList();
+            ReqDG.ItemsSource = myEntities.GetContext().Requests.ToList();
         }
         private void ApdSt()
         {
@@ -225,7 +225,7 @@ namespace ProgrammEasy.WinUse.Admin
             TBoxSearchST.Visibility = Visibility.Visible;
             sortBoxSt.SelectedIndex = 0;
 
-           StatusDG.ItemsSource = my01Entities.GetContext().Status.ToList();
+           StatusDG.ItemsSource = myEntities.GetContext().Status.ToList();
         }
 
 
@@ -251,8 +251,8 @@ namespace ProgrammEasy.WinUse.Admin
                 //if (MessageBox.Show($"Вы дейстиветльно хотите удалить статусов: {delSt.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
 
                 //{
-                //    my01Entities.GetContext().Status.RemoveRange(delSt);
-                //    my01Entities.GetContext().SaveChanges();
+                //    myEntities.GetContext().Status.RemoveRange(delSt);
+                //    myEntities.GetContext().SaveChanges();
                 //    MessageBox.Show("Удаление прошло успешно!");
                 //    UpdWin();
                 //}
@@ -317,7 +317,7 @@ namespace ProgrammEasy.WinUse.Admin
         }
         private void Seach_FilterSt(string search = "")
         {
-            var StSerch = my01Entities.GetContext().Status.ToList();
+            var StSerch = myEntities.GetContext().Status.ToList();
 
             if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
             {
@@ -339,9 +339,9 @@ namespace ProgrammEasy.WinUse.Admin
         }
         public class StatusService
         {
-            private readonly my01Entities _context;            
+            private readonly myEntities _context;            
 
-            public StatusService(my01Entities context)
+            public StatusService(myEntities context)
             {
                 _context = context;
             }

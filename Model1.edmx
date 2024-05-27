@@ -4,14 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище dbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="GroupUser">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="IdTeatcher" Type="int" />
         </EntityType>
         <EntityType Name="ImgFoto">
           <Key>
@@ -84,6 +83,14 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="TichGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdGroup" Type="int" />
+          <Property Name="IdTicher" Type="int" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -98,18 +105,6 @@
           <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FotoImg" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK_GroupUser_User">
-          <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="GroupUser" Type="Self.GroupUser" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="GroupUser">
-              <PropertyRef Name="IdTeatcher" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Requests_Status">
           <End Role="Status" Type="Self.Status" Multiplicity="1" />
           <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
@@ -167,6 +162,30 @@
             </Principal>
             <Dependent Role="Results">
               <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TichGroup_GroupUser">
+          <End Role="GroupUser" Type="Self.GroupUser" Multiplicity="0..1" />
+          <End Role="TichGroup" Type="Self.TichGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TichGroup">
+              <PropertyRef Name="IdGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TichGroup_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="TichGroup" Type="Self.TichGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TichGroup">
+              <PropertyRef Name="IdTicher" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -247,11 +266,8 @@
           <EntitySet Name="ScoreImage" EntityType="Self.ScoreImage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TichGroup" EntityType="Self.TichGroup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_GroupUser_User" Association="Self.FK_GroupUser_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="GroupUser" EntitySet="GroupUser" />
-          </AssociationSet>
           <AssociationSet Name="FK_Requests_Status" Association="Self.FK_Requests_Status">
             <End Role="Status" EntitySet="Status" />
             <End Role="Requests" EntitySet="Requests" />
@@ -272,6 +288,14 @@
             <End Role="User" EntitySet="User" />
             <End Role="Results" EntitySet="Results" />
           </AssociationSet>
+          <AssociationSet Name="FK_TichGroup_GroupUser" Association="Self.FK_TichGroup_GroupUser">
+            <End Role="GroupUser" EntitySet="GroupUser" />
+            <End Role="TichGroup" EntitySet="TichGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TichGroup_User" Association="Self.FK_TichGroup_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="TichGroup" EntitySet="TichGroup" />
+          </AssociationSet>
           <AssociationSet Name="FK_User_GroupUser" Association="Self.FK_User_GroupUser">
             <End Role="GroupUser" EntitySet="GroupUser" />
             <End Role="User" EntitySet="User" />
@@ -285,7 +309,8 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -295,9 +320,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="IdTeatcher" Type="Int32" />
+          <NavigationProperty Name="TichGroup" Relationship="Self.FK_TichGroup_GroupUser" FromRole="GroupUser" ToRole="TichGroup" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_GroupUser" FromRole="GroupUser" ToRole="User" />
-          <NavigationProperty Name="User1" Relationship="dbModel.FK_GroupUser_User" FromRole="GroupUser" ToRole="User" />
         </EntityType>
         <EntityType Name="ImgFoto">
           <Key>
@@ -380,6 +404,16 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="TichGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdGroup" Type="Int32" />
+          <Property Name="IdTicher" Type="Int32" />
+          <NavigationProperty Name="GroupUser" Relationship="Self.FK_TichGroup_GroupUser" FromRole="TichGroup" ToRole="GroupUser" />
+          <NavigationProperty Name="User" Relationship="Self.FK_TichGroup_User" FromRole="TichGroup" ToRole="User" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -398,8 +432,20 @@
           <NavigationProperty Name="Requests" Relationship="Self.FK_Requests_User" FromRole="User" ToRole="Requests" />
           <NavigationProperty Name="Results" Relationship="Self.FK_Results_User" FromRole="User" ToRole="Results" />
           <NavigationProperty Name="RoleUser" Relationship="Self.FK_User_Role" FromRole="User" ToRole="RoleUser" />
-          <NavigationProperty Name="GroupUser1" Relationship="dbModel.FK_GroupUser_User" FromRole="User" ToRole="GroupUser" />
+          <NavigationProperty Name="TichGroup" Relationship="Self.FK_TichGroup_User" FromRole="User" ToRole="TichGroup" />
         </EntityType>
+        <Association Name="FK_TichGroup_GroupUser">
+          <End Role="GroupUser" Type="Self.GroupUser" Multiplicity="0..1" />
+          <End Role="TichGroup" Type="Self.TichGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupUser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TichGroup">
+              <PropertyRef Name="IdGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_User_GroupUser">
           <End Role="GroupUser" Type="Self.GroupUser" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -496,7 +542,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="my01Entities" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK_TichGroup_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="TichGroup" Type="Self.TichGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TichGroup">
+              <PropertyRef Name="IdTicher" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="myEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="GroupUser" EntityType="Self.GroupUser" />
           <EntitySet Name="ImgFoto" EntityType="Self.ImgFoto" />
           <EntitySet Name="Lessons" EntityType="Self.Lessons" />
@@ -506,7 +564,12 @@
           <EntitySet Name="ScoreImage" EntityType="Self.ScoreImage" />
           <EntitySet Name="Status" EntityType="Self.Status" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TichGroup" EntityType="Self.TichGroup" />
           <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK_TichGroup_GroupUser" Association="Self.FK_TichGroup_GroupUser">
+            <End Role="GroupUser" EntitySet="GroupUser" />
+            <End Role="TichGroup" EntitySet="TichGroup" />
+          </AssociationSet>
           <AssociationSet Name="FK_User_GroupUser" Association="Self.FK_User_GroupUser">
             <End Role="GroupUser" EntitySet="GroupUser" />
             <End Role="User" EntitySet="User" />
@@ -539,6 +602,10 @@
             <End Role="RoleUser" EntitySet="RoleUser" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
+          <AssociationSet Name="FK_TichGroup_User" Association="Self.FK_TichGroup_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="TichGroup" EntitySet="TichGroup" />
+          </AssociationSet>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -569,10 +636,6 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <AssociationSet Name="FK_GroupUser_User" Association="dbModel.FK_GroupUser_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="GroupUser" EntitySet="GroupUser" />
-          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -585,30 +648,17 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
-        <Association Name="FK_GroupUser_User">
-          <End Type="dbModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="dbModel.GroupUser" Role="GroupUser" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="GroupUser">
-              <PropertyRef Name="IdTeatcher" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище dbModelContainer" CdmEntityContainer="my01Entities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище dbModelContainer" CdmEntityContainer="myEntities">
           <EntitySetMapping Name="GroupUser">
             <EntityTypeMapping TypeName="dbModel.GroupUser">
               <MappingFragment StoreEntitySet="GroupUser">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="IdTeatcher" ColumnName="IdTeatcher" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -688,6 +738,15 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TichGroup">
+            <EntityTypeMapping TypeName="dbModel.TichGroup">
+              <MappingFragment StoreEntitySet="TichGroup">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdGroup" ColumnName="IdGroup" />
+                <ScalarProperty Name="IdTicher" ColumnName="IdTicher" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -49,8 +49,8 @@ namespace ProgrammEasy.PageUse
                 _user.DateOfReg = DateTime.Now;
                 _user.FotoImg = 1;
 
-                my01Entities.GetContext().User.Add( _user );
-                my01Entities.GetContext().SaveChanges();
+                myEntities.GetContext().User.Add( _user );
+                myEntities.GetContext().SaveChanges();
 
                 MessageBox.Show("Отлично!");
 
