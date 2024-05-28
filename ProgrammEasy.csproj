@@ -151,6 +151,9 @@
     <Compile Include="WinUse\Admin\addEdImg.xaml.cs">
       <DependentUpon>addEdImg.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\Admin\addEdLesson.xaml.cs">
+      <DependentUpon>addEdLesson.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinUse\Admin\addEdRole.xaml.cs">
       <DependentUpon>addEdRole.xaml</DependentUpon>
     </Compile>
@@ -254,6 +257,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinUse\Admin\addEdImg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\Admin\addEdLesson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

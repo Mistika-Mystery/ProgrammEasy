@@ -214,6 +214,8 @@ namespace ProgrammEasy.WinUse.Admin
             ApdImg();
             UpdUs();
             UpdSc();
+            UpdLs();
+
 
 
         }
@@ -227,8 +229,19 @@ namespace ProgrammEasy.WinUse.Admin
             ApdImg();
             UpdUs();
             UpdSc();
+            UpdLs();
 
 
+
+        }
+        private void UpdLs()
+        {
+            SeactWaterLs.Visibility = Visibility.Collapsed;
+            SeactWaterLs.Text = "";
+            TBoxSearchLs.Visibility = Visibility.Visible;
+            sortBoxLs.SelectedIndex = 0;
+
+            LessonDG.ItemsSource = myEntities.GetContext().Lessons.ToList();
         }
         private void UpdSc()
         {
@@ -981,6 +994,112 @@ namespace ProgrammEasy.WinUse.Admin
                     break;
             }
             ScoreDG.ItemsSource = ScSerch;
+        }
+
+        private void DataGridRow_MouseDoubleClick_7(object sender, MouseButtonEventArgs e)
+        {
+            var rowLs = (sender as DataGridRow).DataContext as Lessons;
+            addEdLesson adLs = new addEdLesson(rowLs);
+            adLs.Show();
+        }
+
+        private void AddBTLs_Click(object sender, RoutedEventArgs e)
+        {
+            addEdLesson adnewLs = new addEdLesson(null);
+            adnewLs.Show();
+        }
+
+        private void DelBTLs_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var selectedLs = LessonDG.SelectedItems.Cast<Lessons>().ToList();
+
+                if (selectedLs.Count == 0)
+                {
+                    MessageBox.Show("Пожалуйста, выберите урок для удаления.");
+                    return;
+                }
+
+                if (MessageBox.Show($"Вы действительно хотите удалить уроков: {selectedLs.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    foreach (var lessn in selectedLs)
+                    {
+                        if (CanDeleteLs(lessn.Id))
+                        {
+                            myEntities.GetContext().Lessons.Remove(lessn);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Урок '{lessn.Name}' не может быть удален, так как он используется в успеваемости.");
+                            return;
+                        }
+                    }
+
+                    myEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удаление прошло успешно.");
+                    UpdSc();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private bool CanDeleteLs(int ScId)
+        {
+            return !myEntities.GetContext().Results.Any(u => u.Lessons.Id == ScId);
+        }
+        private void TBoxSearchLs_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TBoxSearchLs.Visibility = Visibility.Collapsed;
+            SeactWaterLs.Visibility = Visibility.Visible;
+            SeactWaterLs.Focus();
+        }
+
+        private void SeactWaterLs_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(SeactWaterLs.Text))
+            {
+                SeactWaterLs.Visibility = Visibility.Collapsed;
+                TBoxSearchLs.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void SeactWaterLs_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Seach_FilterLs(SeactWaterLs.Text);
+        }
+
+        private void sortBoxLs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterLs(SeactWaterLs.Text);
+        }
+
+        private void BtnReloadLs_Click(object sender, RoutedEventArgs e)
+        {
+            UpdLs();
+        }
+        private void Seach_FilterLs(string search = "")
+        {
+            var LsSerch = myEntities.GetContext().Lessons.ToList();
+            if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
+            {
+                LsSerch = LsSerch.Where(s => s.Name.ToLower().Contains(search.ToLower())).ToList();
+            }
+
+            switch (sortBoxLs.SelectedIndex)
+            {
+                case 1:
+                    LsSerch = LsSerch.OrderBy(s => s.Name).ToList();
+                    break;
+                case 2:
+                    LsSerch = LsSerch.OrderByDescending(s => s.Name).ToList();
+                    break;
+                default:
+                    break;
+            }
+            LessonDG.ItemsSource = LsSerch;
         }
     }
 

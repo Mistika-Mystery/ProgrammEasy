@@ -20,8 +20,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="109*"/>
-            <RowDefinition Height="215*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <Grid Grid.Column="1">
@@ -657,11 +656,114 @@
                 </TabItem.Background>
                 <TabItem.Header>
                     <StackPanel Cursor="Hand" Orientation="Horizontal">
-                        <Image Source="/Recourse/days_icon.png" Height="30"/>
-                        <TextBlock Text="Успеваемость" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                        <Image Source="/Recourse/dlgedit_icon.png" Height="30"/>
+                        <TextBlock Text="Уроки" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
                 </TabItem.Header>
-                Содержимое вкладки 1
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="LessonDG" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Редактирование двойным нажатием">
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick"  Handler="DataGridRow_MouseDoubleClick_7"/>
+                            </Style>
+                        </DataGrid.Resources>
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="№" Width="*" Binding="{Binding Id}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Название урока" Width="2*" Binding="{Binding Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Пояснения" Width="2*" Binding="{Binding Description}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Изображение" Width="88">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image >
+                                            <Image.Source>
+                                                <Binding Path="Img">
+                                                    <Binding.TargetNullValue>
+                                                        <ImageSource>netu.png</ImageSource>
+                                                    </Binding.TargetNullValue>
+                                                </Binding>
+                                            </Image.Source>
+                                        </Image>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <Button x:Name="AddBTLs" Content="Создать" Grid.Row="1" FontSize="14" FontWeight="Bold" Cursor="Hand" Click="AddBTLs_Click"  HorizontalAlignment="Left" Width="130" Height="35" VerticalAlignment="Center">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0.507"/>
+                                <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                <GradientStop Color="White" Offset="0.409"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="DelBTLs" Content="Удалить" FontSize="14" Grid.Row="1" FontWeight="Bold" Cursor="Hand" Click="DelBTLs_Click"  HorizontalAlignment="Right" Width="130" Height="35" VerticalAlignment="Center">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0.507"/>
+                                <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                <GradientStop Color="White" Offset="0.409"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="Поиск:" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <TextBox x:Name="TBoxSearchLs" Height="21"  Text="Введите название" GotFocus="TBoxSearchLs_GotFocus"/>
+                        <TextBox x:Name="SeactWaterLs" Height="21" LostFocus="SeactWaterLs_LostFocus"  Visibility="Collapsed" TextChanged="SeactWaterLs_TextChanged" />
+                        <Label Height="5"/>
+                        <TextBlock Text="Сортировать по:" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <ComboBox x:Name="sortBoxLs" Cursor="Hand" SelectionChanged="sortBoxLs_SelectionChanged"  SelectedIndex="0" >
+                            <ComboBoxItem Content="Без сортировки"/>
+                            <ComboBoxItem Content="По названию, от А до Я"/>
+                            <ComboBoxItem Content="По названию, от Я до А"/>
+                        </ComboBox>
+
+                        <Label Height="15"/>
+                        <Button x:Name="BtnReloadLs" Content="Сбросить Фильтры" Cursor="Hand" FontWeight="Bold" FontSize="14" Height="35" Click="BtnReloadLs_Click">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                </Grid>
 
             </TabItem>
             <TabItem Height="40">
@@ -676,8 +778,8 @@
                 </TabItem.Background>
                 <TabItem.Header>
                     <StackPanel Cursor="Hand" Orientation="Horizontal">
-                        <Image Source="/Recourse/dlgedit_icon.png" Height="30"/>
-                        <TextBlock Text="Уроки" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                        <Image Source="/Recourse/days_icon.png" Height="30"/>
+                        <TextBlock Text="Успеваемость" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
                 </TabItem.Header>
                 Содержимое вкладки 1
