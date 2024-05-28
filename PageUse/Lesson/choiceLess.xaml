@@ -19,13 +19,17 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Width="120" Height="40" Background="{x:Null}" FontSize="16" FontWeight="Bold"/>
-        <StackPanel x:Name="DataTypeSP" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="DataTypeSP_MouseLeftButtonDown" Cursor="Help">
+        <StackPanel x:Name="DataTypeSP" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="DataTypeSP_MouseLeftButtonDown" Cursor="Hand">
             <Image Source="/Recourse/sImLslp.png" Width="150"/>
             <TextBlock Text="Типы данных" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
         </StackPanel>
-        <StackPanel x:Name="BlockSP" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="BlockSP_MouseLeftButtonDown"  Cursor="Help" Grid.Column="1">
+        <StackPanel x:Name="BlockSP" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="BlockSP_MouseLeftButtonDown"  Cursor="Hand" Grid.Column="1">
             <Image Source="/Recourse/shemablock.png" Width="170"/>
             <TextBlock Text="Блок схема" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
+        </StackPanel>
+        <StackPanel x:Name="arrySP" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="arrySP_MouseLeftButtonDown"  Cursor="Hand" Grid.Column="2">
+            <Image Source="/Recourse/arryImg.png" Width="190"/>
+            <TextBlock Text="Массивы" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
         </StackPanel>
     </Grid>
 </Page>

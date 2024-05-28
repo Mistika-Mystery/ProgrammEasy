@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse;
+using ProgrammEasy.WinUse.Student;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +29,21 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var logIn = new UserGlav();
+                logIn.Show();
 
+                Window window = Window.GetWindow(this);
+                if (window != null)
+                {
+                    window.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void DataTypeSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -36,6 +52,11 @@ namespace ProgrammEasy.PageUse.Lesson
         }
 
         private void BlockSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void arrySP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
         }
