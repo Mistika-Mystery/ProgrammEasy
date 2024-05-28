@@ -413,7 +413,9 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DataGridRow_MouseDoubleClick_2(object sender, MouseButtonEventArgs e)
         {
-            ///двойной щелчек пользователей
+            var rowUs = (sender as DataGridRow).DataContext as User;
+            addEdUser adUs = new addEdUser(rowUs);
+            adUs.Show();
         }
 
         private void DataGridRow_MouseDoubleClick_3(object sender, MouseButtonEventArgs e)
@@ -744,7 +746,8 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void AddBTUs_Click(object sender, RoutedEventArgs e)
         {
-
+            addEdUser adnewUs = new addEdUser(null);
+            adnewUs.Show();
         }
 
         private void DelBTUs_Click(object sender, RoutedEventArgs e)
