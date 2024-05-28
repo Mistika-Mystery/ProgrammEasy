@@ -117,6 +117,9 @@
     <Compile Include="PageUse\Lesson\TypeDatePG7.xaml.cs">
       <DependentUpon>TypeDatePG7.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\TypeDatePG8.xaml.cs">
+      <DependentUpon>TypeDatePG8.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\PageAdmin\GlavAdmin.xaml.cs">
       <DependentUpon>GlavAdmin.xaml</DependentUpon>
     </Compile>
@@ -282,6 +285,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\Lesson\TypeDatePG7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TypeDatePG8.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
