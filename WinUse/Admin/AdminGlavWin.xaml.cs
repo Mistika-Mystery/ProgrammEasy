@@ -213,6 +213,8 @@ namespace ProgrammEasy.WinUse.Admin
             ApdGR();
             ApdImg();
             UpdUs();
+            UpdSc();
+
 
         }
 
@@ -224,7 +226,18 @@ namespace ProgrammEasy.WinUse.Admin
             ApdGR();
             ApdImg();
             UpdUs();
+            UpdSc();
 
+
+        }
+        private void UpdSc()
+        {
+            SeactWaterSc.Visibility = Visibility.Collapsed;
+            SeactWaterSc.Text = "";
+            TBoxSearchSc.Visibility = Visibility.Visible;
+            sortBoxSc.SelectedIndex = 0;
+
+            ScoreDG.ItemsSource = myEntities.GetContext().ScoreImage.ToList();
         }
         private void UpdWin()
         {
@@ -865,12 +878,15 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DataGridRow_MouseDoubleClick_6(object sender, MouseButtonEventArgs e)
         {
-
+            var rowSc = (sender as DataGridRow).DataContext as ScoreImage;
+            addEdScore adSc = new addEdScore(rowSc);
+            adSc.Show();
         }
 
         private void AddBTSc_Click(object sender, RoutedEventArgs e)
         {
-
+            addEdScore adnewSc = new addEdScore(null);
+            adnewSc.Show();
         }
 
         private void DelBTSc_Click(object sender, RoutedEventArgs e)
@@ -880,27 +896,54 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void TBoxSearchSc_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            TBoxSearchSc.Visibility = Visibility.Collapsed;
+            SeactWaterSc.Visibility = Visibility.Visible;
+            SeactWaterSc.Focus();
         }
 
         private void SeactWaterSc_LostFocus(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(SeactWaterSc.Text))
+            {
+                SeactWaterSc.Visibility = Visibility.Collapsed;
+                TBoxSearchSc.Visibility = Visibility.Visible;
+            }
         }
 
         private void SeactWaterSc_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Seach_FilterSc(SeactWaterSc.Text);
         }
 
         private void sortBoxSc_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            Seach_FilterSc(SeactWaterSc.Text);
         }
 
         private void BtnReloadSc_Click(object sender, RoutedEventArgs e)
         {
+            UpdSc();
+        }
+        private void Seach_FilterSc(string search = "")
+        {
+            var ScSerch = myEntities.GetContext().ScoreImage.ToList();
+            if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
+            {
+                ScSerch = ScSerch.Where(s => s.Name.ToLower().Contains(search.ToLower())).ToList();
+            }
 
+            switch (sortBoxSc.SelectedIndex)
+            {
+                case 1:
+                    ScSerch = ScSerch.OrderBy(s => s.Name).ToList();
+                    break;
+                case 2:
+                    ScSerch = ScSerch.OrderByDescending(s => s.Name).ToList();
+                    break;
+                default:
+                    break;
+            }
+            ScoreDG.ItemsSource = ScSerch;
         }
     }
 

@@ -154,6 +154,9 @@
     <Compile Include="WinUse\Admin\addEdRole.xaml.cs">
       <DependentUpon>addEdRole.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\Admin\addEdScore.xaml.cs">
+      <DependentUpon>addEdScore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinUse\Admin\addEdStatus.xaml.cs">
       <DependentUpon>addEdStatus.xaml</DependentUpon>
     </Compile>
@@ -255,6 +258,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinUse\Admin\addEdRole.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\Admin\addEdScore.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
