@@ -37,6 +37,7 @@ namespace ProgrammEasy.WinUse.Admin
             });
             CBGroupe.ItemsSource = AllGroup;
             CBGroupeUs.ItemsSource = AllGroup;
+            CBGroupeResult.ItemsSource = AllGroup;
 
             var AllRole = myEntities.GetContext().RoleUser.ToList();
             AllRole.Insert(0, new RoleUser
@@ -46,14 +47,29 @@ namespace ProgrammEasy.WinUse.Admin
             var filteredRole = AllRole.Where(role => role.Name != "Гость").ToList();
             CBRole.ItemsSource = filteredRole;
             CBUs.ItemsSource = filteredRole;
+            CBRoleResult.ItemsSource = filteredRole;
 
             var AllStatus = myEntities.GetContext().Status.ToList();
             AllStatus.Insert(0, new Status
             {
                 Name = "Все статусы"
             });
-            CBStatus.ItemsSource = AllStatus;     
-            
+            CBStatus.ItemsSource = AllStatus;
+
+            var AllLesson = myEntities.GetContext().Lessons.ToList();
+            AllLesson.Insert(0, new Lessons
+            {
+                Name = "Все уроки"
+            });
+            CBLessonResult.ItemsSource = AllLesson;
+
+            var AllScore = myEntities.GetContext().ScoreImage.ToList();
+            AllScore.Insert(0, new ScoreImage
+            {
+                Name = "Все оценки"
+            });
+            CBScoreResult.ItemsSource = AllScore;
+
 
         }
 
@@ -215,6 +231,7 @@ namespace ProgrammEasy.WinUse.Admin
             UpdUs();
             UpdSc();
             UpdLs();
+            UpRes();
 
 
 
@@ -230,9 +247,23 @@ namespace ProgrammEasy.WinUse.Admin
             UpdUs();
             UpdSc();
             UpdLs();
+            UpRes();
 
 
 
+        }
+        private void UpRes()
+        {
+            SeactWaterResult.Visibility = Visibility.Collapsed;
+            SeactWaterResult.Text = "";
+            TBoxSearchResult.Visibility = Visibility.Visible;
+            sortBoxResult.SelectedIndex = 0;
+            CBGroupeResult.SelectedIndex = 0;
+            CBRoleResult.SelectedIndex = 0;
+            CBLessonResult.SelectedIndex = 0;
+            CBScoreResult.SelectedIndex = 0;
+
+            ReqDG.ItemsSource = myEntities.GetContext().Requests.ToList();
         }
         private void UpdLs()
         {
@@ -1100,6 +1131,135 @@ namespace ProgrammEasy.WinUse.Admin
                     break;
             }
             LessonDG.ItemsSource = LsSerch;
+        }
+
+        private void DataGridRow_MouseDoubleClick_8(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void AddBTResult_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelBTResult_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBoxSearchResult_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TBoxSearchResult.Visibility = Visibility.Collapsed;
+            SeactWaterResult.Visibility = Visibility.Visible;
+            SeactWaterResult.Focus();
+        }
+
+        private void SeactWaterResult_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(SeactWaterResult.Text))
+            {
+                SeactWaterResult.Visibility = Visibility.Collapsed;
+                TBoxSearchResult.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void SeactWaterResult_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Seach_FilterResult(SeactWaterResult.Text);
+        }
+
+        private void sortBoxResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterResult(SeactWaterResult.Text);
+        }
+
+        private void CBGroupeResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterResult(SeactWaterResult.Text);
+        }
+
+        private void CBRoleResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterResult(SeactWaterResult.Text);
+        }
+
+        private void CBLessonResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterResult(SeactWaterResult.Text);
+        }
+
+        private void BtnReloadResult_Click(object sender, RoutedEventArgs e)
+        {
+            UpRes();
+        }
+
+        private void CBScoreResult_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterResult(SeactWaterResult.Text);
+        }
+        private void Seach_FilterResult(string search = "")
+        {
+            var ResultSerch = myEntities.GetContext().Results.ToList();
+
+            if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
+            {
+                ResultSerch = ResultSerch.Where(s => s.User.Login.ToLower().Contains(search.ToLower())
+                || (s.User.FirstName ?? "").ToLower().Contains(search.ToLower())
+                || (s.User.LastName ?? "").ToLower().Contains(search.ToLower())).ToList();
+            }
+
+            switch (sortBoxResult.SelectedIndex)
+            {
+                case 1:
+                    ResultSerch = ResultSerch.OrderBy(s => s.User.Login).ToList();
+                    break;
+                case 2:
+                    ResultSerch = ResultSerch.OrderByDescending(s => s.User.Login).ToList();
+
+                    break;
+                case 3:
+                    ResultSerch = ResultSerch.OrderByDescending(s => s.Date).ToList();
+                    break;
+                case 4:
+                    ResultSerch = ResultSerch.OrderBy(s => s.Date).ToList();
+                    break;
+                default:
+                    break;
+            }
+
+            if (CBGroupeResult == null)
+            {
+                return;
+            }
+            if (CBGroupeResult.SelectedIndex != 0)
+            {
+                ResultSerch = ResultSerch.Where(s => s.User.GroupUser == CBGroupeResult.SelectedValue).ToList();
+            }
+
+            if (CBRoleResult.SelectedIndex > 0)
+            {
+                ResultSerch = ResultSerch.Where(s => s.User.RoleUser == CBRoleResult.SelectedValue).ToList();
+            }
+
+            if (CBLessonResult.SelectedIndex > 0)
+            {
+                ResultSerch = ResultSerch.Where(p => p.Lessons == CBLessonResult.SelectedValue).ToList();
+            }
+            if (CBScoreResult.SelectedIndex > 0)
+            {
+                ResultSerch = ResultSerch.Where(p => p.ScoreImage == CBScoreResult.SelectedValue).ToList();
+            }
+            if (ResultSerch.Count > 0)
+            {
+                labCoun.Content = ("Найдено: ") + ResultSerch.Count;
+            }
+            else if(ResultSerch.Count == 0)
+            {
+                labCoun.Content = ("Не найдено");
+            }
+
+            ResultDG.ItemsSource = ResultSerch;
         }
     }
 

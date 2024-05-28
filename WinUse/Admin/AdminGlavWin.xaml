@@ -782,7 +782,177 @@
                         <TextBlock Text="Успеваемость" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
                 </TabItem.Header>
-                Содержимое вкладки 1
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid x:Name="ResultDG" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Редактирование двойным нажатием">
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick"  Handler="DataGridRow_MouseDoubleClick_8"/>
+                            </Style>
+                        </DataGrid.Resources>
+
+
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="№" Width="0.6*" Binding="{Binding Id}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Логин" Width="*" Binding="{Binding User.Login}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Группа" Width="*" Binding="{Binding User.GroupUser.Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Роль" Width="*" Binding="{Binding User.RoleUser.Name}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="ФИ" Width="*" >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel >
+                                            <TextBlock Text="{Binding User.LastName}" Margin="0,0,5,0" />
+                                            <TextBlock Text="{Binding User.FirstName}" Margin="0,0,5,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Урок" Width="*" Binding="{Binding Lessons.Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дата прохождения" Width="*" Binding="{Binding Date}"></DataGridTextColumn>
+                            <DataGridTemplateColumn Header="Оценка" Width="50">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image >
+                                            <Image.Source>
+                                                <Binding Path="ScoreImage.Img">
+                                                    <Binding.TargetNullValue>
+                                                        <ImageSource>netu.png</ImageSource>
+                                                    </Binding.TargetNullValue>
+                                                </Binding>
+                                            </Image.Source>
+                                        </Image>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <Label x:Name="labCoun" Content=" " Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14"/>
+
+                    <Button x:Name="DelBTResult" Content="Удалить" FontSize="14" Grid.Row="1" FontWeight="Bold" Cursor="Hand" Height="35" Click="DelBTResult_Click"  HorizontalAlignment="Right" VerticalAlignment="Center" Width="130">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0.507"/>
+                                <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                <GradientStop Color="White" Offset="0.409"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="Поиск:" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <TextBox x:Name="TBoxSearchResult" Height="21"  Text="Введите имя\логин" GotFocus="TBoxSearchResult_GotFocus"/>
+                        <TextBox x:Name="SeactWaterResult" Height="21" LostFocus="SeactWaterResult_LostFocus"  Visibility="Collapsed" TextChanged="SeactWaterResult_TextChanged" />
+                        <Label Height="5"/>
+                        <TextBlock Text="Сортировать по:" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <ComboBox x:Name="sortBoxResult" Cursor="Hand" SelectionChanged="sortBoxResult_SelectionChanged"  SelectedIndex="0" >
+                            <ComboBoxItem Content="Без сортировки"/>
+                            <ComboBoxItem Content="По Логину, от A до Z"/>
+                            <ComboBoxItem Content="По Логину, от Z до A"/>
+                            <ComboBoxItem Content="По дате, вначале новее"/>
+                            <ComboBoxItem Content="По дате, вначале старые"/>
+                        </ComboBox>
+                        <Label Height="5"/>
+                        <TextBlock Text="Фильтр по группам:" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <ComboBox x:Name="CBGroupeResult" DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBGroupeResult_SelectionChanged"  SelectedIndex="0"/>
+                        <Label Height="5"/>
+
+                        <TextBlock Text="Фильтр по роли: " FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <ComboBox x:Name="CBRoleResult"  DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBRoleResult_SelectionChanged"  SelectedIndex="0">
+
+                        </ComboBox>
+                        <Label Height="5"/>
+
+                        <TextBlock Text="Фильтр по уроку: " FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <ComboBox x:Name="CBLessonResult" DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBLessonResult_SelectionChanged"  SelectedIndex="0">
+
+                        </ComboBox>
+                        <Label Height="5"/>
+                        <TextBlock Text="Фильтр по оценкам:" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <ComboBox x:Name="CBScoreResult" DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBScoreResult_SelectionChanged"  SelectedIndex="0"/>
+
+
+                        <Button x:Name="BtnReloadResult" Content="Сбросить Фильтры" Cursor="Hand" FontWeight="Bold" FontSize="14" Height="35" Click="BtnReloadResult_Click">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                    </StackPanel>
+
+                </Grid>
 
             </TabItem>
             <TabItem Height="40">
