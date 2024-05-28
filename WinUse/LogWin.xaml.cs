@@ -53,6 +53,12 @@ namespace ProgrammEasy.WinUse
                             mainAdmin.Show();
                             this.Close();
                             break;
+                        case 2:
+                            MessageBox.Show("Приветсвуем Вас, " + UserLog.FirstName + "!", "Вы вошли как учитель", MessageBoxButton.OK, MessageBoxImage.Information);
+                            var mainAdmin1 = new WinUse.Admin.AdminGlavWin();
+                            mainAdmin1.Show();
+                            this.Close();
+                            break;
                         case 3:
                             MessageBox.Show("Привет, " + UserLog.FirstName + "!", "Вы вошли как ученик", MessageBoxButton.OK, MessageBoxImage.Information);
                             var mainWin = new MainWinUse();

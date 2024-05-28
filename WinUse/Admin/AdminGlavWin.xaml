@@ -32,7 +32,7 @@
             <Image Source="/Recourse/ProgLogoNew.png" Height="101" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown" ToolTip="Перейти на главную"/>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
                 <TextBlock Text="Панель" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-                <TextBlock Text="Администратора" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="32" FontWeight="Bold"/>
+                <TextBlock x:Name="LabRolTB" Text="Администратора" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="32" FontWeight="Bold"/>
             </StackPanel>
             <Image x:Name="ExitBT" Grid.Column="2" Source="/Recourse/exit_icon.png" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="60" Margin="0,0,20,15" Cursor="Hand" MouseLeftButtonDown="ExitBT_MouseLeftButtonDown" ToolTip="Сменить пользователя"/>
 
@@ -401,7 +401,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Height="40" >
+            <TabItem Height="40" x:Name="AdminRole">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -523,7 +523,7 @@
                 </Grid>
             </TabItem>
 
-            <TabItem Height="40" >
+            <TabItem Height="40" x:Name="AdminGroup">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -955,7 +955,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Height="40">
+            <TabItem Height="40" x:Name="AdminImg">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -1077,7 +1077,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Height="40">
+            <TabItem Height="40" x:Name="AdminScore">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -1198,8 +1198,8 @@
                     </StackPanel>
                 </Grid>
 
-            </TabItem>
-            <TabItem Height="40">
+            </TabItem >
+            <TabItem Height="40" x:Name="AdminStatus">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>

@@ -29,6 +29,23 @@ namespace ProgrammEasy.WinUse.Admin
             InitializeComponent();
             _statusService = new StatusService(new myEntities());
 
+            if (RegFlag.IdRol != 1)
+            {
+                DelBT.Visibility = Visibility.Collapsed;
+                DelBTGR.Visibility = Visibility.Collapsed;
+                DelBTImg.Visibility = Visibility.Collapsed;
+                DelBTLs.Visibility = Visibility.Collapsed;
+                DelBTResult.Visibility = Visibility.Collapsed;
+                DelBTRL.Visibility = Visibility.Collapsed;
+                DelBTSc.Visibility = Visibility.Collapsed;
+                DelBTSt.Visibility = Visibility.Collapsed;
+                DelBTUs.Visibility = Visibility.Collapsed;
+                LabRolTB.Text = "Учителя";
+                AdminStatus.Visibility = Visibility.Collapsed;
+                AdminScore.Visibility = Visibility.Collapsed;
+                AdminImg.Visibility = Visibility.Collapsed;               
+                AdminRole.Visibility = Visibility.Collapsed;
+            }
 
             var AllGroup = myEntities.GetContext().GroupUser.ToList();
             AllGroup.Insert(0, new GroupUser
@@ -1135,17 +1152,26 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DataGridRow_MouseDoubleClick_8(object sender, MouseButtonEventArgs e)
         {
-
+            /// тут надо просмотр результатов
         }
 
-        private void AddBTResult_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void DelBTResult_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var delRes = ResultDG.SelectedItems.Cast<Results>().ToList();
 
+                if (MessageBox.Show($"Вы дейстиветльно хотите удалить записей результатов: {delRes.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+
+                {
+                    myEntities.GetContext().Results.RemoveRange(delRes);
+                    myEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удаление прошло успешно");
+                    UpdUs();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void TBoxSearchResult_GotFocus(object sender, RoutedEventArgs e)
