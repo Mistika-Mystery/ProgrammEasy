@@ -36,6 +36,7 @@ namespace ProgrammEasy.WinUse.Admin
                 Name = "Все группы"
             });
             CBGroupe.ItemsSource = AllGroup;
+            CBGroupeUs.ItemsSource = AllGroup;
 
             var AllRole = myEntities.GetContext().RoleUser.ToList();
             AllRole.Insert(0, new RoleUser
@@ -44,6 +45,7 @@ namespace ProgrammEasy.WinUse.Admin
             });
             var filteredRole = AllRole.Where(role => role.Name != "Гость").ToList();
             CBRole.ItemsSource = filteredRole;
+            CBUs.ItemsSource = filteredRole;
 
             var AllStatus = myEntities.GetContext().Status.ToList();
             AllStatus.Insert(0, new Status
@@ -52,8 +54,7 @@ namespace ProgrammEasy.WinUse.Admin
             });
             CBStatus.ItemsSource = AllStatus;     
             
-            
-            UserDG.ItemsSource = myEntities.GetContext().User.ToList(); ///kjaXLJGalxv
+
         }
 
         private void ExitBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -207,6 +208,8 @@ namespace ProgrammEasy.WinUse.Admin
             ApdRL();
             ApdGR();
             ApdImg();
+            UpdUs();
+
         }
 
         private void AdminWin_Activated(object sender, EventArgs e)
@@ -216,6 +219,8 @@ namespace ProgrammEasy.WinUse.Admin
             ApdRL();
             ApdGR();
             ApdImg();
+            UpdUs();
+
         }
         private void UpdWin()
         {
@@ -228,6 +233,17 @@ namespace ProgrammEasy.WinUse.Admin
             CBStatus.SelectedIndex = 0;
 
             ReqDG.ItemsSource = myEntities.GetContext().Requests.ToList();
+        }
+        private void UpdUs()
+        {
+            SeactWaterUs.Visibility = Visibility.Collapsed;
+            SeactWaterUs.Text = "";
+            TBoxSearchUs.Visibility = Visibility.Visible;
+            sortBoxUs.SelectedIndex = 0;
+            CBGroupeUs.SelectedIndex = 0;
+            CBUs.SelectedIndex = 0;
+
+            UserDG.ItemsSource = myEntities.GetContext().User.ToList();
         }
         private void ApdSt()
         {
@@ -726,5 +742,107 @@ namespace ProgrammEasy.WinUse.Admin
             ImgDG.ItemsSource = ImgSerch;
         }
 
+        private void AddBTUs_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelBTUs_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBoxSearchUs_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TBoxSearchUs.Visibility = Visibility.Collapsed;
+            SeactWaterUs.Visibility = Visibility.Visible;
+            SeactWaterUs.Focus();
+        }
+
+        private void SeactWaterUs_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(SeactWaterUs.Text))
+            {
+                SeactWaterUs.Visibility = Visibility.Collapsed;
+                TBoxSearchUs.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void SeactWaterUs_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Seach_FilterUs(SeactWaterUs.Text);
+        }
+
+        private void sortBoxUs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterUs(SeactWaterUs.Text);
+
+        }
+
+        private void CBGroupeUs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterUs(SeactWaterUs.Text);
+
+        }
+
+        private void CBUs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_FilterUs(SeactWaterUs.Text);
+
+        }
+
+        private void BtnReloadUs_Click(object sender, RoutedEventArgs e)
+        {
+            UpdUs();
+        }
+        private void Seach_FilterUs(string search = "")
+        {
+            var UsSerch = myEntities.GetContext().User.ToList();
+
+            if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
+            {
+                UsSerch = UsSerch.Where(s => s.Login.ToLower().Contains(search.ToLower())
+                || (s.FirstName ?? "").ToLower().Contains(search.ToLower())
+                || (s.LastName ?? "").ToLower().Contains(search.ToLower())).ToList();
+            }
+
+            switch (sortBoxUs.SelectedIndex)
+            {
+                case 1:
+                    UsSerch = UsSerch.OrderBy(s => s.Login).ToList();
+                    break;
+                case 2:
+                    UsSerch = UsSerch.OrderByDescending(s => s.Login).ToList();
+
+                    break;
+                case 3:
+                    UsSerch = UsSerch.OrderByDescending(s => s.DateOfReg).ToList();
+                    break;
+                case 4:
+                    UsSerch = UsSerch.OrderBy(s => s.DateOfReg).ToList();
+                    break;
+                default:
+                    break;
+            }
+
+            if (CBGroupeUs == null)
+            {
+                return;
+            }
+            if (CBGroupeUs.SelectedIndex != 0)
+            {
+                UsSerch = UsSerch.Where(s => s.GroupUser == CBGroupeUs.SelectedValue).ToList();
+            }
+
+            if (CBUs.SelectedIndex > 0)
+            {
+                UsSerch = UsSerch.Where(s => s.RoleUser == CBUs.SelectedValue).ToList();
+            }
+
+
+            UserDG.ItemsSource = UsSerch;
+        }
     }
+
+    
 }

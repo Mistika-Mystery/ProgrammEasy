@@ -77,7 +77,7 @@
 
 
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="№" Width="*" Binding="{Binding Id}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="№" Width="0.6*" Binding="{Binding Id}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Логин" Width="*" Binding="{Binding User.Login}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Группа" Width="*" Binding="{Binding User.GroupUser.Name}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Роль" Width="*" Binding="{Binding User.RoleUser.Name}"></DataGridTextColumn>
@@ -266,7 +266,7 @@
 
 
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="№" Width="*" Binding="{Binding Id}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="№" Width="0.6*" Binding="{Binding Id}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Логин" Width="*" Binding="{Binding Login}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Группа" Width="*" Binding="{Binding GroupUser.Name}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Роль" Width="*" Binding="{Binding RoleUser.Name}"></DataGridTextColumn>
@@ -300,7 +300,104 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
+                    <Button x:Name="AddBTUs" Content="Создать" Grid.Row="1" FontSize="14" FontWeight="Bold" Cursor="Hand" Click="AddBTUs_Click"  HorizontalAlignment="Left" Width="130" Height="35" VerticalAlignment="Center">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0.507"/>
+                                <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                <GradientStop Color="White" Offset="0.409"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button x:Name="DelBTUs" Content="Удалить" FontSize="14" Grid.Row="1" FontWeight="Bold" Cursor="Hand" Height="35" Click="DelBTUs_Click"  HorizontalAlignment="Right" VerticalAlignment="Center" Width="130">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0.507"/>
+                                <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                <GradientStop Color="White" Offset="0.409"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
 
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="Поиск:" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <TextBox x:Name="TBoxSearchUs" Height="21"  Text="Введите имя\логин" GotFocus="TBoxSearchUs_GotFocus"/>
+                        <TextBox x:Name="SeactWaterUs" Height="21" LostFocus="SeactWaterUs_LostFocus"  Visibility="Collapsed" TextChanged="SeactWaterUs_TextChanged" />
+                        <Label Height="5"/>
+                        <TextBlock Text="Сортировать по:" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <ComboBox x:Name="sortBoxUs" Cursor="Hand" SelectionChanged="sortBoxUs_SelectionChanged"  SelectedIndex="0" >
+                            <ComboBoxItem Content="Без сортировки"/>
+                            <ComboBoxItem Content="По Логину, от A до Z"/>
+                            <ComboBoxItem Content="По Логину, от Z до A"/>
+                            <ComboBoxItem Content="По дате, вначале новее"/>
+                            <ComboBoxItem Content="По дате, вначале старые"/>
+                        </ComboBox>
+                        <Label Height="5"/>
+                        <TextBlock Text="Фильтр по группам:" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <ComboBox x:Name="CBGroupeUs" DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBGroupeUs_SelectionChanged"  SelectedIndex="0"/>
+                        <Label Height="5"/>
+
+                        <TextBlock Text="Фильтр по роли: " FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <ComboBox x:Name="CBUs"  DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBUs_SelectionChanged"  SelectedIndex="0">
+
+                        </ComboBox>
+                        <Label Height="5"/>
+                        <Label Height="15"/>
+
+
+                        <Button x:Name="BtnReloadUs" Content="Сбросить Фильтры" Cursor="Hand" FontWeight="Bold" FontSize="14" Height="35" Click="BtnReloadUs_Click">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                    </StackPanel>
 
                 </Grid>
 
