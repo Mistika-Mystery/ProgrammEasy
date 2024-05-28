@@ -47,7 +47,7 @@ namespace ProgrammEasy.PageUse
                 _user.IdRole = 3;
                 _user.IdGroup = 1;
                 _user.DateOfReg = DateTime.Now;
-                _user.FotoImg = 1;
+                _user.FotoImg = 4;
 
                 myEntities.GetContext().User.Add( _user );
                 myEntities.GetContext().SaveChanges();
