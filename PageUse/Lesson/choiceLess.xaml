@@ -18,7 +18,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Width="120" Height="40" Background="{x:Null}" FontSize="16" FontWeight="Bold"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold"/>
         <StackPanel x:Name="DataTypeSP" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="DataTypeSP_MouseLeftButtonDown" Cursor="Hand">
             <Image Source="/Recourse/sImLslp.png" Width="150"/>
             <TextBlock Text="Типы данных" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>

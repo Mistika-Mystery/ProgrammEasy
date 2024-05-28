@@ -48,7 +48,7 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void DataTypeSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            NavigationService.Navigate(new TypeDatePG());
         }
 
         private void BlockSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
