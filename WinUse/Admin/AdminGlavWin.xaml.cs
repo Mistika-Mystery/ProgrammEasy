@@ -891,7 +891,44 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DelBTSc_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var selectedSc = ScoreDG.SelectedItems.Cast<ScoreImage>().ToList();
 
+                if (selectedSc.Count == 0)
+                {
+                    MessageBox.Show("Пожалуйста, выберите оценку для удаления.");
+                    return;
+                }
+
+                if (MessageBox.Show($"Вы действительно хотите удалить оценок: {selectedSc.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    foreach (var score in selectedSc)
+                    {
+                        if (CanDeleteSc(score.Id))
+                        {
+                            myEntities.GetContext().ScoreImage.Remove(score);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Оценка '{score.Name}' не может быть удалена, так как она используется в успеваемости.");
+                            return;
+                        }
+                    }
+
+                    myEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удаление прошло успешно.");
+                    UpdSc();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private bool CanDeleteSc(int ScId)
+        {
+            return !myEntities.GetContext().Results.Any(u => u.ScoreImage.Id == ScId);
         }
 
         private void TBoxSearchSc_GotFocus(object sender, RoutedEventArgs e)

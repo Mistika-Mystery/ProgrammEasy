@@ -839,7 +839,7 @@
 
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="*" Binding="{Binding Id}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Название роли" Width="2*" Binding="{Binding Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Название оценки" Width="2*" Binding="{Binding Name}"></DataGridTextColumn>
 
                             <DataGridTemplateColumn Header="Изображение" Width="88">
                                 <DataGridTemplateColumn.CellTemplate>
