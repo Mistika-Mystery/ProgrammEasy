@@ -89,7 +89,11 @@ namespace ProgrammEasy.WinUse.Admin
             try
             {
                 var delReq = ReqDG.SelectedItems.Cast<Requests>().ToList();
-
+                if (delReq.Any(x => x.IdStatus != 1008))
+                {
+                    MessageBox.Show("Нельзя удалять НЕ завершенные заявки");
+                    return;
+                }
                 if (MessageBox.Show($"Вы дейстиветльно хотите удалить заявок: {delReq.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
 
                 {

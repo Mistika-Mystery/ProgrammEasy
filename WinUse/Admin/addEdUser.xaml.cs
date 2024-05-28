@@ -134,5 +134,20 @@ namespace ProgrammEasy.WinUse.Admin
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
+        private void CBImg_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                if (_user.ImgFoto != null && _user.ImgFoto.ImgLev != null && _user.ImgFoto.ImgLev.Length > 0)
+                {
+                    ImgUs.Source = new ImageSourceConverter().ConvertFrom(_user.ImgFoto.ImgLev) as ImageSource;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
     }
 }

@@ -62,7 +62,7 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
             <TextBlock Text="Изображение: " />
-            <ComboBox x:Name="CBImg" SelectedItem="{Binding ImgFoto}" DisplayMemberPath="Name" Width="150" FontSize="14"/>
+            <ComboBox x:Name="CBImg" SelectedItem="{Binding ImgFoto}" SelectionChanged="CBImg_SelectionChanged" DisplayMemberPath="Name" Width="150" FontSize="14"/>
         </StackPanel>
 
         <Image x:Name="ImgUs" Source="{Binding Path=ImgFoto.ImgLev}" Grid.Column="1" Grid.Row="4" MaxWidth="400" Grid.RowSpan="3" MaxHeight="300"/>
