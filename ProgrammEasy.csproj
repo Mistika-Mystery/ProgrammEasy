@@ -93,6 +93,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\choiceLess.xaml.cs">
+      <DependentUpon>choiceLess.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\PageAdmin\GlavAdmin.xaml.cs">
       <DependentUpon>GlavAdmin.xaml</DependentUpon>
     </Compile>
@@ -211,6 +214,9 @@
     <Compile Include="WinUse\ReqNew.xaml.cs">
       <DependentUpon>ReqNew.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\Student\LessonWin.xaml.cs">
+      <DependentUpon>LessonWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinUse\Student\UserGlav.xaml.cs">
       <DependentUpon>UserGlav.xaml</DependentUpon>
     </Compile>
@@ -226,6 +232,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PageUse\Lesson\choiceLess.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageUse\PageAdmin\GlavAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -343,6 +353,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinUse\ReqNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\Student\LessonWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -477,6 +491,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\shemablock.png" />
+    <Resource Include="Recourse\sImLslp.png" />
     <Resource Include="Recourse\userNo.png" />
     <Resource Include="Recourse\userOk.png" />
     <Resource Include="Recourse\test.png" />

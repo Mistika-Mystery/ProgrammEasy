@@ -22,6 +22,7 @@ namespace ProgrammEasy.WinUse.Student
         public UserGlav()
         {
             InitializeComponent();
+            NameUser.Text = RegFlag.UserLogin;
         }
 
         private void ResultSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -31,7 +32,9 @@ namespace ProgrammEasy.WinUse.Student
 
         private void LessonSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            var less = new LessonWin();
+            less.Show();
+            this.Close();
         }
 
         private void TestSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
