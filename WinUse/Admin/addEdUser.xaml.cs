@@ -35,17 +35,30 @@ namespace ProgrammEasy.WinUse.Admin
             CBImg.ItemsSource = myEntities.GetContext().ImgFoto.ToList();
 
 
-            if (_user.ImgFoto.ImgLev != null) ImgUs.Source = new ImageSourceConverter().ConvertFrom(_user.ImgFoto.ImgLev) as ImageSource;///pjijijj
+            if (_user.ImgFoto.ImgLev != null) ImgUs.Source = new ImageSourceConverter().ConvertFrom(_user.ImgFoto.ImgLev) as ImageSource;
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
+            "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                myEntities.GetContext().SaveChanges();
+                MessageBox.Show("Запись изменена!");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }

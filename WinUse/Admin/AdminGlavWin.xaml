@@ -286,7 +286,7 @@
                                     <DataTemplate>
                                         <Image >
                                             <Image.Source>
-                                                <Binding Path="ImgLev">
+                                                <Binding Path="ImgFoto.ImgLev">
                                                     <Binding.TargetNullValue>
                                                         <ImageSource>netu.png</ImageSource>
                                                     </Binding.TargetNullValue>
