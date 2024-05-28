@@ -620,9 +620,9 @@
 
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="№" Width="*" Binding="{Binding Id}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Название роли" Width="2*" Binding="{Binding Name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Название изображения" Width="2*" Binding="{Binding Name}"></DataGridTextColumn>
 
-                            <DataGridTemplateColumn Header="Изображение" Width="100">
+                            <DataGridTemplateColumn Header="Изображение" Width="90">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Image >
