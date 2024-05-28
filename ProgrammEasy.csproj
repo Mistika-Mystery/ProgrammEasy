@@ -99,6 +99,18 @@
     <Compile Include="PageUse\Lesson\TypeDatePG.xaml.cs">
       <DependentUpon>TypeDatePG.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\TypeDatePG2.xaml.cs">
+      <DependentUpon>TypeDatePG2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TypeDatePG3.xaml.cs">
+      <DependentUpon>TypeDatePG3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TypeDatePG4.xaml.cs">
+      <DependentUpon>TypeDatePG4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TypeDatePG5.xaml.cs">
+      <DependentUpon>TypeDatePG5.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\PageAdmin\GlavAdmin.xaml.cs">
       <DependentUpon>GlavAdmin.xaml</DependentUpon>
     </Compile>
@@ -240,6 +252,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\Lesson\TypeDatePG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TypeDatePG2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TypeDatePG3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TypeDatePG4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TypeDatePG5.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -498,6 +526,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\cat.png" />
     <Resource Include="Recourse\arryImg.png" />
     <Resource Include="Recourse\shemablock.png" />
     <Resource Include="Recourse\sImLslp.png" />
