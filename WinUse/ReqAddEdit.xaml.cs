@@ -32,6 +32,8 @@ namespace ProgrammEasy.WinUse
             DataContext = _req;
             CBStatus.ItemsSource = myEntities.GetContext().Status.ToList();
             if (_req.Foto != null) ImgOshib.Source = new ImageSourceConverter().ConvertFrom(_req.Foto) as ImageSource;
+            bool CanEdit = RegFlag.IdRol == 1;
+            CBStatus.IsEnabled = CanEdit;
         }
 
         private void SaveBTN_Click(object sender, RoutedEventArgs e)

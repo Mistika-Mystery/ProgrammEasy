@@ -45,6 +45,7 @@ namespace ProgrammEasy.WinUse.Admin
                 AdminScore.Visibility = Visibility.Collapsed;
                 AdminImg.Visibility = Visibility.Collapsed;               
                 AdminRole.Visibility = Visibility.Collapsed;
+                AddBTUs.Visibility = Visibility.Collapsed;
             }
 
             var AllGroup = myEntities.GetContext().GroupUser.ToList();

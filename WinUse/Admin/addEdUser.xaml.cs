@@ -36,13 +36,24 @@ namespace ProgrammEasy.WinUse.Admin
             if (user != null)
             {
                 _user = user;
+                bool CanEdit = RegFlag.IdRol == 1 || RegFlag.IdUser == _user.Id;
+                NameTB.IsEnabled = CanEdit;
+                SurnameTB.IsEnabled = CanEdit;
+                LoginTB.IsEnabled = CanEdit;
+                PassTB.IsEnabled = CanEdit;
+                CBRole.IsEnabled = CanEdit;
+                CBImg.IsEnabled = CanEdit;
+                bool CanEditGR = RegFlag.IdRol == 1 || (RegFlag.IdRol == 2 && _user.IdRole == 3);
+                CBGroup.IsEnabled = CanEditGR;
+
             }
             DataContext = _user;
             CBGroup.ItemsSource = myEntities.GetContext().GroupUser.ToList();
             CBRole.ItemsSource = myEntities.GetContext().RoleUser.ToList();
             CBImg.ItemsSource = myEntities.GetContext().ImgFoto.ToList();
             TbDate.Text = DateTime.Now.ToString();
-  
+
+
             if (_user.ImgFoto != null && _user.ImgFoto.ImgLev != null && _user.ImgFoto.ImgLev.Length > 0)
             {
                 ImgUs.Source = new ImageSourceConverter().ConvertFrom(_user.ImgFoto.ImgLev) as ImageSource;
