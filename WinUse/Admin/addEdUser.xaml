@@ -38,19 +38,19 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Фамилия: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Text="{Binding LastName}" FontWeight="Bold" FontSize="14" Width="150"/>
+            <TextBox x:Name="SurnameTB" Text="{Binding LastName}" FontWeight="Bold" FontSize="14" Width="150" MaxLength="50"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Имя: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Text="{Binding FirstName}" Margin="5,0,0,0" FontWeight="Bold" FontSize="14" Width="150"/>
+            <TextBox x:Name="NameTB"  Text="{Binding FirstName}" Margin="5,0,0,0" FontWeight="Bold" FontSize="14" Width="150" MaxLength="50"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Login: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Text="{Binding Login}" Margin="5,0,0,0" FontWeight="Bold" FontSize="14" Width="150"/>
+            <TextBox x:Name="LoginTB" Text="{Binding Login}" Margin="5,0,0,0" FontWeight="Bold" FontSize="14" Width="150" MaxLength="50"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Password: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Text="{Binding Pass1}" Margin="5,0,0,0" FontWeight="Bold" FontSize="14" Width="150"/>
+            <TextBox x:Name="PassTB" Text="{Binding Pass1}" Margin="5,0,0,0" FontWeight="Bold" FontSize="14" Width="150" MaxLength="50"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
             <TextBlock Text="Роль Пользователя: "/>

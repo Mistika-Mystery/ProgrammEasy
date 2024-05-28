@@ -752,7 +752,20 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DelBTUs_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var delUs = UserDG.SelectedItems.Cast<User>().ToList();
 
+                if (MessageBox.Show($"Вы дейстиветльно хотите удалить пользователей: {delUs.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+
+                {
+                    myEntities.GetContext().User.RemoveRange(delUs);
+                    myEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удаление прошло успешно");
+                    UpdUs();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void TBoxSearchUs_GotFocus(object sender, RoutedEventArgs e)

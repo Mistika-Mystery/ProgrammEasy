@@ -29,7 +29,7 @@ namespace ProgrammEasy
         public string Pass1 { get; set; }
         public System.DateTime DateOfReg { get; set; }
         public string Login { get; set; }
-        public int FotoImg { get; set; }
+        public Nullable<int> FotoImg { get; set; }
     
         public virtual GroupUser GroupUser { get; set; }
         public virtual ImgFoto ImgFoto { get; set; }
