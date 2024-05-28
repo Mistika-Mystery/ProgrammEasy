@@ -477,6 +477,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\userNo.png" />
+    <Resource Include="Recourse\userOk.png" />
     <Resource Include="Recourse\test.png" />
     <Resource Include="Recourse\lesson.png" />
     <Resource Include="Recourse\kubok.png" />

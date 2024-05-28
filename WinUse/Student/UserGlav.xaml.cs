@@ -38,5 +38,15 @@ namespace ProgrammEasy.WinUse.Student
         {
 
         }
+
+        private void InfoUsSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

@@ -24,8 +24,8 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image Source="/Recourse/ProgLogoNew.png"/>
-        <StackPanel Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,20,0">
+        <Image Source="/Recourse/ProgLogoNew.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="150,0,0,0">
             <TextBlock Text="Программирование" FontSize="40" FontWeight="Bold" Foreground="#FF5C5B5B" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Text=" это просто!" FontSize="40" FontWeight="Bold" Foreground="#FF5C5B5B" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
@@ -44,7 +44,14 @@
             <Image Source="/Recourse/test.png" Width="230" />
             <TextBlock Text="Проверим?" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
         </StackPanel>
+        <StackPanel x:Name="InfoUsSP" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="30,0,0,15" Orientation="Horizontal" MouseLeftButtonDown="InfoUsSP_MouseLeftButtonDown" Cursor="Hand" ToolTip="Перейти в личный кабинет">
+            <Image Source="/Recourse/userOk.png" Width="60" />
+            <TextBlock Text="Alina88" x:Name="NameUser" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="36" FontFamily="Comic Sans MS" Margin="10,0,0,0"/>
+        </StackPanel>
 
+        <StackPanel x:Name="ExitUsSP" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,30,15" Orientation="Horizontal" Grid.Column="2" ToolTip="Сменить пользователя">
+            <Image Source="/Recourse/changeUser.png" Width="70" MouseLeftButtonDown="Image_MouseLeftButtonDown" Cursor="Hand" />
+        </StackPanel>
 
     </Grid>
 </Window>
