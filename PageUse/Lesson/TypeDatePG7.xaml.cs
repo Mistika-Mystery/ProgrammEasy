@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace ProgrammEasy.PageUse.Lesson
 {
     /// <summary>
-    /// Логика взаимодействия для TypeDatePG5.xaml
+    /// Логика взаимодействия для TypeDatePG7.xaml
     /// </summary>
-    public partial class TypeDatePG5 : Page
+    public partial class TypeDatePG7 : Page
     {
-        public TypeDatePG5()
+        public TypeDatePG7()
         {
             InitializeComponent();
-        }
-
-        private void BakcBT_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new TypeDatePG4());
-        }
-
-        private void NextBT_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new TypeDatePG6());
         }
     }
 }

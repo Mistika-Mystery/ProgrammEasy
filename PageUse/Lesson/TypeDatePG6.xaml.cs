@@ -16,23 +16,25 @@ using System.Windows.Shapes;
 namespace ProgrammEasy.PageUse.Lesson
 {
     /// <summary>
-    /// Логика взаимодействия для TypeDatePG4.xaml
+    /// Логика взаимодействия для TypeDatePG6.xaml
     /// </summary>
-    public partial class TypeDatePG4 : Page
+    public partial class TypeDatePG6 : Page
     {
-        public TypeDatePG4()
+        public TypeDatePG6()
         {
             InitializeComponent();
         }
 
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new TypeDatePG3());
+            NavigationService.Navigate(new TypeDatePG5());
+
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new TypeDatePG5());
+            NavigationService.Navigate(new TypeDatePG7());
+
         }
 
         private void CheckBT_Click(object sender, RoutedEventArgs e)
@@ -53,22 +55,24 @@ namespace ProgrammEasy.PageUse.Lesson
 
                 if (Check2.IsChecked == true)
                 {
+                    chOk2.Visibility = Visibility.Visible;                    
+                    
+                }
+                else
+                {
                     chNo2.Visibility = Visibility.Visible;
                     allCorrect = false;
                 }
-                else
-                {
-                    chOk2.Visibility = Visibility.Visible;
-                }
 
                 if (Check3.IsChecked == true)
-                {
-                    chOk3.Visibility = Visibility.Visible;
+                {                    
+                    chNo3.Visibility = Visibility.Visible;
+                    allCorrect = false;
                 }
                 else
                 {
-                    chNo3.Visibility = Visibility.Visible;
-                    allCorrect = false;
+                    chOk3.Visibility = Visibility.Visible;
+
                 }
 
                 if (allCorrect)
@@ -97,4 +101,5 @@ namespace ProgrammEasy.PageUse.Lesson
             }
         }
     }
+    
 }
