@@ -102,7 +102,8 @@ namespace ProgrammEasy.WinUse.Admin
                         return;
                     }
                     else
-                    {
+                    { 
+
                         _user.DateOfReg = DateTime.Now;
                         myEntities.GetContext().User.Add(_user);
                         myEntities.GetContext().SaveChanges();
@@ -123,6 +124,7 @@ namespace ProgrammEasy.WinUse.Admin
                     }
                     else
                     {
+
                         myEntities.GetContext().SaveChanges();
                         MessageBox.Show("Изменения сохранены!");
                         this.Close();
