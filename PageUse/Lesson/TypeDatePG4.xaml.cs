@@ -34,5 +34,67 @@ namespace ProgrammEasy.PageUse.Lesson
         {
             NavigationService.Navigate(new TypeDatePG5());
         }
+
+        private void CheckBT_Click(object sender, RoutedEventArgs e)
+        {
+            if (CheckBT.Content.ToString() == "Проверить")
+            {
+                bool allCorrect = true;
+
+                if (Check1.IsChecked == true)
+                {
+                    chOk1.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    chNo1.Visibility = Visibility.Visible;
+                    allCorrect = false;
+                }
+
+                if (Check2.IsChecked == true)
+                {
+                    chNo2.Visibility = Visibility.Visible;
+                    allCorrect = false;
+                }
+                else
+                {
+                    chOk2.Visibility = Visibility.Visible;
+                }
+
+                if (Check3.IsChecked == true)
+                {
+                    chOk3.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    chNo3.Visibility = Visibility.Visible;
+                    allCorrect = false;
+                }
+
+                if (allCorrect)
+                {
+                    NextBT.IsEnabled = true;
+                    CheckBT.Content = "Проверить";
+                }
+                else
+                {
+                    CheckBT.Content = "Попробовать еще раз";
+                }
+            }
+            else
+            {
+                chNo1.Visibility = Visibility.Hidden;
+                chNo2.Visibility = Visibility.Hidden;
+                chNo3.Visibility = Visibility.Hidden;
+                chOk1.Visibility = Visibility.Hidden;
+                chOk2.Visibility = Visibility.Hidden;
+                chOk3.Visibility = Visibility.Hidden;
+
+                CheckBT.Content = "Проверить";
+                Check1.IsChecked = false;
+                Check2.IsChecked = false;
+                Check3.IsChecked = false;
+            }
+        }
     }
 }

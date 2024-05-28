@@ -526,6 +526,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\NOcheck.png" />
+    <Resource Include="Recourse\Checkimg.png" />
+    <Resource Include="Recourse\cold.png" />
+    <Resource Include="Recourse\hleb.png" />
+    <Resource Include="Recourse\dog.png" />
     <Resource Include="Recourse\cat.png" />
     <Resource Include="Recourse\arryImg.png" />
     <Resource Include="Recourse\shemablock.png" />
