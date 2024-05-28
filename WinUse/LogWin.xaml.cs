@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse.Student;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,8 +62,8 @@ namespace ProgrammEasy.WinUse
                             break;
                         case 3:
                             MessageBox.Show("Привет, " + UserLog.FirstName + "!", "Вы вошли как ученик", MessageBoxButton.OK, MessageBoxImage.Information);
-                            var mainWin = new MainWinUse();
-                            mainWin.Show();
+                            var userWin = new UserGlav();
+                            userWin.Show();
                             this.Close();
                             break;
                         default: MessageBox.Show("Не обнужерен", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning); break;

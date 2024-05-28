@@ -211,6 +211,9 @@
     <Compile Include="WinUse\ReqNew.xaml.cs">
       <DependentUpon>ReqNew.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\Student\UserGlav.xaml.cs">
+      <DependentUpon>UserGlav.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -343,6 +346,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WinUse\Student\UserGlav.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -455,9 +462,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WinUse\Student\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="WinUse\Admin\netu.png" />
   </ItemGroup>
@@ -472,6 +477,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\kubok.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
