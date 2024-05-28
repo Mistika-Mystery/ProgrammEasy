@@ -23,5 +23,20 @@ namespace ProgrammEasy.WinUse.Student
         {
             InitializeComponent();
         }
+
+        private void ResultSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void LessonSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void TestSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

@@ -29,11 +29,22 @@
             <TextBlock Text="Программирование" FontSize="40" FontWeight="Bold" Foreground="#FF5C5B5B" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Text=" это просто!" FontSize="40" FontWeight="Bold" Foreground="#FF5C5B5B" FontFamily="Comic Sans MS" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Image Source="/Recourse/kubok.png" Width="200" />
-            <TextBlock Text="Мои Достижения" HorizontalAlignment="Center"/>
-        </StackPanel>
         
+        <StackPanel Grid.Row="1" x:Name="ResultSP" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="ResultSP_MouseLeftButtonDown">
+            <Image Source="/Recourse/kubok.png" Width="200" />
+            <TextBlock Text="Мои Достижения" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" x:Name="LessonSP" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="LessonSP_MouseLeftButtonDown" Grid.Column="1">
+            <Image Source="/Recourse/lesson.png" Width="200" />
+            <TextBlock Text="Ученье - свет!" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" x:Name="TestSP" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="TestSP_MouseLeftButtonDown"  Grid.Column="2">
+            <Image Source="/Recourse/test.png" Width="230" />
+            <TextBlock Text="Проверим?" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
+        </StackPanel>
+
 
     </Grid>
 </Window>
