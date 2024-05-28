@@ -842,6 +842,46 @@ namespace ProgrammEasy.WinUse.Admin
 
             UserDG.ItemsSource = UsSerch;
         }
+
+        private void DataGridRow_MouseDoubleClick_6(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void AddBTSc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DelBTSc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBoxSearchSc_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SeactWaterSc_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SeactWaterSc_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void sortBoxSc_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void BtnReloadSc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
     
