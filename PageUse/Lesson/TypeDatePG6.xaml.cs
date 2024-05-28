@@ -28,7 +28,6 @@ namespace ProgrammEasy.PageUse.Lesson
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new TypeDatePG5());
-
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
