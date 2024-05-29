@@ -90,7 +90,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Header="Дата заявки" Width="*" Binding="{Binding Date}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дата заявки" Width="*" Binding="{Binding Date, StringFormat={}{0:dd.MM.yyyy HH:mm}}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Описание" Width="*" Binding="{Binding Description}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Статус" Width="*" Binding="{Binding Status.Name}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Изображение" Width="40">
@@ -279,7 +279,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Header="Дата Регистрации" Width="*" Binding="{Binding DateOfReg}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дата Регистрации" Width="*" Binding="{Binding DateOfReg, StringFormat={}{0:dd.MM.yyyy HH:mm}}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Изображение" Width="40">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -817,7 +817,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
                             <DataGridTextColumn Header="Урок" Width="*" Binding="{Binding Lessons.Name}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Дата прохождения" Width="*" Binding="{Binding Date}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Дата прохождения" Width="*" Binding="{Binding Date, StringFormat={}{0:dd.MM.yyyy HH:mm}}"></DataGridTextColumn>
                             <DataGridTemplateColumn Header="Оценка" Width="50">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -862,10 +862,10 @@
                                     <GradientStop Color="White" Offset="0.409"/>
                                 </LinearGradientBrush>
                             </TextBlock.Background></TextBlock>
-                        <TextBox x:Name="TBoxSearchResult" Height="21"  Text="Введите имя\логин" GotFocus="TBoxSearchResult_GotFocus"/>
+                        <TextBox x:Name="TBoxSearchResult" Height="21"  Text="Введите имя\логин\дату" GotFocus="TBoxSearchResult_GotFocus"/>
                         <TextBox x:Name="SeactWaterResult" Height="21" LostFocus="SeactWaterResult_LostFocus"  Visibility="Collapsed" TextChanged="SeactWaterResult_TextChanged" />
                         <Label Height="5"/>
-                        <TextBlock Text="Сортировать по:" FontWeight="Bold">
+                            <TextBlock Text="Сортировать по:" FontWeight="Bold">
                             <TextBlock.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="White" Offset="0.507"/>

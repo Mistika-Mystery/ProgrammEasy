@@ -1233,7 +1233,8 @@ namespace ProgrammEasy.WinUse.Admin
             {
                 ResultSerch = ResultSerch.Where(s => s.User.Login.ToLower().Contains(search.ToLower())
                 || (s.User.FirstName ?? "").ToLower().Contains(search.ToLower())
-                || (s.User.LastName ?? "").ToLower().Contains(search.ToLower())).ToList();
+                || (s.User.LastName ?? "").ToLower().Contains(search.ToLower())
+                || (s.Date.ToString("dd.MM.yyyy").Contains(search))).ToList();
             }
 
             switch (sortBoxResult.SelectedIndex)

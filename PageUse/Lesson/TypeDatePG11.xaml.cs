@@ -32,7 +32,10 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
+
+            ///hiuooug
             NavigationService.Navigate(new choiceLess());
+
         }
     }
 }
