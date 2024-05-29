@@ -28,7 +28,7 @@
         </Grid.ColumnDefinitions>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3"/>
-        <TextBlock Text="Действия изображаются прямоугольниками" TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="28" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="Еще один базовый элемент блок-схемы: решение." TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="28" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
         <TextBlock Text="В нутри треугольника кратко описывают действие." TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
         <Image Source="/Recourse/blok2.png" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3"/>
 
