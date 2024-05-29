@@ -23,16 +23,21 @@ namespace ProgrammEasy.PageUse.Lesson
         public BlockDiagramPG()
         {
             InitializeComponent();
+            RegFlag.LessonId = 2;
         }
 
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
-
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
+"Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                NavigationService.Navigate(new choiceLess());
+            }
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new BlockDiagramPG2());
         }
     }
 }
