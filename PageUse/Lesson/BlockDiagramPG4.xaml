@@ -28,10 +28,10 @@
         </Grid.ColumnDefinitions>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3"/>
-        <TextBlock Text="Действия изображаются прямоугольниками" TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="28" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
-        <TextBlock Text="И обязательно кратко описывают необходимое действие." TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
-        <TextBlock Text="Поэтому у любой сблок схемы есть &quot;начало&quot; и &quot;останов&quot;." TextWrapping="Wrap" Grid.Row="2" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
-        <TextBlock Text="Они изображатся в виде овала." TextWrapping="Wrap" Grid.Row="3" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
-        <Image Source="/Recourse/blok1.png" Grid.RowSpan="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Действия изображаются прямоугольниками" TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="28" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="В нутри треугольника кратко описывают действие." TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <Image Source="/Recourse/blok2.png" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3"/>
+
+        <TextBlock Text="Это при обязательных элемента блок-схемы." TextWrapping="Wrap" Grid.Row="3" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
     </Grid>
 </Page>

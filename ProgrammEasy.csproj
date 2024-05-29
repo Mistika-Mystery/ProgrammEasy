@@ -596,6 +596,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\blok2.png" />
     <Resource Include="Recourse\blok1.png" />
     <Resource Include="Recourse\glass of_milk_icon.png" />
     <Resource Include="Recourse\glass.png" />
