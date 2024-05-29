@@ -41,47 +41,58 @@ namespace ProgrammEasy.PageUse.Lesson
             if (CheckBT.Content.ToString() == "Проверить")
             {
                 bool allCorrect = true;
+                int correctAnswers = 0;
+                int notCorrectAnswers = 0;
 
                 if (Check1.IsChecked == true)
                 {
                     chOk1.Visibility = Visibility.Visible;
+                    correctAnswers++;
                 }
                 else
                 {
-                   
                     allCorrect = false;
                 }
 
                 if (Check2.IsChecked == true)
                 {
-                    chOk2.Visibility = Visibility.Visible;                    
-                    
+                    chOk2.Visibility = Visibility.Visible;
+                    correctAnswers++;
+
                 }
                 else
                 {
-                    
                     allCorrect = false;
                 }
 
                 if (Check3.IsChecked == true)
-                {                    
+                {
                     chNo3.Visibility = Visibility.Visible;
                     allCorrect = false;
+                    notCorrectAnswers++;
                 }
-                else
+                
+
+                if (correctAnswers == 0 && notCorrectAnswers == 0)
                 {
-                    
-
+                    HelpLB.Content = "Выберите варианты ответа";
+                    CheckBT.Content = "Попробовать еще раз";
                 }
-
-                if (allCorrect)
+                else if (correctAnswers == 2 && allCorrect)
                 {
                     NextBT.IsEnabled = true;
                     CheckBT.Content = "Молодец!";
+                    HelpLB.Content = "";
+                }
+                else if (correctAnswers > 0 && correctAnswers < 2 && !allCorrect)
+                {
+                    CheckBT.Content = "Попробовать еще раз";
+                    HelpLB.Content = "Нужно отметить ВСЕ верные значения";
                 }
                 else
                 {
                     CheckBT.Content = "Попробовать еще раз";
+                    HelpLB.Content = "";
                 }
             }
             else
@@ -97,8 +108,8 @@ namespace ProgrammEasy.PageUse.Lesson
                 Check1.IsChecked = false;
                 Check2.IsChecked = false;
                 Check3.IsChecked = false;
+                HelpLB.Content = "";
             }
         }
     }
-    
 }
