@@ -53,7 +53,7 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void BlockSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            NavigationService.Navigate(new BlockDiagramPG());
         }
 
         private void arrySP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
