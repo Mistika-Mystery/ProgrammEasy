@@ -99,6 +99,12 @@
     <Compile Include="PageUse\Lesson\TypeDatePG.xaml.cs">
       <DependentUpon>TypeDatePG.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\TypeDatePG10.xaml.cs">
+      <DependentUpon>TypeDatePG10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TypeDatePG11.xaml.cs">
+      <DependentUpon>TypeDatePG11.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\TypeDatePG2.xaml.cs">
       <DependentUpon>TypeDatePG2.xaml</DependentUpon>
     </Compile>
@@ -264,6 +270,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\Lesson\TypeDatePG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TypeDatePG10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TypeDatePG11.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -554,6 +568,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\molodecst.png" />
+    <Resource Include="Recourse\katus.png" />
+    <Resource Include="Recourse\sun.png" />
     <Resource Include="Recourse\stolb.png" />
     <Resource Include="Recourse\aple.png" />
     <Resource Include="Recourse\milk1.png" />

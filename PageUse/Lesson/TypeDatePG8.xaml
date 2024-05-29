@@ -40,7 +40,7 @@
             <CheckBox x:Name="Check2" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="string a = &quot;Дорога на лево ведёт в Лугу&quot;;  " FontFamily="Comic Sans MS" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock Text="string a = &quot;Дорога на право ведёт в Лугу&quot;;  " FontFamily="Comic Sans MS" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
             <CheckBox x:Name="Check3" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
         <Image x:Name="chOk1" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" Height="70" Visibility="Hidden" />
