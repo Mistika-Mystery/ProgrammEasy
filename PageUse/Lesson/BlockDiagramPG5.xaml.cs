@@ -16,23 +16,23 @@ using System.Windows.Shapes;
 namespace ProgrammEasy.PageUse.Lesson
 {
     /// <summary>
-    /// Логика взаимодействия для BlockDiagramPG4.xaml
+    /// Логика взаимодействия для BlockDiagramPG5.xaml
     /// </summary>
-    public partial class BlockDiagramPG4 : Page
+    public partial class BlockDiagramPG5 : Page
     {
-        public BlockDiagramPG4()
+        public BlockDiagramPG5()
         {
             InitializeComponent();
         }
 
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new BlockDiagramPG3());
+            NavigationService.Navigate(new BlockDiagramPG4());
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new BlockDiagramPG5());
+
         }
     }
 }

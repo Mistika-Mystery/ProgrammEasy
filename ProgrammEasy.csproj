@@ -105,6 +105,9 @@
     <Compile Include="PageUse\Lesson\BlockDiagramPG4.xaml.cs">
       <DependentUpon>BlockDiagramPG4.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\BlockDiagramPG5.xaml.cs">
+      <DependentUpon>BlockDiagramPG5.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\choiceLess.xaml.cs">
       <DependentUpon>choiceLess.xaml</DependentUpon>
     </Compile>
@@ -290,6 +293,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\Lesson\BlockDiagramPG4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\BlockDiagramPG5.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
