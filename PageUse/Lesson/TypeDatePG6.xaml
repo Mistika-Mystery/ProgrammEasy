@@ -49,6 +49,7 @@
         <Image x:Name="chOk3" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" Height="100" Visibility="Hidden" />
         <Image x:Name="chNo3" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" Height="90" Visibility="Hidden" />
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="CheckBT" Click="CheckBT_Click"  Content="Проверить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Width="200" Height="50" Background="#FFBEFF76" FontSize="16" FontWeight="Bold" Grid.Column="2"/>
+        <Label x:Name="HelpLB" Content="" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="#FFAA1515" FontSize="20" Grid.ColumnSpan="3" />
 
 
     </Grid>

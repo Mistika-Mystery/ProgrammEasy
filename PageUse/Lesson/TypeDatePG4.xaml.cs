@@ -41,6 +41,7 @@ namespace ProgrammEasy.PageUse.Lesson
             {
                 bool allCorrect = true;
                 int correctAnswers = 0;
+                int notCorrectAnswers = 0;
 
                 if (Check1.IsChecked == true)
                 {
@@ -56,6 +57,7 @@ namespace ProgrammEasy.PageUse.Lesson
                 {
                     chNo2.Visibility = Visibility.Visible;
                     allCorrect = false;
+                    notCorrectAnswers++;
                 }
 
                 if (Check3.IsChecked == true)
@@ -68,7 +70,12 @@ namespace ProgrammEasy.PageUse.Lesson
                     allCorrect = false;
                 }
 
-                if (correctAnswers == 2 && allCorrect)
+                if (correctAnswers == 0 && notCorrectAnswers == 0)
+                {
+                    HelpLB.Content = "Выберите варианты ответа";
+                    CheckBT.Content = "Попробовать еще раз";
+                }
+                else if (correctAnswers == 2 && allCorrect)
                 {
                     NextBT.IsEnabled = true;
                     CheckBT.Content = "Молодец!";

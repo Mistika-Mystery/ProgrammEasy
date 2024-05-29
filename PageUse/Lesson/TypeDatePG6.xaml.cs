@@ -48,7 +48,7 @@ namespace ProgrammEasy.PageUse.Lesson
                 }
                 else
                 {
-                    chNo1.Visibility = Visibility.Visible;
+                   
                     allCorrect = false;
                 }
 
@@ -59,7 +59,7 @@ namespace ProgrammEasy.PageUse.Lesson
                 }
                 else
                 {
-                    chNo2.Visibility = Visibility.Visible;
+                    
                     allCorrect = false;
                 }
 
@@ -70,7 +70,7 @@ namespace ProgrammEasy.PageUse.Lesson
                 }
                 else
                 {
-                    chOk3.Visibility = Visibility.Visible;
+                    
 
                 }
 
