@@ -23,6 +23,7 @@ namespace ProgrammEasy.PageUse.Lesson
         public TypeDatePG()
         {
             InitializeComponent();
+            RegFlag.LessonId = 1;
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)

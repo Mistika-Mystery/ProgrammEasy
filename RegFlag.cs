@@ -28,5 +28,7 @@ namespace ProgrammEasy
         public static string UserLastName;
         public static string RoleName;
 
+        public static int LessonId;
+
     }
 }

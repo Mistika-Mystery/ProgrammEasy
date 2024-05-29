@@ -49,8 +49,8 @@
             <TextBlock Text="Alina88" x:Name="NameUser" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="36" FontFamily="Comic Sans MS" Margin="10,0,0,0"/>
         </StackPanel>
 
-        <StackPanel x:Name="ExitUsSP" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,30,15" Orientation="Horizontal" Grid.Column="2" ToolTip="Сменить пользователя">
-            <Image Source="/Recourse/changeUser.png" Width="70" MouseLeftButtonDown="Image_MouseLeftButtonDown" Cursor="Hand" />
+        <StackPanel x:Name="ExitUsSP" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,30,15" Orientation="Horizontal" Grid.Column="2" ToolTip="Сменить пользователя" MouseLeftButtonDown="ExitUsSP_MouseLeftButtonDown">
+            <Image Source="/Recourse/changeUser.png" Width="70" Cursor="Hand" />
         </StackPanel>
 
     </Grid>

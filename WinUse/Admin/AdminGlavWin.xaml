@@ -1116,7 +1116,7 @@
                             <DataGridTemplateColumn Header="Изображение" Width="88">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Image >
+                                        <Image Height="50">
                                             <Image.Source>
                                                 <Binding Path="Img">
                                                     <Binding.TargetNullValue>

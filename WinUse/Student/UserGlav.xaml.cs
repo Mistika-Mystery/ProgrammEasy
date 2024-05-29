@@ -47,9 +47,11 @@ namespace ProgrammEasy.WinUse.Student
 
         }
 
-        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void ExitUsSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            var glavWin = new MainWindow();
+            glavWin.Show();
+            this.Close();
         }
     }
 }

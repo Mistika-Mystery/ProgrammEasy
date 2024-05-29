@@ -20,9 +20,11 @@ namespace ProgrammEasy.PageUse.Lesson
     /// </summary>
     public partial class TypeDatePG11 : Page
     {
+        private Results results = new Results();
         public TypeDatePG11()
         {
             InitializeComponent();
+            DataContext = results;
         }
 
         private void BakcBT_Click(object sender, RoutedEventArgs e)
@@ -32,10 +34,23 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                results.IdUser = RegFlag.IdUser;
+                results.IdLesson = RegFlag.LessonId;
+                results.Date = DateTime.Now;
+                results.ScoreImg = 1005;
 
-            ///hiuooug
-            NavigationService.Navigate(new choiceLess());
+                myEntities.GetContext().Results.Add(results);
+                myEntities.GetContext().SaveChanges();
 
+                NavigationService.Navigate(new choiceLess());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }
