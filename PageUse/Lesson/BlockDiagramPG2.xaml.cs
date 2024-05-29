@@ -24,5 +24,15 @@ namespace ProgrammEasy.PageUse.Lesson
         {
             InitializeComponent();
         }
+
+        private void BakcBT_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BlockDiagramPG());
+        }
+
+        private void NextBT_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -9,6 +9,33 @@
       Title="BlockDiagramPG2">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+
+
+        </Grid.ColumnDefinitions>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3"/>
+        <TextBlock Text="Например, нам нужно налить стакан молока." FontFamily="Comic Sans MS" FontSize="28" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="Шаг первый: взять стакан." TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="Шаг второй: взять молоко." TextWrapping="Wrap" Grid.Row="2" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="Шаг третий: налить молоко в стакан." TextWrapping="Wrap" Grid.Row="3" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="Готово!" TextWrapping="Wrap" Grid.Row="4" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <Image Source="/Recourse/moo.png" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="140"/>
+        <Image Source="/Recourse/glass.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90"/>
+        <Image Source="/Recourse/glass of_milk_icon.png" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="90"/>
+
     </Grid>
 </Page>

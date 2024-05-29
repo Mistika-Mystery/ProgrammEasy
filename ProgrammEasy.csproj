@@ -582,6 +582,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\glass of_milk_icon.png" />
+    <Resource Include="Recourse\glass.png" />
+    <Resource Include="Recourse\moo.png" />
     <Resource Include="Recourse\molodecst.png" />
     <Resource Include="Recourse\katus.png" />
     <Resource Include="Recourse\sun.png" />
