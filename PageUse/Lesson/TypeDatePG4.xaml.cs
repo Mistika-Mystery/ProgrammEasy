@@ -81,7 +81,7 @@ namespace ProgrammEasy.PageUse.Lesson
                     CheckBT.Content = "Молодец!";
                     HelpLB.Content = "";
                 }
-                else if (correctAnswers > 0 && correctAnswers < 2 && !allCorrect)
+                else if (correctAnswers ==1 && notCorrectAnswers==0)
                 {
                     CheckBT.Content = "Попробовать еще раз";
                     HelpLB.Content = "Нужно отметить ВСЕ верные значения";
@@ -92,6 +92,8 @@ namespace ProgrammEasy.PageUse.Lesson
                     HelpLB.Content = "";
                 }
             }
+            else if (CheckBT.Content.ToString() == "Молодец!")
+            {}
             else
             {
                 chNo1.Visibility = Visibility.Hidden;
