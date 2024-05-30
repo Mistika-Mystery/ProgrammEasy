@@ -126,33 +126,26 @@ namespace ProgrammEasy.PageUse.Lesson
                     // Пользователь расставил картинки верно
                     CheckBT.Content = "Молодец!";
                     NextBT.IsEnabled = true;
+                    ImgOk.Visibility = Visibility.Visible;
                 }
                 else
                 {
                     // Пользователь расставил картинки неверно
                     //ResetImages();
                     CheckBT.Content = "Попробовать еще раз";
+                    ImgNo.Visibility = Visibility.Visible;
                 }
             }
             else if (CheckBT.Content.ToString() == "Попробовать еще раз")
-            {
-                
+            {                
                 ResetImages();
+                ImgOk.Visibility= Visibility.Hidden;
+                ImgNo.Visibility= Visibility.Hidden;
             }
 
         }
         private void ResetImages()
         {
-            Console.WriteLine("Resetting images...");
-            Console.WriteLine($"Initial position of img01: {img01.Tag}");
-            Console.WriteLine($"Initial position of img02: {img02.Tag}");
-            Console.WriteLine($"Initial position of img03: {img03.Tag}");
-            Console.WriteLine($"Initial position of img04: {img04.Tag}");
-            Console.WriteLine($"Initial position of img05: {img05.Tag}");
-            Console.WriteLine($"Initial position of img06: {img06.Tag}");
-            Console.WriteLine($"Initial position of img07: {img07.Tag}");
-            Console.WriteLine($"Initial position of img08: {img08.Tag}");
-
             // Возвращаем изображения на исходные позиции в разметке грида
             SetImagePosition(img01, (Point)img01.Tag);
             SetImagePosition(img02, (Point)img02.Tag);
