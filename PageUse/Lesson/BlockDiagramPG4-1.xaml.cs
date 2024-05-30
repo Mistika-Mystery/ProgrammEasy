@@ -33,13 +33,13 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new BlockDiagramPG5());
+            NavigationService.Navigate(new BlockDiagramPG4());
 
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-            // Навигация дальше
+            NavigationService.Navigate(new BlockDiagramPG5());
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

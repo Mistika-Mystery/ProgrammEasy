@@ -32,7 +32,7 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new BlockDiagramPG5());
+            NavigationService.Navigate(new BlockDiagramPG4_1());
         }
     }
 }
