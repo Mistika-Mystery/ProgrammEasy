@@ -47,7 +47,19 @@ namespace ProgrammEasy.PageUse.Lesson
             isDragging = true;
             Image image = sender as Image;
             clickPosition = e.GetPosition(this);
-            currentTransform = (TranslateTransform)image.RenderTransform;
+            // Если текущая трансформация еще не установлена, создаем новую
+            if (image.RenderTransform == Transform.Identity)
+            {
+                currentTransform = new TranslateTransform();
+                image.RenderTransform = currentTransform;
+            }
+            else
+            {
+                currentTransform = (TranslateTransform)image.RenderTransform;
+            }
+
+
+
             image.CaptureMouse();
         }
 
@@ -158,8 +170,16 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void SetImagePosition(Image image, Point position)
         {
+            // Устанавливаем позиции в сетке
             Grid.SetColumn(image, (int)position.X);
             Grid.SetRow(image, (int)position.Y);
+
+            // Сбрасываем трансформацию изображения
+            if (image.RenderTransform is TranslateTransform transform)
+            {
+                transform.X = 0;
+                transform.Y = 0;
+            }
         }
     }
 }
