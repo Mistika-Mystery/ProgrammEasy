@@ -111,6 +111,15 @@
     <Compile Include="PageUse\Lesson\BlockDiagramPG5.xaml.cs">
       <DependentUpon>BlockDiagramPG5.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\BlockDiagramPG6.xaml.cs">
+      <DependentUpon>BlockDiagramPG6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\BlockDiagramPG7.xaml.cs">
+      <DependentUpon>BlockDiagramPG7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\BlockDiagramPG8.xaml.cs">
+      <DependentUpon>BlockDiagramPG8.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\choiceLess.xaml.cs">
       <DependentUpon>choiceLess.xaml</DependentUpon>
     </Compile>
@@ -304,6 +313,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\Lesson\BlockDiagramPG5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\BlockDiagramPG6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\BlockDiagramPG7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\BlockDiagramPG8.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -610,6 +631,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\11.png" />
+    <Resource Include="Recourse\Thinking-Transparent-Images-PNG.png" />
+    <Resource Include="Recourse\10.png" />
     <Resource Include="Recourse\09.png" />
     <Resource Include="Recourse\01.png" />
     <Resource Include="Recourse\02.png" />
