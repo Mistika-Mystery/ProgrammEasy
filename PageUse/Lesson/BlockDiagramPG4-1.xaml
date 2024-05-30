@@ -37,6 +37,8 @@
         <Border x:Name="Target4" BorderBrush="Black" BorderThickness="2" Grid.Row="5" Grid.Column="1" AllowDrop="True"/>
         <Border x:Name="Target5" BorderBrush="Black" BorderThickness="2" Grid.Row="6" Grid.Column="1" AllowDrop="True"/>
 
+        
+        
         <Image x:Name="img01" Grid.Row="5" Grid.Column="3" Source="/Recourse/01.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp">
             <Image.RenderTransform>
                 <TranslateTransform x:Name="img01Transform"/>
@@ -77,5 +79,7 @@
                 <TranslateTransform x:Name="img08Transform"/>
             </Image.RenderTransform>
         </Image>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="CheckBT" Click="CheckBT_Click"  Content="Проверить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="200" Height="50" Background="#FFBEFF76" FontSize="16" FontWeight="Bold" Grid.Column="2"/>
+
     </Grid>
 </Page>
