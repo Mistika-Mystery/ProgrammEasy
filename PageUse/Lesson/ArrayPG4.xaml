@@ -7,8 +7,26 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ArrayPG4">
-
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+
+        </Grid.ColumnDefinitions>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3"/>
+        <TextBlock Text="У каждого элемента в массиве есть свой номер, который называется индексом. " TextWrapping="Wrap" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="Индексы всегда начинаются с нуля. Количество элементов в массиве называют - длиной массива." TextWrapping="Wrap" Grid.Row="3" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <Image Grid.Row="1" Grid.Column="1" Source="/Recourse/massiv.png" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
     </Grid>
 </Page>

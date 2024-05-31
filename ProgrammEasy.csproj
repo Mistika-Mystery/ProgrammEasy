@@ -694,6 +694,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\massiv.png" />
+    <Resource Include="Recourse\fg5.png" />
     <Resource Include="Recourse\mix.png" />
     <Resource Include="Recourse\Clothing-PNG-Pic.png" />
     <Resource Include="Recourse\catkorob.png" />
