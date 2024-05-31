@@ -20,9 +20,169 @@ namespace ProgrammEasy.PageUse.Lesson
     /// </summary>
     public partial class BlockDiagramPG12 : Page
     {
+        private bool isDragging = false;
+        private Point clickPosition;
+        private TranslateTransform currentTransform;
         public BlockDiagramPG12()
         {
             InitializeComponent();
+            SaveInitialPositions();
+        }
+
+        private void SaveInitialPositions()
+        {
+            Text01.Tag = new Point(Grid.GetColumn(Text01), Grid.GetRow(Text01));
+            Text02.Tag = new Point(Grid.GetColumn(Text02), Grid.GetRow(Text02));
+            Text03.Tag = new Point(Grid.GetColumn(Text03), Grid.GetRow(Text03));
+            Text04.Tag = new Point(Grid.GetColumn(Text04), Grid.GetRow(Text04));
+            Text05.Tag = new Point(Grid.GetColumn(Text05), Grid.GetRow(Text05));
+            Text06.Tag = new Point(Grid.GetColumn(Text06), Grid.GetRow(Text06));
+            Text07.Tag = new Point(Grid.GetColumn(Text07), Grid.GetRow(Text07));
+            Text08.Tag = new Point(Grid.GetColumn(Text08), Grid.GetRow(Text08));
+        }
+
+        private void BakcBT_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BlockDiagramPG4());
+
+        }
+
+        private void NextBT_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BlockDiagramPG5());
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            isDragging = true;
+            //Image image = sender as Image; /////
+            TextBlock textBlock = sender as TextBlock;
+            clickPosition = e.GetPosition(this);
+            // Если текущая трансформация еще не установлена, создаем новую
+            if (textBlock.RenderTransform == Transform.Identity)
+            {
+                currentTransform = new TranslateTransform();
+                textBlock.RenderTransform = currentTransform;
+            }
+            else
+            {
+                currentTransform = (TranslateTransform)textBlock.RenderTransform;
+            }
+
+            textBlock.CaptureMouse();
+        }
+
+        private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            isDragging = false;
+            //Image image = sender as Image;
+            TextBlock textBlock = sender as TextBlock;
+            textBlock.ReleaseMouseCapture();
+
+            // Сохраняем текущие позиции изображения в Tag
+            Point currentPosition = new Point(Grid.GetColumn(textBlock), Grid.GetRow(textBlock));
+            textBlock.Tag = currentPosition;
+        }
+
+        private void Image_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging)
+            {
+                //Image image = sender as Image;
+                TextBlock textBlock = sender as TextBlock;
+                Point currentPosition = e.GetPosition(this);
+                double offsetX = currentPosition.X - clickPosition.X;
+                double offsetY = currentPosition.Y - clickPosition.Y;
+
+                currentTransform.X += offsetX;
+                currentTransform.Y += offsetY;
+
+                clickPosition = currentPosition;
+            }
+        }
+
+        private bool CheckIfAllTargetsCorrect()
+        {
+            // Логика проверки
+            bool isCorrect = IsInTarget(Text01, Target1) &&
+                             IsInTarget(Text02, Target2) &&
+                             IsInTarget(Text03, Target3) &&
+                             IsInTarget(Text04, Target4);
+            return isCorrect;
+
+
+        }
+
+        private bool IsInTarget(TextBlock text, Border target)
+        {
+            var imgBounds = text.TransformToAncestor(this).TransformBounds(new Rect(0, 0, text.ActualWidth, text.ActualHeight));
+            var targetBounds = target.TransformToAncestor(this).TransformBounds(new Rect(0, 0, target.ActualWidth, target.ActualHeight));
+
+            // Увеличение границ целевой области
+            const double margin = 20; // например, на 20 пикселей с каждой стороны
+            var extendedTargetBounds = new Rect(targetBounds.X - margin, targetBounds.Y - margin,
+                                                targetBounds.Width + 2 * margin, targetBounds.Height + 2 * margin);
+
+            return imgBounds.IntersectsWith(extendedTargetBounds);
+        }
+
+        private void CheckBT_Click(object sender, RoutedEventArgs e)
+        {
+            if (CheckBT.Content.ToString() == "Проверить")
+            {
+
+                if (CheckIfAllTargetsCorrect())
+                {
+                    // Пользователь расставил картинки верно
+                    CheckBT.Content = "Молодец!";
+                    NextBT.IsEnabled = true;
+                    ImgOk.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    // Пользователь расставил картинки неверно
+                    //ResetImages();
+                    CheckBT.Content = "Попробовать еще раз";
+                    ImgNo.Visibility = Visibility.Visible;
+                }
+            }
+            else if (CheckBT.Content.ToString() == "Попробовать еще раз")
+            {
+                ResetImages();
+                ImgOk.Visibility = Visibility.Hidden;
+                ImgNo.Visibility = Visibility.Hidden;
+            }
+
+        }
+        private void ResetImages()
+        {
+            // Возвращаем изображения на исходные позиции в разметке грида
+            SetImagePosition(Text01, (Point)Text01.Tag);
+            SetImagePosition(Text02, (Point)Text02.Tag);
+            SetImagePosition(Text03, (Point)Text03.Tag);
+            SetImagePosition(Text04, (Point)Text04.Tag);
+            SetImagePosition(Text05, (Point)Text05.Tag);
+            SetImagePosition(Text06, (Point)Text06.Tag);
+            SetImagePosition(Text07, (Point)Text07.Tag);
+            SetImagePosition(Text08, (Point)Text08.Tag);
+
+            // Возвращаем контент кнопки на "Проверить"
+            CheckBT.Content = "Проверить";
+        }
+
+
+        private void SetImagePosition(TextBlock text, Point position)
+        {
+            // Устанавливаем позиции в сетке
+            Grid.SetColumn(text, (int)position.X);
+            Grid.SetRow(text, (int)position.Y);
+
+            // Сбрасываем трансформацию изображения
+            if (text.RenderTransform is TranslateTransform transform)
+            {
+                transform.X = 0;
+                transform.Y = 0;
+            }
         }
     }
 }

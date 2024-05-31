@@ -9,6 +9,88 @@
       Title="BlockDiagramPG12">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/Recourse/001Terminator.png" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"/>
+        <Image Source="/Recourse/002Proces.png" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"/>
+        <Image Source="/Recourse/003Vvod.png" Grid.Row="2" Grid.Column="3" Grid.RowSpan="2"/>
+        <Image Source="/Recourse/004Reshenie.png" Grid.Row="2" Grid.Column="4" Grid.RowSpan="2"/>
+
+
+
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click" Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="4" IsEnabled="False"/>
+        <TextBlock Text="Мы изучили 4 базовых блока блок-схемы" TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="26" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="Помнишь их названия?" TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="24" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.RowSpan="2"/>
+        <TextBlock Text="Перетащи названия блоков правильно" TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="24" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+
+        <Border x:Name="Target1" BorderBrush="#FF74FF7E" BorderThickness="1" Grid.Row="2" Grid.Column="1" AllowDrop="True" Grid.RowSpan="2" Margin="20,20,20,20"/>
+        <Border x:Name="Target2" BorderBrush="#FF74FF7E" BorderThickness="1" Grid.Row="2" Grid.Column="2" AllowDrop="True" Grid.RowSpan="2" Margin="20,20,20,20"/>
+        <Border x:Name="Target3" BorderBrush="#FF74FF7E" BorderThickness="1" Grid.Row="2" Grid.Column="3" AllowDrop="True" Grid.RowSpan="2" Margin="20,20,20,20"/>
+        <Border x:Name="Target4" BorderBrush="#FF74FF7E" BorderThickness="1" Grid.Row="2" Grid.Column="4" AllowDrop="True" Grid.RowSpan="2" Margin="20,20,20,20"/>
+
+        <TextBlock x:Name="Text01" Text="Терминатор" Grid.Row="4" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold">
+            <TextBlock.RenderTransform>
+                <TranslateTransform x:Name="img01Transform"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="Text02" Text="Процесс" Grid.Row="5" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold">
+            <TextBlock.RenderTransform>
+                <TranslateTransform x:Name="img02Transform"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="Text03" Text="Ввод/вывод" Grid.Row="4" Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold">
+            <TextBlock.RenderTransform>
+                <TranslateTransform x:Name="img03Transform"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="Text04" Text="Решение" Grid.Row="5" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold">
+            <TextBlock.RenderTransform>
+                <TranslateTransform x:Name="img04Transform"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="Text05" Text="Задача" Grid.Row="4" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold">
+            <TextBlock.RenderTransform>
+                <TranslateTransform x:Name="img05Transform"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="Text06" Text="Ответ" Grid.Row="5" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold">
+            <TextBlock.RenderTransform>
+                <TranslateTransform x:Name="img06Transform"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="Text07" Text="Рассчет" Grid.Row="4" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold">
+            <TextBlock.RenderTransform>
+                <TranslateTransform x:Name="img07Transform"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="Text08" Text="Вопрос" Grid.Row="5" Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold">
+            <TextBlock.RenderTransform>
+                <TranslateTransform x:Name="img08Transform"/>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
+
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="CheckBT" Click="CheckBT_Click"  Content="Проверить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="200" Height="50" Background="#FFBEFF76" FontSize="16" FontWeight="Bold" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Image x:Name="ImgOk" Source="/Recourse/Checkimg.png" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Visibility="Hidden"/>
+        <Image x:Name="ImgNo" Source="/Recourse/NOcheck.png" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Visibility="Hidden"/>
+
     </Grid>
+
 </Page>

@@ -659,6 +659,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\004Reshenie.png" />
+    <Resource Include="Recourse\003Vvod.png" />
+    <Resource Include="Recourse\002Proces.png" />
+    <Resource Include="Recourse\001Terminator.png" />
     <Resource Include="Recourse\21.png" />
     <Resource Include="Recourse\20.png" />
     <Resource Include="Recourse\19.png" />
