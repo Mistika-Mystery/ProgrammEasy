@@ -27,12 +27,12 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ArrayPG3());
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ArrayPG5());
         }
     }
 }
