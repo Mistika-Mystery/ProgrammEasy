@@ -20,9 +20,38 @@ namespace ProgrammEasy.PageUse.Lesson
     /// </summary>
     public partial class BlockDiagramPG13 : Page
     {
+        private Results results = new Results();
         public BlockDiagramPG13()
         {
             InitializeComponent();
+            DataContext = results;
+        }
+
+        private void BakcBT_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BlockDiagramPG12());
+        }
+
+        private void NextBT_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                results.IdUser = RegFlag.IdUser;
+                results.IdLesson = RegFlag.LessonId;
+                results.Date = DateTime.Now;
+                results.ScoreImg = 1005;
+
+                myEntities.GetContext().Results.Add(results);
+                myEntities.GetContext().SaveChanges();
+
+                NavigationService.Navigate(new choiceLess());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
+    
 }

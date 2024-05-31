@@ -58,7 +58,7 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void arrySP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            NavigationService.Navigate(new ArrayPG());
         }
     }
 }

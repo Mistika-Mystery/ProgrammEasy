@@ -93,6 +93,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\ArrayPG.xaml.cs">
+      <DependentUpon>ArrayPG.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\BlockDiagramPG.xaml.cs">
       <DependentUpon>BlockDiagramPG.xaml</DependentUpon>
     </Compile>
@@ -307,6 +310,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PageUse\Lesson\ArrayPG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageUse\Lesson\BlockDiagramPG.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -666,6 +673,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\soob.png" />
     <Resource Include="Recourse\004Reshenie.png" />
     <Resource Include="Recourse\003Vvod.png" />
     <Resource Include="Recourse\002Proces.png" />
