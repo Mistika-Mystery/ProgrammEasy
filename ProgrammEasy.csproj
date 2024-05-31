@@ -105,6 +105,9 @@
     <Compile Include="PageUse\Lesson\BlockDiagramPG12.xaml.cs">
       <DependentUpon>BlockDiagramPG12.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\BlockDiagramPG13.xaml.cs">
+      <DependentUpon>BlockDiagramPG13.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\BlockDiagramPG2.xaml.cs">
       <DependentUpon>BlockDiagramPG2.xaml</DependentUpon>
     </Compile>
@@ -317,6 +320,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\Lesson\BlockDiagramPG12.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\BlockDiagramPG13.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

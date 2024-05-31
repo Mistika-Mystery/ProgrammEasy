@@ -43,13 +43,13 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new BlockDiagramPG4());
+            NavigationService.Navigate(new BlockDiagramPG11());
 
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new BlockDiagramPG5());
+            NavigationService.Navigate(new BlockDiagramPG13());
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -109,10 +109,27 @@ namespace ProgrammEasy.PageUse.Lesson
                              IsInTarget(Text03, Target3) &&
                              IsInTarget(Text04, Target4);
             return isCorrect;
-
-
         }
-
+        private bool Ch01()
+        {
+            bool isCorrect = IsInTarget(Text01, Target1);
+            return isCorrect;
+        }
+        private bool Ch02()
+        {
+            bool isCorrect = IsInTarget(Text02, Target2);
+            return isCorrect;
+        }
+        private bool Ch03()
+        {
+            bool isCorrect = IsInTarget(Text03, Target3);
+            return isCorrect;
+        }
+        private bool Ch04()
+        {
+            bool isCorrect = IsInTarget(Text04, Target4);
+            return isCorrect;
+        }
         private bool IsInTarget(TextBlock text, Border target)
         {
             var imgBounds = text.TransformToAncestor(this).TransformBounds(new Rect(0, 0, text.ActualWidth, text.ActualHeight));
@@ -136,21 +153,61 @@ namespace ProgrammEasy.PageUse.Lesson
                     // Пользователь расставил картинки верно
                     CheckBT.Content = "Молодец!";
                     NextBT.IsEnabled = true;
-                    ImgOk.Visibility = Visibility.Visible;
+                    chOk1.Visibility = Visibility.Visible;
+                    chOk2.Visibility = Visibility.Visible;
+                    chOk3.Visibility = Visibility.Visible;
+                    chOk4.Visibility = Visibility.Visible;
+
                 }
                 else
                 {
-                    // Пользователь расставил картинки неверно
-                    //ResetImages();
+                    if (Ch01())
+                    {
+                        chOk1.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        chNo1.Visibility = Visibility.Visible;
+                    }
+                    if (Ch02())
+                    {
+                        chOk2.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        chNo2.Visibility = Visibility.Visible;
+                    }
+                    if (Ch03())
+                    {
+                        chOk3.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        chNo3.Visibility = Visibility.Visible;
+                    }
+                    if (Ch04())
+                    {
+                        chOk4.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        chNo4.Visibility = Visibility.Visible;
+                    }
+
                     CheckBT.Content = "Попробовать еще раз";
-                    ImgNo.Visibility = Visibility.Visible;
                 }
             }
             else if (CheckBT.Content.ToString() == "Попробовать еще раз")
             {
                 ResetImages();
-                ImgOk.Visibility = Visibility.Hidden;
-                ImgNo.Visibility = Visibility.Hidden;
+                chNo1.Visibility = Visibility.Hidden;
+                chNo2.Visibility = Visibility.Hidden;
+                chNo3.Visibility = Visibility.Hidden;
+                chOk1.Visibility = Visibility.Hidden;
+                chOk2.Visibility = Visibility.Hidden;
+                chOk3.Visibility = Visibility.Hidden;
+                chNo4.Visibility = Visibility.Hidden;
+                chOk4.Visibility = Visibility.Hidden;
             }
 
         }
