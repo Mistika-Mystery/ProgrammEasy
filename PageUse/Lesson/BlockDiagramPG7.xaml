@@ -30,7 +30,7 @@
         <TextBlock Text="Вот один из вариантов блок-схемы с условием" TextWrapping="Wrap" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
         <Image Grid.Column="1" Source="/Recourse/12.png" Grid.RowSpan="4"/>
         <TextBlock Text="Условие это одно из ключевых элементов программирования." TextWrapping="Wrap" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
-        <TextBlock Text="В я зыках программирования условия обозначаются операторами if и else." TextWrapping="Wrap" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" Grid.RowSpan="2"/>
+        <TextBlock Text="В языках программирования условия обозначаются операторами if и else." TextWrapping="Wrap" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" Grid.RowSpan="2"/>
 
     </Grid>
 </Page>

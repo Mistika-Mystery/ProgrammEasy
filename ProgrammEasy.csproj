@@ -102,6 +102,9 @@
     <Compile Include="PageUse\Lesson\BlockDiagramPG11.xaml.cs">
       <DependentUpon>BlockDiagramPG11.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\BlockDiagramPG12.xaml.cs">
+      <DependentUpon>BlockDiagramPG12.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\BlockDiagramPG2.xaml.cs">
       <DependentUpon>BlockDiagramPG2.xaml</DependentUpon>
     </Compile>
@@ -310,6 +313,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\Lesson\BlockDiagramPG11.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\BlockDiagramPG12.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -652,6 +659,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\21.png" />
+    <Resource Include="Recourse\20.png" />
+    <Resource Include="Recourse\19.png" />
+    <Resource Include="Recourse\18.png" />
+    <Resource Include="Recourse\17.png" />
+    <Resource Include="Recourse\16.png" />
     <Resource Include="Recourse\15.png" />
     <Resource Include="Recourse\14.png" />
     <Resource Include="Recourse\13.png" />

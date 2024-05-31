@@ -31,7 +31,7 @@
         <TextBlock Text="Например, нам нужно посчитать на калькуляторе: 23 умножить на 56" TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="28" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
         <TextBlock Text="Вначале мы вводим значения в переменные (в нашем примере это x и y)." TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
         <TextBlock Text="Калькулятор производит вывесления и записывает их в другую переменную (z)." TextWrapping="Wrap" Grid.Row="2" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
-        <TextBlock Text="И выводит нам полученный результат &quot;1288&quot; на экран." TextWrapping="Wrap" Grid.Row="3" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
-        <Image Source="/Recourse/15.png" Grid.RowSpan="4" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5"/>
+        <TextBlock Text="И выводит на экран полученный результат &quot;1288&quot; из переменной &quot;z&quot;." TextWrapping="Wrap" Grid.Row="3" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <Image Source="/Recourse/16.png" Grid.RowSpan="4" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5"/>
     </Grid>
 </Page>

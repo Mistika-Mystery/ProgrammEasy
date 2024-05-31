@@ -9,6 +9,82 @@
       Title="BlockDiagramPG11">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Row="2" Grid.RowSpan="5" Grid.Column="3" Source="/Recourse/09.png"/>
+
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="8" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click" Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="8" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3" IsEnabled="False"/>
+        <TextBlock Text="Расставь блоки правильно" TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="26" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="Процесс: посчитать на калькуляторе: 453 минус 198" TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="24" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+
+        <Border x:Name="Target1" BorderBrush="#FF74FF7E" BorderThickness="1" Grid.Row="2" Grid.Column="3" AllowDrop="True" Width="200"/>
+        <Border x:Name="Target2" BorderBrush="#FF74FF7E" BorderThickness="1" Grid.Row="3" Grid.Column="3" AllowDrop="True" Width="200"/>
+        <Border x:Name="Target3" BorderBrush="#FF74FF7E" BorderThickness="1" Grid.Row="4" Grid.Column="3" AllowDrop="True" Width="200"/>
+        <Border x:Name="Target4" BorderBrush="#FF74FF7E" BorderThickness="1" Grid.Row="5" Grid.Column="3" AllowDrop="True" Width="200"/>
+        <Border x:Name="Target5" BorderBrush="#FF74FF7E" BorderThickness="1" Grid.Row="6" Grid.Column="3" AllowDrop="True" Width="200"/>
+
+
+
+        <Image x:Name="img01" Grid.Row="5" Grid.Column="1" Source="/Recourse/01.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img01Transform"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="img02" Grid.Row="4" Grid.Column="1" Source="/Recourse/18.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img02Transform"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="img03" Grid.Row="2" Grid.Column="1" Source="/Recourse/20.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img03Transform"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="img04" Grid.Row="4" Grid.Column="2" Source="/Recourse/17.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img04Transform"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="img05" Grid.Row="5" Grid.Column="2" Source="/Recourse/05.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img05Transform"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="img06" Grid.Row="3" Grid.Column="2" Source="/Recourse/19.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img06Transform"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="img07" Grid.Row="2" Grid.Column="2" Source="/Recourse/07.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img07Transform"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="img08" Grid.Row="3" Grid.Column="1" Source="/Recourse/21.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img08Transform"/>
+            </Image.RenderTransform>
+        </Image>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="CheckBT" Click="CheckBT_Click"  Content="Проверить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="200" Height="50" Background="#FFBEFF76" FontSize="16" FontWeight="Bold" Grid.Column="2"/>
+        <Image x:Name="ImgOk" Source="/Recourse/Checkimg.png" Grid.Row="3" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Visibility="Hidden"/>
+        <Image x:Name="ImgNo" Source="/Recourse/NOcheck.png" Grid.Row="3" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2" Visibility="Hidden"/>
+
     </Grid>
 </Page>

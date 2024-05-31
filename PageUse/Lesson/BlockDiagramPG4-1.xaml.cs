@@ -11,7 +11,7 @@ namespace ProgrammEasy.PageUse.Lesson
         private bool isDragging = false;
         private Point clickPosition;
         private TranslateTransform currentTransform;
-        private Point[] initialPositions; ///////
+       
 
         public BlockDiagramPG4_1()
         {
