@@ -16,28 +16,23 @@ using System.Windows.Shapes;
 namespace ProgrammEasy.PageUse.Lesson
 {
     /// <summary>
-    /// Логика взаимодействия для ArrayPG.xaml
+    /// Логика взаимодействия для ArrayPG2.xaml
     /// </summary>
-    public partial class ArrayPG : Page
+    public partial class ArrayPG2 : Page
     {
-        public ArrayPG()
+        public ArrayPG2()
         {
             InitializeComponent();
-            RegFlag.LessonId = 1002;
         }
 
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
- "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
-            {
-                NavigationService.Navigate(new choiceLess());
-            }
+            NavigationService.Navigate(new ArrayPG());
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new ArrayPG2());
+            NavigationService.Navigate(new ArrayPG3());
         }
     }
 }

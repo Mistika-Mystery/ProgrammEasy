@@ -96,6 +96,12 @@
     <Compile Include="PageUse\Lesson\ArrayPG.xaml.cs">
       <DependentUpon>ArrayPG.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\ArrayPG2.xaml.cs">
+      <DependentUpon>ArrayPG2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\ArrayPG3.xaml.cs">
+      <DependentUpon>ArrayPG3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\BlockDiagramPG.xaml.cs">
       <DependentUpon>BlockDiagramPG.xaml</DependentUpon>
     </Compile>
@@ -311,6 +317,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PageUse\Lesson\ArrayPG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\ArrayPG2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\ArrayPG3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -673,6 +687,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\igrushk.png" />
     <Resource Include="Recourse\soob.png" />
     <Resource Include="Recourse\004Reshenie.png" />
     <Resource Include="Recourse\003Vvod.png" />
