@@ -96,6 +96,12 @@
     <Compile Include="PageUse\Lesson\BlockDiagramPG.xaml.cs">
       <DependentUpon>BlockDiagramPG.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\BlockDiagramPG10.xaml.cs">
+      <DependentUpon>BlockDiagramPG10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\BlockDiagramPG11.xaml.cs">
+      <DependentUpon>BlockDiagramPG11.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\BlockDiagramPG2.xaml.cs">
       <DependentUpon>BlockDiagramPG2.xaml</DependentUpon>
     </Compile>
@@ -119,6 +125,9 @@
     </Compile>
     <Compile Include="PageUse\Lesson\BlockDiagramPG8.xaml.cs">
       <DependentUpon>BlockDiagramPG8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\BlockDiagramPG9.xaml.cs">
+      <DependentUpon>BlockDiagramPG9.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageUse\Lesson\choiceLess.xaml.cs">
       <DependentUpon>choiceLess.xaml</DependentUpon>
@@ -296,6 +305,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageUse\Lesson\BlockDiagramPG10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\BlockDiagramPG11.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageUse\Lesson\BlockDiagramPG2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -325,6 +342,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\Lesson\BlockDiagramPG8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\BlockDiagramPG9.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -631,6 +652,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\15.png" />
+    <Resource Include="Recourse\14.png" />
+    <Resource Include="Recourse\13.png" />
+    <Resource Include="Recourse\12.png" />
+    <Resource Include="Recourse\enfant-telescope.png" />
     <Resource Include="Recourse\11.png" />
     <Resource Include="Recourse\Thinking-Transparent-Images-PNG.png" />
     <Resource Include="Recourse\10.png" />

@@ -9,6 +9,51 @@
       Title="BlockDiagramPG8">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+
+
+        </Grid.ColumnDefinitions>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3" IsEnabled="False"/>
+        <TextBlock Text="Отметь галочкой вопросы, которые подойдут для блока решение" TextWrapping="Wrap" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="CheckBT" Click="CheckBT_Click"  Content="Проверить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="200" Height="50" Background="#FFBEFF76" FontSize="16" FontWeight="Bold" Grid.Column="2"/>
+        <Image Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Source="/Recourse/enfant-telescope.png"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Сколько звезд на небе? " FontFamily="Comic Sans MS" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check1" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Луна круглая? " FontFamily="Comic Sans MS" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check2" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Сейчас идет дождь?" FontFamily="Comic Sans MS" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check3" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Image x:Name="chOk1" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" Height="70" Visibility="Hidden" />
+        <Image x:Name="chNo1" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" Height="60" Visibility="Hidden" />
+
+        <Image x:Name="chOk2" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3" Height="70" Visibility="Hidden" />
+        <Image x:Name="chNo2" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3" Height="60" Visibility="Hidden" />
+
+        <Image x:Name="chOk3" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="3" Height="70" Visibility="Hidden" />
+        <Image x:Name="chNo3" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="3" Height="60" Visibility="Hidden" />
+        <Label x:Name="HelpLB" Content="" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFAA1515" FontSize="20" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0,0,0,20" />
+
+   
+
     </Grid>
 </Page>
