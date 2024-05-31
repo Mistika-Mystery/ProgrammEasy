@@ -32,7 +32,7 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ArrayPG4());
         }
 
         private void CheckBT_Click(object sender, RoutedEventArgs e)
