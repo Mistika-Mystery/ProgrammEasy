@@ -45,42 +45,42 @@
         <Border x:Name="Target3" BorderThickness="1" Grid.Row="2" Grid.Column="3" AllowDrop="True" Grid.RowSpan="2" Margin="20,20,20,20"/>
         <Border x:Name="Target4" BorderThickness="1" Grid.Row="2" Grid.Column="4" AllowDrop="True" Grid.RowSpan="2" Margin="20,20,20,20"/>
 
-        <TextBlock x:Name="Text01" Text="false" Grid.Row="4" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold" Foreground="#FF37B310">
+        <TextBlock x:Name="Text01" Text="false" Grid.Row="4" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="24" FontWeight="Bold" Foreground="#FF37B310">
             <TextBlock.RenderTransform>
                 <TranslateTransform x:Name="img01Transform"/>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="Text02" Text="null" Grid.Row="5" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold" Foreground="#FF37B310">
+        <TextBlock x:Name="Text02" Text="null" Grid.Row="5" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="24" FontWeight="Bold" Foreground="#FF37B310">
             <TextBlock.RenderTransform>
                 <TranslateTransform x:Name="img02Transform"/>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="Text03" Text="0.0" Grid.Row="4" Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold" Foreground="#FF37B310">
+        <TextBlock x:Name="Text03" Text="0.0" Grid.Row="4" Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="24" FontWeight="Bold" Foreground="#FF37B310">
             <TextBlock.RenderTransform>
                 <TranslateTransform x:Name="img03Transform"/>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="Text04" Text="0" Grid.Row="5" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold" Foreground="#FF37B310">
+        <TextBlock x:Name="Text04" Text="0" Grid.Row="5" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="24" FontWeight="Bold" Foreground="#FF37B310">
             <TextBlock.RenderTransform>
                 <TranslateTransform x:Name="img04Transform"/>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="Text05" Text="true" Grid.Row="4" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold" Foreground="#FF37B310">
+        <TextBlock x:Name="Text05" Text="true" Grid.Row="4" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="22" FontWeight="Bold" Foreground="#FF37B310">
             <TextBlock.RenderTransform>
                 <TranslateTransform x:Name="img05Transform"/>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="Text06" Text="1" Grid.Row="5" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold" Foreground="#FF37B310">
+        <TextBlock x:Name="Text06" Text="1" Grid.Row="5" Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="24" FontWeight="Bold" Foreground="#FF37B310">
             <TextBlock.RenderTransform>
                 <TranslateTransform x:Name="img06Transform"/>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="Text07" Text="no" Grid.Row="4" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold" Foreground="#FF37B310">
+        <TextBlock x:Name="Text07" Text="no" Grid.Row="4" Grid.Column="3"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="24" FontWeight="Bold" Foreground="#FF37B310">
             <TextBlock.RenderTransform>
                 <TranslateTransform x:Name="img07Transform"/>
             </TextBlock.RenderTransform>
         </TextBlock>
-        <TextBlock x:Name="Text08" Text="1.1" Grid.Row="5" Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="20" FontWeight="Bold" Foreground="#FF37B310">
+        <TextBlock x:Name="Text08" Text="1.1" Grid.Row="5" Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,5" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" FontSize="24" FontWeight="Bold" Foreground="#FF37B310">
             <TextBlock.RenderTransform>
                 <TranslateTransform x:Name="img08Transform"/>
             </TextBlock.RenderTransform>

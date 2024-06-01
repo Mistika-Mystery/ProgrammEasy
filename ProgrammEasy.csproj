@@ -96,6 +96,9 @@
     <Compile Include="PageUse\Lesson\ArrayPG.xaml.cs">
       <DependentUpon>ArrayPG.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\ArrayPG10.xaml.cs">
+      <DependentUpon>ArrayPG10.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\ArrayPG2.xaml.cs">
       <DependentUpon>ArrayPG2.xaml</DependentUpon>
     </Compile>
@@ -335,6 +338,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PageUse\Lesson\ArrayPG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\ArrayPG10.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
