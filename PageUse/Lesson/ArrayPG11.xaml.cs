@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace ProgrammEasy.PageUse.Lesson
 {
     /// <summary>
-    /// Логика взаимодействия для ArrayPG10.xaml
+    /// Логика взаимодействия для ArrayPG11.xaml
     /// </summary>
-    public partial class ArrayPG10 : Page
+    public partial class ArrayPG11 : Page
     {
-        public ArrayPG10()
+        public ArrayPG11()
         {
             InitializeComponent();
-        }
-
-        private void BakcBT_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new ArrayPG9());
-        }
-
-        private void NextBT_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new ArrayPG11());
         }
     }
 }
