@@ -28,9 +28,9 @@
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3"/>
         <TextBlock Text="Визульно этот массив будет выглядеть так:" TextWrapping="Wrap" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
-        <Image Source="/Recourse/array4.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="5"/>
+        <Image Source="/Recourse/array5.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="5"/>
         <TextBlock Text="" TextWrapping="Wrap" Grid.Row="3" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
-        <TextBlock Text="Чтобы изменить цифру 5 на 10: нужно обратится к строке с индексом 0 и элементу с индексом 3 в этой строке:" TextWrapping="Wrap" Grid.Row="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <TextBlock Text="Чтобы изменить цифру 5 на 10: нужно обратится к строке с индексом 0 и элементу с индексом 1 в этой строке:" TextWrapping="Wrap" Grid.Row="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
         <TextBlock Text="array[0,1] = 10;" TextWrapping="Wrap" Grid.Row="5" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
         <TextBlock Text="Длина этого массива: array.Length будет равна 6 (всего 6 элементов)." TextWrapping="Wrap" Grid.Row="1" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
 
