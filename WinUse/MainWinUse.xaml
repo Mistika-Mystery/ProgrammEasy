@@ -5,24 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse"
         mc:Ignorable="d"
-        Title="Программирование это просто!" Height="450" Width="800" Icon="/Recourse/LogIsoPr.png">
+        Title="Программирование это просто!" Height="500" Width="800" Icon="/Recourse/LogIsoPr.png">
     <Grid>
-        <Canvas x:Name="MyCanvas" Background="LightGray">
-            <TextBlock x:Name="TextBlock1" Text="Text 1" FontSize="20" Background="LightBlue" Padding="5"
-                       Canvas.Left="10" Canvas.Top="10" MouseMove="TextBlock_MouseMove" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"/>
-            <TextBlock x:Name="TextBlock2" Text="Text 2" FontSize="20" Background="LightGreen" Padding="5"
-                       Canvas.Left="170" Canvas.Top="10" MouseMove="TextBlock_MouseMove" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"/>
-            <TextBlock x:Name="TextBlock3" Text="Text 3" FontSize="20" Background="LightCoral" Padding="5"
-                       Canvas.Left="330" Canvas.Top="10" MouseMove="TextBlock_MouseMove" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"/>
-
-            <!-- Drop target areas -->
-            <Border x:Name="Target1" BorderBrush="Black" BorderThickness="2" Width="150" Height="150" Canvas.Left="10" Canvas.Top="200"/>
-            <Border x:Name="Target2" BorderBrush="Black" BorderThickness="2" Width="150" Height="150" Canvas.Left="170" Canvas.Top="200"/>
-            <Border x:Name="Target3" BorderBrush="Black" BorderThickness="2" Width="150" Height="150" Canvas.Left="330" Canvas.Top="200"/>
-            
-        </Canvas>
-
-        <Button x:Name="BakcBT" Content="Назад" Click="BakcBT_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="150" Height="50"/>
-        <Button x:Name="NextBT" Content="Дальше" Click="NextBT_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="150" Height="50" IsEnabled="False"/>
+        <TextBox Name="CodeInputTextBox" HorizontalAlignment="Left" Height="300" VerticalAlignment="Top" Width="780" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="10,10,10,0"/>
+        <Button Name="RunCodeButton" Content="Run Code" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="30" Margin="10,320,0,0" Click="RunCodeButton_Click"/>
+        <TextBox Name="CodeOutputTextBox" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="780" Margin="10,360,10,0" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
     </Grid>
 </Window>

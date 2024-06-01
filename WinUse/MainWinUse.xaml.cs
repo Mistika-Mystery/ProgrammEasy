@@ -4,6 +4,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Microsoft.CodeAnalysis.CSharp.Scripting;
+using Microsoft.CodeAnalysis.Scripting;
+using System.Linq;
 
 namespace ProgrammEasy.WinUse
 {
@@ -15,81 +18,50 @@ namespace ProgrammEasy.WinUse
         private bool isDragging = false;
         private Point clickPosition;
         private TextBlock draggedTextBlock;
+        private ScriptState<object> scriptState = null;
 
         public MainWinUse()
         {
             InitializeComponent();
         }
 
-        private void BakcBT_Click(object sender, RoutedEventArgs e)
+        private async void RunCodeButton_Click(object sender, RoutedEventArgs e)
         {
-            // Navigation logic for Back button
-        }
- 
-        private void NextBT_Click(object sender, RoutedEventArgs e)
-        {
-            // Navigation logic for Next button
-        }
-
-        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            isDragging = true;
-            draggedTextBlock = sender as TextBlock;
-            clickPosition = e.GetPosition(MyCanvas);
-            draggedTextBlock.CaptureMouse();
-        }
-
-        private void TextBlock_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            isDragging = false;
-            if (draggedTextBlock != null)
+            var code = CodeInputTextBox.Text;
+            try
             {
-                draggedTextBlock.ReleaseMouseCapture();
-                CheckIfAllTargetsCorrect();
+                if (scriptState == null)
+                {
+                    scriptState = await CSharpScript.RunAsync(code, ScriptOptions.Default.WithReferences(AppDomain.CurrentDomain.GetAssemblies()));
+                }
+                else
+                {
+                    scriptState = await scriptState.ContinueWithAsync(code);
+                }
+
+                var result = scriptState.ReturnValue;
+                CodeOutputTextBox.Text = FormatResult(result);
             }
-        }
-        
-        private void TextBlock_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDragging && draggedTextBlock != null)
+            catch (Exception ex)
             {
-                Point currentPosition = e.GetPosition(MyCanvas);
-                double offsetX = currentPosition.X - clickPosition.X;
-                double offsetY = currentPosition.Y - clickPosition.Y;
-
-                double newLeft = Canvas.GetLeft(draggedTextBlock) + offsetX;
-                double newTop = Canvas.GetTop(draggedTextBlock) + offsetY;
-
-                Canvas.SetLeft(draggedTextBlock, newLeft);
-                Canvas.SetTop(draggedTextBlock, newTop);
-
-                clickPosition = currentPosition;
+                CodeOutputTextBox.Text = $"Error: {ex.Message}";
             }
         }
 
-        private void CheckIfAllTargetsCorrect()
+        private string FormatResult(object result)
         {
-            // Logic to check if the correct TextBlocks are in the correct targets
-            bool isCorrect = (IsElementWithinTarget(TextBlock1, Target1) &&
-                              IsElementWithinTarget(TextBlock2, Target2) &&
-                              IsElementWithinTarget(TextBlock3, Target3));
-
-            NextBT.IsEnabled = isCorrect;
-        }
-
-        private bool IsElementWithinTarget(UIElement element, UIElement target)
-        {
-            double elementLeft = Canvas.GetLeft(element);
-            double elementTop = Canvas.GetTop(element);
-
-            double targetLeft = Canvas.GetLeft(target);
-            double targetTop = Canvas.GetTop(target);
-
-            double targetRight = targetLeft + target.RenderSize.Width;
-            double targetBottom = targetTop + target.RenderSize.Height;
-
-            return (elementLeft >= targetLeft && elementLeft <= targetRight &&
-                    elementTop >= targetTop && elementTop <= targetBottom);
+            if (result == null)
+            {
+                return "No result";
+            }
+            else if (result is Array array)
+            {
+                return string.Join(" ", array.Cast<object>());
+            }
+            else
+            {
+                return result.ToString();
+            }
         }
     }
 }
