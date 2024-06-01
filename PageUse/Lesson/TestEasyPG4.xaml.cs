@@ -18,41 +18,17 @@ using System.Windows.Threading;
 namespace ProgrammEasy.PageUse.Lesson
 {
     /// <summary>
-    /// Логика взаимодействия для TestEasyPG.xaml
+    /// Логика взаимодействия для TestEasyPG4.xaml
     /// </summary>
-    public partial class TestEasyPG : Page
+    public partial class TestEasyPG4 : Page
     {
         private static DispatcherTimer _timer;
         private static DateTime _startTime;
         private static TestResult _testResult = new TestResult();
-        
-        public TestEasyPG()
+        public TestEasyPG4()
         {
             InitializeComponent();
-            TestResult._questionNumber = 1;
-            TestResult._countQuestion = 10;
-            if (_timer == null)
-            {
-                _timer = new DispatcherTimer();
-                _timer.Interval = TimeSpan.FromSeconds(1);
-                _timer.Tick += Timer_Tick;
-            }
         }
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (TestResult._questionNumber == 1)
-            {
-                _testResult.TotalQuestions = TestResult._countQuestion;
-                _startTime = DateTime.Now;
-                _timer.Start();
-            }
-        }
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            var elapsedTime = DateTime.Now - _startTime;
-            // Optionally update UI with elapsedTime
-        }
-
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут будут утеряны",
@@ -77,6 +53,11 @@ namespace ProgrammEasy.PageUse.Lesson
                 }
             }
         }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            var elapsedTime = DateTime.Now - _startTime;
+            // Optionally update UI with elapsedTime
+        }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
@@ -89,28 +70,29 @@ namespace ProgrammEasy.PageUse.Lesson
             else
             {
                 TestResult._questionNumber++;
-                NavigationService.Navigate(new TestEasyPG2());
+                NavigationService.Navigate(new TestEasyPG5()); 
             }
         }
         private void SaveAnswer()
         {
             var selectedAnswer = GetSelectedAnswer();
-            var correctAnswer = "c) Массив, содержащий элементы одного типа, расположенные в одном измерении";
+            var correctAnswer = "c) Последовательность символов"; // Правильный ответ для текущего вопроса
             _testResult.QuestionResults.Add(new QuestionResult
             {
-                Question = QuestionBody.Text,
-                SelectedAnswer = selectedAnswer,
-                IsCorrect = selectedAnswer == correctAnswer
+                Question = QuestionBody.Text, // Текущий вопрос
+                SelectedAnswer = selectedAnswer, // Ответ пользователя
+                IsCorrect = selectedAnswer == correctAnswer // Проверка правильности ответа
             });
         }
+
         private string GetSelectedAnswer()
         {
-            if (AnswerRadioButton1.IsChecked == true) return "a) Массив, состоящий из нескольких массивов";
-            if (AnswerRadioButton2.IsChecked == true) return "b) Массив, содержащий элементы разных типов";
-            if (AnswerRadioButton3.IsChecked == true) return "c) Массив, содержащий элементы одного типа, расположенные в одном измерении";
-            if (AnswerRadioButton4.IsChecked == true) return "d) Массив, содержащий строки и столбцы";
+            if (AnswerRadioButton1.IsChecked == true) return "a) Число с плавающей точкой";
+            if (AnswerRadioButton2.IsChecked == true) return "b) Логическое значение";
+            if (AnswerRadioButton3.IsChecked == true) return "c) Последовательность символов";
+            if (AnswerRadioButton4.IsChecked == true) return "d) Одномерный массив";
             return string.Empty;
         }
-
     }
 }
+

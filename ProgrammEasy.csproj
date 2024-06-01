@@ -232,8 +232,38 @@
     <Compile Include="PageUse\Lesson\choiceLess.xaml.cs">
       <DependentUpon>choiceLess.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\ResultPage.xaml.cs">
+      <DependentUpon>ResultPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\TestEasyPG.xaml.cs">
       <DependentUpon>TestEasyPG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG10.xaml.cs">
+      <DependentUpon>TestEasyPG10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG2.xaml.cs">
+      <DependentUpon>TestEasyPG2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG3.xaml.cs">
+      <DependentUpon>TestEasyPG3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG4.xaml.cs">
+      <DependentUpon>TestEasyPG4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG5.xaml.cs">
+      <DependentUpon>TestEasyPG5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG6.xaml.cs">
+      <DependentUpon>TestEasyPG6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG7.xaml.cs">
+      <DependentUpon>TestEasyPG7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG8.xaml.cs">
+      <DependentUpon>TestEasyPG8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG9.xaml.cs">
+      <DependentUpon>TestEasyPG9.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageUse\Lesson\TypeDatePG.xaml.cs">
       <DependentUpon>TypeDatePG.xaml</DependentUpon>
@@ -317,6 +347,7 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TestResult.cs" />
     <Compile Include="User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -543,7 +574,47 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageUse\Lesson\ResultPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageUse\Lesson\TestEasyPG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG10.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG9.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

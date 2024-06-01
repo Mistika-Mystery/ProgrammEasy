@@ -1,4 +1,4 @@
-﻿<Page x:Class="ProgrammEasy.PageUse.Lesson.TestEasyPG"
+﻿<Page x:Class="ProgrammEasy.PageUse.Lesson.TestEasyPG2"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,8 +6,7 @@
       xmlns:local="clr-namespace:ProgrammEasy.PageUse.Lesson"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="TestEasyPG"
-      Loaded="Page_Loaded">
+      Title="TestEasyPG2" >
 
     <Grid>
         <Grid.RowDefinitions>
@@ -26,22 +25,22 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
-        
+
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Выйти" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3"/>
-        <TextBlock x:Name="QuestionText" Text="Вопрос №1" FontFamily="Comic Sans MS" FontSize="36" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
-        <TextBlock x:Name="QuestionBody" Text="Что такое одномерный массив?" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock x:Name="QuestionText" Text="Вопрос №2" FontFamily="Comic Sans MS" FontSize="36" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock x:Name="QuestionBody" Text="Какой тип данных используется для хранения целых чисел?" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
         <RadioButton Name="AnswerRadioButton1" Margin="5" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="a) Массив, состоящий из нескольких массивов" TextWrapping="Wrap" FontSize="24" />
+            <TextBlock Text="a) string" TextWrapping="Wrap" FontSize="24" />
         </RadioButton>
         <RadioButton Name="AnswerRadioButton2" Margin="5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="b) Массив, содержащий элементы разных типов" TextWrapping="Wrap" FontSize="24" />
+            <TextBlock Text="b) int" TextWrapping="Wrap" FontSize="24" />
         </RadioButton>
         <RadioButton Name="AnswerRadioButton3" Margin="5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="c) Массив, содержащий элементы одного типа, расположенные в одном измерении" TextWrapping="Wrap" FontSize="24" />
+            <TextBlock Text="c) bool" TextWrapping="Wrap" FontSize="24" />
         </RadioButton>
         <RadioButton Name="AnswerRadioButton4" Margin="5" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="d) Массив, содержащий строки и столбцы" TextWrapping="Wrap" FontSize="24" />
+            <TextBlock Text="d) float" TextWrapping="Wrap" FontSize="24" />
         </RadioButton>
 
     </Grid>
