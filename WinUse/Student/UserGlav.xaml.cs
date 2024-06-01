@@ -39,7 +39,9 @@ namespace ProgrammEasy.WinUse.Student
 
         private void TestSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            var test = new TestWin();
+            test.Show();
+            this.Close();
         }
 
         private void InfoUsSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

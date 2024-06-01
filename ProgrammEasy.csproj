@@ -232,6 +232,9 @@
     <Compile Include="PageUse\Lesson\choiceLess.xaml.cs">
       <DependentUpon>choiceLess.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG.xaml.cs">
+      <DependentUpon>TestEasyPG.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\TypeDatePG.xaml.cs">
       <DependentUpon>TypeDatePG.xaml</DependentUpon>
     </Compile>
@@ -386,6 +389,9 @@
     <Compile Include="WinUse\Student\LessonWin.xaml.cs">
       <DependentUpon>LessonWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\Student\TestWin.xaml.cs">
+      <DependentUpon>TestWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinUse\Student\UserGlav.xaml.cs">
       <DependentUpon>UserGlav.xaml</DependentUpon>
     </Compile>
@@ -534,6 +540,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\Lesson\choiceLess.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -702,6 +712,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinUse\Student\LessonWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\Student\TestWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
