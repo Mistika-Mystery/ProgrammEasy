@@ -28,10 +28,34 @@
 
         </Grid.ColumnDefinitions>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
-        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3"/>
-        <TextBlock Text="Если мы хотим заполнить пустой массив или изменить значения элетента, то это можно сделать так:" TextWrapping="Wrap" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.RowSpan="2"/>
-        <TextBlock Text="array[1] = 2001;" TextWrapping="Wrap" Grid.Row="2" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" FontWeight="Bold"/>
-        <TextBlock Text="Тут мы обращаемся к массиву типа int под названием array и его второму элементу с индексом 1 и присваеваем ему значение 2001." TextWrapping="Wrap" Grid.Row="3" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.RowSpan="2"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3" IsEnabled="False"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="CheckBT" Click="CheckBT_Click"  Content="Проверить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="200" Height="50" Background="#FFBEFF76" FontSize="16" FontWeight="Bold" Grid.Column="2"/>
+
+        <TextBlock Text="Допустим у нас есть пустой массив: string[] array;" TextWrapping="Wrap" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="Мы хотим присвоить его четвертому элементу значение: &quot;Красная машина&quot;. Выбери, правильный вариант как это сделать:" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.RowSpan="2"/>
+        <Image Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" Source="/Recourse/redcar.png"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="array[4] = &quot;Красная машина&quot;; " FontFamily="Comic Sans MS" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check1" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="array[5] = Красная машина; " FontFamily="Comic Sans MS" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check2" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="array[5] = &quot;Красная машина&quot;; " FontFamily="Comic Sans MS" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check3" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Image x:Name="chOk1" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="3" Height="70" Visibility="Hidden" />
+        <Image x:Name="chNo1" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="3" Height="60" Visibility="Hidden" />
+
+        <Image x:Name="chOk2" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="3" Height="70" Visibility="Hidden" />
+        <Image x:Name="chNo2" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="3" Height="60" Visibility="Hidden" />
+
+        <Image x:Name="chOk3" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="3" Height="70" Visibility="Hidden" />
+        <Image x:Name="chNo3" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="3" Height="60" Visibility="Hidden" />
+        <Label x:Name="HelpLB" Content="" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFAA1515" FontSize="20" Grid.ColumnSpan="3" />
+
 
     </Grid>
 </Page>
