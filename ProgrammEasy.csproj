@@ -160,6 +160,9 @@
     <Compile Include="PageUse\Lesson\ArrayPG18.xaml.cs">
       <DependentUpon>ArrayPG18.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\ArrayPG19.xaml.cs">
+      <DependentUpon>ArrayPG19.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\ArrayPG2.xaml.cs">
       <DependentUpon>ArrayPG2.xaml</DependentUpon>
     </Compile>
@@ -435,6 +438,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\Lesson\ArrayPG18.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\ArrayPG19.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -832,6 +839,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\guitar.png" />
+    <Resource Include="Recourse\doll.png" />
+    <Resource Include="Recourse\boll1.png" />
+    <Resource Include="Recourse\boll.png" />
+    <Resource Include="Recourse\carr.png" />
+    <Resource Include="Recourse\array6.png" />
     <Resource Include="Recourse\array5.png" />
     <Resource Include="Recourse\Eggs1.png" />
     <Resource Include="Recourse\array4.png" />

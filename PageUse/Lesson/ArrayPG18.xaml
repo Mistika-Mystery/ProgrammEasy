@@ -9,6 +9,78 @@
       Title="ArrayPG18">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click" Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="4" IsEnabled="False"/>
         
+        <TextBlock Text="Расставь правильно" TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="26" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock Text="string[,] array = new {{машина, мяч}, {кукла, гитара}};" TextWrapping="Wrap" FontFamily="Comic Sans MS" FontSize="24" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock Text="1" FontWeight="Bold" FontSize="24" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock Text="0" FontWeight="Bold" FontSize="24" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Text="0" FontWeight="Bold" FontSize="24" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2"/>
+        <TextBlock Text="1" FontWeight="Bold" FontSize="24" Grid.Row="5" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2"/>
+
+        <Border x:Name="Target1" BorderThickness="3" Grid.Row="2" Grid.Column="2" AllowDrop="True" Grid.RowSpan="2" Margin="20,20,20,20" />
+        <Border x:Name="Target2" BorderThickness="3" Grid.Row="2" Grid.Column="3" AllowDrop="True" Grid.RowSpan="2" Margin="20,20,20,20" />
+        <Border x:Name="Target3" BorderThickness="3" Grid.Row="4" Grid.Column="2" AllowDrop="True" Grid.RowSpan="2" Margin="20,20,20,20" />
+        <Border x:Name="Target4" BorderThickness="3" Grid.Row="4" Grid.Column="3" AllowDrop="True" Grid.RowSpan="2" Margin="20,20,20,20" />
+
+        <Border BorderThickness="3" Grid.Row="2" Grid.Column="2" AllowDrop="True" Grid.RowSpan="2" Margin="20,20,0,0" BorderBrush="#FF24B600"/>
+        <Border BorderThickness="3" Grid.Row="2" Grid.Column="3" AllowDrop="True" Grid.RowSpan="2" Margin="0,20,20,0" BorderBrush="#FF24B600"/>
+        <Border BorderThickness="3" Grid.Row="4" Grid.Column="2" AllowDrop="True" Grid.RowSpan="2" Margin="20,0,0,20" BorderBrush="#FF24B600"/>
+        <Border BorderThickness="3" Grid.Row="4" Grid.Column="3" AllowDrop="True" Grid.RowSpan="2" Margin="0,0,20,20" BorderBrush="#FF24B600"/>
+
+        <Image x:Name="Text01"  Grid.Row="4" Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,30" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp"  Grid.RowSpan="2" Source="/Recourse/carr.png">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img01Transform"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="Text02" Grid.Row="4" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,25,0,25" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" Grid.RowSpan="2" Source="/Recourse/boll1.png">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img02Transform"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="Text03" Grid.Row="2" Grid.Column="4"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,15" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" Grid.RowSpan="2" Source="/Recourse/doll.png">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img03Transform"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="Text04" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,15,0,15" RenderTransformOrigin="0.5,0.5" MouseMove="Image_MouseMove" MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="Image_MouseLeftButtonUp" Grid.RowSpan="2" Source="/Recourse/guitar.png">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="img04Transform"/>
+            </Image.RenderTransform>
+        </Image>
+
+
+
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="CheckBT" Click="CheckBT_Click"  Content="Проверить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="200" Height="50" Background="#FFBEFF76" FontSize="16" FontWeight="Bold" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="6"/>
+        <Image x:Name="chOk1" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" Height="100" Visibility="Hidden" />
+        <Image x:Name="chNo1" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" Height="90" Visibility="Hidden"/>
+
+        <Image x:Name="chOk2" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="3" Height="100" Visibility="Hidden" />
+        <Image x:Name="chNo2" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="3" Height="90" Visibility="Hidden" />
+
+        <Image x:Name="chOk3" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="2" Height="100" Visibility="Hidden" />
+        <Image x:Name="chNo3" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="2" Height="90" Visibility="Hidden" />
+        <Image x:Name="chOk4" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="3" Height="100" Visibility="Hidden" />
+        <Image x:Name="chNo4" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="3" Height="90" Visibility="Hidden" />
     </Grid>
 </Page>
