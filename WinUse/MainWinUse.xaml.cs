@@ -25,7 +25,7 @@ namespace ProgrammEasy.WinUse
         {
             // Navigation logic for Back button
         }
-
+ 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
             // Navigation logic for Next button
@@ -48,7 +48,7 @@ namespace ProgrammEasy.WinUse
                 CheckIfAllTargetsCorrect();
             }
         }
-
+        
         private void TextBlock_MouseMove(object sender, MouseEventArgs e)
         {
             if (isDragging && draggedTextBlock != null)

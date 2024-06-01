@@ -30,6 +30,7 @@
         <TextBlock Text="Объявление массива похоже на объявление переменной за тем исключением, что после указания типа ставятся квадратные скобки:" TextWrapping="Wrap" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.RowSpan="2"/>
         <TextBlock Text="Например: int[] array  или string[] array." TextWrapping="Wrap" Grid.Row="3" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
         <TextBlock Text="тип_переменной [ ] название_массива;" Grid.Row="2" Grid.ColumnSpan="3" FontSize="32" FontWeight="Bold" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Пустые квадратные скоки, означают что массив может быть любой длины, или же вообще пустой." TextWrapping="Wrap" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2"/>
 
     </Grid>
 </Page>

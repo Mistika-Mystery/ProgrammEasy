@@ -111,6 +111,15 @@
     <Compile Include="PageUse\Lesson\ArrayPG6.xaml.cs">
       <DependentUpon>ArrayPG6.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\ArrayPG7.xaml.cs">
+      <DependentUpon>ArrayPG7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\ArrayPG8.xaml.cs">
+      <DependentUpon>ArrayPG8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\ArrayPG9.xaml.cs">
+      <DependentUpon>ArrayPG9.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\BlockDiagramPG.xaml.cs">
       <DependentUpon>BlockDiagramPG.xaml</DependentUpon>
     </Compile>
@@ -346,6 +355,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageUse\Lesson\ArrayPG6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\ArrayPG7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\ArrayPG8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\ArrayPG9.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
