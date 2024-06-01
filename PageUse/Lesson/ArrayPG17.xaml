@@ -7,8 +7,72 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ArrayPG17">
-
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+
+
+        </Grid.ColumnDefinitions>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3" IsEnabled="False"/>
+        <TextBlock Text="Отметь все верные утверждения, подходящие для созданого массива: string[2,3] array = { {Зеленый, Красный, Синий }, { Желтый, фиолетовый, Оранжевый } };" TextWrapping="Wrap" Grid.ColumnSpan="8" FontFamily="Comic Sans MS" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.RowSpan="2"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="CheckBT" Click="CheckBT_Click"  Content="Проверить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Width="200" Height="50" Background="#FFBEFF76" FontSize="16" FontWeight="Bold" Grid.Column="2"/>
+        <Image Grid.Row="2" Grid.Column="3" Grid.RowSpan="3" Source="/Recourse/Eggs1.png"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Ранг 1 " FontFamily="Comic Sans MS" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check1" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Ранг 2 " FontFamily="Comic Sans MS" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check2" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="array.Length = 6 " FontFamily="Comic Sans MS" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check3" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="array[1,1] = &quot;Зеленый&quot; " FontFamily="Comic Sans MS" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check4" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="array[1,2] = &quot;Оранжевый&quot; " FontFamily="Comic Sans MS" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check5" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="array[2,2] = &quot;Красный&quot; " FontFamily="Comic Sans MS" FontSize="22" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <CheckBox x:Name="Check6" Margin="0,20,0,0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Image x:Name="chOk1" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Height="70"  Visibility="Hidden"/>
+        <Image x:Name="chNo1" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Height="60" Visibility="Hidden"/>
+
+        <Image x:Name="chOk2" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Height="70" Visibility="Hidden" />
+        <Image x:Name="chNo2" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Height="60"  Visibility="Hidden"/>
+
+        <Image x:Name="chOk3" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" Height="70" Visibility="Hidden"/>
+        <Image x:Name="chNo3" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" Height="60" Visibility="Hidden" />
         
+        <Label x:Name="HelpLB" Content="" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFAA1515" FontSize="20" Grid.ColumnSpan="3" />
+
+        <Image x:Name="chOk4" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" Height="70"  Visibility="Hidden"/>
+        <Image x:Name="chNo4" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" Height="60" Visibility="Hidden" />
+
+        <Image x:Name="chOk5" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" Height="70"  Visibility="Hidden"/>
+        <Image x:Name="chNo5" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="2" Height="60"  Visibility="Hidden"/>
+
+        <Image x:Name="chOk6" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Height="70" Visibility="Hidden"/>
+        <Image x:Name="chNo6" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Height="60" Visibility="Hidden" />
     </Grid>
 </Page>
