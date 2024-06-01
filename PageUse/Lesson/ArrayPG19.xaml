@@ -27,7 +27,7 @@
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Завершить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3"/>
         <TextBlock Text="Молодец!" TextWrapping="Wrap" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.RowSpan="2"/>
-        <TextBlock Text="Мы познакомились с самыми базовыми элементами блок-схемы. Конечно, их намного больше. Их мы рассмотрим в слудующем уроке." TextWrapping="Wrap" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"/>
+        <TextBlock Text="Мы познакомились с базовыми свойствами массивов. Конечно, их больше. Их мы рассмотрим в слудующем уроке." TextWrapping="Wrap" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2"/>
         <Image Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="2" Source="/Recourse/molodecst.png"/>
     </Grid>
 </Page>

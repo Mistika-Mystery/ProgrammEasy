@@ -72,15 +72,15 @@
 
 
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="CheckBT" Click="CheckBT_Click"  Content="Проверить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="200" Height="50" Background="#FFBEFF76" FontSize="16" FontWeight="Bold" Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="6"/>
-        <Image x:Name="chOk1" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" Height="100" Visibility="Hidden" />
-        <Image x:Name="chNo1" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" Height="90" Visibility="Hidden"/>
+        <Image x:Name="chOk1" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="2" Height="100" Visibility="Hidden"/>
+        <Image x:Name="chNo1" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="2" Height="90" Visibility="Hidden"/>
 
-        <Image x:Name="chOk2" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="3" Height="100" Visibility="Hidden" />
-        <Image x:Name="chNo2" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="3" Height="90" Visibility="Hidden" />
+        <Image x:Name="chOk2" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="3" Height="100" Visibility="Hidden"/>
+        <Image x:Name="chNo2" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="3" Height="90" Visibility="Hidden" />
 
-        <Image x:Name="chOk3" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="2" Height="100" Visibility="Hidden" />
-        <Image x:Name="chNo3" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="2" Height="90" Visibility="Hidden" />
-        <Image x:Name="chOk4" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="3" Height="100" Visibility="Hidden" />
-        <Image x:Name="chNo4" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.RowSpan="2" Grid.Column="3" Height="90" Visibility="Hidden" />
+        <Image x:Name="chOk3" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" Height="100" Visibility="Hidden"/>
+        <Image x:Name="chNo3" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="2" Height="90" Visibility="Hidden" />
+        <Image x:Name="chOk4" Source="/Recourse/Checkimg.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="3" Height="100" Visibility="Hidden"/>
+        <Image x:Name="chNo4" Source="/Recourse/NOcheck.png" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.RowSpan="2" Grid.Column="3" Height="90" Visibility="Hidden" />
     </Grid>
 </Page>
