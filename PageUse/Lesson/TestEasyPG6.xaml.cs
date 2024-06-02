@@ -22,28 +22,49 @@ namespace ProgrammEasy.PageUse.Lesson
     /// </summary>
     public partial class TestEasyPG6 : Page
     {
-        private static DispatcherTimer _timer;
-        private static DateTime _startTime;
-        private static TestResult _testResult = new TestResult();
-        public TestEasyPG6()
+        private DispatcherTimer _timer;
+        private DateTime _startTime;
+        private TestResult _testResult;
+        private int _questionNumber;
+        public TestEasyPG6(TestResult testResult, int questionNumber)
         {
             InitializeComponent();
-            if (_timer == null)
-            {
-                _timer = new DispatcherTimer();
-                _timer.Interval = TimeSpan.FromSeconds(1);
-                _timer.Tick += Timer_Tick;
-                _startTime = DateTime.Now;
-                _timer.Start();
-            }
+            _testResult = testResult;
+            _questionNumber = questionNumber;
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Tick += Timer_Tick;
+            _startTime = DateTime.Now;
+            _timer.Start();
         }
-        private void BakcBT_Click(object sender, RoutedEventArgs e)
+
+        private void Timer_Tick(object sender, EventArgs e)
         {
-            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут будут утеряны",
- "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            var elapsedTime = DateTime.Now - _startTime;
+            // Optionally update UI with elapsedTime
+        }
+
+        private void NextBT_Click(object sender, RoutedEventArgs e)
+        {
+            SaveAnswer();
+            _testResult.TotalTimeSpent += DateTime.Now - _startTime;
+            if (_questionNumber == _testResult.TotalQuestions)
             {
                 _timer.Stop();
-                //TestResult._questionNumber = 0;
+                NavigationService.Navigate(new ResultPage(_testResult));
+            }
+            else
+            {
+                NavigationService.Navigate(new TestEasyPG7(_testResult, _questionNumber + 1)); // Переход к следующей странице
+            }
+        }
+
+        private void BakcBT_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                _timer.Stop();
+                _testResult.QuestionResults.Clear();
                 try
                 {
                     var logIn = new UserGlav();
@@ -60,26 +81,6 @@ namespace ProgrammEasy.PageUse.Lesson
                     MessageBox.Show(ex.Message);
                 }
             }
-        }
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            var elapsedTime = DateTime.Now - _startTime;
-            // Optionally update UI with elapsedTime
-        }
-
-        private void NextBT_Click(object sender, RoutedEventArgs e)
-        {
-            //SaveAnswer();
-            //if (TestResult._questionNumber == TestResult._countQuestion)
-            //{
-            //    _timer.Stop();
-            //    NavigationService.Navigate(new ResultPage(_testResult));
-            //}
-            //else
-            //{
-            //    TestResult._questionNumber++;
-            //   // NavigationService.Navigate(new TestEasyPG6()); // Переход к следующей странице
-            //}
         }
         private void SaveAnswer()
         {
@@ -103,3 +104,5 @@ namespace ProgrammEasy.PageUse.Lesson
         }
     }
 }
+
+

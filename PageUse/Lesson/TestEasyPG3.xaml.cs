@@ -49,16 +49,16 @@ namespace ProgrammEasy.PageUse.Lesson
         {
             SaveAnswer();
             _testResult.TotalTimeSpent += DateTime.Now - _startTime;
-            //if (_questionNumber == _testResult.TotalQuestions)
-            //{
+            if (_questionNumber == _testResult.TotalQuestions)
+            {
                 _timer.Stop();
                 NavigationService.Navigate(new ResultPage(_testResult));
-            //}
-            //else
-            //{
-            //    NavigationService.Navigate(new TestEasyPG4(_testResult, _questionNumber + 1)); // Переход к следующей странице
-            //}
         }
+            else
+            {
+                NavigationService.Navigate(new TestEasyPG4(_testResult, _questionNumber + 1)); // Переход к следующей странице
+            }
+}
 
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
