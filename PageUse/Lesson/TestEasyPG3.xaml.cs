@@ -87,7 +87,7 @@ namespace ProgrammEasy.PageUse.Lesson
         private void SaveAnswer()
         {
             var selectedAnswer = GetSelectedAnswer();
-            var correctAnswer = "c) float"; // Правильный ответ для текущего вопроса
+            var correctAnswer = "b) Графическое представление алгоритма"; // Правильный ответ для текущего вопроса
             _testResult.QuestionResults.Add(new QuestionResult
             {
                 Question = QuestionBody.Text, // Текущий вопрос
@@ -98,10 +98,10 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private string GetSelectedAnswer()
         {
-            if (AnswerRadioButton1.IsChecked == true) return "a) string";
-            if (AnswerRadioButton2.IsChecked == true) return "b) int";
-            if (AnswerRadioButton3.IsChecked == true) return "c) float";
-            if (AnswerRadioButton4.IsChecked == true) return "d) bool";
+            if (AnswerRadioButton1.IsChecked == true) return "a) Математическая формула";
+            if (AnswerRadioButton2.IsChecked == true) return "b) Графическое представление алгоритма";
+            if (AnswerRadioButton3.IsChecked == true) return "c) Таблица значений";
+            if (AnswerRadioButton4.IsChecked == true) return "d) Программа на компьютере";
             return string.Empty;
         }
     }

@@ -23,7 +23,7 @@ namespace ProgrammEasy.WinUse.Student
         public TestWin()
         {
             InitializeComponent();
-            _testResult = new TestResult { TotalQuestions = 3 }; // Установите общее количество вопросов
+            _testResult = new TestResult { TotalQuestions = 20 }; // Установите общее количество вопросов
             myFrameTest.Navigate(new PageUse.Lesson.TestEasyPG(_testResult, 1)); // Начало с первого вопроса (0)
         }
     }
