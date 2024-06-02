@@ -36,13 +36,16 @@ namespace ProgrammEasy.PageUse.Lesson
         {
             try
             {
-                results.IdUser = RegFlag.IdUser;
-                results.IdLesson = RegFlag.LessonId;
-                results.Date = DateTime.Now;
-                results.ScoreImg = 1005;
+                if (RegFlag.IdRol != 4)
+                {
+                    results.IdUser = RegFlag.IdUser;
+                    results.IdLesson = RegFlag.LessonId;
+                    results.Date = DateTime.Now;
+                    results.ScoreImg = 1005;
 
-                myEntities.GetContext().Results.Add(results);
-                myEntities.GetContext().SaveChanges();
+                    myEntities.GetContext().Results.Add(results);
+                    myEntities.GetContext().SaveChanges();
+                }
 
                 NavigationService.Navigate(new choiceLess());
             }

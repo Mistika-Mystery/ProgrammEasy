@@ -99,13 +99,16 @@ namespace ProgrammEasy.PageUse.Lesson
                     results.ScoreImg = 5;
                     Img01.Visibility = Visibility.Visible;
                 }
-                results.IdUser = RegFlag.IdUser;
-                results.IdLesson = RegFlag.LessonId;
-                results.Date = DateTime.Now;
-                results.Description = ResultsSummary.Text;
+                if (RegFlag.IdRol != 4)
+                {
+                    results.IdUser = RegFlag.IdUser;
+                    results.IdLesson = RegFlag.LessonId;
+                    results.Date = DateTime.Now;
+                    results.Description = ResultsSummary.Text;
 
-                myEntities.GetContext().Results.Add(results);
-                myEntities.GetContext().SaveChanges();
+                    myEntities.GetContext().Results.Add(results);
+                    myEntities.GetContext().SaveChanges();
+                }
 
             }
             catch (Exception ex)

@@ -36,6 +36,8 @@ namespace ProgrammEasy.PageUse.Lesson
         {
             try
             {
+                if (RegFlag.IdRol !=4) 
+                {
                 results.IdUser = RegFlag.IdUser;
                 results.IdLesson = RegFlag.LessonId;
                 results.Date = DateTime.Now;
@@ -43,6 +45,7 @@ namespace ProgrammEasy.PageUse.Lesson
 
                 myEntities.GetContext().Results.Add(results);
                 myEntities.GetContext().SaveChanges();
+                }
 
                 NavigationService.Navigate(new choiceLess());
             }
