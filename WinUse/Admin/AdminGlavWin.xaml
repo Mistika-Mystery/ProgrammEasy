@@ -29,7 +29,7 @@
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="0.8*"/>
             </Grid.ColumnDefinitions>
-            <Image Source="/Recourse/ProgLogoNew.png" Height="101" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown" ToolTip="Перейти на главную"/>
+            <Image Source="/Recourse/ProgLogoNew.png" Height="101" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown" ToolTip="Перейти в пользовательский режим"/>
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
                 <TextBlock Text="Панель" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Comic Sans MS" FontWeight="Bold"/>
                 <TextBlock x:Name="LabRolTB" Text="Администратора" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontSize="32" FontWeight="Bold"/>
@@ -792,7 +792,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <DataGrid x:Name="ResultDG" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Редактирование двойным нажатием">
+                    <DataGrid x:Name="ResultDG" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Просмотр двойным нажатием">
                         <DataGrid.Resources>
                             <Style TargetType="DataGridRow">
                                 <EventSetter Event="MouseDoubleClick"  Handler="DataGridRow_MouseDoubleClick_8"/>
