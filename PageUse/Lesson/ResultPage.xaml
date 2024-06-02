@@ -9,6 +9,6 @@
       Title="ResultPage">
 
     <Grid>
-        <TextBlock x:Name="ResultText" FontSize="24" TextWrapping="Wrap"/>
+        <TextBlock x:Name="ResultsSummary" FontSize="16" TextWrapping="Wrap" />
     </Grid>
 </Page>

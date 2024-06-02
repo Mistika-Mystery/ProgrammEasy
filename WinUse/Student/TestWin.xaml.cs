@@ -19,10 +19,13 @@ namespace ProgrammEasy.WinUse.Student
     /// </summary>
     public partial class TestWin : Window
     {
+        private TestResult _testResult;
         public TestWin()
         {
             InitializeComponent();
-            myFrameTest.Navigate(new PageUse.Lesson.TestEasyPG());
+            _testResult = new TestResult { TotalQuestions = 3 }; // Установите общее количество вопросов
+            myFrameTest.Navigate(new PageUse.Lesson.TestEasyPG(_testResult, 1)); // Начало с первого вопроса (0)
         }
     }
+    
 }

@@ -6,8 +6,7 @@
       xmlns:local="clr-namespace:ProgrammEasy.PageUse.Lesson"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="TestEasyPG"
-      Loaded="Page_Loaded">
+      Title="TestEasyPG">
 
     <Grid>
         <Grid.RowDefinitions>

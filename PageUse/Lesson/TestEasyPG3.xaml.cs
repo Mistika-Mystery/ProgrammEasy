@@ -22,20 +22,50 @@ namespace ProgrammEasy.PageUse.Lesson
     /// </summary>
     public partial class TestEasyPG3 : Page
     {
-        private static DispatcherTimer _timer;
-        private static DateTime _startTime;
-        private static TestResult _testResult = new TestResult();
-        public TestEasyPG3()
+        private DispatcherTimer _timer;
+        private DateTime _startTime;
+        private TestResult _testResult;
+        private int _questionNumber;
+
+        public TestEasyPG3(TestResult testResult, int questionNumber)
         {
             InitializeComponent();
+            _testResult = testResult;
+            _questionNumber = questionNumber;
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Tick += Timer_Tick;
+            _startTime = DateTime.Now;
+            _timer.Start();
         }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            var elapsedTime = DateTime.Now - _startTime;
+            // Optionally update UI with elapsedTime
+        }
+
+        private void NextBT_Click(object sender, RoutedEventArgs e)
+        {
+            SaveAnswer();
+            _testResult.TotalTimeSpent += DateTime.Now - _startTime;
+            //if (_questionNumber == _testResult.TotalQuestions)
+            //{
+                _timer.Stop();
+                NavigationService.Navigate(new ResultPage(_testResult));
+            //}
+            //else
+            //{
+            //    NavigationService.Navigate(new TestEasyPG4(_testResult, _questionNumber + 1)); // Переход к следующей странице
+            //}
+        }
+
         private void BakcBT_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут будут утеряны",
- "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
                 _timer.Stop();
-                TestResult._questionNumber = 0;
+                _testResult.QuestionResults.Clear();
                 try
                 {
                     var logIn = new UserGlav();
@@ -53,30 +83,11 @@ namespace ProgrammEasy.PageUse.Lesson
                 }
             }
         }
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            var elapsedTime = DateTime.Now - _startTime;
-            // Optionally update UI with elapsedTime
-        }
 
-        private void NextBT_Click(object sender, RoutedEventArgs e)
-        {
-            SaveAnswer();
-            if (TestResult._questionNumber == _testResult.TotalQuestions)
-            {
-                _timer.Stop();
-                NavigationService.Navigate(new ResultPage(_testResult));
-            }
-            else
-            {
-                TestResult._questionNumber++;
-                NavigationService.Navigate(new TestEasyPG4()); // Переход к следующей странице
-            }
-        }
         private void SaveAnswer()
         {
             var selectedAnswer = GetSelectedAnswer();
-            var correctAnswer = "b) Графическое представление алгоритма"; // Правильный ответ для текущего вопроса
+            var correctAnswer = "c) float"; // Правильный ответ для текущего вопроса
             _testResult.QuestionResults.Add(new QuestionResult
             {
                 Question = QuestionBody.Text, // Текущий вопрос
@@ -87,10 +98,10 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private string GetSelectedAnswer()
         {
-            if (AnswerRadioButton1.IsChecked == true) return "a) Математическая формула";
-            if (AnswerRadioButton2.IsChecked == true) return "b) Графическое представление алгоритма";
-            if (AnswerRadioButton3.IsChecked == true) return "c) Таблица значений";
-            if (AnswerRadioButton4.IsChecked == true) return "d) Программа на компьютере";
+            if (AnswerRadioButton1.IsChecked == true) return "a) string";
+            if (AnswerRadioButton2.IsChecked == true) return "b) int";
+            if (AnswerRadioButton3.IsChecked == true) return "c) float";
+            if (AnswerRadioButton4.IsChecked == true) return "d) bool";
             return string.Empty;
         }
     }

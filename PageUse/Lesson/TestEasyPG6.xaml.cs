@@ -43,7 +43,7 @@ namespace ProgrammEasy.PageUse.Lesson
  "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
                 _timer.Stop();
-                TestResult._questionNumber = 0;
+                //TestResult._questionNumber = 0;
                 try
                 {
                     var logIn = new UserGlav();
@@ -69,17 +69,17 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
-            SaveAnswer();
-            if (TestResult._questionNumber == TestResult._countQuestion)
-            {
-                _timer.Stop();
-                NavigationService.Navigate(new ResultPage(_testResult));
-            }
-            else
-            {
-                TestResult._questionNumber++;
-               // NavigationService.Navigate(new TestEasyPG6()); // Переход к следующей странице
-            }
+            //SaveAnswer();
+            //if (TestResult._questionNumber == TestResult._countQuestion)
+            //{
+            //    _timer.Stop();
+            //    NavigationService.Navigate(new ResultPage(_testResult));
+            //}
+            //else
+            //{
+            //    TestResult._questionNumber++;
+            //   // NavigationService.Navigate(new TestEasyPG6()); // Переход к следующей странице
+            //}
         }
         private void SaveAnswer()
         {

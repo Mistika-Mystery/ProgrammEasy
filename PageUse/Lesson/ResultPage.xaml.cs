@@ -15,31 +15,35 @@ using System.Windows.Shapes;
 
 namespace ProgrammEasy.PageUse.Lesson
 {
-    /// <summary>
-    /// Логика взаимодействия для ResultPage.xaml
-    /// </summary>
     public partial class ResultPage : Page
     {
+        private TestResult _testResult;
+
         public ResultPage(TestResult testResult)
         {
             InitializeComponent();
-            DisplayResults(testResult);
+            _testResult = testResult;
+            DisplayResults();
         }
-        private void DisplayResults(TestResult testResult)
-        {
-            ResultText.Text = $"Время, потраченное на тест: {testResult.TimeSpent}\n" +
-                              $"Всего вопросов: {testResult.TotalQuestions}\n" +
-                              $"Правильных ответов: {testResult.CorrectAnswers}\n\n" +
-                              "Неправильные ответы:\n";
 
-            foreach (var result in testResult.QuestionResults)
+        private void DisplayResults()
+        {
+            StringBuilder results = new StringBuilder();
+            results.AppendLine($"Всего вопросов: {_testResult.TotalQuestions}");
+            results.AppendLine($"Правильных ответов: {_testResult.CorrectAnswers}");
+            results.AppendLine($"Неправильных ответов: {_testResult.IncorrectAnswers}");
+            results.AppendLine($"Общее время: {_testResult.TotalTimeSpent}");
+
+            foreach (var questionResult in _testResult.QuestionResults)
             {
-                if (!result.IsCorrect)
+                if (!questionResult.IsCorrect)
                 {
-                    ResultText.Text += $"Вопрос: {result.Question}\nВаш ответ: {result.SelectedAnswer}\n\n";
+                    results.AppendLine($"Вопрос: {questionResult.Question}");
+                    results.AppendLine($"Ваш ответ: {questionResult.SelectedAnswer}");
                 }
             }
-            TestResult._questionNumber = 0;
+
+            ResultsSummary.Text = results.ToString();
         }
     }
 }

@@ -22,31 +22,23 @@ namespace ProgrammEasy.PageUse.Lesson
     /// </summary>
     public partial class TestEasyPG : Page
     {
-        private static DispatcherTimer _timer;
-        private static DateTime _startTime;
-        private static TestResult _testResult = new TestResult();
-        
-        public TestEasyPG()
+        private DispatcherTimer _timer;
+        private DateTime _startTime;
+        private TestResult _testResult;
+        private int _questionNumber;
+
+        public TestEasyPG(TestResult testResult, int questionNumber)
         {
             InitializeComponent();
-            TestResult._questionNumber = 1;
-            TestResult._countQuestion = 10;
-            if (_timer == null)
-            {
-                _timer = new DispatcherTimer();
-                _timer.Interval = TimeSpan.FromSeconds(1);
-                _timer.Tick += Timer_Tick;
-            }
+            _testResult = testResult;
+            _questionNumber = questionNumber;
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(1);
+            _timer.Tick += Timer_Tick;
+            _startTime = DateTime.Now;
+            _timer.Start();
         }
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (TestResult._questionNumber == 1)
-            {
-                _testResult.TotalQuestions = TestResult._countQuestion;
-                _startTime = DateTime.Now;
-                _timer.Start();
-            }
-        }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             var elapsedTime = DateTime.Now - _startTime;
@@ -59,7 +51,7 @@ namespace ProgrammEasy.PageUse.Lesson
  "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
             {
                 _timer.Stop();
-                TestResult._questionNumber = 0;
+                _testResult.QuestionResults.Clear();
                 try
                 {
                     var logIn = new UserGlav();
@@ -81,26 +73,27 @@ namespace ProgrammEasy.PageUse.Lesson
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
             SaveAnswer();
-            if (TestResult._questionNumber == _testResult.TotalQuestions)
+            if (_questionNumber == _testResult.TotalQuestions)
             {
                 _timer.Stop();
+                _testResult.TotalTimeSpent += DateTime.Now - _startTime;
                 NavigationService.Navigate(new ResultPage(_testResult));
             }
             else
             {
-                TestResult._questionNumber++;
-                NavigationService.Navigate(new TestEasyPG2());
+                _testResult.TotalTimeSpent += DateTime.Now - _startTime;
+                NavigationService.Navigate(new TestEasyPG2(_testResult, _questionNumber + 1));
             }
         }
         private void SaveAnswer()
         {
             var selectedAnswer = GetSelectedAnswer();
-            var correctAnswer = "c) Массив, содержащий элементы одного типа, расположенные в одном измерении";
+            var correctAnswer = "c) Массив, содержащий элементы одного типа, расположенные в одном измерении"; // Правильный ответ для текущего вопроса
             _testResult.QuestionResults.Add(new QuestionResult
             {
-                Question = QuestionBody.Text,
-                SelectedAnswer = selectedAnswer,
-                IsCorrect = selectedAnswer == correctAnswer
+                Question = QuestionBody.Text, // Текущий вопрос
+                SelectedAnswer = selectedAnswer, // Ответ пользователя
+                IsCorrect = selectedAnswer == correctAnswer // Проверка правильности ответа
             });
         }
         private string GetSelectedAnswer()
