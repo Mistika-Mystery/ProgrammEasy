@@ -19,7 +19,6 @@ namespace ProgrammEasy.WinUse.Admin
     /// </summary>
     public partial class addEdResult : Window
     {
-        private Results _results = new Results();
         public addEdResult(Results results)
         {
             InitializeComponent();
