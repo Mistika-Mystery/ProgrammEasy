@@ -35,6 +35,10 @@
             <TextBlock Text="Мои Достижения" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
         </StackPanel>
 
+        <StackPanel Grid.Row="1" x:Name="NoResultSP" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" >
+            <Image Source="/Recourse/NoRegUs.png" Width="200" />
+            <TextBlock Text="Мои Достижения" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
+        </StackPanel>
         <StackPanel Grid.Row="1" x:Name="LessonSP" HorizontalAlignment="Center" VerticalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="LessonSP_MouseLeftButtonDown" Grid.Column="1">
             <Image Source="/Recourse/lesson.png" Width="200" />
             <TextBlock Text="Ученье - свет!" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>

@@ -27,6 +27,8 @@ namespace ProgrammEasy.WinUse.Student
             {
                 ImgOk.Visibility = Visibility.Collapsed;
                 ImgNo.Visibility = Visibility.Visible;
+                ResultSP.Visibility = Visibility.Collapsed;
+                NoResultSP.Visibility = Visibility.Visible;
             }
         }
 
