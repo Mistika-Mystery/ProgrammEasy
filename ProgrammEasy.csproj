@@ -447,6 +447,9 @@
     <Compile Include="WinUse\ReqNew.xaml.cs">
       <DependentUpon>ReqNew.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\Student\AccountWin.xaml.cs">
+      <DependentUpon>AccountWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinUse\Student\LessonWin.xaml.cs">
       <DependentUpon>LessonWin.xaml</DependentUpon>
     </Compile>
@@ -849,6 +852,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinUse\ReqNew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinUse\Student\AccountWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
