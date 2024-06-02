@@ -30,5 +30,6 @@ namespace ProgrammEasy.WinUse.Admin
         {
             this.Close();
         }
+               
     }
 }

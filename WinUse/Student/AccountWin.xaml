@@ -21,7 +21,8 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image Source="/Recourse/kubok.png" Width="80"/>
-            <TextBlock Text=" Личный Кабинет " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontFamily="Comic Sans MS" Margin="50,0,0,0"/>
+            <TextBlock Text=" Личный Кабинет: " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontFamily="Comic Sans MS" Margin="30,0,0,0"/>
+            <TextBlock Text="Log" x:Name="LogName" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontFamily="Comic Sans MS" FontWeight="Bold"/>
         </StackPanel>
         <Frame x:Name="myFrameAccount" NavigationUIVisibility="Hidden" Grid.Row="1"/>
 

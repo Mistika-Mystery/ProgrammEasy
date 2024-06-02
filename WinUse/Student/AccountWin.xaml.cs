@@ -23,6 +23,7 @@ namespace ProgrammEasy.WinUse.Student
         {
             InitializeComponent();
             myFrameAccount.Navigate(new PageUse.AccountResult());
+            LogName.Text=RegFlag.UserLogin;
         }
     }
 }

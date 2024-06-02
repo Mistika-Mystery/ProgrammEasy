@@ -54,7 +54,9 @@
         </StackPanel>
 
         <TextBlock Text="Подробности:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+        
         <TextBox x:Name="OpisanTB" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Description}" Grid.Row="3" Grid.RowSpan="4" FontSize="16" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="10" Background="{x:Null}" />
+        
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Оценка: " HorizontalAlignment="Center" VerticalAlignment="Center" />
             <Image x:Name="ImgOshib" Source="{Binding Path=ScoreImage.Img}" HorizontalAlignment="Center" VerticalAlignment="Center" />

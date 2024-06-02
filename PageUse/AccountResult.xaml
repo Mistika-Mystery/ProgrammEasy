@@ -19,7 +19,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="1">
             <Image x:Name="LvlImg" Source="{Binding Path=ImgFoto.ImgLev}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -31,22 +31,18 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                <TextBlock Text="Login: " FontSize="18"/>
-                <TextBlock Text="{Binding Login}" FontSize="20"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" >
                 <TextBlock Text="ФИ: " FontSize="18"/>
                 <TextBlock Text="{Binding LastName}" Margin="0,0,5,0" FontSize="20" />
                 <TextBlock Text="{Binding FirstName}" FontSize="20"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" >
                 <TextBlock Text="Статус: " FontSize="18"/>
                 <TextBlock Text="{Binding RoleUser.Name}" FontSize="20"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" >
                 <TextBlock Text="Группа: " FontSize="18"/>
                 <TextBlock Text="{Binding GroupUser.Name}" FontSize="20"/>
             </StackPanel>
@@ -58,7 +54,77 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button Style="{StaticResource SpecialButtonStyle}" Content="Редактировать" x:Name="EditBt" Click="EditBt_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" Background="{x:Null}" FontSize="16" Cursor="Hand"/>
-            <Button Style="{StaticResource SpecialButtonStyle}" Content="Написать Администратору" x:Name="MessBt" Click="EditBt_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" Background="{x:Null}" FontSize="16" Grid.Row="2" Cursor="Hand"/>
+            <Button Style="{StaticResource SpecialButtonStyle}" Content="Написать" x:Name="MessBt" Click="MessBt_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" Background="{x:Null}" FontSize="16" Grid.Row="2" Cursor="Hand"/>
         </Grid>
+        <DataGrid x:Name="myResultDG" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Подробности - двойным щелчком" Grid.Column="1" Grid.ColumnSpan="2" Background="{x:Null}">
+            <DataGrid.Resources>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+
+
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+
+                                </Grid.RowDefinitions>
+
+
+                                <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" MaxWidth="150" MaxHeight="100" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Image.Source>
+                                        <Binding Path="Lessons.Img">
+                                            <Binding.TargetNullValue>
+                                                <ImageSource>netu1.jpg</ImageSource>
+                                            </Binding.TargetNullValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
+                                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding Lessons.Name}" FontWeight="Bold" FontSize="16" TextDecorations="Underline"/>
+                                </StackPanel>
+                                <StackPanel  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock Text="Описание урока: " HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{Binding Lessons.Description}" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock Text="Дата прохождения: "/>
+                                    <TextBlock Text="{Binding Date, StringFormat={}{0:dd.MM.yyyy HH:mm}}" FontWeight="Bold"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <TextBlock Text="{Binding ScoreImage.Name}" FontWeight="Bold"/>
+                                </StackPanel>
+                                <Image Grid.Column="2" Grid.Row="0" Grid.RowSpan="4" MaxWidth="150" MaxHeight="70" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,0">
+                                    <Image.Source>
+                                        <Binding Path="ScoreImage.Img">
+                                            <Binding.TargetNullValue>
+                                                <ImageSource>netu1.jpg</ImageSource>
+                                            </Binding.TargetNullValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
+                            </Grid>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+
+        </DataGrid>
     </Grid>
 </Page>

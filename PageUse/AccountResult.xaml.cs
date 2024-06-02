@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse.Admin;
+using ProgrammEasy.WinUse.Student;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,9 +25,22 @@ namespace ProgrammEasy.PageUse
         public AccountResult()
         {
             InitializeComponent();
+            myResultDG.ItemsSource= myEntities.GetContext().Results.Where( x => x.User.Id == RegFlag.IdUser).ToList();
         }
 
         private void EditBt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var rowRes = (sender as DataGridRow).DataContext as Results;
+            UserResultWin adRes = new UserResultWin(rowRes);
+            adRes.Show();
+        }
+
+        private void MessBt_Click(object sender, RoutedEventArgs e)
         {
 
         }

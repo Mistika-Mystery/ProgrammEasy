@@ -462,6 +462,9 @@
     <Compile Include="WinUse\Student\UserGlav.xaml.cs">
       <DependentUpon>UserGlav.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinUse\Student\UserResultWin.xaml.cs">
+      <DependentUpon>UserResultWin.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -878,6 +881,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WinUse\Student\UserResultWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -1008,6 +1015,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="PageUse\netu1.jpg" />
     <Resource Include="Recourse\NoRegUs.png" />
     <Resource Include="Recourse\q1 %281%29.png" />
     <Resource Include="Recourse\q1 %282%29.png" />
