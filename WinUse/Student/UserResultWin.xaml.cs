@@ -34,14 +34,20 @@ namespace ProgrammEasy.WinUse.Student
 
         private void Expander_Expanded(object sender, RoutedEventArgs e)
         {
-            this.Height += ExpanderHeightChange;
-            DescriptionRow.Height = new GridLength(ExpanderHeightChange);
+            if (!string.IsNullOrEmpty(OpisanTB.Text))
+            {
+                this.Height += ExpanderHeightChange;
+                DescriptionRow.Height = new GridLength(ExpanderHeightChange);
+            }
         }
 
         private void Expander_Collapsed(object sender, RoutedEventArgs e)
         {
-            this.Height -= ExpanderHeightChange;
-            DescriptionRow.Height = new GridLength(1, GridUnitType.Star);
+            if (!string.IsNullOrEmpty(OpisanTB.Text))
+            {
+                this.Height -= ExpanderHeightChange;
+                DescriptionRow.Height = new GridLength(1, GridUnitType.Star);
+            }
         }
     }
 }
