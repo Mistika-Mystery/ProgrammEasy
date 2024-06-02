@@ -19,14 +19,17 @@ namespace ProgrammEasy.WinUse.Admin
     /// </summary>
     public partial class addEdResult : Window
     {
-        public addEdResult()
+        private Results _results = new Results();
+        public addEdResult(Results results)
         {
             InitializeComponent();
+            DataContext = results;
+            if (results.ScoreImage != null) ImgOshib.Source = new ImageSourceConverter().ConvertFrom(results.ScoreImage.Img) as ImageSource;
         }
 
         private void BackBTN_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

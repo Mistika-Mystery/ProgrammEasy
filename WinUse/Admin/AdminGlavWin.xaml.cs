@@ -1154,7 +1154,9 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void DataGridRow_MouseDoubleClick_8(object sender, MouseButtonEventArgs e)
         {
-            /// тут надо просмотр результатов
+            var rowRes = (sender as DataGridRow).DataContext as Results;
+            addEdResult adRes = new addEdResult(rowRes);
+            adRes.Show();
         }
 
 

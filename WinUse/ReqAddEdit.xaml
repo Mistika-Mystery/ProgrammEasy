@@ -34,7 +34,7 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Дата подачи: "/>
-            <TextBlock Text="{Binding Date}" x:Name="TbDate" FontWeight="Bold" FontSize="14"/>
+            <TextBlock Text="{Binding Date, StringFormat={}{0:dd.MM.yyyy HH:mm}}" x:Name="TbDate" FontWeight="Bold" FontSize="14"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Заявитель: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
