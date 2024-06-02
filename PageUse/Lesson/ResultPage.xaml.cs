@@ -46,5 +46,10 @@ namespace ProgrammEasy.PageUse.Lesson
 
             ResultsSummary.Text = results.ToString();
         }
+
+        private void NextBT_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

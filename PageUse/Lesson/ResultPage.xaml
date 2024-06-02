@@ -9,6 +9,25 @@
       Title="ResultPage">
 
     <Grid>
-        <TextBlock x:Name="ResultsSummary" FontSize="16" TextWrapping="Wrap" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Результат теста: " FontFamily="Comic Sans MS" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Image HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Завершить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="2"/>
+
+        <TextBox x:Name="ResultsSummary" FontSize="16" TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="10"/>
+
     </Grid>
 </Page>
