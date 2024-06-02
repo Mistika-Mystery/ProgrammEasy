@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse.Student"
         mc:Ignorable="d"
-        Title="AccountWin" Height="450" Width="800">
+        Title="Программирование это просто!" Height="650" Width="950" MinWidth="800" MinHeight="500" Icon="/Recourse/ProgLogoNew.png">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF57FEFE"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="0.1*"/>
+
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="/Recourse/kubok.png" Width="80"/>
+            <TextBlock Text=" Личный Кабинет " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontFamily="Comic Sans MS" Margin="50,0,0,0"/>
+        </StackPanel>
+        <Frame x:Name="myFrameAccount" NavigationUIVisibility="Hidden" Grid.Row="1"/>
+
     </Grid>
 </Window>

@@ -29,12 +29,15 @@ namespace ProgrammEasy.WinUse.Student
                 ImgNo.Visibility = Visibility.Visible;
                 ResultSP.Visibility = Visibility.Collapsed;
                 NoResultSP.Visibility = Visibility.Visible;
+                InfoUsSP.IsEnabled = false;
             }
         }
 
         private void ResultSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            var Acc = new AccountWin();
+            Acc.Show();
+            this.Close();
         }
 
         private void LessonSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

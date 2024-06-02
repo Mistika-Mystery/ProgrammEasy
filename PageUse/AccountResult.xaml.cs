@@ -10,19 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProgrammEasy.WinUse.Student
+namespace ProgrammEasy.PageUse
 {
     /// <summary>
-    /// Логика взаимодействия для AccountWin.xaml
+    /// Логика взаимодействия для AccountResult.xaml
     /// </summary>
-    public partial class AccountWin : Window
+    public partial class AccountResult : Page
     {
-        public AccountWin()
+        public AccountResult()
         {
             InitializeComponent();
-            myFrameAccount.Navigate(new PageUse.AccountResult());
+        }
+
+        private void EditBt_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
