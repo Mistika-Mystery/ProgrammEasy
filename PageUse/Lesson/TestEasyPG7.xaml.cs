@@ -46,6 +46,11 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(GetSelectedAnswer()))
+            {
+                MessageBox.Show("Пожалуйста, выберите вариант ответа.", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
             SaveAnswer();
             _testResult.TotalTimeSpent += DateTime.Now - _startTime;
             if (_questionNumber == _testResult.TotalQuestions)

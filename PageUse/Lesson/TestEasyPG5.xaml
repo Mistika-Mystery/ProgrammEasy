@@ -28,7 +28,7 @@
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Выйти" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3"/>
         <TextBlock x:Name="QuestionText" Text="Вопрос №5" FontFamily="Comic Sans MS" FontSize="36" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
-        <TextBlock x:Name="QuestionBody" Text="Какой индекс у первого элемента в массиве в C#?" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock x:Name="QuestionBody" Text="Какой индекс у первого элемента в массиве?" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
         <RadioButton Name="AnswerRadioButton1" Margin="5" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="a) 1" TextWrapping="Wrap" FontSize="24" />
         </RadioButton>
