@@ -1,4 +1,5 @@
 ﻿using ProgrammEasy.WinUse;
+using ProgrammEasy.WinUse.Student;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,8 +47,11 @@ namespace ProgrammEasy
             {
                 try
                 {
-                    var mainWinPg = new MainWinUse();
-                    mainWinPg.Show();
+                    RegFlag.IdRol = 4;
+                    RegFlag.IdUser = 1015;
+                    RegFlag.UserLogin = "Гость";
+                    var userWin = new UserGlav();
+                    userWin.Show();
                     this.Close();
                 }
                 catch(Exception ex)

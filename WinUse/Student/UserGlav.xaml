@@ -45,7 +45,8 @@
             <TextBlock Text="Проверим?" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
         </StackPanel>
         <StackPanel x:Name="InfoUsSP" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="30,0,0,15" Orientation="Horizontal" MouseLeftButtonDown="InfoUsSP_MouseLeftButtonDown" Cursor="Hand" ToolTip="Перейти в личный кабинет">
-            <Image Source="/Recourse/userOk.png" Width="60" />
+            <Image x:Name="ImgOk" Source="/Recourse/userOk.png" Width="60" />
+            <Image x:Name="ImgNo" Source="/Recourse/userNo.png" Width="60" Visibility="Collapsed"/>
             <TextBlock Text="Alina88" x:Name="NameUser" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="36" FontFamily="Comic Sans MS" Margin="10,0,0,0"/>
         </StackPanel>
 

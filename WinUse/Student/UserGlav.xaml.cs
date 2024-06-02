@@ -23,6 +23,11 @@ namespace ProgrammEasy.WinUse.Student
         {
             InitializeComponent();
             NameUser.Text = RegFlag.UserLogin;
+            if (RegFlag.IdRol ==4)
+            {
+                ImgOk.Visibility = Visibility.Collapsed;
+                ImgNo.Visibility = Visibility.Visible;
+            }
         }
 
         private void ResultSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
