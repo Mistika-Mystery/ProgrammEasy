@@ -52,7 +52,7 @@ namespace ProgrammEasy.PageUse.Lesson
             }
             else
             {
-                NavigationService.Navigate(new TestEasyPG9(_testResult, _questionNumber + 1)); // Переход к следующей странице
+                NavigationService.Navigate(new TestEasyPG10(_testResult, _questionNumber + 1)); // Переход к следующей странице
             }
         }
 

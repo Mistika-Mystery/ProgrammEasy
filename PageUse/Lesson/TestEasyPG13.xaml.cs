@@ -18,15 +18,15 @@ using System.Windows.Threading;
 namespace ProgrammEasy.PageUse.Lesson
 {
     /// <summary>
-    /// Логика взаимодействия для TestEasyPG10.xaml
+    /// Логика взаимодействия для TestEasyPG13.xaml
     /// </summary>
-    public partial class TestEasyPG10 : Page
+    public partial class TestEasyPG13 : Page
     {
         private DispatcherTimer _timer;
         private DateTime _startTime;
         private TestResult _testResult;
         private int _questionNumber;
-        public TestEasyPG10(TestResult testResult, int questionNumber)
+        public TestEasyPG13(TestResult testResult, int questionNumber)
         {
             InitializeComponent();
             _testResult = testResult;
@@ -52,7 +52,7 @@ namespace ProgrammEasy.PageUse.Lesson
             }
             else
             {
-                NavigationService.Navigate(new TestEasyPG11(_testResult, _questionNumber + 1)); // Переход к следующей странице
+                NavigationService.Navigate(new TestEasyPG14(_testResult, _questionNumber + 1)); // Переход к следующей странице
             }
         }
 
@@ -82,7 +82,7 @@ namespace ProgrammEasy.PageUse.Lesson
         private void SaveAnswer()
         {
             var selectedAnswer = GetSelectedAnswer();
-            var correctAnswer = "c) true"; // Правильный ответ для текущего вопроса
+            var correctAnswer = "d) double"; // Правильный ответ для текущего вопроса
             _testResult.QuestionResults.Add(new QuestionResult
             {
                 Question = QuestionBody.Text, // Текущий вопрос
@@ -93,10 +93,10 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private string GetSelectedAnswer()
         {
-            if (AnswerRadioButton1.IsChecked == true) return "a) 42";
-            if (AnswerRadioButton2.IsChecked == true) return "b) 3.14";
-            if (AnswerRadioButton3.IsChecked == true) return "c) true";
-            if (AnswerRadioButton4.IsChecked == true) return "d) “строка”";
+            if (AnswerRadioButton1.IsChecked == true) return "a) int";
+            if (AnswerRadioButton2.IsChecked == true) return "b) bool";
+            if (AnswerRadioButton3.IsChecked == true) return "c) string";
+            if (AnswerRadioButton4.IsChecked == true) return "d) double";
             return string.Empty;
         }
     }

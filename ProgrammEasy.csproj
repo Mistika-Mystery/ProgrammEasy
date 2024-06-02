@@ -241,8 +241,38 @@
     <Compile Include="PageUse\Lesson\TestEasyPG10.xaml.cs">
       <DependentUpon>TestEasyPG10.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG11.xaml.cs">
+      <DependentUpon>TestEasyPG11.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG12.xaml.cs">
+      <DependentUpon>TestEasyPG12.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG13.xaml.cs">
+      <DependentUpon>TestEasyPG13.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG14.xaml.cs">
+      <DependentUpon>TestEasyPG14.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG15.xaml.cs">
+      <DependentUpon>TestEasyPG15.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG16.xaml.cs">
+      <DependentUpon>TestEasyPG16.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG17.xaml.cs">
+      <DependentUpon>TestEasyPG17.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG18.xaml.cs">
+      <DependentUpon>TestEasyPG18.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG19.xaml.cs">
+      <DependentUpon>TestEasyPG19.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PageUse\Lesson\TestEasyPG2.xaml.cs">
       <DependentUpon>TestEasyPG2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageUse\Lesson\TestEasyPG20.xaml.cs">
+      <DependentUpon>TestEasyPG20.xaml</DependentUpon>
     </Compile>
     <Compile Include="PageUse\Lesson\TestEasyPG3.xaml.cs">
       <DependentUpon>TestEasyPG3.xaml</DependentUpon>
@@ -586,7 +616,47 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG11.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG12.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG13.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG14.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG15.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG16.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG17.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG18.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG19.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PageUse\Lesson\TestEasyPG2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageUse\Lesson\TestEasyPG20.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
