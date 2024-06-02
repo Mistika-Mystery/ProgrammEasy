@@ -19,6 +19,7 @@ namespace ProgrammEasy
         public int IdLesson { get; set; }
         public System.DateTime Date { get; set; }
         public int ScoreImg { get; set; }
+        public string Description { get; set; }
     
         public virtual Lessons Lessons { get; set; }
         public virtual ScoreImage ScoreImage { get; set; }
