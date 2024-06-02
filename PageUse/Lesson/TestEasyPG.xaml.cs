@@ -30,6 +30,7 @@ namespace ProgrammEasy.PageUse.Lesson
         public TestEasyPG(TestResult testResult, int questionNumber)
         {
             InitializeComponent();
+            RegFlag.LessonId = 2002;
             _testResult = testResult;
             _questionNumber = questionNumber;
             _timer = new DispatcherTimer();

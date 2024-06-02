@@ -6,17 +6,6 @@ using System.Threading.Tasks;
 
 namespace ProgrammEasy
 {
-    //public class TestResult
-    //{
-    //    public TimeSpan TimeSpent { get; set; }
-    //    public int TotalQuestions { get; set; }
-    //    public int CorrectAnswers { get; set; }
-    //    public List<QuestionResult> QuestionResults { get; set; } = new List<QuestionResult>();
-
-    //    public static int _questionNumber;
-    //    public static int _countQuestion;
-
-    //}
     public class TestResult
     {
         public int TotalQuestions  { get; set; }

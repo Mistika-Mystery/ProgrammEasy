@@ -994,6 +994,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\q1 %281%29.png" />
+    <Resource Include="Recourse\q1 %282%29.png" />
+    <Resource Include="Recourse\q1 %283%29.png" />
+    <Resource Include="Recourse\q1 %284%29.png" />
+    <Resource Include="Recourse\q1 %285%29.png" />
     <Resource Include="Recourse\guitar.png" />
     <Resource Include="Recourse\doll.png" />
     <Resource Include="Recourse\boll1.png" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse.Student;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +13,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxTokenParser;
 
 namespace ProgrammEasy.PageUse.Lesson
 {
     public partial class ResultPage : Page
     {
+        private Results results = new Results();
         private TestResult _testResult;
 
         public ResultPage(TestResult testResult)
@@ -24,6 +27,7 @@ namespace ProgrammEasy.PageUse.Lesson
             InitializeComponent();
             _testResult = testResult;
             DisplayResults();
+            DescriptionGet();
         }
 
         private void DisplayResults()
@@ -49,7 +53,65 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                var logIn = new UserGlav();
+                logIn.Show();
+                _testResult.QuestionResults.Clear();
 
+                Window window = Window.GetWindow(this);
+                if (window != null)
+                {
+                    window.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void DescriptionGet()
+        {
+            try
+            {
+                if (_testResult.CorrectAnswers >= 19)
+                {
+                    results.ScoreImg = 1;
+                    Img05.Visibility = Visibility.Visible;
+                }
+                else if(_testResult.CorrectAnswers >= 15)
+                {
+                    results.ScoreImg = 2;
+                    Img04.Visibility = Visibility.Visible;
+                }
+                else if(_testResult.CorrectAnswers >= 10)
+                {
+                    results.ScoreImg = 3;
+                    Img03.Visibility = Visibility.Visible;
+                }
+                else if(_testResult.CorrectAnswers >= 5)
+                {
+                    results.ScoreImg = 4;
+                    Img02.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    results.ScoreImg = 5;
+                    Img01.Visibility = Visibility.Visible;
+                }
+                results.IdUser = RegFlag.IdUser;
+                results.IdLesson = RegFlag.LessonId;
+                results.Date = DateTime.Now;
+                results.Description = ResultsSummary.Text;
+
+                myEntities.GetContext().Results.Add(results);
+                myEntities.GetContext().SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

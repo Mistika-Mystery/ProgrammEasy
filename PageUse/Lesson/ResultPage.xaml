@@ -23,7 +23,13 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Результат теста: " FontFamily="Comic Sans MS" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" />
-            <Image HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Image x:Name="Img01" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,25,0,25" Source="/Recourse/q1 (1).png" Visibility="Collapsed"/>
+            <Image x:Name="Img02" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,25,0,25" Source="/Recourse/q1 (2).png" Visibility="Collapsed"/>
+            <Image x:Name="Img03" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,25,0,25" Source="/Recourse/q1 (3).png" Visibility="Collapsed"/>
+            <Image x:Name="Img04" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,25,0,25" Source="/Recourse/q1 (4).png" Visibility="Collapsed"/>
+            <Image x:Name="Img05" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,25,0,25" Source="/Recourse/q1 (5).png" Visibility="Collapsed"/>
+
+
         </StackPanel>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Завершить" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="2"/>
 
