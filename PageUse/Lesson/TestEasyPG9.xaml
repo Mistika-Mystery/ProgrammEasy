@@ -9,6 +9,39 @@
       Title="TestEasyPG9">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Выйти" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" x:Name="NextBT" Click="NextBT_Click"  Content="Дальше" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold" Grid.Column="3"/>
+        <TextBlock x:Name="QuestionText" Text="Вопрос №9" FontFamily="Comic Sans MS" FontSize="36" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock x:Name="QuestionBody" Text="Как изменить значение элемента в двумерном массиве?" TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="3" FontFamily="Comic Sans MS" FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <RadioButton Name="AnswerRadioButton1" Margin="5" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="a) array[index1, index2] = value;" TextWrapping="Wrap" FontSize="24" />
+        </RadioButton>
+        <RadioButton Name="AnswerRadioButton2" Margin="5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="b) array.index1.index2 = value;" TextWrapping="Wrap" FontSize="24" />
+        </RadioButton>
+        <RadioButton Name="AnswerRadioButton3" Margin="5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="c) array(index1, index2) = value;" TextWrapping="Wrap" FontSize="24" />
+        </RadioButton>
+        <RadioButton Name="AnswerRadioButton4" Margin="5" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="d) array{index1, index2} = value;" TextWrapping="Wrap" FontSize="24" />
+        </RadioButton>
+
     </Grid>
 </Page>
