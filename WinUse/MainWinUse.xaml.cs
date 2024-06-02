@@ -15,9 +15,7 @@ namespace ProgrammEasy.WinUse
     /// </summary>
     public partial class MainWinUse : Window
     {
-        private bool isDragging = false;
-        private Point clickPosition;
-        private TextBlock draggedTextBlock;
+
         private ScriptState<object> scriptState = null;
 
         public MainWinUse()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse.Student;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
@@ -100,8 +101,8 @@ namespace ProgrammEasy.WinUse.Admin
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            var glavWin = new MainWindow();
-            glavWin.Show();
+            var logIn = new UserGlav();
+            logIn.Show();
             this.Close();
         }
 

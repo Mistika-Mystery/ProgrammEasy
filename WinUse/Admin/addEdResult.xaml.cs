@@ -23,5 +23,10 @@ namespace ProgrammEasy.WinUse.Admin
         {
             InitializeComponent();
         }
+
+        private void BackBTN_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
