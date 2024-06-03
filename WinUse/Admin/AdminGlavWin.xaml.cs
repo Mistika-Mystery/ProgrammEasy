@@ -110,13 +110,13 @@ namespace ProgrammEasy.WinUse.Admin
         {
             var row = (sender as DataGridRow).DataContext as Requests;
             ReqAddEdit addEddWin = new ReqAddEdit(row);
-            addEddWin.Show();
+            addEddWin.ShowDialog();
         }
 
         private void AddBT_Click(object sender, RoutedEventArgs e)
         {
             ReqNew reqNew = new ReqNew();
-            reqNew.Show();
+            reqNew.ShowDialog();
         }
 
         private void DelBT_Click(object sender, RoutedEventArgs e)
@@ -367,13 +367,13 @@ namespace ProgrammEasy.WinUse.Admin
         {
             var rowSt = (sender as DataGridRow).DataContext as Status;
             addEdStatus adst = new addEdStatus(rowSt);
-            adst.Show();
+            adst.ShowDialog();
         }
 
         private void AddBTSt_Click(object sender, RoutedEventArgs e)
         {
             addEdStatus adnewst = new addEdStatus(null);
-            adnewst.Show();
+            adnewst.ShowDialog();
         }
 
         private void DelBTSt_Click(object sender, RoutedEventArgs e)
@@ -495,20 +495,20 @@ namespace ProgrammEasy.WinUse.Admin
         {
             var rowUs = (sender as DataGridRow).DataContext as User;
             addEdUser adUs = new addEdUser(rowUs);
-            adUs.Show();
+            adUs.ShowDialog();
         }
 
         private void DataGridRow_MouseDoubleClick_3(object sender, MouseButtonEventArgs e)
         {
             var rowRL = (sender as DataGridRow).DataContext as RoleUser;
             addEdRole adRl = new addEdRole(rowRL);
-            adRl.Show();
+            adRl.ShowDialog();
         }
 
         private void AddBTRL_Click(object sender, RoutedEventArgs e)
         {
             addEdRole adnewst = new addEdRole(null);
-            adnewst.Show();
+            adnewst.ShowDialog();
         }
 
         private void DelBTRL_Click(object sender, RoutedEventArgs e)
@@ -612,13 +612,13 @@ namespace ProgrammEasy.WinUse.Admin
         {
             var rowGR = (sender as DataGridRow).DataContext as GroupUser;
             addEdGroup adGR = new addEdGroup(rowGR);
-            adGR.Show();
+            adGR.ShowDialog();
         }
 
         private void AddBTGR_Click(object sender, RoutedEventArgs e)
         {
             addEdGroup adnewGr = new addEdGroup(null);
-            adnewGr.Show();
+            adnewGr.ShowDialog();
         }
 
         private void DelBTGR_Click(object sender, RoutedEventArgs e)
@@ -720,13 +720,13 @@ namespace ProgrammEasy.WinUse.Admin
         {
             var rowImg = (sender as DataGridRow).DataContext as ImgFoto;
             addEdImg adImg = new addEdImg(rowImg);
-            adImg.Show();
+            adImg.ShowDialog();
         }
 
         private void AddBTImg_Click(object sender, RoutedEventArgs e)
         {
             addEdImg adnewImg = new addEdImg(null);
-            adnewImg.Show();
+            adnewImg.ShowDialog();
         }
 
         private void DelBTImg_Click(object sender, RoutedEventArgs e)
@@ -827,7 +827,7 @@ namespace ProgrammEasy.WinUse.Admin
         private void AddBTUs_Click(object sender, RoutedEventArgs e)
         {
             addEdUser adnewUs = new addEdUser(null);
-            adnewUs.Show();
+            adnewUs.ShowDialog();
         }
 
         private void DelBTUs_Click(object sender, RoutedEventArgs e)
@@ -943,13 +943,13 @@ namespace ProgrammEasy.WinUse.Admin
         {
             var rowSc = (sender as DataGridRow).DataContext as ScoreImage;
             addEdScore adSc = new addEdScore(rowSc);
-            adSc.Show();
+            adSc.ShowDialog();
         }
 
         private void AddBTSc_Click(object sender, RoutedEventArgs e)
         {
             addEdScore adnewSc = new addEdScore(null);
-            adnewSc.Show();
+            adnewSc.ShowDialog();
         }
 
         private void DelBTSc_Click(object sender, RoutedEventArgs e)
@@ -1050,13 +1050,13 @@ namespace ProgrammEasy.WinUse.Admin
         {
             var rowLs = (sender as DataGridRow).DataContext as Lessons;
             addEdLesson adLs = new addEdLesson(rowLs);
-            adLs.Show();
+            adLs.ShowDialog();
         }
 
         private void AddBTLs_Click(object sender, RoutedEventArgs e)
         {
             addEdLesson adnewLs = new addEdLesson(null);
-            adnewLs.Show();
+            adnewLs.ShowDialog();
         }
 
         private void DelBTLs_Click(object sender, RoutedEventArgs e)
@@ -1156,7 +1156,7 @@ namespace ProgrammEasy.WinUse.Admin
         {
             var rowRes = (sender as DataGridRow).DataContext as Results;
             addEdResult adRes = new addEdResult(rowRes);
-            adRes.Show();
+            adRes.ShowDialog();
         }
 
 
