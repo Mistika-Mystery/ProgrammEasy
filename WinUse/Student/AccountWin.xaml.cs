@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgrammEasy.WinUse.Admin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,10 @@ namespace ProgrammEasy.WinUse.Student
             InitializeComponent();
             myFrameAccount.Navigate(new PageUse.AccountResult());
             LogName.Text = RegFlag.UserLogin;
+            if (RegFlag.IdRol == 1 || RegFlag.IdRol == 2)
+            {
+                PanelAdminBT.IsEnabled = true;
+            }
 
         }
 
@@ -32,6 +37,13 @@ namespace ProgrammEasy.WinUse.Student
         {
             var exWin = new UserGlav();
             exWin.Show();
+            this.Close();
+        }
+
+        private void PanelAdminBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            AdminGlavWin Panel = new AdminGlavWin();
+            Panel.Show();
             this.Close();
         }
     }

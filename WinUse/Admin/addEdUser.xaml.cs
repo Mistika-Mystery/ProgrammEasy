@@ -41,8 +41,9 @@ namespace ProgrammEasy.WinUse.Admin
                 SurnameTB.IsEnabled = CanEdit;
                 LoginTB.IsEnabled = CanEdit;
                 PassTB.IsEnabled = CanEdit;
-                CBRole.IsEnabled = CanEdit;
-                CBImg.IsEnabled = CanEdit;
+                bool CanEditAd = RegFlag.IdRol == 1;
+                CBRole.IsEnabled = CanEditAd;
+                CBImg.IsEnabled = CanEditAd;
                 bool CanEditGR = RegFlag.IdRol == 1 || (RegFlag.IdRol == 2 && _user.IdRole == 3);
                 CBGroup.IsEnabled = CanEditGR;
 

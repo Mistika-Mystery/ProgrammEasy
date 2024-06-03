@@ -274,7 +274,8 @@ namespace ProgrammEasy.PageUse
 
         private void editInfoBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            addEdUser edUs = new addEdUser(user);
+            edUs.ShowDialog();
         }
     }
 }
