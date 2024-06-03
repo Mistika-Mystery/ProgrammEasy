@@ -1,4 +1,5 @@
-﻿using ProgrammEasy.WinUse.Admin;
+﻿using ProgrammEasy.WinUse;
+using ProgrammEasy.WinUse.Admin;
 using ProgrammEasy.WinUse.Student;
 using System;
 using System.Collections.Generic;
@@ -63,12 +64,13 @@ namespace ProgrammEasy.PageUse
         {
             var rowRes = (sender as DataGridRow).DataContext as Results;
             UserResultWin adRes = new UserResultWin(rowRes);
-            adRes.Show();
+            adRes.ShowDialog();
         }
 
         private void MessBt_Click(object sender, RoutedEventArgs e)
         {
-
+            ReqNew reqNew = new ReqNew();
+            reqNew.ShowDialog();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -229,6 +231,7 @@ namespace ProgrammEasy.PageUse
         {
             UpdWin();
         }
+
         private void Seach_Filter(string search = "")
         {
             var ReqSerch = myEntities.GetContext().Requests.Where(x => x.User.Id == RegFlag.IdUser).ToList();

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ProgrammEasy.PageUse"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AccountResult" Loaded="Page_Loaded">
+      Title="AccountResult" Loaded="Page_Loaded" >
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -265,15 +265,15 @@
                     </Image>
                     <TextBlock Text="{Binding RoleUser.Name}" FontSize="36" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" Grid.ColumnSpan="3"/>
                     <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" >
-                        <TextBlock Text="{Binding LastName}" Margin="0,0,5,0" FontSize="36" FontFamily="Courier New" FontWeight="Bold" />
-                        <TextBlock Text="{Binding FirstName}" FontSize="36" FontFamily="Courier New" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding LastName}" Margin="0,0,5,0" FontSize="37" FontFamily="Courier New" FontWeight="Bold" />
+                        <TextBlock Text="{Binding FirstName}" FontSize="37" FontFamily="Courier New" FontWeight="Bold"/>
                     </StackPanel>
                     <TextBlock Text="{Binding GroupUser.Name}" FontSize="34" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" Grid.ColumnSpan="3"/>
                     <StackPanel Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" >
                         <Image x:Name="LvlImg" Source="{Binding Path=ImgFoto.ImgLev}" HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="190" />
                         <TextBlock Text="{Binding ImgFoto.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" FontFamily="Courier New"/>
                     </StackPanel>
-                    <Image Source="/Recourse/editbt1.png" x:Name="editInfoBT" MouseLeftButtonDown="editInfoBT_MouseLeftButtonDown" Grid.RowSpan="2" Grid.Column="3" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0" />
+                    <Image Source="/Recourse/editbt1.png" x:Name="editInfoBT" MouseLeftButtonDown="editInfoBT_MouseLeftButtonDown" Grid.RowSpan="2" Grid.Column="3" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0" ToolTip="Редактировать Профиль" />
                 </Grid>
             </TabItem>
             <TabItem >
@@ -421,7 +421,7 @@
                             </Button.Background>
                         </Button>
                         <Label Height="50"/>
-                        <Button Style="{StaticResource SpecialButtonStyle}" Content="Создать заявку" x:Name="MessBt" Click="MessBt_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Background="#FF8FF4F9" FontSize="16" Cursor="Hand" Width="170"/>
+                        <Button Style="{StaticResource SpecialButtonStyle}" Content="Создать заявку" x:Name="MessBt" Click="MessBt_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Background="#FF8FF4F9" FontSize="16" Cursor="Hand" Width="170" FontWeight="Bold"/>
                     </StackPanel>
                     <Label x:Name="NomessLab" Content="Вы еще создавали сообщений Администратору" Foreground="#FF7A2525" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" Visibility="Collapsed" Margin="290,0,0,0"/>
                 </Grid>
