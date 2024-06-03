@@ -1016,6 +1016,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\tablo.png" />
+    <Resource Include="Recourse\fon2.jpg" />
+    <Resource Include="Recourse\fon.jpg" />
     <Resource Include="PageUse\netu1.jpg" />
     <Resource Include="Recourse\NoRegUs.png" />
     <Resource Include="Recourse\q1 %281%29.png" />

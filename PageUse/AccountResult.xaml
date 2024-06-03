@@ -10,124 +10,103 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="1.5*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="1">
-            <Image x:Name="LvlImg" Source="{Binding Path=ImgFoto.ImgLev}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBlock Text="{Binding ImgFoto.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold"/>
-        </StackPanel>
-
-        <Grid Grid.Column="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-
-            </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                <TextBlock Text="ФИ: " FontSize="18"/>
-                <TextBlock Text="{Binding LastName}" Margin="0,0,5,0" FontSize="20" />
-                <TextBlock Text="{Binding FirstName}" FontSize="20"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" >
-                <TextBlock Text="Статус: " FontSize="18"/>
-                <TextBlock Text="{Binding RoleUser.Name}" FontSize="20"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" >
-                <TextBlock Text="Группа: " FontSize="18"/>
-                <TextBlock Text="{Binding GroupUser.Name}" FontSize="20"/>
-            </StackPanel>
-        </Grid>
-        <Grid Grid.Column="3">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="0.1*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Button Style="{StaticResource SpecialButtonStyle}" Content="Редактировать" x:Name="EditBt" Click="EditBt_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" Background="{x:Null}" FontSize="16" Cursor="Hand"/>
-            <Button Style="{StaticResource SpecialButtonStyle}" Content="Написать" x:Name="MessBt" Click="MessBt_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" Background="{x:Null}" FontSize="16" Grid.Row="2" Cursor="Hand"/>
-        </Grid>
-        <DataGrid x:Name="myResultDG" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Подробности - двойным щелчком" Grid.Column="1" Grid.ColumnSpan="2">
-            <DataGrid.Resources>
-                <Style TargetType="DataGridRow">
-                    <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+        <TabControl Grid.Row="1" Grid.Column="1" Background="{x:Null}">
+            <TabControl.Resources>
+                <Style TargetType="TabItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Grid>
+                                    <Border Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="20,20,0,0" Padding="10,5">
+                                        <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" Margin="10,2"/>
+                                    </Border>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="Black"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Border" Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#FFD7E7E8"/>
+                                                    <GradientStop Color="#FF77F8FF" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter TargetName="Border" Property="BorderBrush" Value="Gray"/>
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="LightBlue"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
                 </Style>
-            </DataGrid.Resources>
-            <DataGrid.Background>
-                <SolidColorBrush Color="White" Opacity="0.5"/>
-            </DataGrid.Background>
-            <DataGrid.Columns>
-                <DataGridTemplateColumn Width="*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
+            </TabControl.Resources>
 
+            <TabItem  Cursor="Hand">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF56E0FF" Offset="1"/>
+                        <GradientStop Color="#FF56E0FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                        <Image Source="/Recourse/kubok.png" Height="40"/>
+                        <TextBlock Text="Мои достижения" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
 
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-
-                                </Grid.RowDefinitions>
-
-
-                                <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" MaxWidth="150" MaxHeight="100" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Image.Source>
-                                        <Binding Path="Lessons.Img">
-                                            <Binding.TargetNullValue>
-                                                <ImageSource>netu1.jpg</ImageSource>
-                                            </Binding.TargetNullValue>
-                                        </Binding>
-                                    </Image.Source>
-                                </Image>
-                                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding Lessons.Name}" FontWeight="Bold" FontSize="16" TextDecorations="Underline"/>
-                                </StackPanel>
-                                <StackPanel  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="Описание урока: " HorizontalAlignment="Center"/>
-                                    <TextBlock Text="{Binding Lessons.Description}" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap"/>
-
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="Дата прохождения: "/>
-                                    <TextBlock Text="{Binding Date, StringFormat={}{0:dd.MM.yyyy HH:mm}}" FontWeight="Bold"/>
-                                </StackPanel>
-
-                                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding ScoreImage.Name}" FontWeight="Bold"/>
-                                </StackPanel>
-                                <Image Grid.Column="2" Grid.Row="0" Grid.RowSpan="4" MaxWidth="150" MaxHeight="70" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,0">
-                                    <Image.Source>
-                                        <Binding Path="ScoreImage.Img">
-                                            <Binding.TargetNullValue>
-                                                <ImageSource>netu1.jpg</ImageSource>
-                                            </Binding.TargetNullValue>
-                                        </Binding>
-                                    </Image.Source>
-                                </Image>
-                            </Grid>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-
-
-        </DataGrid>
+            <TabItem Cursor="Hand">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF56E0FF" Offset="1"/>
+                        <GradientStop Color="#FF56E0FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal" Margin="20,0,20,0">
+                        <Image Source="/Recourse/userOk.png" Height="40"/>
+                        <TextBlock Text="Мой профиль" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+            <TabItem  Cursor="Hand">
+                <TabItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.507"/>
+                        <GradientStop Color="#FF56E0FF" Offset="1"/>
+                        <GradientStop Color="#FF56E0FF" Offset="0.007"/>
+                        <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                        <GradientStop Color="White" Offset="0.409"/>
+                    </LinearGradientBrush>
+                </TabItem.Background>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Recourse/messagicon.png" Height="40"/>
+                        <TextBlock Text="Мои обращения" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
+                    </StackPanel>
+                </TabItem.Header>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Page>

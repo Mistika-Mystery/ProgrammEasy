@@ -19,11 +19,13 @@ namespace ProgrammEasy.WinUse.Student
     /// </summary>
     public partial class AccountWin : Window
     {
+
         public AccountWin()
         {
             InitializeComponent();
             myFrameAccount.Navigate(new PageUse.AccountResult());
-            LogName.Text=RegFlag.UserLogin;
+            LogName.Text = RegFlag.UserLogin;
+
         }
 
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

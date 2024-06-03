@@ -34,7 +34,7 @@
             <TextBlock Text="Описание: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Text="{Binding Lessons.Description}" x:Name="TbIdLessDesc" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" TextWrapping="Wrap"/>
         </StackPanel>
-        <Expander Grid.Row="4"  Expanded="Expander_Expanded" Collapsed="Expander_Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Description, Converter={StaticResource StringNotEmptyConverter}}">
+        <Expander Grid.Row="4"  Expanded="Expander_Expanded" Collapsed="Expander_Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Description, Converter={StaticResource StringNotEmptyConverter}}" Margin="3,0,3,0">
             <Expander.Header>
                 <TextBlock Text=" Подробности " FontSize="16"/>
             </Expander.Header>

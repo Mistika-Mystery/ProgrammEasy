@@ -24,5 +24,20 @@ namespace ProgrammEasy.PageUse.PageAdmin
         {
             InitializeComponent();
         }
+
+        private void MessBt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditBt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

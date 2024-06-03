@@ -22,10 +22,15 @@ namespace ProgrammEasy.PageUse
     /// </summary>
     public partial class AccountResult : Page
     {
+        private User user;
         public AccountResult()
         {
+
             InitializeComponent();
-            myResultDG.ItemsSource= myEntities.GetContext().Results.Where( x => x.User.Id == RegFlag.IdUser).ToList();
+            //user = myEntities.GetContext().User.FirstOrDefault(x => x.Id == RegFlag.IdUser);
+            //DataContext = user;
+
+            //myResultDG.ItemsSource= myEntities.GetContext().Results.Where( x => x.User.Id == RegFlag.IdUser).ToList();
         }
 
         private void EditBt_Click(object sender, RoutedEventArgs e)
