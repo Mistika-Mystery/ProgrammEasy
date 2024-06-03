@@ -24,7 +24,7 @@
             <Image Source="/Recourse/sparkles2.png" Height="80" Margin="0,0,20,0"/>
             <TextBlock Text="Log" x:Name="LogName" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontFamily="Comic Sans MS" FontWeight="Bold">
                 <TextBlock.Effect>
-                    <DropShadowEffect Color="Black" Direction="200" ShadowDepth="5" Opacity="0.5" BlurRadius="10"/>
+                    <DropShadowEffect Color="Black" Direction="200" ShadowDepth="5" Opacity="0.35" BlurRadius="10"/>
                 </TextBlock.Effect>
             </TextBlock>
 
