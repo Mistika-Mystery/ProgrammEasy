@@ -1016,6 +1016,16 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Recourse\w5.png" />
+    <Resource Include="Recourse\editbt1.png" />
+    <Resource Include="Recourse\editbt.png" />
+    <Resource Include="Recourse\w4.png" />
+    <Resource Include="Recourse\w3.png" />
+    <Resource Include="Recourse\w2.png" />
+    <Resource Include="Recourse\w1.png" />
+    <Resource Include="Recourse\a1.png" />
+    <Resource Include="Recourse\Edit-redo.svg.png" />
+    <Resource Include="Recourse\edit-undo.png" />
     <Resource Include="Recourse\sparkles2.png" />
     <Resource Include="Recourse\sparkles1.png" />
     <Resource Include="Recourse\tablo.png" />

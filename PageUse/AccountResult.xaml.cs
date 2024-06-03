@@ -266,6 +266,11 @@ namespace ProgrammEasy.PageUse
 
             myMessDG.ItemsSource = ReqSerch;
         }
+
+        private void editInfoBT_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
 

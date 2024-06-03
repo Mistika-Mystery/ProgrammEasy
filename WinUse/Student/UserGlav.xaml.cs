@@ -56,7 +56,9 @@ namespace ProgrammEasy.WinUse.Student
 
         private void InfoUsSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-
+            var Acc = new AccountWin();
+            Acc.Show();
+            this.Close();
         }
 
         private void ExitUsSP_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

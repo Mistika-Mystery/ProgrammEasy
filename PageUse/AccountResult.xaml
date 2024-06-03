@@ -45,7 +45,7 @@
                                         </Setter>
                                         <Setter TargetName="Border" Property="BorderBrush" Value="Gray"/>
                                     </Trigger>
-                                    <Trigger Property="IsMouseOver" Value="True">                                        
+                                    <Trigger Property="IsMouseOver" Value="True">
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>
@@ -54,7 +54,7 @@
                 </Style>
             </TabControl.Resources>
 
-            <TabItem  Cursor="Hand">
+            <TabItem  >
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -65,7 +65,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                    <StackPanel Orientation="Horizontal" Margin="10,0,10,0" Cursor="Hand">
                         <Image Source="/Recourse/kubok.png" Height="40"/>
                         <TextBlock Text="Мои достижения" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
@@ -221,12 +221,12 @@
                         </Button>
                     </StackPanel>
                     <Label x:Name="labCoun" Content=" " Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
-                    <Label x:Name="NomessLab1" Content="Вы еще создавали сообщений Администратору" Foreground="#FF7A2525" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Visibility="Collapsed"/>
+                    <Label x:Name="NomessLab1" Content="Вы еще не проходили ни одного урока" Foreground="#FF7A2525" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Visibility="Collapsed"/>
 
                 </Grid>
             </TabItem>
 
-            <TabItem Cursor="Hand">
+            <TabItem >
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -237,14 +237,46 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal" Margin="20,0,20,0">
+                    <StackPanel Orientation="Horizontal" Margin="20,0,20,0" Cursor="Hand">
                         <Image Source="/Recourse/userOk.png" Height="40"/>
                         <TextBlock Text="Мой профиль" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
                 </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
 
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="/Recourse/w5.png" Grid.RowSpan="6" Grid.ColumnSpan="4" Margin="0,20,0,20">
+                        <Image.Effect>
+                            <DropShadowEffect Color="Black" Direction="200" ShadowDepth="5" Opacity="0.35" BlurRadius="10"/>
+                        </Image.Effect>
+                    </Image>
+                    <TextBlock Text="{Binding RoleUser.Name}" FontSize="36" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" Grid.ColumnSpan="3"/>
+                    <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" >
+                        <TextBlock Text="{Binding LastName}" Margin="0,0,5,0" FontSize="36" FontFamily="Courier New" FontWeight="Bold" />
+                        <TextBlock Text="{Binding FirstName}" FontSize="36" FontFamily="Courier New" FontWeight="Bold"/>
+                    </StackPanel>
+                    <TextBlock Text="{Binding GroupUser.Name}" FontSize="34" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Courier New" Grid.ColumnSpan="3"/>
+                    <StackPanel Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <Image x:Name="LvlImg" Source="{Binding Path=ImgFoto.ImgLev}" HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="190" />
+                        <TextBlock Text="{Binding ImgFoto.Name}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" FontFamily="Courier New"/>
+                    </StackPanel>
+                    <Image Source="/Recourse/editbt1.png" x:Name="editInfoBT" MouseLeftButtonDown="editInfoBT_MouseLeftButtonDown" Grid.RowSpan="2" Grid.Column="3" Height="90" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0" />
+                </Grid>
             </TabItem>
-            <TabItem  Cursor="Hand">
+            <TabItem >
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="White" Offset="0.507"/>
@@ -255,7 +287,7 @@
                     </LinearGradientBrush>
                 </TabItem.Background>
                 <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Cursor="Hand">
                         <Image Source="/Recourse/messagicon.png" Height="40"/>
                         <TextBlock Text="Мои обращения" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
@@ -268,8 +300,9 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="*"/>
+
                     </Grid.ColumnDefinitions>
-                    <DataGrid x:Name="myMessDG" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Подробности - двойным щелчком">
+                    <DataGrid x:Name="myMessDG" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Подробности - двойным щелчком" >
                         <DataGrid.Resources>
                             <Style TargetType="DataGridRow">
                                 <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick_1"/>
@@ -329,7 +362,7 @@
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <StackPanel Grid.Column="1">
+                    <StackPanel Grid.Column="1" >
                         <TextBlock Text="Поиск:" FontWeight="Bold">
                             <TextBlock.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -358,7 +391,7 @@
                             <ComboBoxItem Content="По дате, вначале новее"/>
                             <ComboBoxItem Content="По дате, вначале старые"/>
                         </ComboBox>
-                        <Label Height="5"/>                       
+                        <Label Height="5"/>
 
                         <TextBlock Text="Фильтр по статусу: " FontWeight="Bold">
                             <TextBlock.Background>
@@ -390,7 +423,7 @@
                         <Label Height="50"/>
                         <Button Style="{StaticResource SpecialButtonStyle}" Content="Создать заявку" x:Name="MessBt" Click="MessBt_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Background="#FF8FF4F9" FontSize="16" Cursor="Hand" Width="170"/>
                     </StackPanel>
-                    <Label x:Name="NomessLab" Content="Вы еще создавали сообщений Администратору" Foreground="#FF7A2525" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Visibility="Collapsed"/>
+                    <Label x:Name="NomessLab" Content="Вы еще создавали сообщений Администратору" Foreground="#FF7A2525" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" Visibility="Collapsed" Margin="290,0,0,0"/>
                 </Grid>
             </TabItem>
         </TabControl>
