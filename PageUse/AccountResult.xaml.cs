@@ -24,6 +24,7 @@ namespace ProgrammEasy.PageUse
     public partial class AccountResult : Page
     {
         private User user;
+        
         public AccountResult()
         {
 
@@ -45,7 +46,12 @@ namespace ProgrammEasy.PageUse
             });
             CBScoreResult.ItemsSource = AllScore;
 
-
+            var AllStatus = myEntities.GetContext().Status.Where(l => l.Requests.Any(ul => ul.IdUser == user.Id)).ToList();
+            AllStatus.Insert(0, new Status
+            {
+                Name = "Все статусы"
+            });
+            CBStatus.ItemsSource = AllStatus;
         }
 
         private void EditBt_Click(object sender, RoutedEventArgs e)
@@ -68,6 +74,17 @@ namespace ProgrammEasy.PageUse
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             UpRes();
+            UpdWin();
+        }
+        private void UpdWin()
+        {
+            SeactWater.Visibility = Visibility.Collapsed;
+            SeactWater.Text = "";
+            TBoxSearch.Visibility = Visibility.Visible;
+            sortBox.SelectedIndex = 0;
+            CBStatus.SelectedIndex = 0;
+
+            myMessDG.ItemsSource = myEntities.GetContext().Requests.Where(x => x.User.Id == RegFlag.IdUser).ToList();
         }
         private void UpRes()
         {
@@ -124,6 +141,7 @@ namespace ProgrammEasy.PageUse
         private void Seach_FilterResult(string search = "")
         {
             var ResultSerch = myEntities.GetContext().Results.Where(x => x.User.Id == RegFlag.IdUser).ToList();
+            var ResultSerchAll = myEntities.GetContext().Results.Where(x => x.User.Id == RegFlag.IdUser).ToList();
 
             if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
             {
@@ -163,8 +181,90 @@ namespace ProgrammEasy.PageUse
             {
                 labCoun.Content = ("Не найдено");
             }
+            if (ResultSerchAll.Count == 0)
+            {
+                NomessLab1.Visibility = Visibility.Visible;
+            }
 
             myResultDG.ItemsSource = ResultSerch;
+        }
+
+        private void DataGridRow_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void SeactWater_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(SeactWater.Text))
+            {
+                SeactWater.Visibility = Visibility.Collapsed;
+                TBoxSearch.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void SeactWater_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Seach_Filter(SeactWater.Text);
+        }
+
+        private void TBoxSearch_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TBoxSearch.Visibility = Visibility.Collapsed;
+            SeactWater.Visibility = Visibility.Visible;
+            SeactWater.Focus();
+        }
+
+        private void sortBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_Filter(SeactWater.Text);
+        }
+
+        private void CBStatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Seach_Filter(SeactWater.Text);
+        }
+
+        private void BtnReload_Click(object sender, RoutedEventArgs e)
+        {
+            UpdWin();
+        }
+        private void Seach_Filter(string search = "")
+        {
+            var ReqSerch = myEntities.GetContext().Requests.Where(x => x.User.Id == RegFlag.IdUser).ToList();
+
+            if (!string.IsNullOrEmpty(search) || !string.IsNullOrWhiteSpace(search))
+            {
+                ReqSerch = ReqSerch.Where(s => s.Description.ToLower().Contains(search.ToLower())).ToList();
+            }
+
+            switch (sortBox.SelectedIndex)
+            {
+                case 1:
+                    ReqSerch = ReqSerch.OrderByDescending(s => s.Date).ToList();
+                    break;
+                case 2:
+                    ReqSerch = ReqSerch.OrderBy(s => s.Date).ToList();
+                    break;
+                default:
+                    break;
+            }
+
+            if (CBStatus == null)
+            {
+                return;
+            }
+
+            if (CBStatus.SelectedIndex > 0)
+            {
+                ReqSerch = ReqSerch.Where(p => p.Status == CBStatus.SelectedValue).ToList();
+            }
+            if (ReqSerch.Count == 0)
+            {
+                NomessLab.Visibility = Visibility.Visible;
+            }
+
+            myMessDG.ItemsSource = ReqSerch;
         }
     }
 }

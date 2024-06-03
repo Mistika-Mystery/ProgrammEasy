@@ -221,6 +221,8 @@
                         </Button>
                     </StackPanel>
                     <Label x:Name="labCoun" Content=" " Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14"/>
+                    <Label x:Name="NomessLab1" Content="Вы еще создавали сообщений Администратору" Foreground="#FF7A2525" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Visibility="Collapsed"/>
+
                 </Grid>
             </TabItem>
 
@@ -258,7 +260,138 @@
                         <TextBlock Text="Мои обращения" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0" FontWeight="Bold" FontSize="14"/>
                     </StackPanel>
                 </TabItem.Header>
-                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="myMessDG" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Подробности - двойным щелчком">
+                        <DataGrid.Resources>
+                            <Style TargetType="DataGridRow">
+                                <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick_1"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Background>
+                            <SolidColorBrush Color="White" Opacity="0.5"/>
+                        </DataGrid.Background>
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Width="*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+
+
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+
+                                            </Grid.RowDefinitions>
+
+
+                                            <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" MaxWidth="100" MaxHeight="100" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <Image.Source>
+                                                    <Binding Path="Foto">
+                                                        <Binding.TargetNullValue>
+                                                            <ImageSource>netu1.jpg</ImageSource>
+                                                        </Binding.TargetNullValue>
+                                                    </Binding>
+                                                </Image.Source>
+                                            </Image>
+
+                                            <StackPanel  Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <TextBlock Text="Описание: " HorizontalAlignment="Center"/>
+                                                <TextBlock Text="{Binding Description}" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <TextBlock Text="Дата обращения: "/>
+                                                <TextBlock Text="{Binding Date, StringFormat={}{0:dd.MM.yyyy HH:mm}}" FontWeight="Bold"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2">
+                                                <TextBlock Text="Статус заявки: "/>
+                                                <TextBlock Text="{Binding Status.Name}" FontWeight="Bold"/>
+                                            </StackPanel>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="Поиск:" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <TextBox x:Name="TBoxSearch" Height="21"  Text="Введите описание" GotFocus="TBoxSearch_GotFocus"/>
+                        <TextBox x:Name="SeactWater" Height="21" LostFocus="SeactWater_LostFocus" Visibility="Collapsed" TextChanged="SeactWater_TextChanged" />
+                        <Label Height="5"/>
+                        <TextBlock Text="Сортировать по:" FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <ComboBox x:Name="sortBox" Cursor="Hand" SelectionChanged="sortBox_SelectionChanged" SelectedIndex="0" >
+                            <ComboBoxItem Content="Без сортировки"/>
+                            <ComboBoxItem Content="По дате, вначале новее"/>
+                            <ComboBoxItem Content="По дате, вначале старые"/>
+                        </ComboBox>
+                        <Label Height="5"/>                       
+
+                        <TextBlock Text="Фильтр по статусу: " FontWeight="Bold">
+                            <TextBlock.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Background></TextBlock>
+                        <ComboBox x:Name="CBStatus" DisplayMemberPath="Name" Cursor="Hand" SelectionChanged="CBStatus_SelectionChanged"  SelectedIndex="0">
+
+                        </ComboBox>
+                        <Label Height="15"/>
+
+
+                        <Button x:Name="BtnReload" Content="Сбросить Фильтры" Cursor="Hand" FontWeight="Bold" FontSize="14" Height="35" Click="BtnReload_Click">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="White" Offset="0.507"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="1"/>
+                                    <GradientStop Color="#FF04D1FF" Offset="0.007"/>
+                                    <GradientStop Color="#FFFDFDFD" Offset="0.591"/>
+                                    <GradientStop Color="White" Offset="0.409"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Label Height="50"/>
+                        <Button Style="{StaticResource SpecialButtonStyle}" Content="Создать заявку" x:Name="MessBt" Click="MessBt_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Background="#FF8FF4F9" FontSize="16" Cursor="Hand" Width="170"/>
+                    </StackPanel>
+                    <Label x:Name="NomessLab" Content="Вы еще создавали сообщений Администратору" Foreground="#FF7A2525" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Visibility="Collapsed"/>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
