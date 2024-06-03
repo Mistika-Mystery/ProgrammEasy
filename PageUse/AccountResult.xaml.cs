@@ -193,7 +193,9 @@ namespace ProgrammEasy.PageUse
 
         private void DataGridRow_MouseDoubleClick_1(object sender, MouseButtonEventArgs e)
         {
-
+            var rowRes = (sender as DataGridRow).DataContext as Requests;
+            ReqAddEdit reqNew = new ReqAddEdit(rowRes);
+            reqNew.ShowDialog();
         }
 
         private void SeactWater_LostFocus(object sender, RoutedEventArgs e)

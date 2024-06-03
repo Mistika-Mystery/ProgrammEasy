@@ -53,7 +53,7 @@
             <TextBlock Text="Текущий статус заявки: "/>
             <TextBlock Text="{Binding Status.Name}" FontWeight="Bold" FontSize="14"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel x:Name="editST"  Orientation="Horizontal" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Изменить статус на: "/>
             <ComboBox x:Name="CBStatus" SelectedItem="{Binding Status}" DisplayMemberPath="Name" Width="100" FontSize="14"/>
         </StackPanel>
