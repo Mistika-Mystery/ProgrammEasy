@@ -25,5 +25,12 @@ namespace ProgrammEasy.WinUse.Student
             myFrameAccount.Navigate(new PageUse.AccountResult());
             LogName.Text=RegFlag.UserLogin;
         }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var exWin = new UserGlav();
+            exWin.Show();
+            this.Close();
+        }
     }
 }

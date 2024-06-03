@@ -56,12 +56,15 @@
             <Button Style="{StaticResource SpecialButtonStyle}" Content="Редактировать" x:Name="EditBt" Click="EditBt_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" Background="{x:Null}" FontSize="16" Cursor="Hand"/>
             <Button Style="{StaticResource SpecialButtonStyle}" Content="Написать" x:Name="MessBt" Click="MessBt_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="50" Background="{x:Null}" FontSize="16" Grid.Row="2" Cursor="Hand"/>
         </Grid>
-        <DataGrid x:Name="myResultDG" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Подробности - двойным щелчком" Grid.Column="1" Grid.ColumnSpan="2" Background="{x:Null}">
+        <DataGrid x:Name="myResultDG" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" ToolTip="Подробности - двойным щелчком" Grid.Column="1" Grid.ColumnSpan="2">
             <DataGrid.Resources>
                 <Style TargetType="DataGridRow">
                     <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
                 </Style>
             </DataGrid.Resources>
+            <DataGrid.Background>
+                <SolidColorBrush Color="White" Opacity="0.5"/>
+            </DataGrid.Background>
             <DataGrid.Columns>
                 <DataGridTemplateColumn Width="*">
                     <DataGridTemplateColumn.CellTemplate>

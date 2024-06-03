@@ -31,6 +31,10 @@
             <TextBlock Text="Урок: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Text="{Binding Lessons.Name}" x:Name="TbIdLess" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
         </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Описание: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding Lessons.Description}" x:Name="TbIdLessDesc" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" TextWrapping="Wrap"/>
+        </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Дата прохождения: "/>
             <TextBlock Text="{Binding Date, StringFormat={}{0:dd.MM.yyyy HH:mm}}" x:Name="TbDate" FontWeight="Bold" FontSize="14"/>
@@ -53,9 +57,9 @@
             <TextBlock Text="{Binding User.Login}" FontWeight="Bold" FontSize="14"/>
         </StackPanel>
 
-        <TextBlock Text="Подробности:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+        <TextBlock Text="Подробности:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3"/>
         
-        <TextBox x:Name="OpisanTB" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Description}" Grid.Row="3" Grid.RowSpan="4" FontSize="16" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="10" Background="{x:Null}" />
+        <TextBox x:Name="OpisanTB" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Description}" Grid.Row="4" Grid.RowSpan="3" FontSize="16" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="10" Background="{x:Null}" />
         
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Оценка: " HorizontalAlignment="Center" VerticalAlignment="Center" />

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse.Student"
         mc:Ignorable="d"
-        Title="Просмотр результата" Height="300" Width="400" Icon="/Recourse/test.png" MinWidth="400" MinHeight="300" MaxWidth="1200" MaxHeight="800" WindowStyle="None">
+        Title="Просмотр результата" Height="300" Width="450" Icon="/Recourse/test.png" MinWidth="400" MinHeight="300" MaxWidth="800" MaxHeight="800" WindowStyle="None">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -17,6 +17,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition x:Name="DescriptionRow" Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -25,12 +26,15 @@
             <TextBlock Text="Урок: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock Text="{Binding Lessons.Name}" x:Name="TbIdLess" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Дата прохождения: "/>
             <TextBlock Text="{Binding Date, StringFormat={}{0:dd.MM.yyyy HH:mm}}" x:Name="TbDate" FontWeight="Bold" FontSize="14"/>
         </StackPanel>
-
-        <Expander Grid.Row="3"  Expanded="Expander_Expanded" Collapsed="Expander_Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Description, Converter={StaticResource StringNotEmptyConverter}}">
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Описание: " HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding Lessons.Description}" x:Name="TbIdLessDesc" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" TextWrapping="Wrap"/>
+        </StackPanel>
+        <Expander Grid.Row="4"  Expanded="Expander_Expanded" Collapsed="Expander_Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center" IsEnabled="{Binding Description, Converter={StaticResource StringNotEmptyConverter}}">
             <Expander.Header>
                 <TextBlock Text=" Подробности " FontSize="16"/>
             </Expander.Header>
@@ -42,6 +46,6 @@
             <Image x:Name="ImgOshib" Source="{Binding Path=ScoreImage.Img}" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="200" />
         </StackPanel>
 
-        <Button x:Name="BackBTN" Style="{StaticResource SpecialButtonStyle}" Content=" Назад " HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" FontSize="16" Click="BackBTN_Click" Width="140" Cursor="Hand" Background="{x:Null}" FontWeight="Bold" Height="45"/>
+        <Button x:Name="BackBTN" Style="{StaticResource SpecialButtonStyle}" Content=" Назад " HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="16" Click="BackBTN_Click" Width="140" Cursor="Hand" Background="{x:Null}" FontWeight="Bold" Height="45"/>
     </Grid>
 </Window>

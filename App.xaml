@@ -58,7 +58,7 @@
             </Style.Triggers>
         </Style>
 
-            <converters:StringNotEmptyConverter x:Key="StringNotEmptyConverter" />
+        <converters:StringNotEmptyConverter x:Key="StringNotEmptyConverter" />
 
     </Application.Resources>
 </Application>
