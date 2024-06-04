@@ -423,7 +423,7 @@
                         <Label Height="50"/>
                         <Button Style="{StaticResource SpecialButtonStyle}" Content="Создать заявку" x:Name="MessBt" Click="MessBt_Click"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Background="#FF8FF4F9" FontSize="16" Cursor="Hand" Width="170" FontWeight="Bold"/>
                     </StackPanel>
-                    <Label x:Name="NomessLab" Content="Вы еще создавали сообщений Администратору" Foreground="#FF7A2525" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Visibility="Collapsed"/>
+                    <Label x:Name="NomessLab" Content="Вы еще не отправляли сообщений Администратору" Foreground="#FF7A2525" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Visibility="Collapsed"/>
                 </Grid>
             </TabItem>
         </TabControl>

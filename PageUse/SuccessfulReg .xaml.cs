@@ -30,6 +30,8 @@ namespace ProgrammEasy.PageUse
         {
             try
             {
+                RegFlag.ClearData();
+
                 var logIn = new LogWin();
                 logIn.Show();
 

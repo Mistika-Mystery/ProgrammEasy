@@ -30,5 +30,31 @@ namespace ProgrammEasy
 
         public static int LessonId;
 
+        public static void ClearData()
+        {
+            // Присваиваем начальные значения переменным и полям
+            NameFlage = null;
+            LastNameFlage = null;
+            LoginFlag = null;
+            PasswordFlag = null;
+
+            Namebool = 1;
+            LastNamebool = 1;
+            Logbool = 1;
+            Passbool = 1;
+            Informbool = 1;
+            Passwordbool = 1;
+            Avtorizbool = 1;
+
+            UserLogin = null;
+            IdRol = 0;
+            IdUser = 0;
+            UserName = null;
+            UserLastName = null;
+            RoleName = null;
+
+            LessonId = 0;
+        }
     }
+
 }
