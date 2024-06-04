@@ -830,23 +830,7 @@ namespace ProgrammEasy.WinUse.Admin
             adnewUs.ShowDialog();
         }
 
-        private void DelBTUs_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                var delUs = UserDG.SelectedItems.Cast<User>().ToList();
 
-                if (MessageBox.Show($"Вы дейстиветльно хотите удалить пользователей: {delUs.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-
-                {
-                    myEntities.GetContext().User.RemoveRange(delUs);
-                    myEntities.GetContext().SaveChanges();
-                    MessageBox.Show("Удаление прошло успешно");
-                    UpdUs();
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
 
         private void TBoxSearchUs_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -993,7 +977,44 @@ namespace ProgrammEasy.WinUse.Admin
         {
             return !myEntities.GetContext().Results.Any(u => u.ScoreImage.Id == ScId);
         }
+        private void DelBTUs_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var delUs = UserDG.SelectedItems.Cast<User>().ToList();
+                if (delUs.Count == 0)
+                {
+                    MessageBox.Show("Пожалуйста, выберите пользователя для удаления.");
+                    return;
+                }
 
+                if (MessageBox.Show($"Вы дейстиветльно хотите удалить пользователей: {delUs.Count()} шт!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+
+                {
+                    foreach (var scoreUs in delUs)
+                    {
+                        if (CanDeleteUs(scoreUs.Id))
+                        {
+                            myEntities.GetContext().User.RemoveRange(delUs);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Пользователь с Id: '{scoreUs.Id}' не может быть удален, пока не будут удалены его результаты.");
+                            return;
+                        }
+                    }
+                    
+                    myEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Удаление прошло успешно");
+                    UpdUs();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+        private bool CanDeleteUs(int UsId)
+        {
+            return !myEntities.GetContext().Results.Any(u => u.User.Id == UsId);
+        }
         private void TBoxSearchSc_GotFocus(object sender, RoutedEventArgs e)
         {
             TBoxSearchSc.Visibility = Visibility.Collapsed;
