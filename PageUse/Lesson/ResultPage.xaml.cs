@@ -21,11 +21,13 @@ namespace ProgrammEasy.PageUse.Lesson
     {
         private Results results = new Results();
         private TestResult _testResult;
+        private User user;
 
         public ResultPage(TestResult testResult)
         {
             InitializeComponent();
             _testResult = testResult;
+            user = myEntities.GetContext().User.FirstOrDefault(x => x.Id == RegFlag.IdUser);
             DisplayResults();
             DescriptionGet();
         }
@@ -79,17 +81,17 @@ namespace ProgrammEasy.PageUse.Lesson
                     results.ScoreImg = 1;
                     Img05.Visibility = Visibility.Visible;
                 }
-                else if(_testResult.CorrectAnswers >= 15)
+                else if (_testResult.CorrectAnswers >= 15)
                 {
                     results.ScoreImg = 2;
                     Img04.Visibility = Visibility.Visible;
                 }
-                else if(_testResult.CorrectAnswers >= 10)
+                else if (_testResult.CorrectAnswers >= 10)
                 {
                     results.ScoreImg = 3;
                     Img03.Visibility = Visibility.Visible;
                 }
-                else if(_testResult.CorrectAnswers >= 5)
+                else if (_testResult.CorrectAnswers >= 5)
                 {
                     results.ScoreImg = 4;
                     Img02.Visibility = Visibility.Visible;
@@ -98,9 +100,17 @@ namespace ProgrammEasy.PageUse.Lesson
                 {
                     results.ScoreImg = 5;
                     Img01.Visibility = Visibility.Visible;
+
                 }
                 if (RegFlag.IdRol != 4)
                 {
+                    if (CheckRepeatLevel() && _testResult.CorrectAnswers >= 19 && user.FotoImg == 4)
+                    {
+                        user.FotoImg = 5;
+                        myEntities.GetContext().SaveChanges();
+                        MessageBox.Show("Поздравляем! \n Ваш достигли 2 уровня!");
+
+                    }
                     results.IdUser = RegFlag.IdUser;
                     results.IdLesson = RegFlag.LessonId;
                     results.Date = DateTime.Now;
@@ -114,6 +124,25 @@ namespace ProgrammEasy.PageUse.Lesson
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private bool CheckRepeatLevel()
+        {
+            try
+            {
+                var existingResult = myEntities.GetContext().Results.FirstOrDefault(r => r.IdUser == RegFlag.IdUser && r.IdLesson == RegFlag.LessonId);
+
+                if ((existingResult != null && existingResult.ScoreImg != 1) || existingResult == null)
+                {
+                    return true; 
+                }
+
+                return false; 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
             }
         }
     }

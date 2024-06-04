@@ -463,9 +463,6 @@
     <Compile Include="WinUse\Student\UserGlav.xaml.cs">
       <DependentUpon>UserGlav.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WinUse\Student\UserReqWin.xaml.cs">
-      <DependentUpon>UserReqWin.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WinUse\Student\UserResultWin.xaml.cs">
       <DependentUpon>UserResultWin.xaml</DependentUpon>
     </Compile>
@@ -882,10 +879,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinUse\Student\UserGlav.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WinUse\Student\UserReqWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
