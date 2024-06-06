@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgrammEasy.PageUse.Lesson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProgrammEasy.WinUse.Student
@@ -23,6 +25,15 @@ namespace ProgrammEasy.WinUse.Student
         {
             InitializeComponent();
             myFrameLesson.Navigate(new PageUse.Lesson.choiceLess());
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (MessageBox.Show($"Вы уверены, что хотите вернуться?\nНесохраненные данные могут быть утеряны",
+"Внимание", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+                myFrameLesson.Navigate(new choiceLess());   
+            }
         }
     }
 }

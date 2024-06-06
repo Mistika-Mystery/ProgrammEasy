@@ -20,7 +20,11 @@
 
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Image Source="/Recourse/lesson.png" Width="80"/>
+            <Image Source="/Recourse/lesson.png" Width="80" Cursor="Hand" MouseLeftButtonDown="Image_MouseLeftButtonDown">
+                <Image.Effect>
+                    <DropShadowEffect Color="Black" Direction="200" ShadowDepth="5" Opacity="0.5" BlurRadius="30"/>
+                </Image.Effect>
+            </Image>
             <TextBlock Text=" Ученье - свет! " HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontFamily="Comic Sans MS" Margin="50,0,0,0"/>
         </StackPanel>
         <Frame x:Name="myFrameLesson" NavigationUIVisibility="Hidden" Grid.Row="1"/>
