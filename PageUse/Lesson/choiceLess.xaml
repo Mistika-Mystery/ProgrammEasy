@@ -20,15 +20,27 @@
         </Grid.ColumnDefinitions>
         <Button Style="{StaticResource SpecialButtonStyle}" x:Name="BakcBT" Click="BakcBT_Click" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Width="150" Height="50" Background="{x:Null}" FontSize="16" FontWeight="Bold"/>
         <StackPanel x:Name="DataTypeSP" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="DataTypeSP_MouseLeftButtonDown" Cursor="Hand">
-            <Image Source="/Recourse/sImLslp.png" Width="150"/>
+            <Image Source="/Recourse/sImLslp.png" Width="150">
+                <Image.Effect>
+                    <DropShadowEffect Color="Black" Direction="200" ShadowDepth="5" Opacity="0.5" BlurRadius="30"/>
+                </Image.Effect>
+            </Image>
             <TextBlock Text="Типы данных" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
         </StackPanel>
         <StackPanel x:Name="BlockSP" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="BlockSP_MouseLeftButtonDown"  Cursor="Hand" Grid.Column="1">
-            <Image Source="/Recourse/shemablock.png" Width="170"/>
+            <Image Source="/Recourse/shemablock.png" Width="170">
+                <Image.Effect>
+                    <DropShadowEffect Color="Black" Direction="200" ShadowDepth="5" Opacity="0.5" BlurRadius="30"/>
+                </Image.Effect>
+            </Image>
             <TextBlock Text="Блок-схема" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
         </StackPanel>
         <StackPanel x:Name="arrySP" HorizontalAlignment="Center" VerticalAlignment="Center" MouseLeftButtonDown="arrySP_MouseLeftButtonDown"  Cursor="Hand" Grid.Column="2">
-            <Image Source="/Recourse/arryImg.png" Width="190"/>
+            <Image Source="/Recourse/arryImg.png" Width="190">
+                <Image.Effect>
+                    <DropShadowEffect Color="Black" Direction="200" ShadowDepth="5" Opacity="0.5" BlurRadius="30"/>
+                </Image.Effect>
+            </Image>
             <TextBlock Text="Массивы" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26"/>
         </StackPanel>
     </Grid>
