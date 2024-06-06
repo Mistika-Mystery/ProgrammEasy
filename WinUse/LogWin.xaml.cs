@@ -30,6 +30,11 @@ namespace ProgrammEasy.WinUse
         {
             try
             {
+                if (string.IsNullOrEmpty(LogTB.Text)|| string.IsNullOrEmpty(PassPB.Password))
+                {
+                    MessageBox.Show("Пожалуйста, заполните все поля, ибни не могут быть пустые.", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
                 var UserLog = myEntities.GetContext().User.FirstOrDefault(x => x.Login==LogTB.Text && x.Pass1==PassPB.Password);
                 if (UserLog==null) 
                 {
