@@ -34,8 +34,16 @@
         <Image HorizontalAlignment="Right"  VerticalAlignment="Center" Source="/Recourse/ProgLogoNew.png" Grid.Column="1" Grid.Row="1" />
         <TextBlock Text="Введи свой логин ->" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontFamily="Comic Sans MS"/>
         <TextBlock Text="Введи пароль ->" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" FontFamily="Comic Sans MS"/>
-        <Button Style="{StaticResource SpecialButtonStyle}" Content="Войти" x:Name="LogInBT" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="250" Click="LogInBT_Click" Background="#FF62E5FF" Cursor="Hand" FontSize="20" FontWeight="Bold"/>
-        <Button Style="{StaticResource SpecialButtonStyle}" Content="Вернуться на главную" x:Name="BackBT" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="250" Click="BackBT_Click" Background="{x:Null}" Cursor="Hand" FontSize="20" FontWeight="Bold"/>
+        <Button Style="{StaticResource SpecialButtonStyle}" Content="Войти" x:Name="LogInBT" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="250" Click="LogInBT_Click" Background="#FF62E5FF" Cursor="Hand" FontSize="20" FontWeight="Bold">
+            <Button.Effect>
+                <DropShadowEffect Color="Black" Direction="200" ShadowDepth="5" Opacity="0.5" BlurRadius="20"/>
+            </Button.Effect>
+        </Button>
+        <Button Style="{StaticResource SpecialButtonStyle}" Content="Вернуться на главную" x:Name="BackBT" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="250" Click="BackBT_Click" Background="{x:Null}" Cursor="Hand" FontSize="20" FontWeight="Bold">
+            <Button.Effect>
+                <DropShadowEffect Color="Black" Direction="200" ShadowDepth="5" Opacity="0.5" BlurRadius="30"/>
+            </Button.Effect>
+        </Button>
         <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <TextBox x:Name="LogTB" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Width="150" FontSize="18" MaxLength="15"/>
             <Image Source="/Recourse/UserIcon.png" MinWidth="25" MinHeight="25" MaxWidth="27" MaxHeight="27"/>
