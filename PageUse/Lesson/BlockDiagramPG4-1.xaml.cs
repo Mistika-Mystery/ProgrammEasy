@@ -47,7 +47,7 @@ namespace ProgrammEasy.PageUse.Lesson
             isDragging = true;
             Image image = sender as Image;
             clickPosition = e.GetPosition(this);
-            // Если текущая трансформация еще не установлена, создаем новую
+
             if (image.RenderTransform == Transform.Identity)
             {
                 currentTransform = new TranslateTransform();
@@ -69,7 +69,6 @@ namespace ProgrammEasy.PageUse.Lesson
             Image image = sender as Image;
             image.ReleaseMouseCapture();
 
-            // Сохраняем текущие позиции изображения в Tag
             Point currentPosition = new Point(Grid.GetColumn(image), Grid.GetRow(image));
             image.Tag = currentPosition;
         }
@@ -92,7 +91,6 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private bool CheckIfAllTargetsCorrect()
         {
-            // Логика проверки
             bool isCorrect = IsInTarget(img01, Target1) &&
                              IsInTarget(img02, Target2) &&
                              IsInTarget(img03, Target3) &&
@@ -107,9 +105,7 @@ namespace ProgrammEasy.PageUse.Lesson
         {
             var imgBounds = img.TransformToAncestor(this).TransformBounds(new Rect(0, 0, img.ActualWidth, img.ActualHeight));
             var targetBounds = target.TransformToAncestor(this).TransformBounds(new Rect(0, 0, target.ActualWidth, target.ActualHeight));
-
-            // Увеличение границ целевой области
-            const double margin = 20; // например, на 20 пикселей с каждой стороны
+            const double margin = 20; 
             var extendedTargetBounds = new Rect(targetBounds.X - margin, targetBounds.Y - margin,
                                                 targetBounds.Width + 2 * margin, targetBounds.Height + 2 * margin);
 
@@ -123,15 +119,13 @@ namespace ProgrammEasy.PageUse.Lesson
 
                 if (CheckIfAllTargetsCorrect())
                 {
-                    // Пользователь расставил картинки верно
                     CheckBT.Content = "Молодец!";
                     NextBT.IsEnabled = true;
                     ImgOk.Visibility = Visibility.Visible;
                 }
                 else
                 {
-                    // Пользователь расставил картинки неверно
-                    //ResetImages();
+
                     CheckBT.Content = "Попробовать еще раз";
                     ImgNo.Visibility = Visibility.Visible;
                 }
@@ -146,7 +140,6 @@ namespace ProgrammEasy.PageUse.Lesson
         }
         private void ResetImages()
         {
-            // Возвращаем изображения на исходные позиции в разметке грида
             SetImagePosition(img01, (Point)img01.Tag);
             SetImagePosition(img02, (Point)img02.Tag);
             SetImagePosition(img03, (Point)img03.Tag);
@@ -156,18 +149,15 @@ namespace ProgrammEasy.PageUse.Lesson
             SetImagePosition(img07, (Point)img07.Tag);
             SetImagePosition(img08, (Point)img08.Tag);
 
-            // Возвращаем контент кнопки на "Проверить"
             CheckBT.Content = "Проверить";
         }
 
 
         private void SetImagePosition(Image image, Point position)
         {
-            // Устанавливаем позиции в сетке
             Grid.SetColumn(image, (int)position.X);
             Grid.SetRow(image, (int)position.Y);
 
-            // Сбрасываем трансформацию изображения
             if (image.RenderTransform is TranslateTransform transform)
             {
                 transform.X = 0;

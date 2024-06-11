@@ -55,10 +55,9 @@ namespace ProgrammEasy.PageUse.Lesson
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             isDragging = true;
-            //Image image = sender as Image; /////
             TextBlock textBlock = sender as TextBlock;
             clickPosition = e.GetPosition(this);
-            // Если текущая трансформация еще не установлена, создаем новую
+
             if (textBlock.RenderTransform == Transform.Identity)
             {
                 currentTransform = new TranslateTransform();
@@ -75,11 +74,8 @@ namespace ProgrammEasy.PageUse.Lesson
         private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             isDragging = false;
-            //Image image = sender as Image;
             TextBlock textBlock = sender as TextBlock;
             textBlock.ReleaseMouseCapture();
-
-            // Сохраняем текущие позиции изображения в Tag
             Point currentPosition = new Point(Grid.GetColumn(textBlock), Grid.GetRow(textBlock));
             textBlock.Tag = currentPosition;
         }
@@ -88,7 +84,6 @@ namespace ProgrammEasy.PageUse.Lesson
         {
             if (isDragging)
             {
-                //Image image = sender as Image;
                 TextBlock textBlock = sender as TextBlock;
                 Point currentPosition = e.GetPosition(this);
                 double offsetX = currentPosition.X - clickPosition.X;
@@ -103,7 +98,6 @@ namespace ProgrammEasy.PageUse.Lesson
 
         private bool CheckIfAllTargetsCorrect()
         {
-            // Логика проверки
             bool isCorrect = IsInTarget(Text01, Target1) &&
                              IsInTarget(Text02, Target2) &&
                              IsInTarget(Text03, Target3) &&
@@ -135,8 +129,7 @@ namespace ProgrammEasy.PageUse.Lesson
             var imgBounds = text.TransformToAncestor(this).TransformBounds(new Rect(0, 0, text.ActualWidth, text.ActualHeight));
             var targetBounds = target.TransformToAncestor(this).TransformBounds(new Rect(0, 0, target.ActualWidth, target.ActualHeight));
 
-            // Увеличение границ целевой области
-            const double margin = 20; // например, на 20 пикселей с каждой стороны
+            const double margin = 20; 
             var extendedTargetBounds = new Rect(targetBounds.X - margin, targetBounds.Y - margin,
                                                 targetBounds.Width + 2 * margin, targetBounds.Height + 2 * margin);
 
@@ -150,7 +143,6 @@ namespace ProgrammEasy.PageUse.Lesson
 
                 if (CheckIfAllTargetsCorrect())
                 {
-                    // Пользователь расставил картинки верно
                     CheckBT.Content = "Молодец!";
                     NextBT.IsEnabled = true;
                     chOk1.Visibility = Visibility.Visible;
@@ -213,7 +205,6 @@ namespace ProgrammEasy.PageUse.Lesson
         }
         private void ResetImages()
         {
-            // Возвращаем изображения на исходные позиции в разметке грида
             SetImagePosition(Text01, (Point)Text01.Tag);
             SetImagePosition(Text02, (Point)Text02.Tag);
             SetImagePosition(Text03, (Point)Text03.Tag);
@@ -223,18 +214,16 @@ namespace ProgrammEasy.PageUse.Lesson
             SetImagePosition(Text07, (Point)Text07.Tag);
             SetImagePosition(Text08, (Point)Text08.Tag);
 
-            // Возвращаем контент кнопки на "Проверить"
             CheckBT.Content = "Проверить";
         }
 
 
         private void SetImagePosition(TextBlock text, Point position)
         {
-            // Устанавливаем позиции в сетке
+
             Grid.SetColumn(text, (int)position.X);
             Grid.SetRow(text, (int)position.Y);
 
-            // Сбрасываем трансформацию изображения
             if (text.RenderTransform is TranslateTransform transform)
             {
                 transform.X = 0;
