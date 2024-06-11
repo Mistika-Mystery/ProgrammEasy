@@ -57,7 +57,7 @@ namespace ProgrammEasy.PageUse.Lesson
             }
             else
             {
-                NavigationService.Navigate(new TestEasyPG13(_testResult, _questionNumber + 1)); // Переход к следующей странице
+                NavigationService.Navigate(new TestEasyPG13(_testResult, _questionNumber + 1)); 
             }
         }
 
@@ -87,12 +87,12 @@ namespace ProgrammEasy.PageUse.Lesson
         private void SaveAnswer()
         {
             var selectedAnswer = GetSelectedAnswer();
-            var correctAnswer = "c) Для принятия решения"; // Правильный ответ для текущего вопроса
+            var correctAnswer = "c) Для принятия решения"; 
             _testResult.QuestionResults.Add(new QuestionResult
             {
-                Question = QuestionBody.Text, // Текущий вопрос
-                SelectedAnswer = selectedAnswer, // Ответ пользователя
-                IsCorrect = selectedAnswer == correctAnswer // Проверка правильности ответа
+                Question = QuestionBody.Text, 
+                SelectedAnswer = selectedAnswer, 
+                IsCorrect = selectedAnswer == correctAnswer 
             });
         }
 
