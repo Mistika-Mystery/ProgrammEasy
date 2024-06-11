@@ -406,7 +406,7 @@ namespace ProgrammEasy.WinUse.Admin
             {
                 return selectedStatus.Id;
             }
-            return -1; // Возвращает -1, если ничего не выбрано
+            return -1;
         }
 
         private void TBoxSearchST_GotFocus(object sender, RoutedEventArgs e)
