@@ -42,7 +42,7 @@ namespace ProgrammEasy.PageUse.Lesson
         private void Timer_Tick(object sender, EventArgs e)
         {
             var elapsedTime = DateTime.Now - _startTime;
-            // Optionally update UI with elapsedTime
+
         }
 
         private void NextBT_Click(object sender, RoutedEventArgs e)
@@ -61,7 +61,7 @@ namespace ProgrammEasy.PageUse.Lesson
         }
             else
             {
-                NavigationService.Navigate(new TestEasyPG4(_testResult, _questionNumber + 1)); // Переход к следующей странице
+                NavigationService.Navigate(new TestEasyPG4(_testResult, _questionNumber + 1)); 
             }
 }
 
@@ -92,12 +92,12 @@ namespace ProgrammEasy.PageUse.Lesson
         private void SaveAnswer()
         {
             var selectedAnswer = GetSelectedAnswer();
-            var correctAnswer = "b) Графическое представление алгоритма"; // Правильный ответ для текущего вопроса
+            var correctAnswer = "b) Графическое представление алгоритма"; 
             _testResult.QuestionResults.Add(new QuestionResult
             {
-                Question = QuestionBody.Text, // Текущий вопрос
-                SelectedAnswer = selectedAnswer, // Ответ пользователя
-                IsCorrect = selectedAnswer == correctAnswer // Проверка правильности ответа
+                Question = QuestionBody.Text, 
+                SelectedAnswer = selectedAnswer, 
+                IsCorrect = selectedAnswer == correctAnswer 
             });
         }
 

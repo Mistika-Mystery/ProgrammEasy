@@ -57,7 +57,7 @@ namespace ProgrammEasy.PageUse.Lesson
             }
             else
             {
-                NavigationService.Navigate(new TestEasyPG20(_testResult, _questionNumber + 1)); // Переход к следующей странице
+                NavigationService.Navigate(new TestEasyPG20(_testResult, _questionNumber + 1)); 
             }
         }
 
@@ -87,12 +87,12 @@ namespace ProgrammEasy.PageUse.Lesson
         private void SaveAnswer()
         {
             var selectedAnswer = GetSelectedAnswer();
-            var correctAnswer = "b) Для организации данных в несколько измерений"; // Правильный ответ для текущего вопроса
+            var correctAnswer = "b) Для организации данных в несколько измерений"; 
             _testResult.QuestionResults.Add(new QuestionResult
             {
-                Question = QuestionBody.Text, // Текущий вопрос
-                SelectedAnswer = selectedAnswer, // Ответ пользователя
-                IsCorrect = selectedAnswer == correctAnswer // Проверка правильности ответа
+                Question = QuestionBody.Text, 
+                SelectedAnswer = selectedAnswer, 
+                IsCorrect = selectedAnswer == correctAnswer 
             });
         }
 
