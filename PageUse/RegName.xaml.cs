@@ -99,27 +99,24 @@ namespace ProgrammEasy.PageUse
                 string text = textBox.Text.Trim();
                 if (!string.IsNullOrEmpty(text))
                 {
-                    // Удаляем все пробелы, включая в середине текста
+
                     text = System.Text.RegularExpressions.Regex.Replace(text, @"\s+", "");
 
-                    // Удаляем все символы кроме букв кириллицы и дефиса
                     text = System.Text.RegularExpressions.Regex.Replace(text, @"[^а-яА-ЯёЁ-]", "");
 
-                    // Удаляем два и более подряд идущих дефиса, оставляя только один, если за ним есть буква
                     text = System.Text.RegularExpressions.Regex.Replace(text, @"-{2,}", "-");
                     text = System.Text.RegularExpressions.Regex.Replace(text, @"-(?![а-яА-ЯёЁ])", "");
 
-                    // Удаляем начальный дефис, если он есть
                     if (text.StartsWith("-"))
                     {
                         text = text.Substring(1);
                     }
-                    // Если первая буква не заглавная, делаем ее заглавной
+
                     if (!string.IsNullOrEmpty(text))
                     {
                         text = char.ToUpper(text[0]) + text.Substring(1).ToLower();
                     }
-                    // Делаем буквы после дефиса заглавными
+
                     text = System.Text.RegularExpressions.Regex.Replace(text, @"-(\p{L})", match => "-" + match.Groups[1].Value.ToUpper());
 
                     textBox.Text = text;

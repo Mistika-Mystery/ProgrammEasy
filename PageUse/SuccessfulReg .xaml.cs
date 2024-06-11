@@ -31,7 +31,7 @@ namespace ProgrammEasy.PageUse
             try
             {
                 RegFlag.ClearData();
-                myEntities.my01 = null; // Установка переменной my01 в null, чтобы создать новый контекст при следующем вызове GetContext()
+                myEntities.my01 = null;
 
 
 
