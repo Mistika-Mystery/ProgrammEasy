@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProgrammEasy.WinUse.Student"
         mc:Ignorable="d"
-        Title="Просмотр результата" Height="300" Width="450" Icon="/Recourse/test.png" MinWidth="400" MinHeight="300" MaxWidth="800" MaxHeight="800" WindowStyle="None">
+        Title="Просмотр результата" Height="300" Width="450" Icon="/Recourse/test.png" MinWidth="400" MinHeight="300" MaxWidth="800" MaxHeight="800" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
