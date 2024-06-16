@@ -409,7 +409,7 @@
                         <Label Height="15"/>
 
 
-                        <Button x:Name="BtnReload" Content="Сбросить Фильтры" Cursor="Hand" FontWeight="Bold" FontSize="14" Height="35" Click="BtnReload_Click">
+                        <Button x:Name="BtnReload" Content="Сбросить / Обновить" Cursor="Hand" FontWeight="Bold" FontSize="14" Height="35" Click="BtnReload_Click">
                             <Button.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="White" Offset="0.507"/>
